@@ -6165,7 +6165,7 @@
 		)
 		(uuid "f6cc2057-d703-449d-a3c4-a7708d357b5c")
 	)
-	(label "Keys.F9"
+	(label "K.F9"
 		(at 25.4 83.82 0)
 		(effects
 			(font
@@ -6175,7 +6175,7 @@
 		)
 		(uuid "0e4cdc8f-e667-40f1-8822-7dcc5942fc66")
 	)
-	(label "Keys.F1"
+	(label "K.F1"
 		(at 25.4 58.42 0)
 		(effects
 			(font
@@ -6185,7 +6185,7 @@
 		)
 		(uuid "16e399f1-976c-4727-9056-29b29a97fb39")
 	)
-	(label "Keys.F4"
+	(label "K.F4"
 		(at 25.4 66.04 0)
 		(effects
 			(font
@@ -6195,7 +6195,7 @@
 		)
 		(uuid "27088f36-29d2-4988-8530-bba79a6e718e")
 	)
-	(label "Keys.F5"
+	(label "K.F5"
 		(at 25.4 71.12 0)
 		(effects
 			(font
@@ -6205,7 +6205,7 @@
 		)
 		(uuid "2eb38297-e6e9-4791-9602-e9d2668739b3")
 	)
-	(label "Keys.F7"
+	(label "K.F7"
 		(at 25.4 76.2 0)
 		(effects
 			(font
@@ -6215,7 +6215,7 @@
 		)
 		(uuid "32c3ade4-9f41-417d-ad23-e92e1cf1cadd")
 	)
-	(label "Keys.Esc"
+	(label "K.Esc"
 		(at 25.4 53.34 0)
 		(effects
 			(font
@@ -6225,7 +6225,7 @@
 		)
 		(uuid "387e0641-f077-4de0-838f-e04da87e8717")
 	)
-	(label "Keys.F6"
+	(label "K.F6"
 		(at 25.4 73.66 0)
 		(effects
 			(font
@@ -6235,7 +6235,7 @@
 		)
 		(uuid "41fb8142-3b22-4af4-a6fb-014a1086924a")
 	)
-	(label "Keys.F10"
+	(label "K.F10"
 		(at 25.4 86.36 0)
 		(effects
 			(font
@@ -6245,7 +6245,7 @@
 		)
 		(uuid "426f131d-f39f-4ef1-9cf6-b9e03e5091c3")
 	)
-	(label "Keys.F12"
+	(label "K.F12"
 		(at 25.4 91.44 0)
 		(effects
 			(font
@@ -6255,7 +6255,7 @@
 		)
 		(uuid "73c3635c-c9d8-4bb2-8071-9e67ba7137eb")
 	)
-	(label "Keys.F11"
+	(label "K.F11"
 		(at 25.4 88.9 0)
 		(effects
 			(font
@@ -6265,7 +6265,7 @@
 		)
 		(uuid "89ff18f4-de2a-4118-adcf-8218a9ecc3d1")
 	)
-	(label "Keys.F2"
+	(label "K.F2"
 		(at 25.4 60.96 0)
 		(effects
 			(font
@@ -6275,7 +6275,7 @@
 		)
 		(uuid "8cc80204-0c19-4f86-a6b9-59ccb79a9b26")
 	)
-	(label "Keys.F3"
+	(label "K.F3"
 		(at 25.4 63.5 0)
 		(effects
 			(font
@@ -6285,7 +6285,7 @@
 		)
 		(uuid "9aad0084-08e4-43e7-91da-e8cb48b6e57f")
 	)
-	(label "Keys.F8"
+	(label "K.F8"
 		(at 25.4 78.74 0)
 		(effects
 			(font
@@ -6295,7 +6295,7 @@
 		)
 		(uuid "e4a562e4-3533-4a0e-900c-723b3bd1ceb1")
 	)
-	(hierarchical_label "Keys{Keys}"
+	(hierarchical_label "K{Keys}"
 		(shape input)
 		(at 38.1 38.1 180)
 		(effects
