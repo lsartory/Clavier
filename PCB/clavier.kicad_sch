@@ -5,6 +5,20 @@
 	(uuid "6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20")
 	(paper "A4")
 	(lib_symbols)
+	(text "TODO:\n- Power supply\n- USB C connector\n- USB programmer (CH347F)\n- Display?\n- Page titles"
+		(exclude_from_sim no)
+		(at 40.0 150.0 0)
+		(effects
+			(font
+				(size 5.08 5.08)
+				(thickness 1.016)
+				(bold yes)
+				(color 194 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "3ed8b9f7-9303-4e2c-a8c1-769e518a62be")
+	)
 	(bus
 		(pts
 			(xy 127 80.01) (xy 165.1 80.01)
