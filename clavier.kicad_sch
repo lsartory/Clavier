@@ -7,17 +7,27 @@
 	(lib_symbols)
 	(bus
 		(pts
-			(xy 114.3 82.55) (xy 165.1 82.55)
+			(xy 127 80.01) (xy 165.1 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd5e410d-6199-4f69-9c7a-9efd7e6dd324")
+		(uuid "a78b7ef5-b533-4c38-a8ec-f5ae207ff947")
+	)
+	(bus
+		(pts
+			(xy 127 85.09) (xy 165.1 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df66b4c6-14fe-49e8-b218-8635fff83152")
 	)
 	(sheet
 		(at 165.1 76.2)
-		(size 12.7 12.7)
+		(size 25.4 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -50,8 +60,18 @@
 			)
 		)
 		(pin "K{Keys}" input
-			(at 165.1 82.55 180)
+			(at 165.1 80.01 180)
 			(uuid "f4fe7cc6-6d71-4758-9705-9eee2988b8bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Kp{KpKeys}" input
+			(at 165.1 85.09 180)
+			(uuid "6e56a2d2-8600-43a8-bded-d616ac68755c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69,7 +89,7 @@
 	)
 	(sheet
 		(at 101.6 76.2)
-		(size 12.7 12.7)
+		(size 25.4 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -101,9 +121,19 @@
 				(justify left top)
 			)
 		)
+		(pin "Kp{KpKeys}" output
+			(at 127 85.09 0)
+			(uuid "f08570d4-3557-486f-a026-ac1c83ecb41b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(pin "K{Keys}" output
-			(at 114.3 82.55 0)
-			(uuid "f4bc45cb-b00a-4194-8e4e-596dd860f90c")
+			(at 127 80.01 0)
+			(uuid "d54848c9-e10a-4700-b817-91d8b9a2b86a")
 			(effects
 				(font
 					(size 1.27 1.27)

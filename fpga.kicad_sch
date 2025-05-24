@@ -144,6 +144,173 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Oscillator:KC2520Z"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Y"
+				(at 2.54 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "KC2520Z"
+				(at 6.35 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Oscillator:Oscillator_SMD_Kyocera_KC2520Z-4Pin_2.5x2.0mm"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://global.kyocera.com/prdct/electro/product/pdf/clock_z_xz_e.pdf"
+				(at 3.81 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1.8432MHz ~ 125MHz Crystal Oscillator"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "xo"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Oscillator*SMD*Kyocera*KC2520Z*2.5x2.0mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "KC2520Z_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "KC2520Z_1_1"
+				(polyline
+					(pts
+						(xy 1.778 2.032) (xy 2.54 2.032) (xy 2.54 3.302) (xy 3.302 3.302) (xy 3.302 2.032) (xy 4.064 2.032)
+						(xy 4.064 3.302) (xy 4.826 3.302) (xy 4.826 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "INH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "CLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "clavier:LFE5U-25F-6BG256x"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -5358,6 +5525,12 @@
 		(uuid "4910c390-14a7-4aa7-b7cb-1d47d28a7a37")
 	)
 	(junction
+		(at 50.8 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "498b7c77-db3e-4901-9e3a-0a01aea25d5d")
+	)
+	(junction
 		(at 76.2 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5392,6 +5565,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "868b244a-980d-4016-8106-a6afeabf5b25")
+	)
+	(junction
+		(at 50.8 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a27bc630-4e2b-4f4e-a541-3bb169565c65")
 	)
 	(junction
 		(at 88.9 27.94)
@@ -5435,6 +5614,10 @@
 		(color 0 0 0 0)
 		(uuid "e69ba2b8-2ad1-43c7-96e6-25cb511b1dec")
 	)
+	(no_connect
+		(at 40.64 165.1)
+		(uuid "dca9fde3-50e4-4123-ad39-21170e0bad07")
+	)
 	(wire
 		(pts
 			(xy 25.4 53.34) (xy 40.64 53.34)
@@ -5474,6 +5657,16 @@
 			(type default)
 		)
 		(uuid "0efbeb5a-8a79-43f5-9f5e-b3f967348c8a")
+	)
+	(wire
+		(pts
+			(xy 25.4 168.91) (xy 25.4 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "134fc153-0fc0-48ee-a6d8-56b3cbf67a17")
 	)
 	(wire
 		(pts
@@ -5527,6 +5720,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 154.94) (xy 50.8 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c3678df-1636-4763-8f01-079d21ca3028")
+	)
+	(wire
+		(pts
 			(xy 114.3 40.64) (xy 114.3 43.18)
 		)
 		(stroke
@@ -5564,6 +5767,16 @@
 			(type default)
 		)
 		(uuid "28e483db-cdbf-4c59-811c-2f3c6f771a29")
+	)
+	(wire
+		(pts
+			(xy 60.96 165.1) (xy 76.2 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a89427f-8e1e-4322-a328-78f338c94b7d")
 	)
 	(wire
 		(pts
@@ -5727,6 +5940,26 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 152.4) (xy 50.8 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5889486b-333d-47ba-911f-4d19b7fc7cf2")
+	)
+	(wire
+		(pts
+			(xy 50.8 175.26) (xy 50.8 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ad548f3-8f88-41ed-bf03-1d5b9473aca4")
+	)
+	(wire
+		(pts
 			(xy 152.4 40.64) (xy 152.4 38.1)
 		)
 		(stroke
@@ -5764,6 +5997,16 @@
 			(type default)
 		)
 		(uuid "641f7359-ade0-4817-a4c7-e89beb02bf25")
+	)
+	(wire
+		(pts
+			(xy 25.4 161.29) (xy 25.4 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64d0a82e-1b4a-4ddf-a30c-00099983289e")
 	)
 	(wire
 		(pts
@@ -5867,6 +6110,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 175.26) (xy 50.8 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "867bd6c6-0f50-4d44-ba08-b78af75a0baa")
+	)
+	(wire
+		(pts
 			(xy 25.4 88.9) (xy 40.64 88.9)
 		)
 		(stroke
@@ -5954,6 +6207,16 @@
 			(type default)
 		)
 		(uuid "c0bddc15-36a9-4fa5-a07b-450600711c93")
+	)
+	(wire
+		(pts
+			(xy 193.04 58.42) (xy 177.8 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c20baeaa-068d-428d-b898-e7bf9e6399d3")
 	)
 	(wire
 		(pts
@@ -6165,6 +6428,26 @@
 		)
 		(uuid "f6cc2057-d703-449d-a3c4-a7708d357b5c")
 	)
+	(wire
+		(pts
+			(xy 50.8 175.26) (xy 50.8 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f84ec39f-106e-471c-8b91-fd978c983c7f")
+	)
+	(wire
+		(pts
+			(xy 50.8 154.94) (xy 50.8 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f984f3d2-c96b-458d-8601-5efeb77474b0")
+	)
 	(label "K.F9"
 		(at 25.4 83.82 0)
 		(effects
@@ -6245,6 +6528,16 @@
 		)
 		(uuid "426f131d-f39f-4ef1-9cf6-b9e03e5091c3")
 	)
+	(label "CLK_48MHz"
+		(at 177.8 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5ccdb465-0f5b-4936-a3d8-6f0db21e3f9a")
+	)
 	(label "K.F12"
 		(at 25.4 91.44 0)
 		(effects
@@ -6294,6 +6587,27 @@
 			(justify left bottom)
 		)
 		(uuid "e4a562e4-3533-4a0e-900c-723b3bd1ceb1")
+	)
+	(label "CLK_48MHz"
+		(at 76.2 165.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f08b5428-fc67-4cc5-b819-701d09f89863")
+	)
+	(hierarchical_label "Kp{KpKeys}"
+		(shape input)
+		(at 38.1 41.91 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e766276-777e-4b3e-8f10-f009ad8f2b8d")
 	)
 	(hierarchical_label "K{Keys}"
 		(shape input)
@@ -6485,7 +6799,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 252.73 16.51 0)
 			(effects
 				(font
@@ -8050,6 +8364,158 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 50.8 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7084e0d7-cf6e-45c1-831e-194bd4984417")
+		(property "Reference" "#PWR013"
+			(at 50.8 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 50.8 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 50.8 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "40426773-8319-43dd-b4f3-edc037b5e711")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 25.4 165.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "75941905-8c26-4ab1-8f49-e04df01a7714")
+		(property "Reference" "C13"
+			(at 28.321 162.7886 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1µF"
+			(at 28.321 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 26.3652 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+			(at 25.4 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 25.4 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "50V"
+			(at 28.321 167.4114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part_number" "C1608X5R1H105K080AB"
+			(at 25.4 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cbfeed68-f277-473e-a5db-88ac67df4a9d")
+		)
+		(pin "1"
+			(uuid "f32486e7-5aff-43d2-a906-37764e795560")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 228.6 43.18 0)
 		(unit 1)
@@ -8110,6 +8576,72 @@
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 50.8 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91063959-838b-4bb2-9997-c020d56e4078")
+		(property "Reference" "#PWR014"
+			(at 50.8 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eb962eec-1962-417a-8f02-93d1e49549ec")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -8228,7 +8760,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 214.63 16.51 0)
 			(effects
 				(font
@@ -8446,6 +8978,7 @@
 		)
 		(pin "M1"
 			(uuid "d81d4305-bc35-404d-a042-5bc15e1dfcce")
+			(alternate "PCLKT6_0")
 		)
 		(pin "P6"
 			(uuid "1b70451a-77e3-4512-8de7-3985011978c9")
@@ -9383,7 +9916,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 62.23 6.35 0)
 			(effects
 				(font
@@ -10214,7 +10747,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 138.43 16.51 0)
 			(effects
 				(font
@@ -11415,7 +11948,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 100.33 16.51 0)
 			(effects
 				(font
@@ -12312,7 +12845,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
 			(at 176.53 16.51 0)
 			(effects
 				(font
@@ -13112,6 +13645,80 @@
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
 					(reference "U1")
 					(unit 5)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Oscillator:KC2520Z")
+		(at 50.8 165.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f85f01dd-8d18-496f-9073-d5a66796d275")
+		(property "Reference" "Y1"
+			(at 64.77 158.6798 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "KC2520Z"
+			(at 64.77 161.2198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Oscillator:Oscillator_SMD_Kyocera_KC2520Z-4Pin_2.5x2.0mm"
+			(at 54.61 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://global.kyocera.com/prdct/electro/product/pdf/clock_z_xz_e.pdf"
+			(at 54.61 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1.8432MHz ~ 125MHz Crystal Oscillator"
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1cc8fdc8-3415-4b45-86fd-e97ec90d66a8")
+		)
+		(pin "2"
+			(uuid "ae3add02-2361-490d-afaf-a4efca3aa6b8")
+		)
+		(pin "4"
+			(uuid "0365ad99-8db1-4383-b599-e4c080248006")
+		)
+		(pin "3"
+			(uuid "9a516355-d5a6-448b-bc6f-e5efa1027a32")
+		)
+		(instances
+			(project ""
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "Y1")
+					(unit 1)
 				)
 			)
 		)
