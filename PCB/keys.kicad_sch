@@ -306,8 +306,19 @@
 		)
 	)
 	(bus_alias "Keys"
-		(members "Esc" "F1" "F2" "F3" "F4" "F5" "F6" "F7" "F8" "F9" "F10" "F11"
-			"F12" "Druck" "Rollen" "Pause" "Lock"
+		(members "A" "AE" "Acute" "Alt" "AltGr" "B" "Bksp" "C" "Circ" "Comma" "Comp"
+			"D" "Delete" "Dot" "Down" "E" "End" "Esc" "Eszett" "F" "F1" "F10" "F11"
+			"F12" "F2" "F3" "F4" "F5" "F6" "F7" "F8" "F9" "G" "H" "Hash" "Home" "I"
+			"Insert" "J" "K" "L" "LCtrl" "LMeta" "LShift" "Left" "Lock" "Lt" "M" "Menu"
+			"Minus" "N" "O" "OE" "P" "Pause" "PgDn" "PgUp" "Plus" "Print" "Q" "R"
+			"RCtrl" "RMeta" "RShift" "Right" "Rtrn" "S" "SLock" "Space" "T" "Tab"
+			"U" "UE" "Up" "V" "W" "X" "Y" "Z" "_0" "_1" "_2" "_3" "_4" "_5" "_6" "_7"
+			"_8" "_9"
+		)
+	)
+	(bus_alias "KpKeys"
+		(members "Dot" "Minus" "NLock" "Plus" "Rtrn" "Slash" "Star" "_0" "_1" "_2"
+			"_3" "_4" "_5" "_6" "_7" "_8" "_9"
 		)
 	)
 	(junction

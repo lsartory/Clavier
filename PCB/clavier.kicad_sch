@@ -5,9 +5,9 @@
 	(uuid "6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20")
 	(paper "A4")
 	(lib_symbols)
-	(text "TODO:\n- Power supply\n- USB C connector\n- USB programmer (CH347F)\n- Display?\n- Page titles"
+	(text "TODO schematics:\n- Power supply\n- LEDs\n- Test points\n- USB C connector\n- USB hub (GL852G-OHY60)\n- USB programmer (CH347F)\n- Display?\n- Page titles\n- Check licenses\n\nTODO layout:\n- Mounting holes\n- 3D models (all, including keycaps)\n- Alternate ctrl + odd/even number keys\n- Cat logo\n- Title block\n\nTODO release:\n- Export production files\n- Export PDF"
 		(exclude_from_sim no)
-		(at 40.0 150.0 0)
+		(at 19.304 99.568 0)
 		(effects
 			(font
 				(size 5.08 5.08)
@@ -21,7 +21,7 @@
 	)
 	(bus
 		(pts
-			(xy 127 80.01) (xy 165.1 80.01)
+			(xy 177.8 92.71) (xy 215.9 92.71)
 		)
 		(stroke
 			(width 0)
@@ -31,7 +31,7 @@
 	)
 	(bus
 		(pts
-			(xy 127 85.09) (xy 165.1 85.09)
+			(xy 177.8 97.79) (xy 215.9 97.79)
 		)
 		(stroke
 			(width 0)
@@ -40,7 +40,91 @@
 		(uuid "df66b4c6-14fe-49e8-b218-8635fff83152")
 	)
 	(sheet
-		(at 165.1 76.2)
+		(at 190.5 38.1)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0c8a9398-ddd2-4230-9850-fe0f46e922ad")
+		(property "Sheetname" "Power"
+			(at 190.5 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 190.5 51.3846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 38.1)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7a0fedde-fdbf-441d-b3e6-197cbc93a029")
+		(property "Sheetname" "Display"
+			(at 215.9 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "display.kicad_sch"
+			(at 215.9 51.3846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 215.9 88.9)
 		(size 25.4 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -56,7 +140,7 @@
 		)
 		(uuid "d73938da-f0ba-48e3-aac9-a36988c25c2c")
 		(property "Sheetname" "FPGA"
-			(at 165.1 75.4884 0)
+			(at 215.9 88.1884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -65,7 +149,7 @@
 			)
 		)
 		(property "Sheetfile" "fpga.kicad_sch"
-			(at 165.1 89.4846 0)
+			(at 215.9 102.1846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -74,7 +158,7 @@
 			)
 		)
 		(pin "K{Keys}" input
-			(at 165.1 80.01 180)
+			(at 215.9 92.71 180)
 			(uuid "f4fe7cc6-6d71-4758-9705-9eee2988b8bc")
 			(effects
 				(font
@@ -84,7 +168,7 @@
 			)
 		)
 		(pin "Kp{KpKeys}" input
-			(at 165.1 85.09 180)
+			(at 215.9 97.79 180)
 			(uuid "6e56a2d2-8600-43a8-bded-d616ac68755c")
 			(effects
 				(font
@@ -96,13 +180,55 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 165.1 38.1)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f3d926d4-179d-4033-9062-145e3f3d7f6d")
+		(property "Sheetname" "USB"
+			(at 165.1 37.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 165.1 51.3846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
 					(page "2")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 101.6 76.2)
+		(at 152.4 88.9)
 		(size 25.4 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -118,7 +244,7 @@
 		)
 		(uuid "fe36ef85-cf96-48c6-8774-50fbc2348e34")
 		(property "Sheetname" "Keys"
-			(at 101.6 75.4884 0)
+			(at 152.4 88.1884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -127,7 +253,7 @@
 			)
 		)
 		(property "Sheetfile" "keys.kicad_sch"
-			(at 101.6 89.4846 0)
+			(at 152.4 102.1846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -136,7 +262,7 @@
 			)
 		)
 		(pin "Kp{KpKeys}" output
-			(at 127 85.09 0)
+			(at 177.8 97.79 0)
 			(uuid "f08570d4-3557-486f-a026-ac1c83ecb41b")
 			(effects
 				(font
@@ -146,7 +272,7 @@
 			)
 		)
 		(pin "K{Keys}" output
-			(at 127 80.01 0)
+			(at 177.8 92.71 0)
 			(uuid "d54848c9-e10a-4700-b817-91d8b9a2b86a")
 			(effects
 				(font
@@ -158,7 +284,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "5")
+					(page "6")
 				)
 			)
 		)

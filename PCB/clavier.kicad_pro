@@ -635,20 +635,32 @@
       "Root"
     ],
     [
-      "d73938da-f0ba-48e3-aac9-a36988c25c2c",
-      "FPGA"
+      "f3d926d4-179d-4033-9062-145e3f3d7f6d",
+      "USB"
     ],
     [
-      "e36c52fe-7af8-49a0-bf3c-a636c30fc9cb",
-      "FPGA power"
+      "d73938da-f0ba-48e3-aac9-a36988c25c2c",
+      "FPGA"
     ],
     [
       "de1eff49-f476-44bd-be62-918dcb8e6e8d",
       "FPGA config"
     ],
     [
+      "e36c52fe-7af8-49a0-bf3c-a636c30fc9cb",
+      "FPGA power"
+    ],
+    [
       "fe36ef85-cf96-48c6-8774-50fbc2348e34",
       "Keys"
+    ],
+    [
+      "7a0fedde-fdbf-441d-b3e6-197cbc93a029",
+      "Display"
+    ],
+    [
+      "0c8a9398-ddd2-4230-9850-fe0f46e922ad",
+      "Power"
     ]
   ],
   "text_variables": {}
