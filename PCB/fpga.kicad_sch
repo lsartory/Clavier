@@ -6630,7 +6630,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "07bfb185-4e49-4166-8018-8dd42578810c")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR012"
 			(at 152.4 49.53 0)
 			(effects
 				(font
@@ -6680,7 +6680,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR09")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -6713,7 +6713,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 216.8652 38.1 0)
 			(effects
 				(font
@@ -6722,7 +6722,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 215.9 34.29 0)
 			(effects
 				(font
@@ -6748,7 +6748,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 215.9 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 215.9 34.29 0)
 			(effects
 				(font
@@ -6790,7 +6799,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 236.22 138.684 0)
 			(effects
 				(font
@@ -6818,6 +6827,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 241.3 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 241.3 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 241.3 88.9 0)
 			(effects
 				(font
@@ -7613,7 +7640,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "150932da-809f-43fb-bb11-b69c045d6d7c")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR013"
 			(at 190.5 49.53 0)
 			(effects
 				(font
@@ -7663,7 +7690,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR010")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -7696,7 +7723,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 191.4652 38.1 0)
 			(effects
 				(font
@@ -7705,7 +7732,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 190.5 34.29 0)
 			(effects
 				(font
@@ -7731,7 +7758,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 190.5 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 190.5 34.29 0)
 			(effects
 				(font
@@ -7765,7 +7801,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3596e280-ea81-4527-b389-cf245dbbe352")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR09"
 			(at 241.3 29.21 0)
 			(effects
 				(font
@@ -7815,7 +7851,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR06")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -7848,7 +7884,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 102.5652 38.1 0)
 			(effects
 				(font
@@ -7857,7 +7893,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 101.6 34.29 0)
 			(effects
 				(font
@@ -7883,7 +7919,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 101.6 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 101.6 34.29 0)
 			(effects
 				(font
@@ -7934,7 +7979,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 115.2652 38.1 0)
 			(effects
 				(font
@@ -7943,7 +7988,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 114.3 34.29 0)
 			(effects
 				(font
@@ -7969,7 +8014,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 114.3 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 114.3 34.29 0)
 			(effects
 				(font
@@ -8003,7 +8057,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "51da5777-3238-44ee-9e24-6df478456b75")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR015"
 			(at 266.7 49.53 0)
 			(effects
 				(font
@@ -8053,7 +8107,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR012")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -8069,7 +8123,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "605a4db8-ed0e-4d2f-8015-078b0b955e57")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR07"
 			(at 165.1 29.21 0)
 			(effects
 				(font
@@ -8119,7 +8173,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR04")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -8152,7 +8206,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 77.1652 38.1 0)
 			(effects
 				(font
@@ -8161,7 +8215,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 76.2 34.29 0)
 			(effects
 				(font
@@ -8187,7 +8241,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 76.2 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 76.2 34.29 0)
 			(effects
 				(font
@@ -8221,7 +8284,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64fc2d51-92a9-4673-9756-12faab8db42c")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR05"
 			(at 88.9 29.21 0)
 			(effects
 				(font
@@ -8271,7 +8334,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR02")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -8304,7 +8367,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 254.9652 38.1 0)
 			(effects
 				(font
@@ -8313,7 +8376,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 254 34.29 0)
 			(effects
 				(font
@@ -8339,7 +8402,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 254 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 254 34.29 0)
 			(effects
 				(font
@@ -8373,7 +8445,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7084e0d7-cf6e-45c1-831e-194bd4984417")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR016"
 			(at 50.8 156.21 0)
 			(effects
 				(font
@@ -8423,7 +8495,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR013")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -8456,7 +8528,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 26.3652 168.91 0)
 			(effects
 				(font
@@ -8465,7 +8537,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 25.4 165.1 0)
 			(effects
 				(font
@@ -8491,7 +8563,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 25.4 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 25.4 165.1 0)
 			(effects
 				(font
@@ -8525,7 +8606,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d392b80-046f-4c69-9a6d-a5a9a50c1b7f")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR014"
 			(at 228.6 49.53 0)
 			(effects
 				(font
@@ -8575,7 +8656,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR011")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -8591,7 +8672,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91063959-838b-4bb2-9997-c020d56e4078")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR017"
 			(at 50.8 184.15 0)
 			(effects
 				(font
@@ -8641,7 +8722,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR014")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -8674,7 +8755,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 229.5652 38.1 0)
 			(effects
 				(font
@@ -8683,7 +8764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 228.6 34.29 0)
 			(effects
 				(font
@@ -8709,7 +8790,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 228.6 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 228.6 34.29 0)
 			(effects
 				(font
@@ -8751,7 +8841,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 198.12 138.684 0)
 			(effects
 				(font
@@ -8779,6 +8869,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 203.2 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 203.2 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 203.2 88.9 0)
 			(effects
 				(font
@@ -9592,7 +9700,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 140.6652 38.1 0)
 			(effects
 				(font
@@ -9601,7 +9709,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 139.7 34.29 0)
 			(effects
 				(font
@@ -9627,7 +9735,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 139.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 139.7 34.29 0)
 			(effects
 				(font
@@ -9661,7 +9778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aba2f123-6413-4890-82f6-a6781ef0a36c")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR08"
 			(at 203.2 29.21 0)
 			(effects
 				(font
@@ -9711,7 +9828,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR05")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -9744,7 +9861,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 178.7652 38.1 0)
 			(effects
 				(font
@@ -9753,7 +9870,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 177.8 34.29 0)
 			(effects
 				(font
@@ -9779,7 +9896,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 177.8 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 177.8 34.29 0)
 			(effects
 				(font
@@ -9830,7 +9956,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 153.3652 38.1 0)
 			(effects
 				(font
@@ -9839,7 +9965,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 152.4 34.29 0)
 			(effects
 				(font
@@ -9865,7 +9991,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 152.4 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 152.4 34.29 0)
 			(effects
 				(font
@@ -9907,7 +10042,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 45.72 118.364 0)
 			(effects
 				(font
@@ -9935,6 +10070,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 50.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 50.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 50.8 78.74 0)
 			(effects
 				(font
@@ -10738,7 +10891,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 121.92 138.684 0)
 			(effects
 				(font
@@ -10766,6 +10919,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 127 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 127 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 127 88.9 0)
 			(effects
 				(font
@@ -11561,7 +11732,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c37e6d5d-2c66-406f-a24b-1a525f0d80ff")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR010"
 			(at 76.2 49.53 0)
 			(effects
 				(font
@@ -11611,7 +11782,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR07")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -11627,7 +11798,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5ebdb94-be66-465b-85a1-33f44e5a7481")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR04"
 			(at 50.8 29.21 0)
 			(effects
 				(font
@@ -11677,7 +11848,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR01")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -11710,7 +11881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 267.6652 38.1 0)
 			(effects
 				(font
@@ -11719,7 +11890,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
 			(at 266.7 34.29 0)
 			(effects
 				(font
@@ -11745,7 +11916,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H104K080AA"
+		(property "Part_number" "GRM155R71H104KE14D"
+			(at 266.7 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C77020"
 			(at 266.7 34.29 0)
 			(effects
 				(font
@@ -11796,7 +11976,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 64.4652 38.1 0)
 			(effects
 				(font
@@ -11805,7 +11985,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
 			(at 63.5 34.29 0)
 			(effects
 				(font
@@ -11831,7 +12011,16 @@
 				(justify left)
 			)
 		)
-		(property "Part_number" "C1608X5R1H105K080AB"
+		(property "Part_number" "GRM155R61H105KE05D"
+			(at 63.5 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1518208"
 			(at 63.5 34.29 0)
 			(effects
 				(font
@@ -11865,7 +12054,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d967d4eb-98ed-4d47-b6dc-7d467ef91816")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR06"
 			(at 127 29.21 0)
 			(effects
 				(font
@@ -11915,7 +12104,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR03")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -11939,7 +12128,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 83.82 138.684 0)
 			(effects
 				(font
@@ -11967,6 +12156,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 88.9 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 88.9 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 88.9 88.9 0)
 			(effects
 				(font
@@ -12762,7 +12969,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f54ee2bc-e029-4ba5-8669-ff38a27fcb07")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR011"
 			(at 114.3 49.53 0)
 			(effects
 				(font
@@ -12812,7 +13019,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR08")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -12836,7 +13043,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LFE5U-25F-6BG256x"
+		(property "Value" "LFE5U-25F-6BG256C"
 			(at 160.02 138.684 0)
 			(effects
 				(font
@@ -12864,6 +13071,24 @@
 			)
 		)
 		(property "Description" "ECP5 FPGA, 24K LUTs, 1.1V, BGA-256"
+			(at 165.1 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1521614"
+			(at 165.1 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "LFE5U-25F-6BG256C"
 			(at 165.1 88.9 0)
 			(effects
 				(font
@@ -13657,22 +13882,23 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f85f01dd-8d18-496f-9073-d5a66796d275")
 		(property "Reference" "Y1"
-			(at 64.77 158.6798 0)
+			(at 53.34 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "KC2520Z"
-			(at 64.77 161.2198 0)
+		(property "Value" "CO22H4-48.000-WPJDTSTL"
+			(at 53.34 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Oscillator:Oscillator_SMD_Kyocera_KC2520Z-4Pin_2.5x2.0mm"
@@ -13684,7 +13910,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://global.kyocera.com/prdct/electro/product/pdf/clock_z_xz_e.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411041703_HCI-CO22H4-48-000-WPJDTSTL_C3034286.pdf"
 			(at 54.61 161.29 0)
 			(effects
 				(font
@@ -13693,7 +13919,25 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1.8432MHz ~ 125MHz Crystal Oscillator"
+		(property "Description" "48 MHz Crystal Oscillator"
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3034286"
+			(at 50.8 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "CO22H4-48.000-WPJDTSTL"
 			(at 50.8 165.1 0)
 			(effects
 				(font

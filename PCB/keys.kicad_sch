@@ -7351,8 +7351,8 @@
 				)
 			)
 		)
-		(property "Value" "2"
-			(at 69.85 102.87 0)
+		(property "Value" "~"
+			(at 69.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7384,6 +7384,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "2"
+			(at 69.85 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 69.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7419,8 +7435,8 @@
 				)
 			)
 		)
-		(property "Value" "Raute"
-			(at 209.55 153.67 0)
+		(property "Value" "~"
+			(at 209.55 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7452,6 +7468,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Raute"
+			(at 209.55 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 209.55 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7487,8 +7519,8 @@
 				)
 			)
 		)
-		(property "Value" "Tab"
-			(at 44.45 128.27 0)
+		(property "Value" "~"
+			(at 44.45 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7520,6 +7552,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Tab"
+			(at 44.45 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7555,8 +7603,8 @@
 				)
 			)
 		)
-		(property "Value" "Plus"
-			(at 203.2 128.27 0)
+		(property "Value" "~"
+			(at 203.2 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7588,6 +7636,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Plus"
+			(at 203.2 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 203.2 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7623,8 +7687,8 @@
 				)
 			)
 		)
-		(property "Value" "F9"
-			(at 184.15 77.47 0)
+		(property "Value" "~"
+			(at 184.15 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7656,6 +7720,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F9"
+			(at 184.15 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 184.15 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7691,8 +7771,8 @@
 				)
 			)
 		)
-		(property "Value" "W"
-			(at 76.2 128.27 0)
+		(property "Value" "~"
+			(at 76.2 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7724,6 +7804,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "W"
+			(at 76.2 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 76.2 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7759,8 +7855,8 @@
 				)
 			)
 		)
-		(property "Value" "Sternchen"
-			(at 336.55 102.87 0)
+		(property "Value" "~"
+			(at 336.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7792,6 +7888,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Sternchen"
+			(at 336.55 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 336.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7827,8 +7939,8 @@
 				)
 			)
 		)
-		(property "Value" "Steuerung"
-			(at 44.45 204.47 0)
+		(property "Value" "~"
+			(at 44.45 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7860,6 +7972,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Steuerung"
+			(at 44.45 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -7895,8 +8023,8 @@
 				)
 			)
 		)
-		(property "Value" "F1"
-			(at 69.85 77.47 0)
+		(property "Value" "~"
+			(at 69.85 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7930,6 +8058,22 @@
 				(hide yes)
 			)
 		)
+		(property "Key" "F1"
+			(at 69.85 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 69.85 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "31282b49-d8c6-4e67-8467-9d2d99819c30")
 		)
@@ -7955,7 +8099,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d0bb5d1-59e0-4603-ad23-17987479736a")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR040"
 			(at 38.1 73.66 0)
 			(effects
 				(font
@@ -8005,7 +8149,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34"
-					(reference "#PWR037")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -8029,8 +8173,8 @@
 				)
 			)
 		)
-		(property "Value" "Komma"
-			(at 165.1 179.07 0)
+		(property "Value" "~"
+			(at 165.1 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8062,6 +8206,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Komma"
+			(at 165.1 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 165.1 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8097,8 +8257,8 @@
 				)
 			)
 		)
-		(property "Value" "Druck"
-			(at 247.65 77.47 0)
+		(property "Value" "~"
+			(at 247.65 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8130,6 +8290,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Druck"
+			(at 247.65 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 247.65 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8165,8 +8341,8 @@
 				)
 			)
 		)
-		(property "Value" "AltGr"
-			(at 171.45 204.47 0)
+		(property "Value" "~"
+			(at 171.45 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8198,6 +8374,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "AltGr"
+			(at 171.45 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 171.45 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8233,8 +8425,8 @@
 				)
 			)
 		)
-		(property "Value" "F11"
-			(at 209.55 77.47 0)
+		(property "Value" "~"
+			(at 209.55 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8266,6 +8458,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F11"
+			(at 209.55 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 209.55 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8301,8 +8509,8 @@
 				)
 			)
 		)
-		(property "Value" "F4"
-			(at 107.95 77.47 0)
+		(property "Value" "~"
+			(at 107.95 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8334,6 +8542,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F4"
+			(at 107.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 107.95 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8369,8 +8593,8 @@
 				)
 			)
 		)
-		(property "Value" "Rollen"
-			(at 260.35 77.47 0)
+		(property "Value" "~"
+			(at 260.35 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8402,6 +8626,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Rollen"
+			(at 260.35 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 260.35 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8437,8 +8677,8 @@
 				)
 			)
 		)
-		(property "Value" "H"
-			(at 133.35 153.67 0)
+		(property "Value" "~"
+			(at 133.35 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8470,6 +8710,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "H"
+			(at 133.35 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 133.35 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8505,8 +8761,8 @@
 				)
 			)
 		)
-		(property "Value" "Minus"
-			(at 349.25 102.87 0)
+		(property "Value" "~"
+			(at 349.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8538,6 +8794,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Minus"
+			(at 349.25 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 349.25 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8573,8 +8845,8 @@
 				)
 			)
 		)
-		(property "Value" "Z"
-			(at 127 128.27 0)
+		(property "Value" "~"
+			(at 127 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8606,6 +8878,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Z"
+			(at 127 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 127 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8641,8 +8929,8 @@
 				)
 			)
 		)
-		(property "Value" "1"
-			(at 57.15 102.87 0)
+		(property "Value" "~"
+			(at 57.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8674,6 +8962,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "1"
+			(at 57.15 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 57.15 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8709,8 +9013,8 @@
 				)
 			)
 		)
-		(property "Value" "Leertaste"
-			(at 114.3 204.47 0)
+		(property "Value" "~"
+			(at 114.3 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8742,6 +9046,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Leertaste"
+			(at 114.3 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 114.3 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8777,8 +9097,8 @@
 				)
 			)
 		)
-		(property "Value" "Entfernen"
-			(at 247.65 128.27 0)
+		(property "Value" "~"
+			(at 247.65 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8810,6 +9130,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Entfernen"
+			(at 247.65 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 247.65 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8845,8 +9181,8 @@
 				)
 			)
 		)
-		(property "Value" "Bild↓"
-			(at 273.05 128.27 0)
+		(property "Value" "~"
+			(at 273.05 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8878,6 +9214,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Bild↓"
+			(at 273.05 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 273.05 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8913,8 +9265,8 @@
 				)
 			)
 		)
-		(property "Value" "U"
-			(at 139.7 128.27 0)
+		(property "Value" "~"
+			(at 139.7 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8946,6 +9298,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "U"
+			(at 139.7 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 139.7 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -8981,8 +9349,8 @@
 				)
 			)
 		)
-		(property "Value" "Esc"
-			(at 44.45 77.47 0)
+		(property "Value" "~"
+			(at 44.45 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9014,6 +9382,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Esc"
+			(at 44.45 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9049,8 +9433,8 @@
 				)
 			)
 		)
-		(property "Value" "A"
-			(at 69.85 153.67 0)
+		(property "Value" "~"
+			(at 69.85 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9082,6 +9466,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "A"
+			(at 69.85 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 69.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9117,8 +9517,8 @@
 				)
 			)
 		)
-		(property "Value" "1"
-			(at 311.15 179.07 0)
+		(property "Value" "~"
+			(at 311.15 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9150,6 +9550,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "1"
+			(at 311.15 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 311.15 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9185,8 +9601,8 @@
 				)
 			)
 		)
-		(property "Value" "J"
-			(at 146.05 153.67 0)
+		(property "Value" "~"
+			(at 146.05 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9218,6 +9634,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "J"
+			(at 146.05 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 146.05 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9253,8 +9685,8 @@
 				)
 			)
 		)
-		(property "Value" "→"
-			(at 273.05 204.47 0)
+		(property "Value" "~"
+			(at 273.05 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9286,6 +9718,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "→"
+			(at 273.05 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 273.05 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9321,8 +9769,8 @@
 				)
 			)
 		)
-		(property "Value" "Meta"
-			(at 57.15 204.47 0)
+		(property "Value" "~"
+			(at 57.15 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9354,6 +9802,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Meta"
+			(at 57.15 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 57.15 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9389,8 +9853,8 @@
 				)
 			)
 		)
-		(property "Value" "Einfügen"
-			(at 247.65 102.87 0)
+		(property "Value" "~"
+			(at 247.65 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9422,6 +9886,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Einfügen"
+			(at 247.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 247.65 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9457,8 +9937,8 @@
 				)
 			)
 		)
-		(property "Value" "V"
-			(at 114.3 179.07 0)
+		(property "Value" "~"
+			(at 114.3 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9490,6 +9970,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "V"
+			(at 114.3 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 114.3 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9525,8 +10021,8 @@
 				)
 			)
 		)
-		(property "Value" "F2"
-			(at 82.55 77.47 0)
+		(property "Value" "~"
+			(at 82.55 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9558,6 +10054,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F2"
+			(at 82.55 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 82.55 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9593,8 +10105,8 @@
 				)
 			)
 		)
-		(property "Value" "Ö"
-			(at 184.15 153.67 0)
+		(property "Value" "~"
+			(at 184.15 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9626,6 +10138,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Ö"
+			(at 184.15 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 184.15 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9661,8 +10189,8 @@
 				)
 			)
 		)
-		(property "Value" "Menü"
-			(at 196.85 204.47 0)
+		(property "Value" "~"
+			(at 196.85 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9694,6 +10222,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Menü"
+			(at 196.85 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 196.85 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9729,8 +10273,8 @@
 				)
 			)
 		)
-		(property "Value" "Compose"
-			(at 44.45 153.67 0)
+		(property "Value" "~"
+			(at 44.45 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9762,6 +10306,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Compose"
+			(at 44.45 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9797,8 +10357,8 @@
 				)
 			)
 		)
-		(property "Value" "F12"
-			(at 222.25 77.47 0)
+		(property "Value" "~"
+			(at 222.25 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9830,6 +10390,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F12"
+			(at 222.25 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 222.25 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9865,8 +10441,8 @@
 				)
 			)
 		)
-		(property "Value" "Minus"
-			(at 190.5 179.07 0)
+		(property "Value" "~"
+			(at 190.5 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9898,6 +10474,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Minus"
+			(at 190.5 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 190.5 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -9933,8 +10525,8 @@
 				)
 			)
 		)
-		(property "Value" "0"
-			(at 171.45 102.87 0)
+		(property "Value" "~"
+			(at 171.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9966,6 +10558,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "0"
+			(at 171.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 171.45 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10001,8 +10609,8 @@
 				)
 			)
 		)
-		(property "Value" "Rücktaste"
-			(at 209.55 102.87 0)
+		(property "Value" "~"
+			(at 209.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10034,6 +10642,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Rücktaste"
+			(at 209.55 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 209.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10069,8 +10693,8 @@
 				)
 			)
 		)
-		(property "Value" "Pos1"
-			(at 260.35 102.87 0)
+		(property "Value" "~"
+			(at 260.35 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10102,6 +10726,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Pos1"
+			(at 260.35 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 260.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10137,8 +10777,8 @@
 				)
 			)
 		)
-		(property "Value" "Ende"
-			(at 260.35 128.27 0)
+		(property "Value" "~"
+			(at 260.35 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10170,6 +10810,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Ende"
+			(at 260.35 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 260.35 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10205,8 +10861,8 @@
 				)
 			)
 		)
-		(property "Value" "Punkt"
-			(at 177.8 179.07 0)
+		(property "Value" "~"
+			(at 177.8 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10238,6 +10894,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Punkt"
+			(at 177.8 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 177.8 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10273,8 +10945,8 @@
 				)
 			)
 		)
-		(property "Value" "F5"
-			(at 127 77.47 0)
+		(property "Value" "~"
+			(at 127 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10306,6 +10978,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F5"
+			(at 127 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 127 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10341,8 +11029,8 @@
 				)
 			)
 		)
-		(property "Value" "3"
-			(at 336.55 179.07 0)
+		(property "Value" "~"
+			(at 336.55 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10374,6 +11062,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "3"
+			(at 336.55 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 336.55 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10409,8 +11113,8 @@
 				)
 			)
 		)
-		(property "Value" "E"
-			(at 88.9 128.27 0)
+		(property "Value" "~"
+			(at 88.9 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10442,6 +11146,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "E"
+			(at 88.9 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 88.9 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10477,8 +11197,8 @@
 				)
 			)
 		)
-		(property "Value" "9"
-			(at 336.55 128.27 0)
+		(property "Value" "~"
+			(at 336.55 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10510,6 +11230,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "9"
+			(at 336.55 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 336.55 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10545,8 +11281,8 @@
 				)
 			)
 		)
-		(property "Value" "F"
-			(at 107.95 153.67 0)
+		(property "Value" "~"
+			(at 107.95 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10578,6 +11314,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F"
+			(at 107.95 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 107.95 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10613,8 +11365,8 @@
 				)
 			)
 		)
-		(property "Value" "O"
-			(at 165.1 128.27 0)
+		(property "Value" "~"
+			(at 165.1 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10646,6 +11398,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "O"
+			(at 165.1 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 165.1 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10681,8 +11449,8 @@
 				)
 			)
 		)
-		(property "Value" "F10"
-			(at 196.85 77.47 0)
+		(property "Value" "~"
+			(at 196.85 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10714,6 +11482,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F10"
+			(at 196.85 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 196.85 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10749,8 +11533,8 @@
 				)
 			)
 		)
-		(property "Value" "C"
-			(at 101.6 179.07 0)
+		(property "Value" "~"
+			(at 101.6 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10782,6 +11566,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "C"
+			(at 101.6 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 101.6 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10817,8 +11617,8 @@
 				)
 			)
 		)
-		(property "Value" "S"
-			(at 82.55 153.67 0)
+		(property "Value" "~"
+			(at 82.55 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10850,6 +11650,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "S"
+			(at 82.55 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 82.55 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10885,8 +11701,8 @@
 				)
 			)
 		)
-		(property "Value" "Meta"
-			(at 184.15 204.47 0)
+		(property "Value" "~"
+			(at 184.15 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10918,6 +11734,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Meta"
+			(at 184.15 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 184.15 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -10953,8 +11785,8 @@
 				)
 			)
 		)
-		(property "Value" "<"
-			(at 63.5 179.07 0)
+		(property "Value" "~"
+			(at 63.5 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10986,6 +11818,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "<"
+			(at 63.5 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 63.5 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11021,8 +11869,8 @@
 				)
 			)
 		)
-		(property "Value" "8"
-			(at 323.85 128.27 0)
+		(property "Value" "~"
+			(at 323.85 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11054,6 +11902,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "8"
+			(at 323.85 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 323.85 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11089,8 +11953,8 @@
 				)
 			)
 		)
-		(property "Value" "8"
-			(at 146.05 102.87 0)
+		(property "Value" "~"
+			(at 146.05 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11122,6 +11986,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "8"
+			(at 146.05 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 146.05 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11157,8 +12037,8 @@
 				)
 			)
 		)
-		(property "Value" "9"
-			(at 158.75 102.87 0)
+		(property "Value" "~"
+			(at 158.75 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11190,6 +12070,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "9"
+			(at 158.75 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 158.75 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11225,8 +12121,8 @@
 				)
 			)
 		)
-		(property "Value" "F7"
-			(at 152.4 77.47 0)
+		(property "Value" "~"
+			(at 152.4 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11258,6 +12154,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F7"
+			(at 152.4 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 152.4 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11293,8 +12205,8 @@
 				)
 			)
 		)
-		(property "Value" "↓"
-			(at 260.35 204.47 0)
+		(property "Value" "~"
+			(at 260.35 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11326,6 +12238,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "↓"
+			(at 260.35 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 260.35 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11361,8 +12289,8 @@
 				)
 			)
 		)
-		(property "Value" "Schrägstrich"
-			(at 323.85 102.87 0)
+		(property "Value" "~"
+			(at 323.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11394,6 +12322,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Schrägstrich"
+			(at 323.85 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 323.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11429,8 +12373,8 @@
 				)
 			)
 		)
-		(property "Value" "5"
-			(at 107.95 102.87 0)
+		(property "Value" "~"
+			(at 107.95 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11462,6 +12406,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "5"
+			(at 107.95 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 107.95 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11497,8 +12457,8 @@
 				)
 			)
 		)
-		(property "Value" "F6"
-			(at 139.7 77.47 0)
+		(property "Value" "~"
+			(at 139.7 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11530,6 +12490,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F6"
+			(at 139.7 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 139.7 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11565,8 +12541,8 @@
 				)
 			)
 		)
-		(property "Value" "Komma"
-			(at 336.55 204.47 0)
+		(property "Value" "~"
+			(at 336.55 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11598,6 +12574,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Komma"
+			(at 336.55 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 336.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11633,8 +12625,8 @@
 				)
 			)
 		)
-		(property "Value" "I"
-			(at 152.4 128.27 0)
+		(property "Value" "~"
+			(at 152.4 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11666,6 +12658,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "I"
+			(at 152.4 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 152.4 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11701,8 +12709,8 @@
 				)
 			)
 		)
-		(property "Value" "Umschalt"
-			(at 203.2 179.07 0)
+		(property "Value" "~"
+			(at 203.2 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11734,6 +12742,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Umschalt"
+			(at 203.2 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 203.2 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11769,8 +12793,8 @@
 				)
 			)
 		)
-		(property "Value" "4"
-			(at 311.15 153.67 0)
+		(property "Value" "~"
+			(at 311.15 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11802,6 +12826,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "4"
+			(at 311.15 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 311.15 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11837,8 +12877,8 @@
 				)
 			)
 		)
-		(property "Value" "Umschalt"
-			(at 44.45 179.07 0)
+		(property "Value" "~"
+			(at 44.45 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11870,6 +12910,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Umschalt"
+			(at 44.45 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11905,8 +12961,8 @@
 				)
 			)
 		)
-		(property "Value" "3"
-			(at 82.55 102.87 0)
+		(property "Value" "~"
+			(at 82.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11938,6 +12994,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "3"
+			(at 82.55 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -11973,8 +13045,8 @@
 				)
 			)
 		)
-		(property "Value" "Q"
-			(at 63.5 128.27 0)
+		(property "Value" "~"
+			(at 63.5 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12006,6 +13078,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Q"
+			(at 63.5 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 63.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12041,8 +13129,8 @@
 				)
 			)
 		)
-		(property "Value" "T"
-			(at 114.3 128.27 0)
+		(property "Value" "~"
+			(at 114.3 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12074,6 +13162,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "T"
+			(at 114.3 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 114.3 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12109,8 +13213,8 @@
 				)
 			)
 		)
-		(property "Value" "Akut"
-			(at 196.85 102.87 0)
+		(property "Value" "~"
+			(at 196.85 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12142,6 +13246,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Akut"
+			(at 196.85 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 196.85 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12177,8 +13297,8 @@
 				)
 			)
 		)
-		(property "Value" "N"
-			(at 139.7 179.07 0)
+		(property "Value" "~"
+			(at 139.7 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12210,6 +13330,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "N"
+			(at 139.7 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 139.7 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12245,8 +13381,8 @@
 				)
 			)
 		)
-		(property "Value" "2"
-			(at 323.85 179.07 0)
+		(property "Value" "~"
+			(at 323.85 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12278,6 +13414,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "2"
+			(at 323.85 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 323.85 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12313,8 +13465,8 @@
 				)
 			)
 		)
-		(property "Value" "6"
-			(at 120.65 102.87 0)
+		(property "Value" "~"
+			(at 120.65 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12346,6 +13498,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "6"
+			(at 120.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 120.65 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12381,8 +13549,8 @@
 				)
 			)
 		)
-		(property "Value" "5"
-			(at 323.85 153.67 0)
+		(property "Value" "~"
+			(at 323.85 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12414,6 +13582,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "5"
+			(at 323.85 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 323.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12449,8 +13633,8 @@
 				)
 			)
 		)
-		(property "Value" "Steuerung"
-			(at 209.55 204.47 0)
+		(property "Value" "~"
+			(at 209.55 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12482,6 +13666,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Steuerung"
+			(at 209.55 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 209.55 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12517,8 +13717,8 @@
 				)
 			)
 		)
-		(property "Value" "K"
-			(at 158.75 153.67 0)
+		(property "Value" "~"
+			(at 158.75 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12550,6 +13750,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "K"
+			(at 158.75 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 158.75 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12585,8 +13801,8 @@
 				)
 			)
 		)
-		(property "Value" "M"
-			(at 152.4 179.07 0)
+		(property "Value" "~"
+			(at 152.4 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12618,6 +13834,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "M"
+			(at 152.4 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 152.4 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12653,8 +13885,8 @@
 				)
 			)
 		)
-		(property "Value" "←"
-			(at 247.65 204.47 0)
+		(property "Value" "~"
+			(at 247.65 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12686,6 +13918,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "←"
+			(at 247.65 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 247.65 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12721,8 +13969,8 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 101.6 128.27 0)
+		(property "Value" "~"
+			(at 101.6 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12754,6 +14002,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "R"
+			(at 101.6 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 101.6 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12789,8 +14053,8 @@
 				)
 			)
 		)
-		(property "Value" "Zirkumflex"
-			(at 44.45 102.87 0)
+		(property "Value" "~"
+			(at 44.45 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12822,6 +14086,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Zirkumflex"
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 44.45 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12857,8 +14137,8 @@
 				)
 			)
 		)
-		(property "Value" "X"
-			(at 88.9 179.07 0)
+		(property "Value" "~"
+			(at 88.9 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12890,6 +14170,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "X"
+			(at 88.9 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 88.9 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12925,8 +14221,8 @@
 				)
 			)
 		)
-		(property "Value" "Eingabe"
-			(at 349.25 204.47 0)
+		(property "Value" "~"
+			(at 349.25 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12958,6 +14254,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Eingabe"
+			(at 349.25 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 349.25 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -12993,8 +14305,8 @@
 				)
 			)
 		)
-		(property "Value" "Alt"
-			(at 69.85 204.47 0)
+		(property "Value" "~"
+			(at 69.85 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13026,6 +14338,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Alt"
+			(at 69.85 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 69.85 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13061,8 +14389,8 @@
 				)
 			)
 		)
-		(property "Value" "Plus"
-			(at 349.25 153.67 0)
+		(property "Value" "~"
+			(at 349.25 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13094,6 +14422,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Plus"
+			(at 349.25 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 349.25 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13129,8 +14473,8 @@
 				)
 			)
 		)
-		(property "Value" "Ü"
-			(at 190.5 128.27 0)
+		(property "Value" "~"
+			(at 190.5 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13162,6 +14506,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Ü"
+			(at 190.5 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 190.5 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13197,8 +14557,8 @@
 				)
 			)
 		)
-		(property "Value" "B"
-			(at 127 179.07 0)
+		(property "Value" "~"
+			(at 127 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13230,6 +14590,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "B"
+			(at 127 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 127 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13265,8 +14641,8 @@
 				)
 			)
 		)
-		(property "Value" "NumLock"
-			(at 311.15 102.87 0)
+		(property "Value" "~"
+			(at 311.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13298,6 +14674,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "NumLock"
+			(at 311.15 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 311.15 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13333,8 +14725,8 @@
 				)
 			)
 		)
-		(property "Value" "0"
-			(at 317.5 204.47 0)
+		(property "Value" "~"
+			(at 317.5 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13366,6 +14758,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "0"
+			(at 317.5 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 317.5 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13401,8 +14809,8 @@
 				)
 			)
 		)
-		(property "Value" "6"
-			(at 336.55 153.67 0)
+		(property "Value" "~"
+			(at 336.55 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13434,6 +14842,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "6"
+			(at 336.55 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 336.55 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13469,8 +14893,8 @@
 				)
 			)
 		)
-		(property "Value" "Bild↑"
-			(at 273.05 102.87 0)
+		(property "Value" "~"
+			(at 273.05 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13502,6 +14926,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Bild↑"
+			(at 273.05 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 273.05 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13537,8 +14977,8 @@
 				)
 			)
 		)
-		(property "Value" "D"
-			(at 95.25 153.67 0)
+		(property "Value" "~"
+			(at 95.25 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13570,6 +15010,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "D"
+			(at 95.25 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13605,8 +15061,8 @@
 				)
 			)
 		)
-		(property "Value" "↑"
-			(at 260.35 179.07 0)
+		(property "Value" "~"
+			(at 260.35 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13638,6 +15094,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "↑"
+			(at 260.35 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 260.35 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13673,8 +15145,8 @@
 				)
 			)
 		)
-		(property "Value" "P"
-			(at 177.8 128.27 0)
+		(property "Value" "~"
+			(at 177.8 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13706,6 +15178,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "P"
+			(at 177.8 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 177.8 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13741,8 +15229,8 @@
 				)
 			)
 		)
-		(property "Value" "F8"
-			(at 165.1 77.47 0)
+		(property "Value" "~"
+			(at 165.1 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13774,6 +15262,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F8"
+			(at 165.1 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 165.1 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13809,8 +15313,8 @@
 				)
 			)
 		)
-		(property "Value" "7"
-			(at 311.15 128.27 0)
+		(property "Value" "~"
+			(at 311.15 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13842,6 +15346,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "7"
+			(at 311.15 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 311.15 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13877,8 +15397,8 @@
 				)
 			)
 		)
-		(property "Value" "7"
-			(at 133.35 102.87 0)
+		(property "Value" "~"
+			(at 133.35 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13910,6 +15430,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "7"
+			(at 133.35 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 133.35 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -13945,8 +15481,8 @@
 				)
 			)
 		)
-		(property "Value" "Pause"
-			(at 273.05 77.47 0)
+		(property "Value" "~"
+			(at 273.05 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13978,6 +15514,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Pause"
+			(at 273.05 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 273.05 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14013,8 +15565,8 @@
 				)
 			)
 		)
-		(property "Value" "Eingabe"
-			(at 215.9 128.27 0)
+		(property "Value" "~"
+			(at 215.9 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14046,6 +15598,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Eingabe"
+			(at 215.9 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 215.9 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14081,8 +15649,8 @@
 				)
 			)
 		)
-		(property "Value" "L"
-			(at 171.45 153.67 0)
+		(property "Value" "~"
+			(at 171.45 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14114,6 +15682,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "L"
+			(at 171.45 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 171.45 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14149,8 +15733,8 @@
 				)
 			)
 		)
-		(property "Value" "Sperren"
-			(at 349.25 77.47 0)
+		(property "Value" "~"
+			(at 349.25 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14182,6 +15766,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Sperren"
+			(at 349.25 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 349.25 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14217,8 +15817,8 @@
 				)
 			)
 		)
-		(property "Value" "Y"
-			(at 76.2 179.07 0)
+		(property "Value" "~"
+			(at 76.2 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14250,6 +15850,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Y"
+			(at 76.2 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 76.2 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14285,8 +15901,8 @@
 				)
 			)
 		)
-		(property "Value" "F3"
-			(at 95.25 77.47 0)
+		(property "Value" "~"
+			(at 95.25 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14318,6 +15934,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "F3"
+			(at 95.25 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14353,8 +15985,8 @@
 				)
 			)
 		)
-		(property "Value" "G"
-			(at 120.65 153.67 0)
+		(property "Value" "~"
+			(at 120.65 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14386,6 +16018,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "G"
+			(at 120.65 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 120.65 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14421,8 +16069,8 @@
 				)
 			)
 		)
-		(property "Value" "Ä"
-			(at 196.85 153.67 0)
+		(property "Value" "~"
+			(at 196.85 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14454,6 +16102,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Ä"
+			(at 196.85 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 196.85 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14489,8 +16153,8 @@
 				)
 			)
 		)
-		(property "Value" "4"
-			(at 95.25 102.87 0)
+		(property "Value" "~"
+			(at 95.25 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14522,6 +16186,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "4"
+			(at 95.25 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 95.25 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
@@ -14557,8 +16237,8 @@
 				)
 			)
 		)
-		(property "Value" "Eszett"
-			(at 184.15 102.87 0)
+		(property "Value" "~"
+			(at 184.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14590,6 +16270,22 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Key" "Eszett"
+			(at 184.15 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 184.15 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"
