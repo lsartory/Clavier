@@ -5,7 +5,7 @@
 	(uuid "6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20")
 	(paper "A4")
 	(lib_symbols)
-	(text "TODO schematics:\n- Power supply\n- LEDs\n- Test points\n- USB C connector\n- USB hub (GL852G-OHY60)\n- USB programmer (CH347F)\n- Display?\n- Page titles\n- Check licenses\n\nTODO layout:\n- Mounting holes\n- 3D models (all, including keycaps)\n- Alternate ctrl + odd/even number keys\n- Cat logo\n- Title block\n\nTODO release:\n- Export production files\n- Export PDF"
+	(text "TODO schematics:\n- USB programmer (CH347F)\n- Display?\n- LEDs\n- Test points\n- Page titles\n- Check licenses\n\nTODO layout:\n- Mounting holes\n- 3D models (all, including keycaps)\n- Alternate ctrl + odd/even number keys\n- Cat logo\n- Title block\n\nTODO release:\n- Export production files\n- Export PDF"
 		(exclude_from_sim no)
 		(at 19.304 99.568 0)
 		(effects
@@ -19,6 +19,46 @@
 		)
 		(uuid "3ed8b9f7-9303-4e2c-a8c1-769e518a62be")
 	)
+	(wire
+		(pts
+			(xy 199.39 69.85) (xy 199.39 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4358f074-0d9b-4dd8-bb5f-2f0330d6e553")
+	)
+	(wire
+		(pts
+			(xy 177.8 72.39) (xy 196.85 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dd0de55-bd4b-474f-8e1d-f64183cc565c")
+	)
+	(wire
+		(pts
+			(xy 177.8 69.85) (xy 199.39 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ad47fc5-15c4-473c-bb9c-1154fc8f2548")
+	)
+	(wire
+		(pts
+			(xy 196.85 72.39) (xy 196.85 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96d6959d-b0c9-4028-8330-2ae2fb451289")
+	)
 	(bus
 		(pts
 			(xy 177.8 92.71) (xy 215.9 92.71)
@@ -29,6 +69,16 @@
 		)
 		(uuid "a78b7ef5-b533-4c38-a8ec-f5ae207ff947")
 	)
+	(wire
+		(pts
+			(xy 199.39 78.74) (xy 215.9 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be95250e-7a20-4420-a351-4690adc3b444")
+	)
 	(bus
 		(pts
 			(xy 177.8 97.79) (xy 215.9 97.79)
@@ -38,6 +88,16 @@
 			(type default)
 		)
 		(uuid "df66b4c6-14fe-49e8-b218-8635fff83152")
+	)
+	(wire
+		(pts
+			(xy 196.85 81.28) (xy 215.9 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0271dbe-ba37-42b0-8c40-7119eeb690f8")
 	)
 	(sheet
 		(at 190.5 38.1)
@@ -124,8 +184,8 @@
 		)
 	)
 	(sheet
-		(at 215.9 88.9)
-		(size 25.4 12.7)
+		(at 215.9 76.2)
+		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -140,7 +200,7 @@
 		)
 		(uuid "d73938da-f0ba-48e3-aac9-a36988c25c2c")
 		(property "Sheetname" "FPGA"
-			(at 215.9 88.1884 0)
+			(at 215.9 75.4884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -177,6 +237,26 @@
 				(justify left)
 			)
 		)
+		(pin "USB_FPGA-" bidirectional
+			(at 215.9 78.74 180)
+			(uuid "687d1dba-74a9-4d0e-b01a-848de6eb61e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB_FPGA+" bidirectional
+			(at 215.9 81.28 180)
+			(uuid "ee210926-98e8-49ab-bfb5-a0ff597e2753")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
@@ -186,8 +266,8 @@
 		)
 	)
 	(sheet
-		(at 165.1 38.1)
-		(size 12.7 12.7)
+		(at 152.4 57.15)
+		(size 25.4 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -201,8 +281,8 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "f3d926d4-179d-4033-9062-145e3f3d7f6d")
-		(property "Sheetname" "USB"
-			(at 165.1 37.3884 0)
+		(property "Sheetname" "USB hub"
+			(at 152.4 56.4384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -210,13 +290,53 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "usb.kicad_sch"
-			(at 165.1 51.3846 0)
+		(property "Sheetfile" "usb_hub.kicad_sch"
+			(at 152.4 76.7846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "USB_FPGA+" bidirectional
+			(at 177.8 72.39 0)
+			(uuid "c9ad789d-aadc-4b49-bbc1-5f8c56a8a6c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_FPGA-" bidirectional
+			(at 177.8 69.85 0)
+			(uuid "fc042d28-af29-44fe-8b72-24d374d55903")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_JTAG-" bidirectional
+			(at 177.8 60.96 0)
+			(uuid "0425b4de-a016-4d8e-ae20-a892ab4dddff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_JTAG+" bidirectional
+			(at 177.8 63.5 0)
+			(uuid "c98bd8b4-50a1-430d-a3f7-a2ee22052aca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
