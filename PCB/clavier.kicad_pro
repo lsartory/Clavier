@@ -587,6 +587,12 @@
         },
         {
           "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
           "label": "Voltage",
           "name": "Voltage",
           "show": false
@@ -673,6 +679,10 @@
     [
       "f3d926d4-179d-4033-9062-145e3f3d7f6d",
       "USB hub"
+    ],
+    [
+      "363c396c-f7c0-4911-9972-4574f7737631",
+      "USB to JTAG"
     ],
     [
       "d73938da-f0ba-48e3-aac9-a36988c25c2c",

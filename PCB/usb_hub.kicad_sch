@@ -4398,6 +4398,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C7501404"
+			(at 222.25 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 222.25 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "2facdc36-6bc6-46d4-90db-7d5cf6437408")
 		)
@@ -4825,6 +4843,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C7501404"
+			(at 101.6 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 101.6 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "29"
 			(uuid "14d74470-20db-43f9-85b6-9535ad5c7b77")
 		)
@@ -5121,6 +5157,24 @@
 		)
 		(property "Description" "4-port USB hub"
 			(at 171.45 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501404"
+			(at 177.8 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 177.8 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5562,92 +5616,110 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C7501404"
+			(at 222.25 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 222.25 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
-			(uuid "2facdc36-6bc6-46d4-90db-7d5cf6437408")
+			(uuid "2facdc36-6bc6-46d4-90db-7d5cf6437409")
 		)
 		(pin "16"
-			(uuid "0b3cb5b3-aaa3-4c5d-8a2d-cd1fb03e45a3")
+			(uuid "0b3cb5b3-aaa3-4c5d-8a2d-cd1fb03e45a4")
 		)
 		(pin "14"
-			(uuid "4ec609d0-05ec-4803-99d6-d803c6468566")
+			(uuid "4ec609d0-05ec-4803-99d6-d803c6468567")
 		)
 		(pin "20"
-			(uuid "417e022f-40d8-43e2-a57f-f3196bc47aa2")
+			(uuid "417e022f-40d8-43e2-a57f-f3196bc47aa3")
 		)
 		(pin "12"
-			(uuid "41763e29-123d-4225-b312-6ed438e5c883")
+			(uuid "41763e29-123d-4225-b312-6ed438e5c884")
 		)
 		(pin "27"
-			(uuid "f675fc03-d210-4a18-bf19-ec9e64a33a81")
+			(uuid "f675fc03-d210-4a18-bf19-ec9e64a33a82")
 		)
 		(pin "10"
-			(uuid "eeadc9f8-1443-49ac-9362-e713570a8944")
+			(uuid "eeadc9f8-1443-49ac-9362-e713570a8945")
 		)
 		(pin "6"
-			(uuid "cbce599f-01c2-4591-a0a5-fdc31b455d6a")
+			(uuid "cbce599f-01c2-4591-a0a5-fdc31b455d6b")
 		)
 		(pin "2"
-			(uuid "35b6ea5a-f9f1-47a9-b9ff-e66280d32e65")
+			(uuid "35b6ea5a-f9f1-47a9-b9ff-e66280d32e66")
 		)
 		(pin "7"
-			(uuid "6c5993d9-258d-4a37-860c-7c87ce9ef57d")
+			(uuid "6c5993d9-258d-4a37-860c-7c87ce9ef57e")
 		)
 		(pin "25"
-			(uuid "5b7f17b6-9ea7-4189-b6c0-b3b7e0b99f37")
+			(uuid "5b7f17b6-9ea7-4189-b6c0-b3b7e0b99f38")
 		)
 		(pin "13"
-			(uuid "bdfbdbb8-a58b-4719-b600-16460cfcbffe")
+			(uuid "bdfbdbb8-a58b-4719-b600-16460cfcbfff")
 		)
 		(pin "15"
-			(uuid "7fa96990-0df4-4138-b044-9e8ff8c5a262")
+			(uuid "7fa96990-0df4-4138-b044-9e8ff8c5a263")
 		)
 		(pin "5"
-			(uuid "322fbccd-9d47-44a6-be93-f0ef5e0f16dd")
+			(uuid "322fbccd-9d47-44a6-be93-f0ef5e0f16de")
 		)
 		(pin "3"
-			(uuid "d318fc57-6776-4d5f-b7d8-4f4728523df5")
+			(uuid "d318fc57-6776-4d5f-b7d8-4f4728523df6")
 		)
 		(pin "21"
-			(uuid "b4e1b4f9-8979-49bb-b059-e6a72c5843a7")
+			(uuid "b4e1b4f9-8979-49bb-b059-e6a72c5843a8")
 		)
 		(pin "23"
-			(uuid "aa79b712-25de-4e4b-a3e7-a7d60b7d762e")
+			(uuid "aa79b712-25de-4e4b-a3e7-a7d60b7d762f")
 		)
 		(pin "4"
-			(uuid "25234ba7-0ce4-4344-aa8d-1be44eaea67c")
+			(uuid "25234ba7-0ce4-4344-aa8d-1be44eaea67d")
 		)
 		(pin "24"
-			(uuid "b8ae94e7-eefb-42d3-8ca4-4709c8d89849")
+			(uuid "b8ae94e7-eefb-42d3-8ca4-4709c8d8984a")
 		)
 		(pin "19"
-			(uuid "58013403-30e6-4861-b146-14f6a4db670c")
+			(uuid "58013403-30e6-4861-b146-14f6a4db670d")
 		)
 		(pin "28"
-			(uuid "6158e895-7328-4d6e-830e-a7c00cc49776")
+			(uuid "6158e895-7328-4d6e-830e-a7c00cc49777")
 		)
 		(pin "11"
-			(uuid "39f4f217-c7fb-4edb-aae8-eae4749ee21e")
+			(uuid "39f4f217-c7fb-4edb-aae8-eae4749ee21f")
 		)
 		(pin "18"
-			(uuid "6c21df68-0f3b-44d7-9226-615ae78cb368")
+			(uuid "6c21df68-0f3b-44d7-9226-615ae78cb369")
 		)
 		(pin "9"
-			(uuid "4e5f2b67-fbad-42d4-8a84-c13468f53df5")
+			(uuid "4e5f2b67-fbad-42d4-8a84-c13468f53df6")
 		)
 		(pin "17"
-			(uuid "597a4279-b39c-4752-8882-a3f581552a66")
+			(uuid "597a4279-b39c-4752-8882-a3f581552a67")
 		)
 		(pin "22"
-			(uuid "87ba8d02-bfc6-48e9-8865-2fcc5b7b7a74")
+			(uuid "87ba8d02-bfc6-48e9-8865-2fcc5b7b7a75")
 		)
 		(pin "29"
-			(uuid "7c739a1a-542c-4d9f-8235-3075ee41de64")
+			(uuid "7c739a1a-542c-4d9f-8235-3075ee41de65")
 		)
 		(pin "1"
-			(uuid "ea222ed2-6b33-4e02-86c0-0818f655e68b")
+			(uuid "ea222ed2-6b33-4e02-86c0-0818f655e68c")
 		)
 		(pin "26"
-			(uuid "e29602e1-02e4-4087-8f5d-31c4d8fbbf0b")
+			(uuid "e29602e1-02e4-4087-8f5d-31c4d8fbbf0c")
 		)
 		(instances
 			(project ""
@@ -6822,7 +6894,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CO22H4-12.000-WPGDTSNL"
+		(property "Value" "12MHz"
 			(at 35.306 140.462 0)
 			(effects
 				(font
@@ -6831,7 +6903,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_SMD_Kyocera_KC2520Z-4Pin_2.5x2.0mm"
+		(property "Footprint" "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm"
 			(at 67.31 148.59 0)
 			(effects
 				(font
@@ -7455,6 +7527,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C7501404"
+			(at 222.25 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 222.25 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "15"
 			(uuid "ad1705d6-0505-40bf-9399-c8f0d2084099")
 		)
@@ -7663,6 +7753,24 @@
 		)
 		(property "Description" "4-port USB hub"
 			(at 215.9 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501404"
+			(at 222.25 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "GL852G-OHY60"
+			(at 222.25 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
