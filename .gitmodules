@@ -1,0 +1,6 @@
+[submodule "PCB/3rdparty/cherry-mx-switch"]
+	path = PCB/3rdparty/cherry-mx-switch
+	url = https://github.com/ConstantinoSchillebeeckx/cherry-mx-switch.git
+[submodule "PCB/3rdparty/cherry-mx-keycaps"]
+	path = PCB/3rdparty/cherry-mx-keycaps
+	url = https://github.com/endeavoursc/cherry-mx-keycaps.git

@@ -5,6 +5,322 @@
 	(uuid "dd064609-0f3c-4c2e-8fe7-24e8a9b7c9bf")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_02x04_Counter_Clockwise"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 1.27 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_02x04_Counter_Clockwise"
+				(at 1.27 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_2x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_02x04_Counter_Clockwise_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 3.81 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 2.667)
+					(end 2.54 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 0.127)
+					(end 2.54 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -2.413)
+					(end 2.54 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -4.953)
+					(end 2.54 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 180)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -5680,6 +5996,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 162.56) (xy 101.6 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08758b59-7e05-4930-9ebe-d03c51fe30a3")
+	)
+	(wire
+		(pts
 			(xy 63.5 114.3) (xy 78.74 114.3)
 		)
 		(stroke
@@ -6280,6 +6606,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 157.48) (xy 101.6 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e94013e-b6b7-4d14-96f1-ec2fc54a8521")
+	)
+	(wire
+		(pts
 			(xy 139.7 104.14) (xy 154.94 104.14)
 		)
 		(stroke
@@ -6640,6 +6976,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 157.48) (xy 114.3 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d07edab-4cff-4d60-a9ed-0eea5166acfc")
+	)
+	(wire
+		(pts
 			(xy 215.9 78.74) (xy 231.14 78.74)
 		)
 		(stroke
@@ -6897,6 +7243,16 @@
 			(type default)
 		)
 		(uuid "75fd5e9e-bfd7-4295-832c-5b38419141c0")
+	)
+	(wire
+		(pts
+			(xy 86.36 154.94) (xy 101.6 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77cfc664-0574-4f58-b942-4cdf4ff8d279")
 	)
 	(wire
 		(pts
@@ -7710,6 +8066,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 160.02) (xy 101.6 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfc72743-22d8-4279-bfe7-7f8a32858d8f")
+	)
+	(wire
+		(pts
 			(xy 101.6 38.1) (xy 101.6 40.64)
 		)
 		(stroke
@@ -7940,6 +8306,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 154.94) (xy 114.3 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e66f8ea7-e6d4-405d-89a5-84d70cf15857")
+	)
+	(wire
+		(pts
 			(xy 139.7 27.94) (xy 127 27.94)
 		)
 		(stroke
@@ -7970,6 +8346,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 160.02) (xy 114.3 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e994c7a1-b660-4fc1-aa95-3c3af7fa49b0")
+	)
+	(wire
+		(pts
 			(xy 101.6 60.96) (xy 116.84 60.96)
 		)
 		(stroke
@@ -7987,6 +8373,16 @@
 			(type default)
 		)
 		(uuid "ebaeb07e-9826-4a4e-985c-0f49de37aa1e")
+	)
+	(wire
+		(pts
+			(xy 129.54 162.56) (xy 114.3 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed31651a-80fa-4726-ae7f-f5c671c71ece")
 	)
 	(wire
 		(pts
@@ -8197,6 +8593,16 @@
 			(justify left bottom)
 		)
 		(uuid "05d900fb-d020-41a2-8202-3d065029caf1")
+	)
+	(label "FPGA_IO87"
+		(at 129.54 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "06126cdf-388c-4e95-9004-742a5c2d442d")
 	)
 	(label "K.B"
 		(at 177.8 119.38 0)
@@ -8507,6 +8913,16 @@
 			(justify left bottom)
 		)
 		(uuid "358c665a-3c9c-4ac7-b04c-5fc6481c6b0f")
+	)
+	(label "FPGA_IO180"
+		(at 86.36 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "35ce4016-b4d5-4966-ac2f-dee0ea77241a")
 	)
 	(label "K.K"
 		(at 139.7 86.36 0)
@@ -8858,6 +9274,16 @@
 		)
 		(uuid "61b26445-f814-46fc-b015-2e0001369493")
 	)
+	(label "FPGA_IO181"
+		(at 86.36 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "66ee0011-7562-4f3e-9eee-d1d3c725f25c")
+	)
 	(label "K.X"
 		(at 215.9 96.52 0)
 		(effects
@@ -9138,6 +9564,16 @@
 		)
 		(uuid "8ac2f770-cb7b-44ca-9a9a-553a4bb71833")
 	)
+	(label "FPGA_IO118"
+		(at 86.36 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e14d8d9-b1e3-4efc-ae4e-bb19c78fc4f5")
+	)
 	(label "FPGA_IO94"
 		(at 139.7 68.58 0)
 		(effects
@@ -9318,6 +9754,16 @@
 		)
 		(uuid "a242780d-d15a-4c68-a7d3-7a9d592e878e")
 	)
+	(label "FPGA_IO85"
+		(at 129.54 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a2dd8e4f-60e9-48db-992d-70f7b849864e")
+	)
 	(label "FPGA_IO180"
 		(at 215.9 124.46 0)
 		(effects
@@ -9458,6 +9904,16 @@
 		)
 		(uuid "b12dbc4f-076a-4f81-b5a6-f1cdbfb5d35c")
 	)
+	(label "FPGA_IO46"
+		(at 129.54 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b1a0d36b-1ae7-4c4d-ba08-bf2edadcf868")
+	)
 	(label "FPGA_IO128"
 		(at 177.8 73.66 0)
 		(effects
@@ -9577,6 +10033,16 @@
 			(justify left bottom)
 		)
 		(uuid "bdd22713-5736-489b-81d6-77e60e879995")
+	)
+	(label "FPGA_IO119"
+		(at 86.36 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c189d60e-68e3-47ce-bb47-10079513b4a6")
 	)
 	(label "Kp._2"
 		(at 101.6 106.68 0)
@@ -9938,6 +10404,16 @@
 		)
 		(uuid "f43a2e33-18ad-4e80-8621-d39cf07368c8")
 	)
+	(label "FPGA_IO51"
+		(at 129.54 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f7df248a-83d3-4f64-b160-dcf6b96970ca")
+	)
 	(label "FPGA_IO140"
 		(at 177.8 104.14 0)
 		(effects
@@ -10032,7 +10508,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "07bfb185-4e49-4166-8018-8dd42578810c")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR041"
 			(at 152.4 49.53 0)
 			(effects
 				(font
@@ -10082,7 +10558,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR036")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -10192,7 +10668,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "13cd18b1-4582-438c-a58a-ece5c8836f84")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 236.22 136.144 0)
 			(effects
 				(font
@@ -11026,7 +11502,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 7)
 				)
 			)
@@ -11042,7 +11518,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "150932da-809f-43fb-bb11-b69c045d6d7c")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR042"
 			(at 190.5 49.53 0)
 			(effects
 				(font
@@ -11092,7 +11568,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR037")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -11203,7 +11679,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3596e280-ea81-4527-b389-cf245dbbe352")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR038"
 			(at 241.3 29.21 0)
 			(effects
 				(font
@@ -11253,7 +11729,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR033")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -11459,7 +11935,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "51da5777-3238-44ee-9e24-6df478456b75")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR044"
 			(at 266.7 49.53 0)
 			(effects
 				(font
@@ -11509,7 +11985,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR039")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -11525,7 +12001,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "605a4db8-ed0e-4d2f-8015-078b0b955e57")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR036"
 			(at 165.1 29.21 0)
 			(effects
 				(font
@@ -11575,7 +12051,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR031")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -11686,7 +12162,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64fc2d51-92a9-4673-9756-12faab8db42c")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR034"
 			(at 88.9 29.21 0)
 			(effects
 				(font
@@ -11736,7 +12212,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR029")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -11847,7 +12323,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7084e0d7-cf6e-45c1-831e-194bd4984417")
-		(property "Reference" "#PWR040"
+		(property "Reference" "#PWR045"
 			(at 50.8 156.21 0)
 			(effects
 				(font
@@ -11897,7 +12373,111 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR040")
+					(reference "#PWR045")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
+		(at 106.68 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "740d166d-8f35-46e6-9431-f42afe7ae52c")
+		(property "Reference" "J8"
+			(at 107.95 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pin header, 2x4"
+			(at 107.95 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 106.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
+			(at 106.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 106.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501275"
+			(at 106.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
+			(at 106.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b5691170-55c3-4f8b-a55c-a9ce2d85cb70")
+		)
+		(pin "4"
+			(uuid "47834a5a-569b-43e6-aed1-93625107207b")
+		)
+		(pin "7"
+			(uuid "1ec32e16-f8e4-4dab-b0ee-63b9ae2c497c")
+		)
+		(pin "3"
+			(uuid "6b6c27e3-309e-4d4a-b7a7-d4f6327997d1")
+		)
+		(pin "5"
+			(uuid "0bfaa857-6dfe-4109-bc84-f90399251821")
+		)
+		(pin "8"
+			(uuid "8e91eb2f-a21d-4a3f-a384-1ab3f52f4382")
+		)
+		(pin "6"
+			(uuid "9d5390d8-98ab-42fe-acfa-921cce99d01b")
+		)
+		(pin "1"
+			(uuid "b95f465e-8c22-4c06-8667-23ca29a7f4c7")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -12008,7 +12588,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d392b80-046f-4c69-9a6d-a5a9a50c1b7f")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR043"
 			(at 228.6 49.53 0)
 			(effects
 				(font
@@ -12058,7 +12638,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR038")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -12074,7 +12654,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91063959-838b-4bb2-9997-c020d56e4078")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR046"
 			(at 50.8 184.15 0)
 			(effects
 				(font
@@ -12124,7 +12704,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR041")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -12234,7 +12814,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9b6ee38e-e32a-4168-b452-38110a0e39d3")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 198.12 136.144 0)
 			(effects
 				(font
@@ -13069,7 +13649,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 6)
 				)
 			)
@@ -13180,7 +13760,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aba2f123-6413-4890-82f6-a6781ef0a36c")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR037"
 			(at 203.2 29.21 0)
 			(effects
 				(font
@@ -13230,7 +13810,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR032")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -13528,7 +14108,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b6a63e80-0234-41fe-8eca-80f2a3399fb0")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 45.72 115.824 0)
 			(effects
 				(font
@@ -14362,7 +14942,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 2)
 				)
 			)
@@ -14377,7 +14957,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bfb8d251-b2ab-4c77-8b5a-dc14d17a91f4")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 121.92 136.144 0)
 			(effects
 				(font
@@ -15211,7 +15791,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 4)
 				)
 			)
@@ -15227,7 +15807,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c37e6d5d-2c66-406f-a24b-1a525f0d80ff")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR039"
 			(at 76.2 49.53 0)
 			(effects
 				(font
@@ -15277,7 +15857,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR034")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -15293,7 +15873,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d5ebdb94-be66-465b-85a1-33f44e5a7481")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR033"
 			(at 50.8 29.21 0)
 			(effects
 				(font
@@ -15343,7 +15923,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR028")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -15549,7 +16129,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d967d4eb-98ed-4d47-b6dc-7d467ef91816")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR035"
 			(at 127 29.21 0)
 			(effects
 				(font
@@ -15599,7 +16179,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR030")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -15614,7 +16194,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f24fb714-0e13-4beb-8302-8bf24f528387")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 83.82 136.144 0)
 			(effects
 				(font
@@ -16448,7 +17028,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 3)
 				)
 			)
@@ -16464,7 +17044,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f54ee2bc-e029-4ba5-8669-ff38a27fcb07")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR040"
 			(at 114.3 49.53 0)
 			(effects
 				(font
@@ -16514,7 +17094,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "#PWR035")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -16529,7 +17109,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f7b3bd43-17be-4cc3-a2ac-28828b04314a")
-		(property "Reference" "U3"
+		(property "Reference" "U4"
 			(at 160.02 136.144 0)
 			(effects
 				(font
@@ -17363,14 +17943,14 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U3")
+					(reference "U4")
 					(unit 5)
 				)
 			)
 		)
 	)
 	(sheet
-		(at 101.6 165.1)
+		(at 139.7 152.4)
 		(size 12.7 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17386,7 +17966,7 @@
 		)
 		(uuid "de1eff49-f476-44bd-be62-918dcb8e6e8d")
 		(property "Sheetname" "FPGA config"
-			(at 101.6 164.3884 0)
+			(at 139.7 151.6884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17395,7 +17975,7 @@
 			)
 		)
 		(property "Sheetfile" "fpga_config.kicad_sch"
-			(at 101.6 178.3846 0)
+			(at 139.7 165.6846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17412,7 +17992,7 @@
 		)
 	)
 	(sheet
-		(at 139.7 165.1)
+		(at 139.7 177.8)
 		(size 12.7 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17428,7 +18008,7 @@
 		)
 		(uuid "e36c52fe-7af8-49a0-bf3c-a636c30fc9cb")
 		(property "Sheetname" "FPGA power"
-			(at 139.7 164.3884 0)
+			(at 139.7 177.0884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17437,7 +18017,7 @@
 			)
 		)
 		(property "Sheetfile" "fpga_power.kicad_sch"
-			(at 139.7 178.3846 0)
+			(at 139.7 191.0846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
