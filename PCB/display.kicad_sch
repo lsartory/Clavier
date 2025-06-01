@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "86ff34ca-2dc7-40d2-887c-2d44001add17")
 	(paper "A4")
+	(title_block
+		(title "Clavier - Display")
+		(date "2025-06-01")
+		(rev "1.0")
+		(company "Copyright (c) 2025 L. Sartory")
+		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
+	)
 	(lib_symbols
 		(symbol "Device:LED"
 			(pin_numbers
@@ -999,7 +1006,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35dd9d39-d03f-4835-81bf-26adeef4f2ea")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR068"
 			(at 165.1 67.31 0)
 			(effects
 				(font
@@ -1049,7 +1056,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "#PWR069")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)

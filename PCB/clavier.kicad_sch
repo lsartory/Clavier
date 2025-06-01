@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20")
 	(paper "A4")
+	(title_block
+		(title "Clavier - Overview")
+		(date "2025-06-01")
+		(rev "1.0")
+		(company "Copyright (c) 2025 L. Sartory")
+		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
+	)
 	(lib_symbols
 		(symbol "Graphic:Logo_Open_Hardware_Large"
 			(exclude_from_sim no)
@@ -143,9 +150,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "TODO schematics:\n- Complete connections\n- Page titles\n- Check licenses\n\n\nTODO layout:\n- Components on bottom side\n- Mounting holes\n- 3D models (all, including keycaps)\n- Alternate ctrl + odd/even number keys\n- Cat logo\n- Title block\n\n\nTODO release:\n- Export production files\n- Export PDF"
+	(text "TODO layout:\n- Components on bottom side\n- Mounting holes\n- 3D models (all, including keycaps)\n- Alternate ctrl + odd/even number keys\n- Cat logo\n- Title block\n\n\nTODO release:\n- Export production files\n- Export PDF"
 		(exclude_from_sim no)
-		(at 25.4 127 0)
+		(at 23.114 147.574 0)
 		(effects
 			(font
 				(size 4.572 4.572)
@@ -216,6 +223,16 @@
 			(type default)
 		)
 		(uuid "96d6959d-b0c9-4028-8330-2ae2fb451289")
+	)
+	(bus
+		(pts
+			(xy 215.9 95.25) (xy 228.6 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ff71fb0-84d3-4ebb-80a9-cd1f8273e1c3")
 	)
 	(bus
 		(pts
@@ -549,6 +566,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "LED[0..4]" output
+			(at 215.9 95.25 0)
+			(uuid "7bf180dc-1718-4912-9641-a93f0f991d99")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "640864cf-d97e-456a-8be7-826eefd77c0d")
 	(paper "A3")
+	(title_block
+		(title "Clavier - Keys")
+		(date "2025-06-01")
+		(rev "1.0")
+		(company "Copyright (c) 2025 L. Sartory")
+		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
+	)
 	(lib_symbols
 		(symbol "Switch:SW_Push_45deg"
 			(pin_numbers
@@ -8099,7 +8106,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0d0bb5d1-59e0-4603-ad23-17987479736a")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR067"
 			(at 38.1 73.66 0)
 			(effects
 				(font
@@ -8149,7 +8156,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34"
-					(reference "#PWR068")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)

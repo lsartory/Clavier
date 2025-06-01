@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "dd064609-0f3c-4c2e-8fe7-24e8a9b7c9bf")
 	(paper "A4")
+	(title_block
+		(title "Clavier - FPGA")
+		(date "2025-06-01")
+		(rev "1.0")
+		(company "Copyright (c) 2025 L. Sartory")
+		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
+	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_02x04_Counter_Clockwise"
 			(pin_names
@@ -6356,6 +6363,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 182.88) (xy 114.3 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23d93dfd-e85c-404e-bd49-9a128a592cec")
+	)
+	(wire
+		(pts
 			(xy 101.6 68.58) (xy 116.84 68.58)
 		)
 		(stroke
@@ -6836,6 +6853,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 187.96) (xy 114.3 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "511c9e07-c8c4-468d-8209-b7e34286f57d")
+	)
+	(wire
+		(pts
 			(xy 139.7 106.68) (xy 154.94 106.68)
 		)
 		(stroke
@@ -6853,6 +6880,16 @@
 			(type default)
 		)
 		(uuid "525c468c-cc65-4a4d-ab15-0071e2cd98f4")
+	)
+	(wire
+		(pts
+			(xy 86.36 180.34) (xy 101.6 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52ddd5bf-b596-490f-b9d0-a1418d30ec21")
 	)
 	(wire
 		(pts
@@ -7476,6 +7513,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 185.42) (xy 101.6 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9298d3b8-6b64-4ce5-88e9-43b1cebf50b2")
+	)
+	(wire
+		(pts
 			(xy 101.6 86.36) (xy 116.84 86.36)
 		)
 		(stroke
@@ -7976,6 +8023,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 182.88) (xy 101.6 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5a9217d-bf7b-4cda-8c0c-229b449bb0d6")
+	)
+	(wire
+		(pts
 			(xy 50.8 27.94) (xy 50.8 38.1)
 		)
 		(stroke
@@ -8093,6 +8150,16 @@
 			(type default)
 		)
 		(uuid "d2578941-afc3-4078-a00b-4104421856ac")
+	)
+	(wire
+		(pts
+			(xy 86.36 187.96) (xy 101.6 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d31b8eb8-6371-4bfa-bf8f-6ee8b1887cb8")
 	)
 	(wire
 		(pts
@@ -8326,6 +8393,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 180.34) (xy 114.3 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e72d0cb2-dba3-4c91-b2ac-81a36a7a47d8")
+	)
+	(wire
+		(pts
 			(xy 215.9 76.2) (xy 231.14 76.2)
 		)
 		(stroke
@@ -8373,6 +8450,16 @@
 			(type default)
 		)
 		(uuid "ebaeb07e-9826-4a4e-985c-0f49de37aa1e")
+	)
+	(wire
+		(pts
+			(xy 129.54 185.42) (xy 114.3 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec8f2827-914d-4f94-8261-9849fe72faa3")
 	)
 	(wire
 		(pts
@@ -8574,6 +8661,16 @@
 		)
 		(uuid "00f267c3-af4e-44fc-9bc6-4952746daa90")
 	)
+	(label "FPGA_IO172"
+		(at 86.36 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0216a098-2cc0-4830-8dd6-3d092769faf7")
+	)
 	(label "K.Alt"
 		(at 101.6 88.9 0)
 		(effects
@@ -8653,6 +8750,16 @@
 			(justify left bottom)
 		)
 		(uuid "09294e53-4eb2-46e2-a703-e98d3ff266be")
+	)
+	(label "FPGA_IO174"
+		(at 86.36 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "09a90f3b-8fbf-45fa-b25b-9849af653115")
 	)
 	(label "K.D"
 		(at 25.4 96.52 0)
@@ -9014,6 +9121,16 @@
 		)
 		(uuid "3d20d7bc-d85a-4805-9a95-773c8683dd25")
 	)
+	(label "FPGA_IO176"
+		(at 86.36 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3dd27067-e6c9-4fab-846f-02c7116b3987")
+	)
 	(label "K.Minus"
 		(at 101.6 119.38 0)
 		(effects
@@ -9103,6 +9220,16 @@
 			(justify left bottom)
 		)
 		(uuid "4f6a1157-63f6-4466-9c07-8f44ee68ae48")
+	)
+	(label "FPGA_IO134"
+		(at 129.54 185.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5276edb8-1f8f-4275-bf9f-879ba648801a")
 	)
 	(label "K.Print"
 		(at 25.4 63.5 0)
@@ -9274,6 +9401,16 @@
 		)
 		(uuid "61b26445-f814-46fc-b015-2e0001369493")
 	)
+	(label "FPGA_IO132"
+		(at 129.54 182.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "654358d2-2548-4ad6-a495-de73b7643570")
+	)
 	(label "FPGA_IO181"
 		(at 86.36 162.56 0)
 		(effects
@@ -9394,7 +9531,7 @@
 		)
 		(uuid "76fa0be3-7a8b-4316-ab45-8093b8376020")
 	)
-	(label "FPGA_IO62"
+	(label "LED1"
 		(at 101.6 68.58 0)
 		(effects
 			(font
@@ -9513,6 +9650,16 @@
 			(justify left bottom)
 		)
 		(uuid "8412c22f-776e-49b2-aed6-4d1aa845cac4")
+	)
+	(label "FPGA_IO173"
+		(at 86.36 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "86a0d09c-60e2-4887-ba8c-d8773df37527")
 	)
 	(label "Kp._5"
 		(at 63.5 73.66 0)
@@ -9724,7 +9871,7 @@
 		)
 		(uuid "9f9a2f98-d8df-4245-912d-f8609fa129dd")
 	)
-	(label "FPGA_IO61"
+	(label "LED0"
 		(at 101.6 66.04 0)
 		(effects
 			(font
@@ -9813,6 +9960,16 @@
 			(justify left bottom)
 		)
 		(uuid "a59442af-d514-4cfa-928b-f1d5fdaab2db")
+	)
+	(label "FPGA_IO135"
+		(at 129.54 187.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a74b8d28-e3c2-4136-87c1-5a6a0cb5656c")
 	)
 	(label "FPGA_IO123"
 		(at 177.8 60.96 0)
@@ -10014,7 +10171,7 @@
 		)
 		(uuid "bcb9bc1a-2a61-4a50-a22b-af58bbfd4ba1")
 	)
-	(label "FPGA_IO64"
+	(label "LED3"
 		(at 101.6 73.66 0)
 		(effects
 			(font
@@ -10124,7 +10281,7 @@
 		)
 		(uuid "d1a0f02b-5379-4400-a83d-3cc638ad8d57")
 	)
-	(label "FPGA_IO71"
+	(label "LED4"
 		(at 101.6 91.44 0)
 		(effects
 			(font
@@ -10233,6 +10390,16 @@
 			(justify left bottom)
 		)
 		(uuid "dc3b463e-31d5-4fea-8300-1d4d9f690b5d")
+	)
+	(label "FPGA_IO131"
+		(at 129.54 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dc91116f-3769-40ee-a969-fb57cbd630f7")
 	)
 	(label "FPGA_IO59"
 		(at 101.6 60.96 0)
@@ -10424,7 +10591,7 @@
 		)
 		(uuid "f80a3f52-0ab9-4f05-9125-0a8412701f25")
 	)
-	(label "FPGA_IO63"
+	(label "LED2"
 		(at 101.6 71.12 0)
 		(effects
 			(font
@@ -10465,6 +10632,17 @@
 		)
 		(uuid "11d7c7b6-cbb7-4a18-85e9-9204555648b2")
 	)
+	(hierarchical_label "LED[0..4]"
+		(shape output)
+		(at 25.4 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "319f21f1-6e45-41c6-abb1-ae49b2b5d024")
+	)
 	(hierarchical_label "USB_FPGA+"
 		(shape bidirectional)
 		(at 38.1 111.76 180)
@@ -10478,7 +10656,7 @@
 	)
 	(hierarchical_label "Kp{KpKeys}"
 		(shape input)
-		(at 38.1 41.91 180)
+		(at 38.1 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10489,7 +10667,7 @@
 	)
 	(hierarchical_label "K{Keys}"
 		(shape input)
-		(at 38.1 38.1 180)
+		(at 38.1 30.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10573,7 +10751,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "139a99c1-4630-454f-8252-1d078057dbc0")
-		(property "Reference" "C20"
+		(property "Reference" "C22"
 			(at 218.821 31.9786 0)
 			(effects
 				(font
@@ -10653,7 +10831,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C20")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -11583,7 +11761,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "289075c7-639f-4bab-a590-accb4c5b30c8")
-		(property "Reference" "C19"
+		(property "Reference" "C21"
 			(at 193.421 31.9786 0)
 			(effects
 				(font
@@ -11663,7 +11841,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C19")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -11744,7 +11922,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3bde4f45-0625-443f-b699-b0eff45f14eb")
-		(property "Reference" "C14"
+		(property "Reference" "C16"
 			(at 104.521 31.9786 0)
 			(effects
 				(font
@@ -11824,7 +12002,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C14")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -11839,7 +12017,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "50db616a-4799-4389-be45-8129fc8333ed")
-		(property "Reference" "C15"
+		(property "Reference" "C17"
 			(at 117.221 31.9786 0)
 			(effects
 				(font
@@ -11919,7 +12097,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C15")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -12066,7 +12244,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6167cc45-3c76-4426-9a21-efa5dc504463")
-		(property "Reference" "C13"
+		(property "Reference" "C15"
 			(at 79.121 31.9786 0)
 			(effects
 				(font
@@ -12146,7 +12324,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C13")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -12227,7 +12405,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c309ced-5b44-4af4-8c1d-569b5f807a94")
-		(property "Reference" "C22"
+		(property "Reference" "C24"
 			(at 256.921 31.9786 0)
 			(effects
 				(font
@@ -12307,7 +12485,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C22")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -12492,7 +12670,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75941905-8c26-4ab1-8f49-e04df01a7714")
-		(property "Reference" "C24"
+		(property "Reference" "C26"
 			(at 34.671 162.7886 0)
 			(effects
 				(font
@@ -12572,7 +12750,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C24")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -12639,6 +12817,110 @@
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
+		(at 106.68 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90f6c290-e451-443b-861c-16b204ec21da")
+		(property "Reference" "J9"
+			(at 107.95 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pin header, 2x4"
+			(at 107.95 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 106.68 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
+			(at 106.68 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 106.68 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501275"
+			(at 106.68 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
+			(at 106.68 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7840795b-1ab1-4d02-a0e2-0a983056ec90")
+		)
+		(pin "4"
+			(uuid "bd60987d-1a25-4b8a-804e-fb8fa03f3f3c")
+		)
+		(pin "7"
+			(uuid "8a0aec28-75d7-4d47-b107-70c1b3915e34")
+		)
+		(pin "3"
+			(uuid "45521376-c5f6-451a-9e90-da56f40b99c9")
+		)
+		(pin "5"
+			(uuid "288ffb36-32fc-469a-931f-66d6e97456a4")
+		)
+		(pin "8"
+			(uuid "3c362ada-f686-4ae2-91c5-02f64ed1f942")
+		)
+		(pin "6"
+			(uuid "afd16616-54a0-46f2-b604-41cbe8dc95a8")
+		)
+		(pin "1"
+			(uuid "887cb1ff-0c87-4ba9-9755-33be50b8ee7e")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -12719,7 +13001,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9af5c72f-e018-44a8-bd64-d8befb0748bb")
-		(property "Reference" "C21"
+		(property "Reference" "C23"
 			(at 231.521 31.9786 0)
 			(effects
 				(font
@@ -12799,7 +13081,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C21")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -13664,7 +13946,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9ecf5d5e-f8c3-42de-9918-919805a77db4")
-		(property "Reference" "C16"
+		(property "Reference" "C18"
 			(at 142.621 31.9786 0)
 			(effects
 				(font
@@ -13744,7 +14026,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C16")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -13918,7 +14200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ace48e70-f895-4fb3-967c-46338b758592")
-		(property "Reference" "C18"
+		(property "Reference" "C20"
 			(at 180.721 31.9786 0)
 			(effects
 				(font
@@ -13998,7 +14280,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C18")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -14013,7 +14295,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b612127a-2744-4fd1-af08-bdb5cf4fcae0")
-		(property "Reference" "C17"
+		(property "Reference" "C19"
 			(at 155.321 31.9786 0)
 			(effects
 				(font
@@ -14093,7 +14375,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C17")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -15938,7 +16220,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d72023be-ecc2-48d0-9e4f-728080f1f919")
-		(property "Reference" "C23"
+		(property "Reference" "C25"
 			(at 269.621 31.9786 0)
 			(effects
 				(font
@@ -16018,7 +16300,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C23")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -16033,7 +16315,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d867715f-e22c-4c6b-8d4c-fef6588d2256")
-		(property "Reference" "C12"
+		(property "Reference" "C14"
 			(at 66.421 31.9786 0)
 			(effects
 				(font
@@ -16113,7 +16395,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C12")
+					(reference "C14")
 					(unit 1)
 				)
 			)

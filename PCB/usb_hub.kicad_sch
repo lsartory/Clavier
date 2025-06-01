@@ -4,6 +4,13 @@
 	(generator_version "9.0")
 	(uuid "0ba42c6a-ef2a-477b-8c1c-09e7d397a27d")
 	(paper "A4")
+	(title_block
+		(title "Clavier - USB hub")
+		(date "2025-06-01")
+		(rev "1.0")
+		(company "Copyright (c) 2025 L. Sartory")
+		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
+	)
 	(lib_symbols
 		(symbol "Connector:USB_A"
 			(pin_names
@@ -1310,6 +1317,155 @@
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Polyfuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Polyfuse"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*polyfuse* *PTC*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Polyfuse_0_1"
+				(polyline
+					(pts
+						(xy -1.524 2.54) (xy -1.524 1.524) (xy 1.524 -1.524) (xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.762 2.54)
+					(end 0.762 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Polyfuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3382,7 +3538,7 @@
 		(uuid "068fdbdf-7eef-47d7-b22b-6c44494a9107")
 	)
 	(junction
-		(at 69.85 40.64)
+		(at 82.55 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b1ccfc7-2d6c-4d91-bb1f-1748def68431")
@@ -3424,13 +3580,19 @@
 		(uuid "23547743-8e9a-4d27-b47c-54df1b70656e")
 	)
 	(junction
+		(at 234.95 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "35cbd84f-4366-431e-b9f8-87aab337a173")
+	)
+	(junction
 		(at 69.85 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3e2f7b7c-ad27-472c-8696-3cd4e768733a")
 	)
 	(junction
-		(at 264.16 147.32)
+		(at 251.46 153.67)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "414fe7ed-e79f-4135-bf0b-bc6f96de9e77")
@@ -3448,13 +3610,25 @@
 		(uuid "530b03e4-4f8d-4d77-8409-3e3060b9aeac")
 	)
 	(junction
+		(at 260.35 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "611c3455-3435-4adc-9b4b-aa80cf90d145")
+	)
+	(junction
+		(at 234.95 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6618933a-4398-4cea-9c98-394b9a7e79aa")
+	)
+	(junction
 		(at 63.5 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "716a5b5a-f48e-4afa-aff4-affe4760f16d")
 	)
 	(junction
-		(at 264.16 109.22)
+		(at 251.46 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7c93f745-ef17-4e3d-a6e3-29f636b6f39e")
@@ -3478,13 +3652,19 @@
 		(uuid "85db16a5-131a-40bc-8b84-8019f0c079e3")
 	)
 	(junction
-		(at 233.68 78.74)
+		(at 220.98 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "937002ae-c04b-4ed7-adac-b3ecd75c56f3")
 	)
 	(junction
-		(at 233.68 116.84)
+		(at 260.35 153.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c759ce66-e62c-466a-bb0d-ce67a4124b24")
+	)
+	(junction
+		(at 220.98 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c7e7b2d2-64a6-414d-8be9-a6633ef81461")
@@ -3575,7 +3755,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 137.16) (xy 243.84 134.62)
+			(xy 228.6 143.51) (xy 231.14 140.97)
 		)
 		(stroke
 			(width 0)
@@ -3585,13 +3765,23 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 134.62) (xy 243.84 137.16)
+			(xy 228.6 140.97) (xy 231.14 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "07acaff4-51bb-4079-b5f5-c9a0c6624a66")
+	)
+	(wire
+		(pts
+			(xy 260.35 109.22) (xy 251.46 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07adb5ed-e616-4325-8173-4660c1eb00f6")
 	)
 	(wire
 		(pts
@@ -3615,7 +3805,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 147.32) (xy 264.16 149.86)
+			(xy 260.35 153.67) (xy 260.35 156.21)
 		)
 		(stroke
 			(width 0)
@@ -3625,7 +3815,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 96.52) (xy 241.3 96.52)
+			(xy 218.44 96.52) (xy 228.6 96.52)
 		)
 		(stroke
 			(width 0)
@@ -3635,7 +3825,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 109.22) (xy 264.16 111.76)
+			(xy 260.35 109.22) (xy 260.35 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3655,7 +3845,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 134.62) (xy 241.3 134.62)
+			(xy 218.44 140.97) (xy 228.6 140.97)
 		)
 		(stroke
 			(width 0)
@@ -3675,7 +3865,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 78.74) (xy 233.68 81.28)
+			(xy 220.98 78.74) (xy 220.98 81.28)
 		)
 		(stroke
 			(width 0)
@@ -3715,7 +3905,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 116.84) (xy 247.65 129.54)
+			(xy 234.95 123.19) (xy 234.95 135.89)
 		)
 		(stroke
 			(width 0)
@@ -3725,7 +3915,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 78.74) (xy 247.65 91.44)
+			(xy 234.95 78.74) (xy 234.95 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3775,7 +3965,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 147.32) (xy 264.16 147.32)
+			(xy 248.92 153.67) (xy 251.46 153.67)
 		)
 		(stroke
 			(width 0)
@@ -3815,7 +4005,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 99.06) (xy 241.3 99.06)
+			(xy 218.44 99.06) (xy 228.6 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3845,13 +4035,23 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 137.16) (xy 254 137.16)
+			(xy 231.14 143.51) (xy 241.3 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "505a1ebd-addf-4db7-a535-52b19ffa53a7")
+	)
+	(wire
+		(pts
+			(xy 260.35 123.19) (xy 260.35 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51aa649f-53ee-4e2a-96d7-ff7b12a0ab2c")
 	)
 	(wire
 		(pts
@@ -3885,7 +4085,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 91.44) (xy 254 91.44)
+			(xy 234.95 91.44) (xy 241.3 91.44)
 		)
 		(stroke
 			(width 0)
@@ -3895,7 +4095,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 76.2) (xy 233.68 78.74)
+			(xy 220.98 76.2) (xy 220.98 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3905,7 +4105,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 96.52) (xy 254 96.52)
+			(xy 231.14 96.52) (xy 241.3 96.52)
 		)
 		(stroke
 			(width 0)
@@ -3955,7 +4155,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 40.64) (xy 63.5 40.64)
+			(xy 82.55 40.64) (xy 73.66 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3975,7 +4175,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 116.84) (xy 247.65 116.84)
+			(xy 220.98 123.19) (xy 234.95 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4025,7 +4225,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 35.56) (xy 69.85 40.64)
+			(xy 82.55 35.56) (xy 82.55 40.64)
 		)
 		(stroke
 			(width 0)
@@ -4045,13 +4245,33 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 144.78) (xy 264.16 147.32)
+			(xy 66.04 40.64) (xy 63.5 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79872ec8-a50a-4492-99c2-6ecd1f29d61e")
+	)
+	(wire
+		(pts
+			(xy 251.46 151.13) (xy 251.46 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "799d28b2-68ff-4660-9168-fc9fea64a6c2")
+	)
+	(wire
+		(pts
+			(xy 234.95 123.19) (xy 260.35 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79ec3947-8647-4b22-9a50-c4382ab41820")
 	)
 	(wire
 		(pts
@@ -4095,7 +4315,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 96.52) (xy 243.84 99.06)
+			(xy 228.6 96.52) (xy 231.14 99.06)
 		)
 		(stroke
 			(width 0)
@@ -4205,7 +4425,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 91.44) (xy 233.68 88.9)
+			(xy 220.98 91.44) (xy 220.98 88.9)
 		)
 		(stroke
 			(width 0)
@@ -4215,7 +4435,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 78.74) (xy 247.65 78.74)
+			(xy 220.98 78.74) (xy 234.95 78.74)
 		)
 		(stroke
 			(width 0)
@@ -4225,7 +4445,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 116.84) (xy 233.68 119.38)
+			(xy 220.98 123.19) (xy 220.98 125.73)
 		)
 		(stroke
 			(width 0)
@@ -4285,7 +4505,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 99.06) (xy 243.84 96.52)
+			(xy 228.6 99.06) (xy 231.14 96.52)
 		)
 		(stroke
 			(width 0)
@@ -4295,7 +4515,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 114.3) (xy 233.68 116.84)
+			(xy 220.98 120.65) (xy 220.98 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4315,7 +4535,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 137.16) (xy 241.3 137.16)
+			(xy 218.44 143.51) (xy 228.6 143.51)
 		)
 		(stroke
 			(width 0)
@@ -4415,13 +4635,33 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 106.68) (xy 261.62 109.22)
+			(xy 260.35 153.67) (xy 251.46 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b49b2cc9-ae38-4c5b-aab2-1f902466eef2")
+	)
+	(wire
+		(pts
+			(xy 248.92 106.68) (xy 248.92 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b55df257-f77a-4362-8ab5-d6754ae93eff")
+	)
+	(wire
+		(pts
+			(xy 260.35 153.67) (xy 260.35 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b562710d-9538-4235-9ce7-ceea9b58fea5")
 	)
 	(wire
 		(pts
@@ -4455,7 +4695,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 109.22) (xy 264.16 109.22)
+			(xy 248.92 109.22) (xy 251.46 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4465,7 +4705,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 144.78) (xy 261.62 147.32)
+			(xy 248.92 151.13) (xy 248.92 153.67)
 		)
 		(stroke
 			(width 0)
@@ -4475,7 +4715,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 134.62) (xy 254 134.62)
+			(xy 231.14 140.97) (xy 241.3 140.97)
 		)
 		(stroke
 			(width 0)
@@ -4515,7 +4755,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 129.54) (xy 254 129.54)
+			(xy 234.95 135.89) (xy 241.3 135.89)
 		)
 		(stroke
 			(width 0)
@@ -4565,7 +4805,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 99.06) (xy 254 99.06)
+			(xy 231.14 99.06) (xy 241.3 99.06)
 		)
 		(stroke
 			(width 0)
@@ -4592,6 +4832,16 @@
 			(type default)
 		)
 		(uuid "d625d180-ab1b-455a-9dcf-b942abad6b72")
+	)
+	(wire
+		(pts
+			(xy 234.95 78.74) (xy 260.35 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d651aec7-12c5-4a2f-8d1f-a3e90b996435")
 	)
 	(wire
 		(pts
@@ -4625,7 +4875,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 129.54) (xy 233.68 127)
+			(xy 220.98 135.89) (xy 220.98 133.35)
 		)
 		(stroke
 			(width 0)
@@ -4702,6 +4952,16 @@
 			(type default)
 		)
 		(uuid "e1005390-3748-4091-a238-c8147ae394e7")
+	)
+	(wire
+		(pts
+			(xy 260.35 78.74) (xy 260.35 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e15f1ed4-7002-42ef-84fd-897c298b94b1")
 	)
 	(wire
 		(pts
@@ -4805,7 +5065,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 91.44) (xy 233.68 91.44)
+			(xy 218.44 91.44) (xy 220.98 91.44)
 		)
 		(stroke
 			(width 0)
@@ -4835,7 +5095,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 129.54) (xy 233.68 129.54)
+			(xy 218.44 135.89) (xy 220.98 135.89)
 		)
 		(stroke
 			(width 0)
@@ -4865,13 +5125,23 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 106.68) (xy 264.16 109.22)
+			(xy 251.46 106.68) (xy 251.46 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "fa13a7cf-c2c4-4912-ac5b-39c6b825c1c3")
+	)
+	(wire
+		(pts
+			(xy 260.35 109.22) (xy 260.35 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa35e51a-6fba-4e39-acbd-1c7a86709c68")
 	)
 	(wire
 		(pts
@@ -4944,7 +5214,7 @@
 		(uuid "1ea19eba-9026-48e8-bb6c-5f6ddfed5b60")
 	)
 	(label "D4-"
-		(at 233.68 134.62 0)
+		(at 220.98 140.97 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4954,7 +5224,7 @@
 		(uuid "20da5184-4559-4abd-ba06-09f490adba83")
 	)
 	(label "D3-"
-		(at 233.68 96.52 0)
+		(at 220.98 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4964,7 +5234,7 @@
 		(uuid "74e6bba9-cba7-4434-b862-ac5617a8ddaa")
 	)
 	(label "D3+"
-		(at 233.68 99.06 0)
+		(at 220.98 99.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4974,7 +5244,7 @@
 		(uuid "7dffe908-b260-4397-9d9d-f650c6ab3cfd")
 	)
 	(label "D4+"
-		(at 233.68 137.16 0)
+		(at 220.98 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5453,7 +5723,7 @@
 	)
 	(symbol
 		(lib_id "Connector:USB_A")
-		(at 261.62 96.52 0)
+		(at 248.92 96.52 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5462,7 +5732,7 @@
 		(dnp no)
 		(uuid "0ccc4961-eff9-4652-8266-ce84fb5ff77a")
 		(property "Reference" "J2"
-			(at 256.54 83.82 0)
+			(at 243.84 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5471,7 +5741,7 @@
 			)
 		)
 		(property "Value" "901-211A1021D10100"
-			(at 256.54 86.36 0)
+			(at 236.22 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5480,7 +5750,7 @@
 			)
 		)
 		(property "Footprint" "Connector_USB:USB_A_Molex_67643_Horizontal"
-			(at 257.81 97.79 0)
+			(at 245.11 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5489,7 +5759,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411220132_Jing-Extension-of-the-Electronic-Co--901-211A1021D10100_C2346.pdf"
-			(at 257.81 97.79 0)
+			(at 245.11 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5498,7 +5768,7 @@
 			)
 		)
 		(property "Description" "USB Type A connector"
-			(at 261.62 96.52 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5507,7 +5777,7 @@
 			)
 		)
 		(property "LCSC" "C2346"
-			(at 261.62 96.52 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5516,7 +5786,7 @@
 			)
 		)
 		(property "Part_number" "901-211A1021D10100"
-			(at 261.62 96.52 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6651,7 +6921,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 85.09 0)
+		(at 220.98 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6659,7 +6929,7 @@
 		(dnp no)
 		(uuid "6ddc29e5-0cd9-4e3b-be36-89d763865caa")
 		(property "Reference" "R3"
-			(at 235.458 83.9216 0)
+			(at 222.758 83.9216 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6668,7 +6938,7 @@
 			)
 		)
 		(property "Value" "100kΩ"
-			(at 235.458 86.233 0)
+			(at 222.758 86.233 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6677,7 +6947,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 231.902 85.09 90)
+			(at 219.202 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6686,7 +6956,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311211102_YAGEO-RE0402DRE07100KL_C851870.pdf"
-			(at 233.68 85.09 0)
+			(at 220.98 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6695,7 +6965,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 233.68 85.09 0)
+			(at 220.98 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6703,7 +6973,7 @@
 			)
 		)
 		(property "Part_number" "RE0402DRE07100KL"
-			(at 233.68 85.09 0)
+			(at 220.98 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6712,7 +6982,7 @@
 			)
 		)
 		(property "LCSC" "C851870"
-			(at 233.68 85.09 0)
+			(at 220.98 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6877,7 +7147,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "72c013cf-9ba9-4727-bc2f-0eb6dd2a92eb")
-		(property "Reference" "C5"
+		(property "Reference" "C6"
 			(at 129.54 131.572 90)
 			(effects
 				(font
@@ -6954,7 +7224,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "C5")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -6962,7 +7232,7 @@
 	)
 	(symbol
 		(lib_id "Connector:USB_A")
-		(at 261.62 134.62 0)
+		(at 248.92 140.97 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6971,7 +7241,7 @@
 		(dnp no)
 		(uuid "785cfb71-7cc4-4d10-ab0a-81d0e7e718a3")
 		(property "Reference" "J3"
-			(at 256.54 121.92 0)
+			(at 243.84 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6980,7 +7250,7 @@
 			)
 		)
 		(property "Value" "901-211A1021D10100"
-			(at 256.54 124.46 0)
+			(at 236.22 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6989,7 +7259,7 @@
 			)
 		)
 		(property "Footprint" "Connector_USB:USB_A_Molex_67643_Horizontal"
-			(at 257.81 135.89 0)
+			(at 245.11 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6998,7 +7268,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411220132_Jing-Extension-of-the-Electronic-Co--901-211A1021D10100_C2346.pdf"
-			(at 257.81 135.89 0)
+			(at 245.11 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7007,7 +7277,7 @@
 			)
 		)
 		(property "Description" "USB Type A connector"
-			(at 261.62 134.62 0)
+			(at 248.92 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7016,7 +7286,7 @@
 			)
 		)
 		(property "LCSC" "C2346"
-			(at 261.62 134.62 0)
+			(at 248.92 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7025,7 +7295,7 @@
 			)
 		)
 		(property "Part_number" "901-211A1021D10100"
-			(at 261.62 134.62 0)
+			(at 248.92 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7286,7 +7556,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 69.85 35.56 0)
+		(at 82.55 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7295,7 +7565,7 @@
 		(fields_autoplaced yes)
 		(uuid "83740c61-7897-4a87-bb92-d5120ce2b1c2")
 		(property "Reference" "#PWR01"
-			(at 69.85 39.37 0)
+			(at 82.55 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7304,7 +7574,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 69.85 30.48 0)
+			(at 82.55 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7312,7 +7582,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 35.56 0)
+			(at 82.55 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7321,7 +7591,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 35.56 0)
+			(at 82.55 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7330,7 +7600,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 69.85 35.56 0)
+			(at 82.55 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7418,15 +7688,15 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 123.19 0)
+		(at 220.98 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "8a4e55be-567f-4e44-be7c-f239fcb093d8")
-		(property "Reference" "R5"
-			(at 235.458 122.0216 0)
+		(property "Reference" "R6"
+			(at 222.758 128.3716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7435,7 +7705,7 @@
 			)
 		)
 		(property "Value" "100kΩ"
-			(at 235.458 124.333 0)
+			(at 222.758 130.683 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7444,7 +7714,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 231.902 123.19 90)
+			(at 219.202 129.54 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7453,7 +7723,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311211102_YAGEO-RE0402DRE07100KL_C851870.pdf"
-			(at 233.68 123.19 0)
+			(at 220.98 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7462,7 +7732,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 233.68 123.19 0)
+			(at 220.98 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7470,7 +7740,7 @@
 			)
 		)
 		(property "Part_number" "RE0402DRE07100KL"
-			(at 233.68 123.19 0)
+			(at 220.98 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7479,7 +7749,7 @@
 			)
 		)
 		(property "LCSC" "C851870"
-			(at 233.68 123.19 0)
+			(at 220.98 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7496,7 +7766,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "R5")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -7504,7 +7774,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 69.85 40.64 270)
+		(at 82.55 40.64 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7513,7 +7783,7 @@
 		(fields_autoplaced yes)
 		(uuid "8c33283f-24b6-4f02-93fb-4481e281dfcd")
 		(property "Reference" "#FLG01"
-			(at 71.755 40.64 0)
+			(at 84.455 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7522,7 +7792,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 73.66 40.6399 90)
+			(at 86.36 40.6399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7531,7 +7801,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 40.64 0)
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7540,7 +7810,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 69.85 40.64 0)
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7549,7 +7819,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 69.85 40.64 0)
+			(at 82.55 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7570,8 +7840,95 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Polyfuse")
+		(at 69.85 40.64 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8cd54f5d-0109-4db5-abe1-36c343963b87")
+		(property "Reference" "F1"
+			(at 69.85 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Polyfuse"
+			(at 69.85 36.83 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+			(at 74.93 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2409301532_BHFUSE-BSMD0805-075-12V_C883111.pdf"
+			(at 69.85 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+			(at 69.85 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C883111"
+			(at 69.85 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "BSMD0805-075-12V"
+			(at 69.85 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cf42934f-97e0-45b6-b05c-ad48a39c9286")
+		)
+		(pin "1"
+			(uuid "a4828138-182a-4a51-bd03-5e4a54e18c7f")
+		)
+		(instances
+			(project ""
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 264.16 149.86 0)
+		(at 260.35 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7580,7 +7937,7 @@
 		(fields_autoplaced yes)
 		(uuid "9296ec85-2bcc-484d-8132-c25239ff5135")
 		(property "Reference" "#PWR016"
-			(at 264.16 156.21 0)
+			(at 260.35 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7589,7 +7946,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 264.16 154.94 0)
+			(at 260.35 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7597,7 +7954,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 264.16 149.86 0)
+			(at 260.35 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7606,7 +7963,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 264.16 149.86 0)
+			(at 260.35 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7615,7 +7972,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 264.16 149.86 0)
+			(at 260.35 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7789,6 +8146,101 @@
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
 					(reference "Y1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 260.35 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "aeca37ed-6637-4aef-8df3-43e56e3827e8")
+		(property "Reference" "C7"
+			(at 263.271 139.9286 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22µF"
+			(at 263.271 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 261.3152 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121552_Murata-Electronics-GRM21BR61E226ME44L_C86816.pdf"
+			(at 260.35 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 260.35 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 263.271 144.5514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part_number" "GRM21BR61E226ME44L"
+			(at 260.35 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C86816"
+			(at 260.35 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b33b33b4-5064-4833-a1dc-99752fb7f12c")
+		)
+		(pin "1"
+			(uuid "f97163fc-b333-403e-ae4c-a7934a47687d")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -8027,6 +8479,101 @@
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 260.35 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c2bd205a-1ff5-4b6f-8422-dfe063cf06a7")
+		(property "Reference" "C5"
+			(at 263.271 95.4786 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22µF"
+			(at 263.271 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 261.3152 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121552_Murata-Electronics-GRM21BR61E226ME44L_C86816.pdf"
+			(at 260.35 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 260.35 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 263.271 100.1014 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part_number" "GRM21BR61E226ME44L"
+			(at 260.35 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C86816"
+			(at 260.35 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1d942ba4-1aad-4d02-b968-419f31ede067")
+		)
+		(pin "1"
+			(uuid "4763a80f-5e64-410e-ab4c-d1564d0c2678")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -8301,7 +8848,7 @@
 	)
 	(symbol
 		(lib_id "clavier:GL852G-OHY60")
-		(at 222.25 133.35 0)
+		(at 209.55 139.7 0)
 		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8310,7 +8857,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9541dd0-f54d-45ee-9d75-cf4372d8bcc9")
 		(property "Reference" "U1"
-			(at 222.25 121.92 0)
+			(at 209.55 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8318,7 +8865,7 @@
 			)
 		)
 		(property "Value" "GL852G-OHY60"
-			(at 222.25 124.46 0)
+			(at 209.55 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8326,7 +8873,7 @@
 			)
 		)
 		(property "Footprint" "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.75x3.75mm"
-			(at 222.25 133.35 0)
+			(at 209.55 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8335,7 +8882,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221351_Genesys-Logic-GL852G-OHY60_C7501404.pdf"
-			(at 222.25 133.35 0)
+			(at 209.55 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8344,7 +8891,7 @@
 			)
 		)
 		(property "Description" "4-port USB hub"
-			(at 215.9 137.16 0)
+			(at 203.2 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8353,7 +8900,7 @@
 			)
 		)
 		(property "LCSC" "C7501404"
-			(at 222.25 133.35 0)
+			(at 209.55 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8362,7 +8909,7 @@
 			)
 		)
 		(property "Part_number" "GL852G-OHY60"
-			(at 222.25 133.35 0)
+			(at 209.55 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8534,7 +9081,7 @@
 	)
 	(symbol
 		(lib_id "clavier:GL852G-OHY60")
-		(at 222.25 95.25 0)
+		(at 209.55 95.25 0)
 		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8543,7 +9090,7 @@
 		(fields_autoplaced yes)
 		(uuid "cc01466a-05cc-497d-a943-0637af42b766")
 		(property "Reference" "U1"
-			(at 222.25 83.82 0)
+			(at 209.55 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8551,7 +9098,7 @@
 			)
 		)
 		(property "Value" "GL852G-OHY60"
-			(at 222.25 86.36 0)
+			(at 209.55 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8559,7 +9106,7 @@
 			)
 		)
 		(property "Footprint" "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.75x3.75mm"
-			(at 222.25 95.25 0)
+			(at 209.55 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8568,7 +9115,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411221351_Genesys-Logic-GL852G-OHY60_C7501404.pdf"
-			(at 222.25 95.25 0)
+			(at 209.55 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8577,7 +9124,7 @@
 			)
 		)
 		(property "Description" "4-port USB hub"
-			(at 215.9 99.06 0)
+			(at 203.2 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8586,7 +9133,7 @@
 			)
 		)
 		(property "LCSC" "C7501404"
-			(at 222.25 95.25 0)
+			(at 209.55 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8595,7 +9142,7 @@
 			)
 		)
 		(property "Part_number" "GL852G-OHY60"
-			(at 222.25 95.25 0)
+			(at 209.55 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8701,7 +9248,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 233.68 114.3 0)
+		(at 220.98 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8709,8 +9256,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d75e58df-9d2d-4883-bfb8-77b86fe654e2")
-		(property "Reference" "#PWR012"
-			(at 233.68 118.11 0)
+		(property "Reference" "#PWR013"
+			(at 220.98 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8719,7 +9266,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 233.68 109.22 0)
+			(at 220.98 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8727,7 +9274,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 233.68 114.3 0)
+			(at 220.98 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8736,7 +9283,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 233.68 114.3 0)
+			(at 220.98 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8745,7 +9292,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 233.68 114.3 0)
+			(at 220.98 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8759,7 +9306,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR012")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -8857,7 +9404,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc5fa20d-9a81-46b9-bf11-be02698603e6")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR012"
 			(at 95.25 123.19 0)
 			(effects
 				(font
@@ -8907,7 +9454,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR013")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -9187,7 +9734,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6cf8355-84ff-4f1d-b546-0c29cde079e0")
-		(property "Reference" "C6"
+		(property "Reference" "C8"
 			(at 47.371 150.0886 0)
 			(effects
 				(font
@@ -9267,7 +9814,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "C6")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -9275,7 +9822,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 233.68 76.2 0)
+		(at 220.98 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9284,7 +9831,7 @@
 		(fields_autoplaced yes)
 		(uuid "ecf9d405-0b51-459c-9b1e-b368b8786b2a")
 		(property "Reference" "#PWR06"
-			(at 233.68 80.01 0)
+			(at 220.98 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9293,7 +9840,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 233.68 71.12 0)
+			(at 220.98 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9301,7 +9848,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 233.68 76.2 0)
+			(at 220.98 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9310,7 +9857,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 233.68 76.2 0)
+			(at 220.98 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9319,7 +9866,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 233.68 76.2 0)
+			(at 220.98 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9341,7 +9888,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 264.16 111.76 0)
+		(at 260.35 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9350,7 +9897,7 @@
 		(fields_autoplaced yes)
 		(uuid "f6b92341-cb31-450c-b076-efce7d4b3bfd")
 		(property "Reference" "#PWR011"
-			(at 264.16 118.11 0)
+			(at 260.35 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9359,7 +9906,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 264.16 116.84 0)
+			(at 260.35 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9367,7 +9914,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 264.16 111.76 0)
+			(at 260.35 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9376,7 +9923,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 264.16 111.76 0)
+			(at 260.35 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9385,7 +9932,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 264.16 111.76 0)
+			(at 260.35 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9586,7 +10133,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff8d61a3-b8aa-4145-bc05-ef9952535d59")
-		(property "Reference" "R6"
+		(property "Reference" "R5"
 			(at 129.54 121.92 90)
 			(effects
 				(font
@@ -9655,7 +10202,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "R6")
+					(reference "R5")
 					(unit 1)
 				)
 			)
