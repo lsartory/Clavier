@@ -701,12 +701,16 @@
       "Keys"
     ],
     [
-      "7a0fedde-fdbf-441d-b3e6-197cbc93a029",
-      "Display"
+      "030080dd-0f27-48c8-8d7a-6555150d84cb",
+      "Keycaps"
     ],
     [
       "0c8a9398-ddd2-4230-9850-fe0f46e922ad",
       "Power"
+    ],
+    [
+      "7a0fedde-fdbf-441d-b3e6-197cbc93a029",
+      "Display"
     ]
   ],
   "text_variables": {}

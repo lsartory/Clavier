@@ -1,4 +1,4 @@
-25237312728320029
+25242559167607248
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -101275,6 +101275,27 @@ Varistor VF
 0
 2
 2
+clavier
+KC_Cherry_MX_R1_1.00u_Black
+
+
+0
+0
+0
+clavier
+KC_Cherry_MX_R1_1.00u_Red
+
+
+0
+0
+0
+clavier
+KC_Cherry_MX_R1_1.00u_White
+
+
+0
+0
+0
 clavier
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf

@@ -16310,4 +16310,46 @@
 			)
 		)
 	)
+	(sheet
+		(at 50.8 241.3)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "030080dd-0f27-48c8-8d7a-6555150d84cb")
+		(property "Sheetname" "Keycaps"
+			(at 50.8 240.5884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "keycaps.kicad_sch"
+			(at 50.8 254.5846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34"
+					(page "8")
+				)
+			)
+		)
+	)
 )
