@@ -403,7 +403,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_Barred_Black"
 			(at 107.95 158.75 0)
 			(effects
 				(font
@@ -465,7 +465,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 165.1 133.35 0)
 			(effects
 				(font
@@ -589,7 +589,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 101.6 133.35 0)
 			(effects
 				(font
@@ -651,7 +651,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 273.05 107.95 0)
 			(effects
 				(font
@@ -713,7 +713,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 165.1 184.15 0)
 			(effects
 				(font
@@ -837,7 +837,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 196.85 209.55 0)
 			(effects
 				(font
@@ -899,7 +899,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 107.95 82.55 0)
 			(effects
 				(font
@@ -961,7 +961,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 69.85 82.55 0)
 			(effects
 				(font
@@ -1023,7 +1023,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 44.45 209.55 0)
 			(effects
 				(font
@@ -1085,7 +1085,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 171.45 209.55 0)
 			(effects
 				(font
@@ -1147,7 +1147,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_Black"
 			(at 273.05 133.35 0)
 			(effects
 				(font
@@ -1209,7 +1209,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_Black"
 			(at 247.65 133.35 0)
 			(effects
 				(font
@@ -1271,7 +1271,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 311.15 184.15 0)
 			(effects
 				(font
@@ -1333,7 +1333,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 69.85 107.95 0)
 			(effects
 				(font
@@ -1395,7 +1395,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 171.45 158.75 0)
 			(effects
 				(font
@@ -1457,7 +1457,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 184.15 158.75 0)
 			(effects
 				(font
@@ -1519,7 +1519,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 222.25 82.55 0)
 			(effects
 				(font
@@ -1581,7 +1581,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 76.2 133.35 0)
 			(effects
 				(font
@@ -1705,7 +1705,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 133.35 107.95 0)
 			(effects
 				(font
@@ -1829,7 +1829,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 336.55 209.55 0)
 			(effects
 				(font
@@ -1891,7 +1891,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_Black"
 			(at 260.35 184.15 0)
 			(effects
 				(font
@@ -1953,7 +1953,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 69.85 158.75 0)
 			(effects
 				(font
@@ -2077,7 +2077,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 95.25 158.75 0)
 			(effects
 				(font
@@ -2139,7 +2139,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 107.95 107.95 0)
 			(effects
 				(font
@@ -2201,7 +2201,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_Black"
 			(at 247.65 209.55 0)
 			(effects
 				(font
@@ -2325,7 +2325,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 63.5 184.15 0)
 			(effects
 				(font
@@ -2387,7 +2387,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_2.00u_Black"
 			(at 209.55 107.95 0)
 			(effects
 				(font
@@ -2511,7 +2511,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_Black"
 			(at 273.05 209.55 0)
 			(effects
 				(font
@@ -2573,7 +2573,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 88.9 133.35 0)
 			(effects
 				(font
@@ -2635,7 +2635,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 196.85 107.95 0)
 			(effects
 				(font
@@ -2697,7 +2697,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 158.75 158.75 0)
 			(effects
 				(font
@@ -2759,7 +2759,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 209.55 209.55 0)
 			(effects
 				(font
@@ -2821,7 +2821,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 196.85 158.75 0)
 			(effects
 				(font
@@ -2883,7 +2883,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 184.15 107.95 0)
 			(effects
 				(font
@@ -2945,7 +2945,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 158.75 107.95 0)
 			(effects
 				(font
@@ -3007,7 +3007,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 209.55 158.75 0)
 			(effects
 				(font
@@ -3069,7 +3069,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 184.15 209.55 0)
 			(effects
 				(font
@@ -3131,7 +3131,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 152.4 184.15 0)
 			(effects
 				(font
@@ -3193,7 +3193,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 114.3 133.35 0)
 			(effects
 				(font
@@ -3317,7 +3317,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 336.55 133.35 0)
 			(effects
 				(font
@@ -3441,7 +3441,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 69.85 209.55 0)
 			(effects
 				(font
@@ -3503,7 +3503,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_Black"
 			(at 260.35 133.35 0)
 			(effects
 				(font
@@ -3565,7 +3565,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 171.45 107.95 0)
 			(effects
 				(font
@@ -3689,7 +3689,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 82.55 158.75 0)
 			(effects
 				(font
@@ -3751,7 +3751,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 190.5 133.35 0)
 			(effects
 				(font
@@ -3875,7 +3875,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 57.15 107.95 0)
 			(effects
 				(font
@@ -3937,7 +3937,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 127 184.15 0)
 			(effects
 				(font
@@ -3999,7 +3999,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 336.55 158.75 0)
 			(effects
 				(font
@@ -4061,7 +4061,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 44.45 107.95 0)
 			(effects
 				(font
@@ -4185,7 +4185,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 323.85 184.15 0)
 			(effects
 				(font
@@ -4247,7 +4247,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 133.35 158.75 0)
 			(effects
 				(font
@@ -4309,7 +4309,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 323.85 158.75 0)
 			(effects
 				(font
@@ -4371,7 +4371,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 82.55 107.95 0)
 			(effects
 				(font
@@ -4433,7 +4433,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_Black"
 			(at 260.35 209.55 0)
 			(effects
 				(font
@@ -4495,7 +4495,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 177.8 133.35 0)
 			(effects
 				(font
@@ -4557,7 +4557,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 120.65 158.75 0)
 			(effects
 				(font
@@ -4619,7 +4619,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 63.5 133.35 0)
 			(effects
 				(font
@@ -4681,7 +4681,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 336.55 184.15 0)
 			(effects
 				(font
@@ -4743,7 +4743,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 76.2 184.15 0)
 			(effects
 				(font
@@ -4805,7 +4805,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.25u_Black"
 			(at 57.15 209.55 0)
 			(effects
 				(font
@@ -4867,7 +4867,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 120.65 107.95 0)
 			(effects
 				(font
@@ -4929,7 +4929,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 336.55 107.95 0)
 			(effects
 				(font
@@ -5053,7 +5053,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
 			(at 95.25 107.95 0)
 			(effects
 				(font
@@ -5115,7 +5115,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 247.65 107.95 0)
 			(effects
 				(font
@@ -5177,7 +5177,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 152.4 133.35 0)
 			(effects
 				(font
@@ -5239,7 +5239,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 184.15 82.55 0)
 			(effects
 				(font
@@ -5301,7 +5301,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 323.85 133.35 0)
 			(effects
 				(font
@@ -5363,7 +5363,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 101.6 184.15 0)
 			(effects
 				(font
@@ -5425,7 +5425,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 311.15 107.95 0)
 			(effects
 				(font
@@ -5549,7 +5549,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 311.15 133.35 0)
 			(effects
 				(font
@@ -5735,7 +5735,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 177.8 184.15 0)
 			(effects
 				(font
@@ -5797,7 +5797,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 203.2 133.35 0)
 			(effects
 				(font
@@ -5859,7 +5859,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_White"
 			(at 311.15 158.75 0)
 			(effects
 				(font
@@ -5921,7 +5921,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 323.85 107.95 0)
 			(effects
 				(font
@@ -5983,7 +5983,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 88.9 184.15 0)
 			(effects
 				(font
@@ -6045,7 +6045,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 260.35 107.95 0)
 			(effects
 				(font
@@ -6107,7 +6107,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 82.55 82.55 0)
 			(effects
 				(font
@@ -6169,7 +6169,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 95.25 82.55 0)
 			(effects
 				(font
@@ -6231,7 +6231,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 190.5 184.15 0)
 			(effects
 				(font
@@ -6293,7 +6293,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R3_1.00u_Barred_Black"
 			(at 146.05 158.75 0)
 			(effects
 				(font
@@ -6355,7 +6355,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 127 133.35 0)
 			(effects
 				(font
@@ -6417,7 +6417,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 349.25 107.95 0)
 			(effects
 				(font
@@ -6541,7 +6541,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 114.3 184.15 0)
 			(effects
 				(font
@@ -6603,7 +6603,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 146.05 107.95 0)
 			(effects
 				(font
@@ -6665,7 +6665,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R4_1.00u_White"
 			(at 139.7 184.15 0)
 			(effects
 				(font
@@ -6727,7 +6727,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "clavier:KC_Cherry_MX_R2_1.00u_White"
 			(at 139.7 133.35 0)
 			(effects
 				(font
@@ -6851,7 +6851,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 209.55 82.55 0)
 			(effects
 				(font
@@ -6913,7 +6913,7 @@
 				)
 			)
 		)
-		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_White"
+		(property "Footprint" "clavier:KC_Cherry_MX_R1_1.00u_Black"
 			(at 196.85 82.55 0)
 			(effects
 				(font
