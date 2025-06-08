@@ -12,7 +12,7 @@
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
 	)
 	(lib_symbols
-		(symbol "Connector_Generic:Conn_02x04_Counter_Clockwise"
+		(symbol "Connector_Generic:Conn_02x04_Odd_Even"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -28,7 +28,7 @@
 					)
 				)
 			)
-			(property "Value" "Conn_02x04_Counter_Clockwise"
+			(property "Value" "Conn_02x04_Odd_Even"
 				(at 1.27 -7.62 0)
 				(effects
 					(font
@@ -54,7 +54,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -81,7 +81,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Conn_02x04_Counter_Clockwise_1_1"
+			(symbol "Conn_02x04_Odd_Even_1_1"
 				(rectangle
 					(start -1.27 3.81)
 					(end 3.81 -6.35)
@@ -202,24 +202,6 @@
 				(pin passive line
 					(at -5.08 0 0)
 					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
 					(name "Pin_3"
 						(effects
 							(font
@@ -236,16 +218,34 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -5.08 0)
+					(at -5.08 -2.54 0)
 					(length 3.81)
-					(name "Pin_4"
+					(name "Pin_5"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -256,14 +256,14 @@
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 3.81)
-					(name "Pin_8"
+					(name "Pin_2"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "8"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -274,14 +274,14 @@
 				(pin passive line
 					(at 7.62 0 180)
 					(length 3.81)
-					(name "Pin_7"
+					(name "Pin_4"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "7"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -310,14 +310,14 @@
 				(pin passive line
 					(at 7.62 -5.08 180)
 					(length 3.81)
-					(name "Pin_5"
+					(name "Pin_8"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "5"
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1352,14 +1352,14 @@
 				(pin output line
 					(at 7.62 3.81 180)
 					(length 2.54)
-					(name "SCK"
+					(name "SCS0"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "14"
+					(number "13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1370,14 +1370,14 @@
 				(pin output line
 					(at 7.62 1.27 180)
 					(length 2.54)
-					(name "MOSI"
+					(name "SCK"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "16"
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1406,14 +1406,14 @@
 				(pin output line
 					(at 7.62 -3.81 180)
 					(length 2.54)
-					(name "SCS0"
+					(name "MOSI"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "13"
+					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3434,7 +3434,7 @@
 		(uuid "0cb2b119-cbf1-4eb4-ad90-54d4b159b87a")
 	)
 	(label "CH347_SCK"
-		(at 193.04 40.64 0)
+		(at 193.04 43.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3504,7 +3504,7 @@
 		(uuid "a9949ddb-092b-4f84-8f67-d350f3a8a0de")
 	)
 	(label "CH347_MOSI"
-		(at 193.04 43.18 0)
+		(at 193.04 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3524,7 +3524,7 @@
 		(uuid "cad2d1a5-8ccc-4d98-b75b-260315c7c595")
 	)
 	(label "CH347_SCS0"
-		(at 193.04 48.26 0)
+		(at 193.04 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3734,6 +3734,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
+		(at 220.98 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0a0e8a36-edbf-40b7-97ea-8f76e7727748")
+		(property "Reference" "J4"
+			(at 222.25 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pin header, 2x4"
+			(at 222.25 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 220.98 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
+			(at 220.98 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 220.98 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501275"
+			(at 220.98 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
+			(at 220.98 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "614cb78e-cefe-4503-bb14-6deecce8f97e")
+		)
+		(pin "7"
+			(uuid "2b3593c2-0a21-4e73-b33d-7695d5a53e4e")
+		)
+		(pin "8"
+			(uuid "38fb6f0e-7340-4d81-874a-d1a00fa2fe9c")
+		)
+		(pin "6"
+			(uuid "3cf5c74b-b348-47f5-a75f-440f0d606d33")
+		)
+		(pin "3"
+			(uuid "2a5ed229-d911-4a85-9d7d-fadd269edec2")
+		)
+		(pin "1"
+			(uuid "c2d10e65-d68e-4d04-b530-83ce4c48da9c")
+		)
+		(pin "4"
+			(uuid "1cd340b5-b757-4556-bc43-d78677f26742")
+		)
+		(pin "2"
+			(uuid "4f92fddc-ab21-43f5-9c19-67a690c52476")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Crystal_GND24")
 		(at 95.25 82.55 90)
 		(unit 1)
@@ -3825,110 +3929,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
-		(at 220.98 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "13f73951-1a80-4f8f-bc64-8d7e97f57d61")
-		(property "Reference" "J4"
-			(at 222.25 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Pin header, 2x4"
-			(at 222.25 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
-			(at 220.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
-			(at 220.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 220.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7501275"
-			(at 220.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
-			(at 220.98 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "18a1c7e2-0ae3-4a03-8c3b-7ec253839c84")
-		)
-		(pin "4"
-			(uuid "55143455-145b-4868-bf02-497b0ae87d7e")
-		)
-		(pin "7"
-			(uuid "c1b4ea31-79a4-4c59-b991-228f5c2d3dc5")
-		)
-		(pin "3"
-			(uuid "f1686a19-245b-4e6f-8393-37adb344c2df")
-		)
-		(pin "5"
-			(uuid "8d459358-bbd6-4850-8c6f-1e07000096c4")
-		)
-		(pin "8"
-			(uuid "6d037c91-f3c3-425e-bd1a-7a9e48d75615")
-		)
-		(pin "6"
-			(uuid "660f7028-353a-4bfb-8832-d9bac4226de7")
-		)
-		(pin "1"
-			(uuid "27881048-321f-490d-9935-b0d2d1daecf3")
-		)
-		(instances
-			(project ""
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 63.5 125.73 0)
 		(unit 1)
@@ -3937,7 +3937,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "247119ff-d87f-4364-a45c-eb8258d769d5")
-		(property "Reference" "C12"
+		(property "Reference" "C15"
 			(at 66.421 123.4186 0)
 			(effects
 				(font
@@ -4017,7 +4017,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C12")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -4262,6 +4262,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
+		(at 259.08 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56170a16-a35d-4dd4-9eaf-a020512932cf")
+		(property "Reference" "J7"
+			(at 260.35 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pin header, 2x4"
+			(at 260.35 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 259.08 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
+			(at 259.08 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 259.08 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501275"
+			(at 259.08 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
+			(at 259.08 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "834e9146-8bd7-47f6-b847-2f0e3eb82ca4")
+		)
+		(pin "7"
+			(uuid "df44064f-e89e-47d9-96c5-f4e40f4a2028")
+		)
+		(pin "8"
+			(uuid "5f5fe467-b066-49ae-82fc-3dc7f145e844")
+		)
+		(pin "6"
+			(uuid "fbf68feb-ac17-4c47-8dc7-34316ab87a09")
+		)
+		(pin "3"
+			(uuid "7d27cc27-833e-46e8-a1e8-eccf614ac23c")
+		)
+		(pin "1"
+			(uuid "b00ba472-5678-479a-a564-4c2a60e03e67")
+		)
+		(pin "4"
+			(uuid "500298ef-410d-49df-b5f3-46ac10934467")
+		)
+		(pin "2"
+			(uuid "e6817051-ca53-4be5-bc3e-b4999fe0c47f")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 269.24 153.67 0)
 		(unit 1)
@@ -4402,7 +4506,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60e1dff7-de77-4bb0-b1f6-f7d581d39c72")
-		(property "Reference" "C9"
+		(property "Reference" "C12"
 			(at 82.55 68.072 90)
 			(effects
 				(font
@@ -4479,111 +4583,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
-		(at 222.25 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6904af59-826d-46b9-bac7-9b56da486776")
-		(property "Reference" "J6"
-			(at 223.52 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Pin header, 2x4"
-			(at 223.52 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
-			(at 222.25 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
-			(at 222.25 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 222.25 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7501275"
-			(at 222.25 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
-			(at 222.25 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "59179a50-4edd-4a36-9241-38554f459f90")
-		)
-		(pin "4"
-			(uuid "c22d0337-0af8-41e1-a097-0f318be84952")
-		)
-		(pin "7"
-			(uuid "bc579db6-a599-4a0d-be48-d5e75cb21059")
-		)
-		(pin "3"
-			(uuid "9dd946d9-2c17-440c-8bad-2914d52d04fb")
-		)
-		(pin "5"
-			(uuid "d3790afe-a934-42ca-afc0-340a72dec8bb")
-		)
-		(pin "8"
-			(uuid "13d5de23-2243-4b3b-b6c6-aec3825a07bd")
-		)
-		(pin "6"
-			(uuid "0bedd681-eb3c-4a75-a7e9-614415f9eb55")
-		)
-		(pin "1"
-			(uuid "1bab2885-5247-4d21-95c8-ba212040ac93")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J6")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -4891,17 +4891,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
-		(at 259.08 146.05 0)
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
+		(at 222.25 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8e3d5460-1459-4ef1-9c6b-c95a6d79edb4")
-		(property "Reference" "J7"
-			(at 260.35 137.16 0)
+		(uuid "8697954f-cd3c-464e-80eb-81b340541bbb")
+		(property "Reference" "J6"
+			(at 223.52 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4909,7 +4909,7 @@
 			)
 		)
 		(property "Value" "Pin header, 2x4"
-			(at 260.35 139.7 0)
+			(at 223.52 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4917,7 +4917,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
-			(at 259.08 146.05 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4926,7 +4926,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
-			(at 259.08 146.05 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4934,8 +4934,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 259.08 146.05 0)
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4944,7 +4944,7 @@
 			)
 		)
 		(property "LCSC" "C7501275"
-			(at 259.08 146.05 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4953,7 +4953,7 @@
 			)
 		)
 		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
-			(at 259.08 146.05 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4961,34 +4961,34 @@
 				(hide yes)
 			)
 		)
-		(pin "2"
-			(uuid "f2bdcf40-0811-4ce3-9044-ce47b6d9423f")
-		)
-		(pin "4"
-			(uuid "11d51759-3862-4242-87f9-ae74cb91a701")
+		(pin "5"
+			(uuid "4b18aa3c-25f8-48cb-b99d-e86a2585c5cd")
 		)
 		(pin "7"
-			(uuid "89dd3219-24f2-4cd1-854d-5857c6c9fed5")
-		)
-		(pin "3"
-			(uuid "248e036f-fa26-4cba-ac0c-3f8e150afcf4")
-		)
-		(pin "5"
-			(uuid "bd09bb9d-7543-4c9e-8c59-896b4364b7f7")
+			(uuid "b8671415-6d52-4039-a6f3-5028fc973404")
 		)
 		(pin "8"
-			(uuid "46cb8a31-8f0f-4fc4-b7c0-9d7b22aa8bbb")
+			(uuid "738424af-d77c-4180-bd09-9e6a743108db")
 		)
 		(pin "6"
-			(uuid "0de504d5-4cea-4a10-b6aa-b6d15bf97c5b")
+			(uuid "de1fd158-6262-4913-9845-09a32c03aecd")
+		)
+		(pin "3"
+			(uuid "dd2cec71-52a8-4327-9112-38d718101d59")
 		)
 		(pin "1"
-			(uuid "18c41c95-6aa5-4d8a-a870-4738932605c3")
+			(uuid "5a96aea4-30c5-44fa-adff-f59ecddf2929")
+		)
+		(pin "4"
+			(uuid "773e43cc-e0c7-4641-a492-fc19718c5afd")
+		)
+		(pin "2"
+			(uuid "7b9e3036-dfcb-4563-974d-da71e8f7cc86")
 		)
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J7")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -5170,7 +5170,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "96c95073-d259-4c1d-b4cc-6f7c34bf9887")
-		(property "Reference" "C13"
+		(property "Reference" "C16"
 			(at 104.521 123.4186 0)
 			(effects
 				(font
@@ -5250,7 +5250,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C13")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -5772,7 +5772,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c34151a2-e617-4d23-b471-316d2949377d")
-		(property "Reference" "C10"
+		(property "Reference" "C13"
 			(at 66.421 80.2386 0)
 			(effects
 				(font
@@ -5852,7 +5852,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C10")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -6187,7 +6187,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d87088c9-c3e4-4cb7-9e13-6aa9ba28fea3")
-		(property "Reference" "C11"
+		(property "Reference" "C14"
 			(at 82.55 80.772 90)
 			(effects
 				(font
@@ -6264,7 +6264,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C11")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -6599,6 +6599,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_02x04_Odd_Even")
+		(at 220.98 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ee4d87b7-65da-4ce7-95de-0def01664be1")
+		(property "Reference" "J5"
+			(at 222.25 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Pin header, 2x4"
+			(at 222.25 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
+			(at 220.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
+			(at 220.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, double row, 02x04, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 220.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C7501275"
+			(at 220.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
+			(at 220.98 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "7b97cb9c-27a5-42a4-a4fe-d11dd30493c0")
+		)
+		(pin "7"
+			(uuid "01029f80-1365-470e-8a1c-017bfd9aacd4")
+		)
+		(pin "8"
+			(uuid "bf90de54-6172-4c33-8ac4-1357edd07db3")
+		)
+		(pin "6"
+			(uuid "8c59063f-ed79-45d5-a1f0-b4371c29bc2c")
+		)
+		(pin "3"
+			(uuid "2b341ff9-2c62-470e-9445-2e78647d286a")
+		)
+		(pin "1"
+			(uuid "ec3d5ea1-552c-4fa3-be51-6155ba811071")
+		)
+		(pin "4"
+			(uuid "0df21eda-acf2-458c-aeb9-ae704a37221a")
+		)
+		(pin "2"
+			(uuid "e912bf70-2316-4bad-9546-7128ae41c071")
+		)
+		(instances
+			(project "clavier"
+				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 101.6 115.57 0)
 		(mirror y)
@@ -6827,110 +6931,6 @@
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_02x04_Counter_Clockwise")
-		(at 220.98 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fca2eb20-d057-41dc-b457-9867d92fbbd3")
-		(property "Reference" "J5"
-			(at 222.25 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Pin header, 2x4"
-			(at 222.25 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
-			(at 220.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2311221544_Megastar-ZX-PZ2-54-2-4PZZ_C7501275.pdf"
-			(at 220.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, double row, 02x04, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 220.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7501275"
-			(at 220.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part_number" "ZX-PZ2.54-2-4PZZ"
-			(at 220.98 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fe8382ac-b6e3-4a1b-a4b7-8140a0f0ac50")
-		)
-		(pin "4"
-			(uuid "f5274d0c-f071-4710-98be-5685e665e74f")
-		)
-		(pin "7"
-			(uuid "a7444723-50aa-4c37-8edf-2a33021c6d48")
-		)
-		(pin "3"
-			(uuid "e09f8bee-b1a8-4926-bce2-f485a1b75ab4")
-		)
-		(pin "5"
-			(uuid "74323f31-0421-49db-84a3-5b609c331411")
-		)
-		(pin "8"
-			(uuid "67b26f62-1c72-4c98-8ecf-6587ce909310")
-		)
-		(pin "6"
-			(uuid "fd0dc4da-8c0e-4c67-94b2-d8595e55c22c")
-		)
-		(pin "1"
-			(uuid "90c30d38-f85d-40d8-9d67-4886e181864b")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J5")
 					(unit 1)
 				)
 			)

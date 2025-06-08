@@ -59,6 +59,15 @@
 					(hide yes)
 				)
 			)
+			(property "ki_fp_filters" "KC_*R*u*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(symbol "Keycap_0_1"
 				(polyline
 					(pts
