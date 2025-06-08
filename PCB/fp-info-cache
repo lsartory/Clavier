@@ -1,4 +1,4 @@
-25284538558991234
+25295034907381906
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -101353,6 +101353,20 @@ KC_Cherry_MX_R2_1.00u_White
 0
 0
 clavier
+KC_Cherry_MX_R2_1.50u_Black
+
+
+0
+0
+0
+clavier
+KC_Cherry_MX_R2_1.50u_White
+
+
+0
+0
+0
+clavier
 KC_Cherry_MX_R3_1.00u_Barred_Black
 
 
@@ -101375,6 +101389,20 @@ KC_Cherry_MX_R3_1.00u_Black
 0
 clavier
 KC_Cherry_MX_R3_1.00u_White
+
+
+0
+0
+0
+clavier
+KC_Cherry_MX_R3_1.75u_Black
+
+
+0
+0
+0
+clavier
+KC_Cherry_MX_R3_1.75u_White
 
 
 0
@@ -101527,3 +101555,17 @@ Cherry MX keyswitch ISO enter PCB
 0
 2
 2
+clavier
+Stabilizer_2.00u
+
+
+0
+0
+0
+clavier
+Stabilizer_6.25u
+
+
+0
+0
+0

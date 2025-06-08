@@ -5317,7 +5317,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "02a1de8f-664b-4c06-a6e6-2f89864a8df9")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR08"
 			(at 146.05 90.17 0)
 			(effects
 				(font
@@ -5367,7 +5367,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR07")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -6404,7 +6404,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3a66373c-7171-4c56-a1d0-41476a5ca4be")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR03"
 			(at 133.35 41.91 0)
 			(effects
 				(font
@@ -6454,7 +6454,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR02")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -6768,7 +6768,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "540d6edd-64f2-4ab3-8b48-e04a54709370")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR011"
 			(at 120.65 115.57 0)
 			(effects
 				(font
@@ -6818,7 +6818,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR010")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -7015,7 +7015,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e701e69-814f-4234-a833-aa3d1046633d")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR018"
 			(at 63.5 172.72 0)
 			(effects
 				(font
@@ -7065,7 +7065,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR017")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -7082,7 +7082,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6f2d2503-a14a-4980-9172-c1f501c152f5")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR09"
 			(at 95.25 90.17 0)
 			(effects
 				(font
@@ -7132,7 +7132,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR08")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -7337,7 +7337,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e8c4f31-4723-4ba6-8a5c-cea30dd80e66")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR015"
 			(at 63.5 143.51 0)
 			(effects
 				(font
@@ -7387,7 +7387,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR014")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -7564,7 +7564,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "83740c61-7897-4a87-bb92-d5120ce2b1c2")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR02"
 			(at 82.55 39.37 0)
 			(effects
 				(font
@@ -7614,7 +7614,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR01")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -7630,7 +7630,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "87b9602d-60d8-4de4-9260-508dc7228033")
-		(property "Reference" "#PWR019"
+		(property "Reference" "#PWR020"
 			(at 81.28 184.15 0)
 			(effects
 				(font
@@ -7680,7 +7680,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR019")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -7936,7 +7936,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9296ec85-2bcc-484d-8132-c25239ff5135")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR017"
 			(at 260.35 162.56 0)
 			(effects
 				(font
@@ -7986,7 +7986,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR016")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -8002,7 +8002,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "945256ad-5418-40c9-a963-57044026ae5b")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR010"
 			(at 48.26 95.25 0)
 			(effects
 				(font
@@ -8052,7 +8052,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR09")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -8342,7 +8342,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc80a7ba-4d30-4b6b-b31a-1dacb67fcef4")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR05"
 			(at 101.6 77.47 0)
 			(effects
 				(font
@@ -8392,7 +8392,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR04")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -9023,7 +9023,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb67d1ab-230c-4fbc-9851-1c555e6d4876")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR06"
 			(at 177.8 82.55 0)
 			(effects
 				(font
@@ -9073,7 +9073,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR05")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -9256,7 +9256,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d75e58df-9d2d-4883-bfb8-77b86fe654e2")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR014"
 			(at 220.98 124.46 0)
 			(effects
 				(font
@@ -9306,7 +9306,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR013")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -9404,7 +9404,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc5fa20d-9a81-46b9-bf11-be02698603e6")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR013"
 			(at 95.25 123.19 0)
 			(effects
 				(font
@@ -9454,7 +9454,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR012")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -9470,7 +9470,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd952e6b-98ba-46a6-80d1-a942d1210a6c")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR016"
 			(at 156.21 139.7 0)
 			(effects
 				(font
@@ -9521,7 +9521,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR015")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -9537,7 +9537,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e15274a3-3ba9-4969-8ea5-584d6b8c7de0")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR04"
 			(at 146.05 64.77 0)
 			(effects
 				(font
@@ -9587,7 +9587,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR03")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -9669,7 +9669,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6bc1903-211b-4c96-98a8-f4d99bf25a15")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR019"
 			(at 149.86 176.53 0)
 			(effects
 				(font
@@ -9719,7 +9719,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR018")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -9830,7 +9830,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ecf9d405-0b51-459c-9b1e-b368b8786b2a")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR07"
 			(at 220.98 80.01 0)
 			(effects
 				(font
@@ -9880,7 +9880,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR06")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -9896,7 +9896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6b92341-cb31-450c-b076-efce7d4b3bfd")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR012"
 			(at 260.35 118.11 0)
 			(effects
 				(font
@@ -9946,7 +9946,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d"
-					(reference "#PWR011")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)

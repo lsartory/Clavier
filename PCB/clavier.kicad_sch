@@ -726,7 +726,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e751747-3233-49ad-ba8d-036fe8599552")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR01"
 			(at 76.2 55.88 0)
 			(effects
 				(font
@@ -776,7 +776,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(reference "#PWR078")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)

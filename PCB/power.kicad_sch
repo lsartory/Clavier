@@ -2432,7 +2432,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b5a9d02-8e7d-4cfd-b47c-4b716e5e8170")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR074"
 			(at 171.45 110.49 0)
 			(effects
 				(font
@@ -2482,7 +2482,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR073")
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -2595,7 +2595,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "193b1d47-4ebb-4408-b53d-65d69ce7cbf2")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR071"
 			(at 171.45 72.39 0)
 			(effects
 				(font
@@ -2645,7 +2645,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR070")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -3196,7 +3196,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e320a8e-00fc-44bd-bf0a-879cd9c96589")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR075"
 			(at 101.6 128.27 0)
 			(effects
 				(font
@@ -3246,7 +3246,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR074")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -3357,7 +3357,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "72a45a14-ffb3-4a82-9cde-91b6f9c3b18a")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR077"
 			(at 171.45 148.59 0)
 			(effects
 				(font
@@ -3407,7 +3407,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR076")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -3423,7 +3423,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7471f51d-2c77-42a1-a8a1-272e6c0ebc00")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR069"
 			(at 101.6 52.07 0)
 			(effects
 				(font
@@ -3473,7 +3473,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR068")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -3657,7 +3657,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8e90dac6-2c6d-4af5-ae42-17562790a6d7")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR072"
 			(at 101.6 90.17 0)
 			(effects
 				(font
@@ -3707,7 +3707,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR071")
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -3972,7 +3972,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aadddae9-401f-4885-bf50-d3389a92c945")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR070"
 			(at 171.45 52.07 0)
 			(effects
 				(font
@@ -4022,7 +4022,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR069")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -4219,7 +4219,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd3f0461-0e25-427d-bba6-b7970f49d3dd")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR076"
 			(at 171.45 128.27 0)
 			(effects
 				(font
@@ -4269,7 +4269,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR075")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -4828,7 +4828,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6d172f0-ee5f-4b47-b1d3-9784e4261549")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR073"
 			(at 171.45 90.17 0)
 			(effects
 				(font
@@ -4878,7 +4878,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/0c8a9398-ddd2-4230-9850-fe0f46e922ad"
-					(reference "#PWR072")
+					(reference "#PWR073")
 					(unit 1)
 				)
 			)
