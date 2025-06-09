@@ -5460,80 +5460,44 @@
 		)
 	)
 	(junction
-		(at 76.2 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "04a6a203-c790-41a4-b802-3943f2604711")
-	)
-	(junction
-		(at 63.5 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0a07c951-0372-4b37-9d49-cd8289e8037f")
-	)
-	(junction
-		(at 127 71.12)
+		(at 127 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "10abaff6-366d-4b83-8a68-1d9fdad02656")
 	)
 	(junction
-		(at 50.8 55.88)
+		(at 50.8 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "203359ca-a26e-4b9e-aa21-7e6e4c1974a6")
 	)
 	(junction
-		(at 63.5 55.88)
+		(at 63.5 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4beda519-ffe9-421d-bc05-23f32b29e8c3")
 	)
 	(junction
-		(at 114.3 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a9f48a1-c250-4d13-84c2-28b094230fba")
-	)
-	(junction
-		(at 50.8 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "778a2b52-9ec5-47a0-9f18-0c9a2142a7c2")
-	)
-	(junction
-		(at 114.3 55.88)
+		(at 114.3 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8c9feeec-fa10-40d7-98c0-b1e7da7509e6")
 	)
 	(junction
-		(at 76.2 71.12)
+		(at 76.2 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b94f562a-b249-4646-b686-9f9ee86cbe5c")
 	)
 	(junction
-		(at 63.5 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bca49a73-8d03-436c-9f5b-8c604fe3fafa")
-	)
-	(junction
-		(at 63.5 71.12)
+		(at 63.5 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e077bcfc-9f84-4649-b1ef-611a887b3b18")
 	)
-	(junction
-		(at 127 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fec9e283-e0d9-4732-82c2-93fcb8f91399")
-	)
 	(wire
 		(pts
-			(xy 50.8 50.8) (xy 50.8 55.88)
+			(xy 50.8 76.2) (xy 50.8 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5543,17 +5507,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 93.98) (xy 63.5 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "079fda81-58e5-49c1-87e3-80a41dd2954b")
-	)
-	(wire
-		(pts
-			(xy 114.3 55.88) (xy 114.3 59.69)
+			(xy 114.3 81.28) (xy 114.3 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5563,7 +5517,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 55.88) (xy 50.8 55.88)
+			(xy 63.5 81.28) (xy 50.8 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5573,17 +5527,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 105.41) (xy 50.8 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34037daf-08a2-49a6-a846-65db157109ce")
-	)
-	(wire
-		(pts
-			(xy 114.3 50.8) (xy 114.3 55.88)
+			(xy 114.3 76.2) (xy 114.3 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5603,27 +5547,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 105.41) (xy 127 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41de054e-89ad-4fa1-8177-82c51ede1e67")
-	)
-	(wire
-		(pts
-			(xy 114.3 88.9) (xy 114.3 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "48156796-46d4-4496-b49f-22fe8ff18faa")
-	)
-	(wire
-		(pts
-			(xy 114.3 71.12) (xy 127 71.12)
+			(xy 114.3 96.52) (xy 127 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5633,7 +5557,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 67.31) (xy 127 71.12)
+			(xy 127 92.71) (xy 127 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5643,7 +5567,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 55.88) (xy 50.8 59.69)
+			(xy 50.8 81.28) (xy 50.8 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5653,27 +5577,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 93.98) (xy 114.3 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5558dba0-160c-4038-87c6-c2af0f3850b5")
-	)
-	(wire
-		(pts
-			(xy 114.3 109.22) (xy 127 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58ad66cb-adf6-41dd-a427-7898b3af1e8b")
-	)
-	(wire
-		(pts
-			(xy 76.2 71.12) (xy 76.2 76.2)
+			(xy 76.2 96.52) (xy 76.2 101.6)
 		)
 		(stroke
 			(width 0)
@@ -5683,17 +5587,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 88.9) (xy 50.8 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6dab533c-27de-4270-8c7f-0d7288e3463e")
-	)
-	(wire
-		(pts
-			(xy 127 71.12) (xy 127 76.2)
+			(xy 127 96.52) (xy 127 101.6)
 		)
 		(stroke
 			(width 0)
@@ -5703,37 +5597,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 97.79) (xy 76.2 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "772918ca-7ad5-4931-8939-b5d6d6b992bb")
-	)
-	(wire
-		(pts
-			(xy 114.3 105.41) (xy 114.3 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e7b4d36-4157-4c62-a3fb-153f58bb514c")
-	)
-	(wire
-		(pts
-			(xy 127 93.98) (xy 127 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f3128bb-4870-468e-94a0-71255bc05926")
-	)
-	(wire
-		(pts
-			(xy 127 55.88) (xy 114.3 55.88)
+			(xy 127 81.28) (xy 114.3 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5753,17 +5617,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 93.98) (xy 50.8 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a17b13be-4f2a-4b8b-bc8a-b52e9398a527")
-	)
-	(wire
-		(pts
-			(xy 50.8 67.31) (xy 50.8 71.12)
+			(xy 50.8 92.71) (xy 50.8 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5773,7 +5627,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 71.12) (xy 76.2 71.12)
+			(xy 63.5 96.52) (xy 76.2 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5783,7 +5637,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 71.12) (xy 63.5 71.12)
+			(xy 50.8 96.52) (xy 63.5 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5793,17 +5647,7 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 105.41) (xy 76.2 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0d52cf4-1e2c-4563-b89e-762806f28af4")
-	)
-	(wire
-		(pts
-			(xy 63.5 55.88) (xy 63.5 59.69)
+			(xy 63.5 81.28) (xy 63.5 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5813,27 +5657,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 93.98) (xy 63.5 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b59631ae-6520-4c70-bf3c-e0f931f54caf")
-	)
-	(wire
-		(pts
-			(xy 76.2 109.22) (xy 76.2 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd0c1e04-03b5-4767-b1b4-108e361766b6")
-	)
-	(wire
-		(pts
-			(xy 76.2 59.69) (xy 76.2 55.88)
+			(xy 76.2 85.09) (xy 76.2 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5843,27 +5667,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 93.98) (xy 114.3 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c27a79d8-4bd7-43d4-98b1-cbbd2a287539")
-	)
-	(wire
-		(pts
-			(xy 63.5 109.22) (xy 76.2 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c3f6eb0f-9fb8-4c8c-b8fc-fc42e858de0c")
-	)
-	(wire
-		(pts
-			(xy 127 55.88) (xy 127 59.69)
+			(xy 127 81.28) (xy 127 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5873,7 +5677,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 67.31) (xy 63.5 71.12)
+			(xy 63.5 92.71) (xy 63.5 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5883,17 +5687,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 109.22) (xy 63.5 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6d9eb61-851c-43c6-ac22-d0932b89c0db")
-	)
-	(wire
-		(pts
-			(xy 76.2 55.88) (xy 63.5 55.88)
+			(xy 76.2 81.28) (xy 63.5 81.28)
 		)
 		(stroke
 			(width 0)
@@ -5903,17 +5697,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 109.22) (xy 127 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de8731c3-1266-4ae1-95cb-5ee0be04a766")
-	)
-	(wire
-		(pts
-			(xy 76.2 67.31) (xy 76.2 71.12)
+			(xy 76.2 92.71) (xy 76.2 96.52)
 		)
 		(stroke
 			(width 0)
@@ -5923,33 +5707,13 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 105.41) (xy 63.5 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6eea7fb-dc69-4c7c-9b7c-a7868e2c9e32")
-	)
-	(wire
-		(pts
-			(xy 114.3 67.31) (xy 114.3 71.12)
+			(xy 114.3 92.71) (xy 114.3 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ea227c53-db00-41bc-a661-0c0a9d96b860")
-	)
-	(wire
-		(pts
-			(xy 50.8 93.98) (xy 50.8 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f339f633-28a8-4481-a92e-194e7f32e50a")
 	)
 	(wire
 		(pts
@@ -5963,15 +5727,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 50.8 63.5 0)
+		(at 50.8 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-0000604ab97b")
-		(property "Reference" "C33"
-			(at 53.721 61.1886 0)
+		(property "Reference" "C27"
+			(at 53.721 86.5886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5980,7 +5744,7 @@
 			)
 		)
 		(property "Value" "1µF"
-			(at 53.721 63.5 0)
+			(at 53.721 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5989,7 +5753,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 51.7652 67.31 0)
+			(at 51.7652 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5998,7 +5762,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 50.8 63.5 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6007,7 +5771,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 63.5 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6015,7 +5779,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 53.721 65.8114 0)
+			(at 53.721 91.2114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6024,7 +5788,7 @@
 			)
 		)
 		(property "Part_number" "GRM155R61H105KE05D"
-			(at 50.8 63.5 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6033,7 +5797,7 @@
 			)
 		)
 		(property "LCSC" "C1518208"
-			(at 50.8 63.5 0)
+			(at 50.8 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6050,7 +5814,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C33")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -6058,15 +5822,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 76.2 63.5 0)
+		(at 76.2 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00006069fb4c")
-		(property "Reference" "C35"
-			(at 79.121 61.1886 0)
+		(property "Reference" "C29"
+			(at 79.121 86.5886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6075,7 +5839,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 79.121 63.5 0)
+			(at 79.121 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6084,7 +5848,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 77.1652 67.31 0)
+			(at 77.1652 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6093,7 +5857,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
-			(at 76.2 63.5 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6102,7 +5866,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 76.2 63.5 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6110,7 +5874,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 79.121 65.8114 0)
+			(at 79.121 91.2114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6119,7 +5883,7 @@
 			)
 		)
 		(property "Part_number" "GRM155R71H104KE14D"
-			(at 76.2 63.5 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6128,7 +5892,7 @@
 			)
 		)
 		(property "LCSC" "C77020"
-			(at 76.2 63.5 0)
+			(at 76.2 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6145,7 +5909,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C35")
+					(reference "C29")
 					(unit 1)
 				)
 			)
@@ -6153,15 +5917,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 63.5 63.5 0)
+		(at 63.5 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "02e5345e-33c9-48d8-a394-2f100f50ed29")
-		(property "Reference" "C34"
-			(at 66.421 61.1886 0)
+		(property "Reference" "C28"
+			(at 66.421 86.5886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6170,7 +5934,7 @@
 			)
 		)
 		(property "Value" "1µF"
-			(at 66.421 63.5 0)
+			(at 66.421 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6179,7 +5943,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 64.4652 67.31 0)
+			(at 64.4652 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6188,7 +5952,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 63.5 63.5 0)
+			(at 63.5 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6197,7 +5961,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 63.5 63.5 0)
+			(at 63.5 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6205,7 +5969,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 66.421 65.8114 0)
+			(at 66.421 91.2114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6214,7 +5978,7 @@
 			)
 		)
 		(property "Part_number" "GRM155R61H105KE05D"
-			(at 63.5 63.5 0)
+			(at 63.5 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6223,7 +5987,7 @@
 			)
 		)
 		(property "LCSC" "C1518208"
-			(at 63.5 63.5 0)
+			(at 63.5 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6240,7 +6004,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C34")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -6248,205 +6012,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 63.5 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0b1839c9-af17-4aab-bc46-421256bc6231")
-		(property "Reference" "C39"
-			(at 66.421 99.2886 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1µF"
-			(at 66.421 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 64.4652 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "50V"
-			(at 66.421 103.9114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part_number" "GRM155R61H105KE05D"
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C1518208"
-			(at 63.5 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "5ce41340-87e8-430c-9c7d-e73bc2c96b45")
-		)
-		(pin "1"
-			(uuid "8c46f463-e2e5-4881-a070-652b76cc71d6")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 114.3 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0ceabc4f-740b-40e7-9ce7-9b474acc6c7e")
-		(property "Reference" "C41"
-			(at 117.221 99.2886 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1µF"
-			(at 117.221 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 115.2652 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 114.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 114.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "50V"
-			(at 117.221 103.9114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part_number" "GRM155R61H105KE05D"
-			(at 114.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C1518208"
-			(at 114.3 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3c1a77c4-98e1-41a8-9653-c3d1740975f5")
-		)
-		(pin "1"
-			(uuid "8c76a574-5dd0-44d9-b4f6-a087c99e5675")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 114.3 63.5 0)
+		(at 114.3 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "19ad0fc7-85f8-462f-b284-8790a3d32396")
-		(property "Reference" "C36"
-			(at 117.221 61.1886 0)
+		(property "Reference" "C30"
+			(at 117.221 86.5886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6455,7 +6029,7 @@
 			)
 		)
 		(property "Value" "1µF"
-			(at 117.221 63.5 0)
+			(at 117.221 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6464,7 +6038,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 115.2652 67.31 0)
+			(at 115.2652 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6473,7 +6047,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 114.3 63.5 0)
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6482,7 +6056,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 63.5 0)
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6490,7 +6064,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 117.221 65.8114 0)
+			(at 117.221 91.2114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6499,7 +6073,7 @@
 			)
 		)
 		(property "Part_number" "GRM155R61H105KE05D"
-			(at 114.3 63.5 0)
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6508,7 +6082,7 @@
 			)
 		)
 		(property "LCSC" "C1518208"
-			(at 114.3 63.5 0)
+			(at 114.3 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6525,7 +6099,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C36")
+					(reference "C30")
 					(unit 1)
 				)
 			)
@@ -7383,7 +6957,7 @@
 	)
 	(symbol
 		(lib_id "power:+2V5")
-		(at 114.3 50.8 0)
+		(at 114.3 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7391,8 +6965,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "49d16b5e-7bfe-4cd3-8908-fc0eb7e2287c")
-		(property "Reference" "#PWR058"
-			(at 114.3 54.61 0)
+		(property "Reference" "#PWR057"
+			(at 114.3 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7401,7 +6975,7 @@
 			)
 		)
 		(property "Value" "+2V5"
-			(at 114.3 45.72 0)
+			(at 114.3 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7409,7 +6983,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 50.8 0)
+			(at 114.3 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7418,7 +6992,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 50.8 0)
+			(at 114.3 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7427,7 +7001,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+2V5\""
-			(at 114.3 50.8 0)
+			(at 114.3 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7441,168 +7015,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR058")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 127 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "518910f4-47b1-4c71-aaf5-680c7b87626f")
-		(property "Reference" "C42"
-			(at 129.921 99.2886 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 129.921 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 127.9652 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
-			(at 127 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 127 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "50V"
-			(at 129.921 103.9114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part_number" "GRM155R71H104KE14D"
-			(at 127 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C77020"
-			(at 127 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f3212da7-7e19-4a79-9c14-30c4e05e9010")
-		)
-		(pin "2"
-			(uuid "7c3e9182-e5e6-4c41-a5d2-c429126a9040")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C42")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 127 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "79f01fd8-b8e7-4603-a855-c899cf5365dc")
-		(property "Reference" "#PWR067"
-			(at 127 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 127 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 127 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 127 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "57192550-a949-4987-8338-1165cf624ac5")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR067")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -7618,7 +7031,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "81145f6f-c899-4e1a-9499-0a8e7a0c5d81")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR055"
 			(at 215.9 72.39 0)
 			(effects
 				(font
@@ -7668,7 +7081,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR060")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -7684,7 +7097,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85adbaa3-6491-4bd6-a211-cc0499e7159e")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR054"
 			(at 203.2 72.39 0)
 			(effects
 				(font
@@ -7734,7 +7147,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR059")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -7742,7 +7155,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 127 76.2 0)
+		(at 127 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7750,8 +7163,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9063690d-c61d-4c61-864a-be3d0073445e")
-		(property "Reference" "#PWR062"
-			(at 127 82.55 0)
+		(property "Reference" "#PWR059"
+			(at 127 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7760,7 +7173,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 127 81.28 0)
+			(at 127 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7768,7 +7181,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 127 76.2 0)
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7777,7 +7190,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 127 76.2 0)
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7786,7 +7199,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 127 76.2 0)
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7800,7 +7213,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR062")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -7808,7 +7221,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 76.2 76.2 0)
+		(at 76.2 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7816,8 +7229,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92c93716-a125-449a-ad59-5fe692cd72cf")
-		(property "Reference" "#PWR061"
-			(at 76.2 82.55 0)
+		(property "Reference" "#PWR058"
+			(at 76.2 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7826,7 +7239,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 76.2 81.28 0)
+			(at 76.2 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7834,7 +7247,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 76.2 76.2 0)
+			(at 76.2 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7843,7 +7256,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 76.2 76.2 0)
+			(at 76.2 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7852,7 +7265,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 76.2 76.2 0)
+			(at 76.2 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7866,7 +7279,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR061")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -7874,7 +7287,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V1")
-		(at 50.8 50.8 0)
+		(at 50.8 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7882,8 +7295,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "947af76c-265d-4852-b150-0ac8c2efdd7c")
-		(property "Reference" "#PWR057"
-			(at 50.8 54.61 0)
+		(property "Reference" "#PWR056"
+			(at 50.8 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7892,7 +7305,7 @@
 			)
 		)
 		(property "Value" "+1V1"
-			(at 50.8 45.72 0)
+			(at 50.8 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7900,7 +7313,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 50.8 0)
+			(at 50.8 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7909,7 +7322,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 50.8 0)
+			(at 50.8 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7918,7 +7331,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+1V1\""
-			(at 50.8 50.8 0)
+			(at 50.8 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7932,102 +7345,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR057")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 50.8 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a199b6ae-a1e9-446c-bb5c-099285ea29bd")
-		(property "Reference" "C38"
-			(at 53.721 99.2886 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1µF"
-			(at 53.721 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 51.7652 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410010232_Murata-Electronics-GRM155R61H105KE05D_C1518208.pdf"
-			(at 50.8 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "50V"
-			(at 53.721 103.9114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part_number" "GRM155R61H105KE05D"
-			(at 50.8 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C1518208"
-			(at 50.8 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ddefabe1-761d-4d61-b5c1-1db0729d4e30")
-		)
-		(pin "1"
-			(uuid "28f5e930-98bc-4cee-9e05-69adea20dac1")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C38")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -8043,7 +7361,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "afc98a32-8eed-41e7-9e03-7d1a0ef76555")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR060"
 			(at 203.2 115.57 0)
 			(effects
 				(font
@@ -8093,73 +7411,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR065")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V1")
-		(at 50.8 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c01bd13d-82b1-47bb-be64-4068f98a95f9")
-		(property "Reference" "#PWR063"
-			(at 50.8 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+1V1"
-			(at 50.8 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 50.8 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V1\""
-			(at 50.8 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "32bdb44a-4494-46ee-bfe9-8fb7a57038ff")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR063")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -8167,15 +7419,15 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 127 63.5 0)
+		(at 127 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "cda719b2-8f5e-434a-9300-6ab98ae9ed05")
-		(property "Reference" "C37"
-			(at 129.921 61.1886 0)
+		(property "Reference" "C31"
+			(at 129.921 86.5886 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8184,7 +7436,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 129.921 63.5 0)
+			(at 129.921 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8193,7 +7445,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 127.9652 67.31 0)
+			(at 127.9652 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8202,7 +7454,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
-			(at 127 63.5 0)
+			(at 127 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8211,7 +7463,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 127 63.5 0)
+			(at 127 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8219,7 +7471,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 129.921 65.8114 0)
+			(at 129.921 91.2114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8228,7 +7480,7 @@
 			)
 		)
 		(property "Part_number" "GRM155R71H104KE14D"
-			(at 127 63.5 0)
+			(at 127 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8237,7 +7489,7 @@
 			)
 		)
 		(property "LCSC" "C77020"
-			(at 127 63.5 0)
+			(at 127 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8254,234 +7506,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+2V5")
-		(at 114.3 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dca044c4-5006-413c-8658-86851b42b3c2")
-		(property "Reference" "#PWR064"
-			(at 114.3 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+2V5"
-			(at 114.3 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+2V5\""
-			(at 114.3 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6484fafa-bc4b-4869-bdff-c3228adf3974")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR064")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 76.2 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef77e0a8-6fc4-494a-b745-79d61e6b2fd0")
-		(property "Reference" "#PWR066"
-			(at 76.2 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 76.2 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 76.2 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b2f83eb8-5b33-4292-8508-9c7d28057f3f")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "#PWR066")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 76.2 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f94b5f2f-0b2f-4beb-9495-98b56b6a7b74")
-		(property "Reference" "C40"
-			(at 79.121 99.2886 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 79.121 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 77.1652 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121858_Murata-Electronics-GRM155R71H104KE14D_C77020.pdf"
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Voltage" "50V"
-			(at 79.121 103.9114 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part_number" "GRM155R71H104KE14D"
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C77020"
-			(at 76.2 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "112e0f67-32d0-4b61-8a36-8019a6f5ff6d")
-		)
-		(pin "2"
-			(uuid "e2aac5a4-8253-496d-8cdd-fea9c47a85db")
-		)
-		(instances
-			(project "clavier"
-				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/e36c52fe-7af8-49a0-bf3c-a636c30fc9cb"
-					(reference "C40")
+					(reference "C31")
 					(unit 1)
 				)
 			)
