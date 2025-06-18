@@ -13,6 +13,7 @@ LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += PLL.vhd
+SOURCES += USB_Device.vhd
 SOURCES += VectorCDC.vhd
 
 
