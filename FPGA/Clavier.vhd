@@ -26,6 +26,12 @@ architecture Clavier_arch of Clavier is
     signal clrn:       std_logic;
     signal pll_clk:    std_logic;
     signal pll_locked: std_logic;
+
+    -- USB signals
+    signal usb_oe:             std_logic;
+    signal usb_dn_out:         std_logic;
+    signal usb_dp_out:         std_logic;
+    signal usb_dp_pull_enable: std_logic;
 begin
 
     -- PLL for the USB controller
@@ -48,9 +54,16 @@ begin
             CLK_96MHz   => pll_clk,
             CLRn        => clrn,
 
-            USB_DN      => USB_DN,
-            USB_DP      => USB_DP,
-            USB_DP_PULL => USB_DP_PULL
+            USB_OE      => usb_oe,
+            USB_DN_IN   => USB_DN,
+            USB_DP_IN   => USB_DP,
+            USB_DN_OUT  => usb_dn_out,
+            USB_DP_OUT  => usb_dp_out,
+            USB_DN_PULL => open,
+            USB_DP_PULL => usb_dp_pull_enable
         );
+    USB_DN      <= usb_dn_out when usb_oe = '1' else 'Z';
+    USB_DP      <= usb_dp_out when usb_oe = '1' else 'Z';
+    USB_DP_PULL <= '1' when usb_dp_pull_enable = '1' else 'Z';
 
 end Clavier_arch;
