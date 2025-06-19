@@ -14,6 +14,7 @@ PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += PLL.vhd
 SOURCES += USB_Device.vhd
+SOURCES += USB_PHY.vhd
 SOURCES += VectorCDC.vhd
 
 
