@@ -15,7 +15,7 @@ entity USB_Device is
         FULL_SPEED: boolean := true
     );
     port (
-        CLK_96MHz:   in  std_logic;
+        CLK_48MHz:   in  std_logic;
         CLRn:        in  std_logic := '1';
 
         USB_OE:      out std_logic;
@@ -81,7 +81,7 @@ begin
             FULL_SPEED => FULL_SPEED
         )
         port map (
-            CLK_96MHz   => clk_96MHz,
+            CLK_48MHz   => clk_48MHz,
             CLRn        => clrn,
 
             USB_OE      => USB_OE,
@@ -101,9 +101,9 @@ begin
         );
 
     -- State handling process
-    process (CLK_96MHz)
+    process (CLK_48MHz)
     begin
-        if rising_edge(CLK_96MHz) then
+        if rising_edge(CLK_48MHz) then
             case usb_state is
                 when detached =>
                     -- Keep all lines deactivated
@@ -191,9 +191,9 @@ begin
     end process;
 
     -- Token packet decoder
-    process (CLK_96MHz)
+    process (CLK_48MHz)
     begin
-        if rising_edge(CLK_96MHz) then
+        if rising_edge(CLK_48MHz) then
             case token_decoder_state is
                 when idle =>
                     -- Wait for a new packet
@@ -240,7 +240,7 @@ begin
 
                 when wait_eop =>
                     -- Wait for the end of packet
-                    if rx_eop = '1' then
+                    if usb_state = eop or usb_state = idle then
                         token_decoder_state <= idle;
                     end if;
             end case;

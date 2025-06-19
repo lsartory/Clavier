@@ -106,7 +106,7 @@ begin
     pll_inst: EHXPLLL
         generic map (
             CLKI_DIV         => 1,
-            CLKFB_DIV        => 8,
+            CLKFB_DIV        => 4,
             CLKOP_DIV        => 12,
             CLKOS_DIV        => 1,
             CLKOS2_DIV       => 1,

@@ -30,7 +30,7 @@ $(BUILDDIR)/$(TOPLEVEL).json: $(BUILDDIR)/work-obj93.cf
 	yosys -t -m ghdl -p 'ghdl -Wall --workdir=$(BUILDDIR) -P$(BUILDDIR) $(TOPLEVEL); stat; synth_ecp5 -iopad -json $@' -l $(BUILDDIR)/yosys.rpt
 
 $(BUILDDIR)/$(TOPLEVEL).config: $(BUILDDIR)/$(TOPLEVEL).json
-	nextpnr-ecp5 --package $(PACKAGE) --$(SIZE) --speed $(SPEED) --pre-pack $(PREPACK) --lpf $(LPFFILE) --json $< --textcfg $@ -l $(BUILDDIR)/nextpnt.rpt
+	nextpnr-ecp5 --package $(PACKAGE) --$(SIZE) --speed $(SPEED) --pre-pack $(PREPACK) --lpf $(LPFFILE) --json $< --textcfg $@ -l $(BUILDDIR)/nextpnr.rpt
 
 $(BUILDDIR)/$(TOPLEVEL).bit: $(BUILDDIR)/$(TOPLEVEL).config
 	ecppack $< $@

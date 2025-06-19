@@ -15,7 +15,7 @@ entity USB_PHY is
         FULL_SPEED: boolean := true
     );
     port (
-        CLK_96MHz:   in  std_logic;
+        CLK_48MHz:   in  std_logic;
         CLRn:        in  std_logic := '1';
 
         USB_OE:      out std_logic;
@@ -66,7 +66,7 @@ begin
     -- Input synchronization
     usb_cdc: entity work.VectorCDC
         port map (
-            TARGET_CLK => CLK_96MHz,
+            TARGET_CLK => CLK_48MHz,
             INPUT(0)   => USB_DN_IN,
             INPUT(1)   => USB_DP_IN,
             OUTPUT(0)  => usb_dn_sync,
@@ -74,13 +74,13 @@ begin
         );
 
     -- Line input filter process
-    process (CLK_96MHz)
+    process (CLK_48MHz)
         variable input_vector:    std_logic_vector(2 downto 0);
         variable bit_length:      unsigned(line_counter'range);
         variable bit_threshold:   unsigned(line_counter'range);
         variable prev_line_state: line_state_t;
     begin
-        if rising_edge(CLK_96MHz) then
+        if rising_edge(CLK_48MHz) then
             line_state_valid <= '0';
 
             -- Decode the line state depending on the chosen speed
@@ -102,12 +102,12 @@ begin
             end case;
 
             -- Filter the line state
-            bit_length    := to_unsigned(64, bit_length'length);
-            bit_threshold := to_unsigned(32, bit_length'length);
+            bit_length    := to_unsigned(32, bit_length'length);
+            bit_threshold := to_unsigned(16, bit_length'length);
             if FULL_SPEED then
                 input_vector(2) := '1';
-                bit_length    := to_unsigned(8, bit_length'length);
-                bit_threshold := to_unsigned(4, bit_length'length);
+                bit_length    := to_unsigned(4, bit_length'length);
+                bit_threshold := to_unsigned(2, bit_length'length);
             end if;
             if prev_line_state /= K and line_state = K and line_resync = '1' then
                 -- Resynchronize
@@ -174,10 +174,10 @@ begin
     end process;
 
     -- Receiver process
-    process (CLK_96MHz)
+    process (CLK_48MHz)
         variable prev_line_state: line_state_t;
     begin
-        if rising_edge(CLK_96MHz) then
+        if rising_edge(CLK_48MHz) then
             RX_VALID   <= '0';
             RX_EOP     <= '0';
             RX_ERROR   <= '0';

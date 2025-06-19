@@ -51,7 +51,7 @@ begin
 
     usb_dev: entity work.USB_Device
         port map (
-            CLK_96MHz   => pll_clk,
+            CLK_48MHz   => pll_clk,
             CLRn        => clrn,
 
             USB_OE      => usb_oe,
