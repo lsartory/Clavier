@@ -24,7 +24,9 @@ entity USB_Device is
         USB_DN_OUT:  out std_logic;
         USB_DP_OUT:  out std_logic;
         USB_DN_PULL: out std_logic;
-        USB_DP_PULL: out std_logic
+        USB_DP_PULL: out std_logic;
+
+        FRAME_START: out std_logic
     );
 end entity USB_Device;
 
@@ -54,7 +56,7 @@ architecture USB_Device_arch of USB_Device is
     signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: reset value
     signal rx_pid: std_logic_vector(3 downto 0);
 
-    signal rx_ack: std_logic;
+    signal rx_ack:  std_logic;
     signal rx_nack: std_logic;
 
     type token_type_t is (
@@ -213,6 +215,8 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
+            FRAME_START <= '0';
+
             case token_decoder_state is
                 when idle =>
                     -- Wait for a new packet
@@ -240,11 +244,12 @@ begin
                     end if;
 
                 when decode_data =>
+                    -- Decode the received data
                     if token_crc_counter = 0 then
-                        -- Decode the received data
                         if token_crc5 = "01100" then
-                            token_type <= token_none;
-                            if unsigned(token_shift_reg(10 downto 4)) = device_address then
+                            if token_shift_reg(3 downto 0) = "0101" then
+                                FRAME_START <= '1';
+                            elsif unsigned(token_shift_reg(10 downto 4)) = device_address then
                                 case token_shift_reg(3 downto 0) is
                                     when "0001" => token_type <= token_out;
                                     when "1001" => token_type <= token_in;
@@ -263,6 +268,9 @@ begin
                         token_decoder_state <= idle;
                     end if;
             end case;
+            if usb_state = sync then
+                token_decoder_state <= idle;
+            end if;
 
             -- Compute CRC5
             if token_crc_counter > 0 then
@@ -280,6 +288,7 @@ begin
                 token_type          <= token_none;
                 token_endpoint      <= (others => '0');
                 token_decoder_state <= idle;
+                FRAME_START         <= '0';
             end if;
         end if;
     end process;

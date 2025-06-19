@@ -60,7 +60,9 @@ begin
             USB_DN_OUT  => usb_dn_out,
             USB_DP_OUT  => usb_dp_out,
             USB_DN_PULL => open,
-            USB_DP_PULL => usb_dp_pull_enable
+            USB_DP_PULL => usb_dp_pull_enable,
+
+            FRAME_START => open
         );
     USB_DN      <= usb_dn_out when usb_oe = '1' else 'Z';
     USB_DP      <= usb_dp_out when usb_oe = '1' else 'Z';
