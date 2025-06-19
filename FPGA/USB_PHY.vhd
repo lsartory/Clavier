@@ -42,14 +42,13 @@ architecture USB_PHY_arch of USB_PHY is
     signal usb_dp_sync: std_logic;
 
     type line_state_t is (J, K, SE0, SE1);
-    signal line_state:          line_state_t;
-    signal line_state_filtered: line_state_t;
-    signal line_state_valid:    std_logic;
-    signal line_resync:         std_logic;
-    signal line_counter:        unsigned(6 downto 0);
-    signal line_counter_j:      unsigned(line_counter'range);
-    signal line_counter_k:      unsigned(line_counter'range);
-    signal line_counter_se0:    unsigned(line_counter'range);
+    signal line_state:         line_state_t;
+    signal line_state_sampled: line_state_t;
+    signal line_idle:          std_logic;
+    signal line_idle_prev:     std_logic;
+    signal line_state_valid:   std_logic;
+    signal line_counter:       unsigned(6 downto 0);
+    signal line_timeout:       unsigned(3 downto 0);
 
     signal rx_idle:          std_logic;
     signal rx_idle_prev:     std_logic;
@@ -73,12 +72,11 @@ begin
             OUTPUT(1)  => usb_dp_sync
         );
 
-    -- Line input filter process
+    -- Line input sampling process
     process (CLK_48MHz)
-        variable input_vector:    std_logic_vector(2 downto 0);
-        variable bit_length:      unsigned(line_counter'range);
-        variable bit_threshold:   unsigned(line_counter'range);
-        variable prev_line_state: line_state_t;
+        variable input_vector:     std_logic_vector(2 downto 0);
+        variable usb_dn_sync_prev: std_logic;
+        variable usb_dp_sync_prev: std_logic;
     begin
         if rising_edge(CLK_48MHz) then
             line_state_valid <= '0';
@@ -101,75 +99,48 @@ begin
                 when others => line_state <= SE1;
             end case;
 
-            -- Filter the line state
-            bit_length    := to_unsigned(32, bit_length'length);
-            bit_threshold := to_unsigned(16, bit_length'length);
-            if FULL_SPEED then
-                input_vector(2) := '1';
-                bit_length    := to_unsigned(4, bit_length'length);
-                bit_threshold := to_unsigned(2, bit_length'length);
-            end if;
-            if prev_line_state /= K and line_state = K and line_resync = '1' then
-                -- Resynchronize
-                line_resync      <= '0';
-                line_counter     <= to_unsigned(1, line_counter'length);
-                line_counter_j   <= (others => '0');
-                line_counter_k   <= to_unsigned(1, line_counter_k'length);
-                line_counter_se0 <= (others => '0');
-            elsif line_counter < bit_length then
-                -- Count occurences
-                line_counter <= line_counter + 1;
-                case line_state is
-                    when J   => line_counter_j   <= line_counter_j   + 1;
-                    when K   => line_counter_k   <= line_counter_k   + 1;
-                    when SE0 => line_counter_se0 <= line_counter_se0 + 1;
-                    when SE1 => null;
-                end case;
-            elsif line_resync = '0' then
-                -- Majority filter
-                if line_counter_j >= bit_threshold then
-                    line_state_filtered <= J;
-                elsif line_counter_k >= bit_threshold then
-                    line_state_filtered <= K;
-                elsif line_counter_se0 >= bit_threshold then
-                    line_state_filtered <= SE0;
-                else
-                    line_state_filtered <= SE1;
+            -- Detect edges or sample bits
+            if (FULL_SPEED and usb_dn_sync /= usb_dn_sync_prev) or (not FULL_SPEED and usb_dp_sync /= usb_dp_sync_prev) then
+                -- Set the next sampling time for a half bit, according to the selected speed
+                line_counter <= to_unsigned(16, line_counter'length) - 1;
+                if FULL_SPEED then
+                    line_counter <= to_unsigned(2, line_counter'length) - 1;
                 end if;
-                line_counter     <= to_unsigned(1, line_counter'length);
-                line_counter_j   <= (others => '0');
-                line_counter_k   <= (others => '0');
-                line_counter_se0 <= (others => '0');
-                case line_state is
-                    when J   => line_counter_j   <= to_unsigned(1, line_counter_j'length);
-                    when K   => line_counter_k   <= to_unsigned(1, line_counter_k'length);
-                    when SE0 => line_counter_se0 <= to_unsigned(1, line_counter_se0'length);
-                    when SE1 => null;
-                end case;
-                line_state_valid <= '1';
-            end if;
-            prev_line_state := line_state;
+                line_timeout <= (others => '0');
+                line_idle    <= '0';
+            elsif line_counter = 0 and line_idle = '0' then
+                -- Set the next sampling time for a full bit, according to the selected speed
+                line_counter <= to_unsigned(32, line_counter'length) - 1;
+                if FULL_SPEED then
+                    line_counter <= to_unsigned(4, line_counter'length) - 1;
+                end if;
+                line_timeout <= line_timeout + 1;
 
-            -- Resynchronization enable
-            if rx_idle = '1' and rx_idle_prev = '0' then
-                line_resync      <= '1';
-                line_counter     <= (others => '0');
-                line_counter_j   <= (others => '0');
-                line_counter_k   <= (others => '0');
-                line_counter_se0 <= (others => '0');
+                -- Sample the line state
+                line_state_sampled <= line_state;
+                line_state_valid   <= '1';
+            elsif line_counter > 0 then
+                line_counter <= line_counter - 1;
+            end if;
+
+            -- Resynchronization
+            if (rx_idle = '1' and rx_idle_prev = '0') or line_timeout >= 8 then
+                line_idle <= '1';
             end if;
 
             -- Synchronous reset
             if CLRn = '0' then
-                line_resync         <= '1';
-                line_counter        <= (others => '0');
-                line_counter_j      <= (others => '0');
-                line_counter_k      <= (others => '0');
-                line_counter_se0    <= (others => '0');
-                line_state          <= SE0;
-                line_state_filtered <= SE0;
-                line_state_valid    <= '0';
+                line_idle          <= '1';
+                line_counter       <= (others => '0');
+                line_timeout       <= (others => '0');
+                line_state         <= SE0;
+                line_state_sampled <= SE0;
+                line_state_valid   <= '0';
             end if;
+
+            line_idle_prev   <= line_idle;
+            usb_dn_sync_prev := usb_dn_sync;
+            usb_dp_sync_prev := usb_dp_sync;
         end if;
     end process;
 
@@ -183,13 +154,13 @@ begin
             RX_ERROR   <= '0';
 
             -- Line activity detection
-            if line_state_valid = '1' and line_state_filtered = K then
+            if line_state_valid = '1' and line_state_sampled = K then
                 rx_idle <= '0';
             end if;
 
             -- Receive bits
             if line_state_valid = '1' then
-                if line_state_filtered = prev_line_state then
+                if line_state_sampled = prev_line_state then
                     if rx_stuffing < 6 then
                         rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
                         rx_shift_counter <= rx_shift_counter + 1;
@@ -205,7 +176,7 @@ begin
                     end if;
                     rx_stuffing <= (others => '0');
                 end if;
-                prev_line_state := line_state_filtered;
+                prev_line_state := line_state_sampled;
             end if;
 
             -- Signal full bytes
@@ -217,7 +188,7 @@ begin
 
             -- End of packet shift register
             if line_state_valid = '1' then
-                eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_filtered;
+                eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_sampled;
             end if;
             if eop_shift_reg = (SE0, SE0, J) then
                 eop_shift_reg <= (others => SE0);
@@ -229,7 +200,7 @@ begin
             if line_state /= J then
                 suspend_counter <= (others => '0');
                 RX_SUSPEND      <= '0';
-            elsif reset_counter < 288_000 then -- 3 ms
+            elsif suspend_counter < 288_000 then -- 3 ms
                 suspend_counter <= suspend_counter + 1;
             else
                 RX_SUSPEND <= '1';
@@ -246,7 +217,7 @@ begin
             end if;
 
             -- Resynchronization
-            if rx_idle = '1' and rx_idle_prev = '0' then
+            if line_idle = '0' and line_idle_prev = '1' then
                 rx_shift_reg     <= (others => '0');
                 rx_shift_counter <= (others => '0');
                 rx_stuffing      <= (others => '0');
