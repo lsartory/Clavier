@@ -39,15 +39,17 @@ architecture USB_Device_arch of USB_Device is
     signal line_state_filtered: line_state_t;
     signal line_state_valid:    std_logic;
     signal line_resync:         std_logic;
-    signal line_counter:     unsigned(6 downto 0);
-    signal line_counter_j:   unsigned(line_counter'range);
-    signal line_counter_k:   unsigned(line_counter'range);
-    signal line_counter_se0: unsigned(line_counter'range);
+    signal line_counter:        unsigned(6 downto 0);
+    signal line_counter_j:      unsigned(line_counter'range);
+    signal line_counter_k:      unsigned(line_counter'range);
+    signal line_counter_se0:    unsigned(line_counter'range);
 
     signal rx_shift_reg:     std_logic_vector(7 downto 0);
     signal rx_shift_counter: unsigned(3 downto 0);
+    signal rx_stuffing:      unsigned(3 downto 0);
     signal rx_data:          std_logic_vector(7 downto 0);
     signal rx_valid:         std_logic;
+    signal rx_error:         std_logic;
 
     type usb_state_t is (
         detached,
@@ -184,19 +186,27 @@ begin
     begin
         if rising_edge(CLK_96MHz) then
             rx_valid <= '0';
+            rx_error <= '0';
 
             -- Receive bits
             if line_state_valid = '1' then
                 if line_state_filtered = prev_line_state then
-                    rx_shift_reg <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                    if rx_stuffing < 6 then
+                        rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                        rx_shift_counter <= rx_shift_counter + 1;
+                        rx_stuffing      <= rx_stuffing + 1;
+                    else
+                        rx_error <= '1';
+                    end if;
                 else
-                    rx_shift_reg <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                    if rx_stuffing < 6 then
+                        rx_shift_reg     <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                        rx_shift_counter <= rx_shift_counter + 1;
+                    end if;
+                    rx_stuffing <= (others => '0');
                 end if;
-                rx_shift_counter <= rx_shift_counter + 1;
                 prev_line_state := line_state_filtered;
             end if;
-
-            -- TODO: handle bit stuffing
 
             -- Signal full bytes
             if rx_shift_counter = 8 then
@@ -301,6 +311,11 @@ begin
                 reset_counter <= reset_counter + 1;
             else
                 usb_state <= reset;
+            end if;
+
+            -- Handle receive errors
+            if rx_error = '1' then
+                usb_state <= idle;
             end if;
 
             -- Synchronous reset
