@@ -45,13 +45,36 @@ architecture USB_Device_arch of USB_Device is
         idle,
         sync,
         pid,
-        data,
+        payload,
         eop,
         suspend,
         reset
     );
     signal usb_state: usb_state_t;
+    signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: reset value
     signal rx_pid: std_logic_vector(3 downto 0);
+
+    type token_type_t is (
+        token_none,
+        token_out,
+        token_in,
+        token_setup,
+        token_unknown
+    );
+    type token_decoder_state_t is (
+        idle,
+        load_data_1,
+        load_data_2,
+        decode_data,
+        wait_eop
+    );
+    signal token_decoder_state: token_decoder_state_t;
+    signal token_shift_reg:     std_logic_vector(19 downto 0);
+    signal token_type:          token_type_t;
+    signal token_endpoint:      std_logic_vector(3 downto 0);
+    signal token_crc_shift_reg: std_logic_vector(7 downto 0);
+    signal token_crc_counter:   unsigned(3 downto 0);
+    signal token_crc5:          std_logic_vector(4 downto 0);
 begin
     usb_phy: entity work.USB_PHY
         generic map (
@@ -119,7 +142,7 @@ begin
                 when pid =>
                     -- Get the packet identifier
                     if rx_valid = '1' then
-                        usb_state <= data;
+                        usb_state <= payload;
                         rx_pid    <= rx_data(3 downto 0);
                         for i in 0 to 3 loop
                             if rx_data(i) = rx_data(i + 4) then
@@ -128,13 +151,14 @@ begin
                         end loop;
                     end if;
 
-                when data =>
+                when payload =>
                     -- Detect end of packet
                     if rx_eop = '1' then
                         usb_state <= eop;
                     end if;
 
                 when eop =>
+                    -- Wait for the next packet
                     usb_state <= idle;
 
                 when suspend => null;
@@ -162,6 +186,81 @@ begin
             -- Synchronous reset
             if CLRn = '0' then
                 usb_state <= detached;
+            end if;
+        end if;
+    end process;
+
+    -- Token packet decoder
+    process (CLK_96MHz)
+    begin
+        if rising_edge(CLK_96MHz) then
+            case token_decoder_state is
+                when idle =>
+                    -- Wait for a new packet
+                    if usb_state = payload then
+                        token_shift_reg     <= rx_pid & (15 downto 0 => '0');
+                        token_crc5          <= (others => '1');
+                        token_decoder_state <= load_data_1;
+                    end if;
+
+                when load_data_1 =>
+                    -- Receive the first byte
+                    if rx_valid = '1' then
+                        token_shift_reg     <= rx_data & token_shift_reg(token_shift_reg'high downto token_shift_reg'low + 8);
+                        token_crc_shift_reg <= rx_data;
+                        token_crc_counter   <= to_unsigned(8, token_crc_counter'length);
+                        token_decoder_state <= load_data_2;
+                    end if;
+                when load_data_2 =>
+                    -- Receive the second byte
+                    if rx_valid = '1' then
+                        token_shift_reg     <= rx_data & token_shift_reg(token_shift_reg'high downto token_shift_reg'low + 8);
+                        token_crc_shift_reg <= rx_data;
+                        token_crc_counter   <= to_unsigned(8, token_crc_counter'length);
+                        token_decoder_state <= decode_data;
+                    end if;
+
+                when decode_data =>
+                    if token_crc_counter = 0 then
+                        -- Decode the received data
+                        if token_crc5 = "01100" then
+                            token_type <= token_none;
+                            if unsigned(token_shift_reg(10 downto 4)) = device_address then
+                                case token_shift_reg(3 downto 0) is
+                                    when "0001" => token_type <= token_out;
+                                    when "1001" => token_type <= token_in;
+                                    when "1101" => token_type <= token_setup;
+                                    when others => token_type <= token_unknown;
+                                end case;
+                                token_endpoint <= token_shift_reg(14 downto 11);
+                            end if;
+                        end if;
+                        token_decoder_state <= wait_eop;
+                    end if;
+
+                when wait_eop =>
+                    -- Wait for the end of packet
+                    if rx_eop = '1' then
+                        token_decoder_state <= idle;
+                    end if;
+            end case;
+
+            -- Compute CRC5
+            if token_crc_counter > 0 then
+                token_crc_counter   <= token_crc_counter - 1;
+                token_crc_shift_reg <= '0' & token_crc_shift_reg(token_crc_shift_reg'high downto token_crc_shift_reg'low + 1);
+                token_crc5(0)       <= token_crc5(4) xor token_crc_shift_reg(token_crc_shift_reg'low);
+                token_crc5(1)       <= token_crc5(0);
+                token_crc5(2)       <= token_crc5(1) xor token_crc5(4) xor token_crc_shift_reg(token_shift_reg'low);
+                token_crc5(3)       <= token_crc5(2);
+                token_crc5(4)       <= token_crc5(3);
+            end if;
+
+            -- Synchronous reset
+            if CLRn = '0' then
+                token_type          <= token_none;
+                token_endpoint      <= (others => '0');
+                token_decoder_state <= idle;
             end if;
         end if;
     end process;
