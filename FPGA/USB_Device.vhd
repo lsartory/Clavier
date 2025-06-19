@@ -54,6 +54,9 @@ architecture USB_Device_arch of USB_Device is
     signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: reset value
     signal rx_pid: std_logic_vector(3 downto 0);
 
+    signal rx_ack: std_logic;
+    signal rx_nack: std_logic;
+
     type token_type_t is (
         token_none,
         token_out,
@@ -186,6 +189,22 @@ begin
             -- Synchronous reset
             if CLRn = '0' then
                 usb_state <= detached;
+            end if;
+        end if;
+    end process;
+
+    -- Handshake packet decoder
+    process (CLK_48MHz)
+    begin
+        if rising_edge(CLK_48MHz) then
+            rx_ack  <= '0';
+            rx_nack <= '0';
+            if CLRn = '1' and usb_state = eop then
+                case rx_pid is
+                    when "0010" => rx_ack  <= '1';
+                    when "1010" => rx_nack <= '1';
+                    when others => null;
+                end case;
             end if;
         end if;
     end process;
