@@ -56,13 +56,16 @@ architecture USB_Device_arch of USB_Device is
         connect,
         idle,
         sync,
+        pid,
         data,
+        eop,
         suspend,
         reset
     );
     signal usb_state: usb_state_t;
     type eop_shift_reg_t is array(natural range <>) of line_state_t;
     signal eop_shift_reg: eop_shift_reg_t(2 downto 0);
+    signal rx_pid: std_logic_vector(3 downto 0);
 
     signal reset_counter:   unsigned(18 downto 0);
     signal suspend_counter: unsigned(18 downto 0);
@@ -219,6 +222,7 @@ begin
             if prev_usb_state /= idle and usb_state = idle then
                 rx_shift_reg     <= (others => '0');
                 rx_shift_counter <= (others => '0');
+                rx_stuffing      <= (others => '0');
             end if;
             prev_usb_state := usb_state;
 
@@ -226,6 +230,7 @@ begin
             if CLRn = '0' then
                 rx_shift_reg     <= (others => '0');
                 rx_shift_counter <= (others => '0');
+                rx_stuffing      <= (others => '0');
                 rx_data          <= (others => '0');
                 rx_valid         <= '0';
             end if;
@@ -272,15 +277,30 @@ begin
                     if rx_valid = '1' then
                         usb_state <= idle;
                         if rx_data = x"80" then
-                            usb_state <= data;
+                            usb_state <= pid;
                         end if;
+                    end if;
+
+                when pid =>
+                    -- Get the packet identifier
+                    if rx_valid = '1' then
+                        usb_state <= data;
+                        rx_pid    <= rx_data(3 downto 0);
+                        for i in 0 to 3 loop
+                            if rx_data(i) = rx_data(i + 4) then
+                                usb_state <= idle;
+                            end if;
+                        end loop;
                     end if;
 
                 when data =>
                     -- Detect end of packet
                     if eop_shift_reg = (SE0, SE0, J) then
-                        usb_state <= idle;
+                        usb_state <= eop;
                     end if;
+
+                when eop =>
+                    usb_state <= idle;
 
                 when suspend => null;
                     -- Low power mode
