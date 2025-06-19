@@ -53,7 +53,7 @@ architecture USB_Device_arch of USB_Device is
         reset
     );
     signal usb_state: usb_state_t;
-    signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: reset value
+    signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: move to the USB_Setup block
     signal rx_pid: std_logic_vector(3 downto 0);
 
     signal rx_ack:  std_logic;
@@ -80,6 +80,15 @@ architecture USB_Device_arch of USB_Device is
     signal token_crc_shift_reg: std_logic_vector(7 downto 0);
     signal token_crc_counter:   unsigned(3 downto 0);
     signal token_crc5:          std_logic_vector(4 downto 0);
+
+    signal data_start:           std_logic;
+    signal data_end:             std_logic;
+    signal data_parity:          std_logic;
+    signal data_crc_shift_reg:   std_logic_vector(7 downto 0);
+    signal data_crc_counter:     unsigned(3 downto 0);
+    signal data_crc16:           std_logic_vector(15 downto 0);
+    signal rx_data_packet:       std_logic;
+    signal rx_data_packet_valid: std_logic;
 begin
     usb_phy: entity work.USB_PHY
         generic map (
@@ -246,7 +255,7 @@ begin
                 when decode_data =>
                     -- Decode the received data
                     if token_crc_counter = 0 then
-                        if token_crc5 = "01100" then
+                        if token_crc5 = "00110" then
                             if token_shift_reg(3 downto 0) = "0101" then
                                 FRAME_START <= '1';
                             elsif unsigned(token_shift_reg(10 downto 4)) = device_address then
@@ -276,11 +285,9 @@ begin
             if token_crc_counter > 0 then
                 token_crc_counter   <= token_crc_counter - 1;
                 token_crc_shift_reg <= '0' & token_crc_shift_reg(token_crc_shift_reg'high downto token_crc_shift_reg'low + 1);
-                token_crc5(0)       <= token_crc5(4) xor token_crc_shift_reg(token_crc_shift_reg'low);
-                token_crc5(1)       <= token_crc5(0);
-                token_crc5(2)       <= token_crc5(1) xor token_crc5(4) xor token_crc_shift_reg(token_shift_reg'low);
-                token_crc5(3)       <= token_crc5(2);
-                token_crc5(4)       <= token_crc5(3);
+                token_crc5          <= '0' & token_crc5(token_crc5'high downto token_crc5'low + 1);
+                token_crc5(2)       <= token_crc5(3) xor token_crc5(0) xor token_crc_shift_reg(token_crc_shift_reg'low);
+                token_crc5(4)       <= token_crc5(0) xor token_crc_shift_reg(token_crc_shift_reg'low);
             end if;
 
             -- Synchronous reset
@@ -289,6 +296,71 @@ begin
                 token_endpoint      <= (others => '0');
                 token_decoder_state <= idle;
                 FRAME_START         <= '0';
+            end if;
+        end if;
+    end process;
+
+    -- Data packet decoder
+    process (CLK_48MHz)
+    begin
+        if rising_edge(CLK_48MHz) then
+            rx_data_packet_valid <= '0';
+
+            -- Wait for the beginning of a packet
+            case usb_state is
+                when pid =>
+                    rx_data_packet <= '0';
+                    data_start     <= '1';
+
+                when payload =>
+                    if data_start = '1' then
+                        if (data_parity = '0' and rx_pid = "0011")
+                        or (data_parity = '1' and rx_pid = "1011")
+                        then
+                            rx_data_packet <= '1';
+                            data_crc16     <= (others => '1');
+                        end if;
+                    elsif rx_data_packet = '1' and rx_valid = '1' then
+                        data_crc_shift_reg <= rx_data;
+                        data_crc_counter   <= to_unsigned(8, data_crc_counter'length);
+                    end if;
+                    data_start <= '0';
+
+                when eop =>
+                    data_end <= '1';
+
+                when others => null;
+            end case;
+
+            -- Compute CRC16
+            if data_crc_counter > 0 then
+                data_crc_counter   <= data_crc_counter - 1;
+                data_crc_shift_reg <= '0' & data_crc_shift_reg(data_crc_shift_reg'high downto data_crc_shift_reg'low + 1);
+                data_crc16         <= '0' & data_crc16(data_crc16'high downto data_crc16'low + 1);
+                data_crc16(0)      <= data_crc16(1)  xor data_crc16(0) xor data_crc_shift_reg(data_crc_shift_reg'low);
+                data_crc16(13)     <= data_crc16(14) xor data_crc16(0) xor data_crc_shift_reg(data_crc_shift_reg'low);
+                data_crc16(15)     <= data_crc16(0)  xor data_crc_shift_reg(data_crc_shift_reg'low);
+            end if;
+
+            -- Wait for the end of a packet
+            if data_end = '1' and data_crc_counter = 0 then
+                data_end       <= '0';
+                rx_data_packet <= '0';
+                if data_crc16 = "1011000000000001" then
+                    data_parity          <= not data_parity;
+                    rx_data_packet_valid <= '1';
+                end if;
+            end if;
+
+            -- TODO: setup tokens reset data_parity to '0'
+
+            -- Synchronous reset
+            if CLRn = '0' then
+                data_start           <= '0';
+                data_end             <= '0';
+                data_parity          <= '0';
+                rx_data_packet       <= '0';
+                rx_data_packet_valid <= '0';
             end if;
         end if;
     end process;
