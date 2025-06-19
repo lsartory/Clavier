@@ -59,8 +59,8 @@ architecture USB_PHY_arch of USB_PHY is
     type eop_shift_reg_t is array(natural range <>) of line_state_t;
     signal eop_shift_reg: eop_shift_reg_t(2 downto 0);
 
-    signal reset_counter:   unsigned(18 downto 0);
-    signal suspend_counter: unsigned(18 downto 0);
+    signal reset_counter:   unsigned(17 downto 0);
+    signal suspend_counter: unsigned(17 downto 0);
 begin
     -- Input synchronization
     usb_cdc: entity work.VectorCDC
@@ -200,7 +200,7 @@ begin
             if line_state /= J then
                 suspend_counter <= (others => '0');
                 RX_SUSPEND      <= '0';
-            elsif suspend_counter < 288_000 then -- 3 ms
+            elsif suspend_counter <= 144_000 then -- 3 ms
                 suspend_counter <= suspend_counter + 1;
             else
                 RX_SUSPEND <= '1';
@@ -210,7 +210,7 @@ begin
             if line_state /= SE0 then
                 reset_counter <= (others => '0');
                 RX_RESET      <= '0';
-            elsif reset_counter < 240_000 then -- 2.5 ms
+            elsif reset_counter <= 120_000 then -- 2.5 ms
                 reset_counter <= reset_counter + 1;
             else
                 RX_RESET <= '1';
