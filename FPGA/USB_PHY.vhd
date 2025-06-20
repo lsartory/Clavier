@@ -33,6 +33,7 @@ entity USB_PHY is
         RX_SUSPEND:  out std_logic;
         RX_RESET:    out std_logic;
 
+        TX_ACTIVE:   out std_logic;
         TX_ENABLE:   in  std_logic;
         TX_DATA:     in  std_logic_vector(7 downto 0);
         TX_READ:     out std_logic
@@ -71,7 +72,7 @@ architecture USB_PHY_arch of USB_PHY is
     signal reset_counter:   unsigned(17 downto 0);
     signal suspend_counter: unsigned(17 downto 0);
 
-    type tx_state_t is (idle, sending, eop_1, eop_2);
+    type tx_state_t is (idle, start_delay, sending, eop_1, eop_2, end_delay);
     signal tx_state:         tx_state_t;
     signal tx_divider:       unsigned(7 downto 0);
     signal tx_shift_reg:     std_logic_vector(7 downto 0);
@@ -79,6 +80,8 @@ architecture USB_PHY_arch of USB_PHY is
     signal tx_stuffing:      unsigned(3 downto 0);
     signal tx_dn:            std_logic;
     signal tx_dp:            std_logic;
+    signal tx_dn_buf:        std_logic;
+    signal tx_dp_buf:        std_logic;
 begin
     -- Input synchronization
     usb_cdc: entity work.VectorCDC
@@ -167,9 +170,9 @@ begin
         variable prev_line_state: line_state_t;
     begin
         if rising_edge(CLK_48MHz) then
-            RX_VALID   <= '0';
-            RX_EOP     <= '0';
-            RX_ERROR   <= '0';
+            RX_VALID <= '0';
+            RX_EOP   <= '0';
+            RX_ERROR <= '0';
 
             if tx_state = idle then
                 -- Line activity detection
@@ -270,38 +273,43 @@ begin
         if rising_edge(CLK_48MHz) then
             TX_READ <= '0';
 
-            case tx_state is
-                when idle =>
-                    -- Wait for data to be sent
-                    tx_dn  <= '1';
-                    tx_dp  <= '0';
-                    if FULL_SPEED then
-                        tx_dn <= '0';
-                        tx_dp <= '1';
-                    end if;
-                    tx_divider       <= (others => '0');
-                    tx_shift_counter <= to_unsigned(7, tx_shift_counter'length);
-                    tx_stuffing      <= (others => '0');
-                    if TX_ENABLE = '1' then
-                        tx_shift_reg <= TX_DATA;
-                        TX_READ      <= '1';
-                        tx_state     <= sending;
-                    end if;
+            -- Wait for data to be sent
+            if tx_state = idle then
+                tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
+                tx_dn      <= '1';
+                tx_dp      <= '0';
+                if FULL_SPEED then
+                    tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
+                    tx_dn      <= '0';
+                    tx_dp      <= '1';
+                end if;
+                tx_shift_counter <= to_unsigned(8, tx_shift_counter'length);
+                tx_stuffing      <= (others => '0');
+                if TX_ENABLE = '1' then
+                    tx_shift_reg <= TX_DATA;
+                    TX_READ      <= '1';
+                    tx_state     <= start_delay;
+                end if;
+            elsif tx_divider > 0 then
+                -- Divide the clock frequency to reach the target bitrate
+                tx_divider <= tx_divider - 1;
+            else
+                case tx_state is
+                    when idle => null;
 
-                when sending =>
-                    -- Divide the clock frequency to reach the target speed
-                    if tx_divider > 0 then
-                        tx_divider <= tx_divider - 1;
-                    else
-                        tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
-                        if FULL_SPEED then
-                            tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH, tx_divider'length) - 1;
-                        end if;
+                    when start_delay =>
+                        -- Delay a bit before sending
+                        tx_state <= sending;
 
+                    when sending =>
                         -- Send data bit by bit
                         tx_shift_reg     <= '0' & tx_shift_reg(tx_shift_reg'high downto tx_shift_reg'low + 1);
                         tx_shift_counter <= tx_shift_counter - 1;
                         tx_stuffing      <= (others => '0');
+                        tx_divider       <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        if FULL_SPEED then
+                            tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        end if;
 
                         -- Check if bit stuffing is required
                         if tx_shift_reg(tx_shift_reg'low) = '1' then
@@ -319,28 +327,22 @@ begin
                         end if;
 
                         -- Check if more data is available
-                        if tx_shift_counter = 0 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
-                            if TX_ENABLE = '1' then
-                                tx_shift_reg     <= TX_DATA;
-                                tx_shift_counter <= to_unsigned(7, tx_shift_counter'length);
-                                TX_READ          <= '1';
-                            else
-                                tx_dn      <= '0';
-                                tx_dp      <= '0';
-                                tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
-                                if FULL_SPEED then
-                                    tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
-                                end if;
-                                tx_state <= eop_1;
+                        if TX_ENABLE = '1' and tx_shift_counter = 1 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                            tx_shift_reg     <= TX_DATA;
+                            tx_shift_counter <= to_unsigned(8, tx_shift_counter'length);
+                            TX_READ          <= '1';
+                        elsif tx_shift_counter = 0 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                            tx_dn      <= '0';
+                            tx_dp      <= '0';
+                            tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
+                            if FULL_SPEED then
+                                tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
                             end if;
+                            tx_state <= eop_1;
                         end if;
-                    end if;
 
-                when eop_1 =>
-                    -- Send SE0 twice
-                    if tx_divider > 0 then
-                        tx_divider <= tx_divider - 1;
-                    else
+                    when eop_1 =>
+                        -- Send SE0 twice
                         tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
                         tx_dn      <= '1';
                         tx_dp      <= '0';
@@ -350,22 +352,28 @@ begin
                             tx_dp      <= '1';
                         end if;
                         tx_state <= eop_2;
-                    end if;
 
-                when eop_2 =>
-                    -- Send J once
-                    if tx_divider > 0 then
-                        tx_divider <= tx_divider - 1;
-                    else
+                    when eop_2 =>
+                        -- Send J once
+                        tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        if FULL_SPEED then
+                            tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        end if;
+                        tx_state <= end_delay;
+
+                    when end_delay =>
+                        -- Delay a bit after sending
                         tx_state <= idle;
-                    end if;
-            end case;
+                end case;
+            end if;
 
             -- Drive the USB lines
-            if tx_state /= idle then
-                USB_OE     <= '0'; -- TODO: test first
-                USB_DN_OUT <= tx_dn;
-                USB_DP_OUT <= tx_dp;
+            tx_dn_buf <= tx_dn;
+            tx_dp_buf <= tx_dp;
+            if tx_state /= idle and tx_state /= start_delay and tx_state /= end_delay then
+                USB_OE     <= '1';
+                USB_DN_OUT <= tx_dn_buf;
+                USB_DP_OUT <= tx_dp_buf;
             else
                 USB_OE     <= '0';
                 USB_DN_OUT <= '0';
@@ -382,5 +390,6 @@ begin
             end if;
         end if;
     end process;
+    TX_ACTIVE <= '1' when tx_state = idle else '0';
 
 end USB_PHY_arch;

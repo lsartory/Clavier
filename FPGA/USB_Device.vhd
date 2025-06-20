@@ -95,6 +95,10 @@ architecture USB_Device_arch of USB_Device is
     signal data_crc16:           std_logic_vector(15 downto 0);
     signal rx_data_packet:       std_logic;
     signal rx_data_packet_valid: std_logic;
+
+    signal tx_send_ack:  std_logic;
+    signal tx_send_nak:  std_logic;
+    signal tx_wait_read: std_logic;
 begin
     usb_phy: entity work.USB_PHY
         generic map (
@@ -119,6 +123,7 @@ begin
             RX_SUSPEND  => rx_suspend,
             RX_RESET    => rx_reset,
 
+            TX_ACTIVE   => open,
             TX_ENABLE   => tx_enable,
             TX_DATA     => tx_data,
             TX_READ     => tx_read
@@ -387,12 +392,37 @@ begin
         if rising_edge(CLK_48MHz) then
             tx_enable <= '0';
 
+            -- Check if an ACK or NAK needs to be sent
             if tx_ack = '1' then
-                tx_enable <= '1';
-                tx_data   <= x"CA"; -- TODO
+                tx_enable    <= '1';
+                tx_data      <= x"80";
+                tx_send_ack  <= '1';
+                tx_wait_read <= '1';
             elsif tx_nak = '1' then
+                tx_enable    <= '1';
+                tx_data      <= x"80";
+                tx_send_nak  <= '1';
+                tx_wait_read <= '1';
+            end if;
+
+            -- Send the second byte of the ACK or NAK packet
+            if tx_wait_read = '1' then
                 tx_enable <= '1';
-                tx_data   <= x"FE"; -- TODO
+                if tx_read = '1' then
+                    tx_wait_read <= '0';
+                end if;
+            elsif tx_send_ack = '1' then
+                tx_enable <= '1';
+                tx_data   <= x"D2";
+                if tx_read = '1' then
+                    tx_send_ack <= '0';
+                end if;
+            elsif tx_send_nak = '1' then
+                tx_enable <= '1';
+                tx_data   <= x"5A";
+                if tx_read = '1' then
+                    tx_send_nak <= '0';
+                end if;
             end if;
 
             -- Synchronous reset
