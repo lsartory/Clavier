@@ -31,13 +31,22 @@ entity USB_PHY is
 
         RX_ERROR:    out std_logic;
         RX_SUSPEND:  out std_logic;
-        RX_RESET:    out std_logic
+        RX_RESET:    out std_logic;
+
+        TX_ENABLE:   in  std_logic;
+        TX_DATA:     in  std_logic_vector(7 downto 0);
+        TX_READ:     out std_logic
     );
 end entity USB_PHY;
 
 --------------------------------------------------
 
 architecture USB_PHY_arch of USB_PHY is
+    constant LOW_SPEED_BIT_LENGTH:  natural :=      32; -- 1.5 Mbps
+    constant FULL_SPEED_BIT_LENGTH: natural :=       4; --  12 Mbps
+    constant SUSPEND_LENGTH:        natural := 144_000; -- 3.0 ms
+    constant RESET_LENGTH:          natural := 120_000; -- 2.5 ms
+
     signal usb_dn_sync: std_logic;
     signal usb_dp_sync: std_logic;
 
@@ -61,6 +70,15 @@ architecture USB_PHY_arch of USB_PHY is
 
     signal reset_counter:   unsigned(17 downto 0);
     signal suspend_counter: unsigned(17 downto 0);
+
+    type tx_state_t is (idle, sending, eop_1, eop_2);
+    signal tx_state:         tx_state_t;
+    signal tx_divider:       unsigned(7 downto 0);
+    signal tx_shift_reg:     std_logic_vector(7 downto 0);
+    signal tx_shift_counter: unsigned(3 downto 0);
+    signal tx_stuffing:      unsigned(3 downto 0);
+    signal tx_dn:            std_logic;
+    signal tx_dp:            std_logic;
 begin
     -- Input synchronization
     usb_cdc: entity work.VectorCDC
@@ -102,17 +120,17 @@ begin
             -- Detect edges or sample bits
             if (FULL_SPEED and usb_dn_sync /= usb_dn_sync_prev) or (not FULL_SPEED and usb_dp_sync /= usb_dp_sync_prev) then
                 -- Set the next sampling time for a half bit, according to the selected speed
-                line_counter <= to_unsigned(16, line_counter'length) - 1;
+                line_counter <= to_unsigned(LOW_SPEED_BIT_LENGTH / 2, line_counter'length) - 1;
                 if FULL_SPEED then
-                    line_counter <= to_unsigned(2, line_counter'length) - 1;
+                    line_counter <= to_unsigned(FULL_SPEED_BIT_LENGTH / 2, line_counter'length) - 1;
                 end if;
                 line_timeout <= (others => '0');
                 line_idle    <= '0';
             elsif line_counter = 0 and line_idle = '0' then
                 -- Set the next sampling time for a full bit, according to the selected speed
-                line_counter <= to_unsigned(32, line_counter'length) - 1;
+                line_counter <= to_unsigned(LOW_SPEED_BIT_LENGTH, line_counter'length) - 1;
                 if FULL_SPEED then
-                    line_counter <= to_unsigned(4, line_counter'length) - 1;
+                    line_counter <= to_unsigned(FULL_SPEED_BIT_LENGTH, line_counter'length) - 1;
                 end if;
                 line_timeout <= line_timeout + 1;
 
@@ -153,74 +171,76 @@ begin
             RX_EOP     <= '0';
             RX_ERROR   <= '0';
 
-            -- Line activity detection
-            if line_state_valid = '1' and line_state_sampled = K then
-                rx_idle <= '0';
-            end if;
-
-            -- Receive bits
-            if line_state_valid = '1' then
-                if line_state_sampled = prev_line_state then
-                    if rx_stuffing < 6 then
-                        rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
-                        rx_shift_counter <= rx_shift_counter + 1;
-                        rx_stuffing      <= rx_stuffing + 1;
-                    else
-                        rx_idle  <= '1';
-                        RX_ERROR <= '1';
-                    end if;
-                else
-                    if rx_stuffing < 6 then
-                        rx_shift_reg     <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
-                        rx_shift_counter <= rx_shift_counter + 1;
-                    end if;
-                    rx_stuffing <= (others => '0');
+            if tx_state = idle then
+                -- Line activity detection
+                if line_state_valid = '1' and line_state_sampled = K then
+                    rx_idle <= '0';
                 end if;
-                prev_line_state := line_state_sampled;
-            end if;
 
-            -- Signal full bytes
-            if rx_shift_counter = 8 then
-                rx_shift_counter <= (others => '0');
-                RX_DATA          <= rx_shift_reg;
-                RX_VALID         <= '1';
-            end if;
+                -- Receive bits
+                if line_state_valid = '1' then
+                    if line_state_sampled = prev_line_state then
+                        if rx_stuffing < 6 then
+                            rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                            rx_shift_counter <= rx_shift_counter + 1;
+                            rx_stuffing      <= rx_stuffing + 1;
+                        else
+                            rx_idle  <= '1';
+                            RX_ERROR <= '1';
+                        end if;
+                    else
+                        if rx_stuffing < 6 then
+                            rx_shift_reg     <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                            rx_shift_counter <= rx_shift_counter + 1;
+                        end if;
+                        rx_stuffing <= (others => '0');
+                    end if;
+                    prev_line_state := line_state_sampled;
+                end if;
 
-            -- End of packet shift register
-            if line_state_valid = '1' then
-                eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_sampled;
-            end if;
-            if eop_shift_reg = (SE0, SE0, J) then
-                eop_shift_reg <= (others => SE0);
-                rx_idle <= '1';
-                RX_EOP  <= '1';
-            end if;
+                -- Signal full bytes
+                if rx_shift_counter = 8 then
+                    rx_shift_counter <= (others => '0');
+                    RX_DATA          <= rx_shift_reg;
+                    RX_VALID         <= '1';
+                end if;
 
-            -- Suspend timer
-            if line_state /= J then
-                suspend_counter <= (others => '0');
-                RX_SUSPEND      <= '0';
-            elsif suspend_counter <= 144_000 then -- 3 ms
-                suspend_counter <= suspend_counter + 1;
-            else
-                RX_SUSPEND <= '1';
-            end if;
+                -- End of packet shift register
+                if line_state_valid = '1' then
+                    eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_sampled;
+                end if;
+                if eop_shift_reg = (SE0, SE0, J) then
+                    eop_shift_reg <= (others => SE0);
+                    rx_idle       <= '1';
+                    RX_EOP        <= '1';
+                end if;
 
-            -- Host reset timer
-            if line_state /= SE0 then
-                reset_counter <= (others => '0');
-                RX_RESET      <= '0';
-            elsif reset_counter <= 120_000 then -- 2.5 ms
-                reset_counter <= reset_counter + 1;
-            else
-                RX_RESET <= '1';
-            end if;
+                -- Suspend timer
+                if line_state /= J then
+                    suspend_counter <= (others => '0');
+                    RX_SUSPEND      <= '0';
+                elsif suspend_counter <= SUSPEND_LENGTH then
+                    suspend_counter <= suspend_counter + 1;
+                else
+                    RX_SUSPEND <= '1';
+                end if;
 
-            -- Resynchronization
-            if line_idle = '0' and line_idle_prev = '1' then
-                rx_shift_reg     <= (others => '0');
-                rx_shift_counter <= (others => '0');
-                rx_stuffing      <= (others => '0');
+                -- Host reset timer
+                if line_state /= SE0 then
+                    reset_counter <= (others => '0');
+                    RX_RESET      <= '0';
+                elsif reset_counter <= RESET_LENGTH then
+                    reset_counter <= reset_counter + 1;
+                else
+                    RX_RESET <= '1';
+                end if;
+
+                -- Resynchronization
+                if line_idle = '0' and line_idle_prev = '1' then
+                    rx_shift_reg     <= (others => '0');
+                    rx_shift_counter <= (others => '0');
+                    rx_stuffing      <= (others => '0');
+                end if;
             end if;
 
             -- Synchronous reset
@@ -242,7 +262,125 @@ begin
             rx_idle_prev <= rx_idle;
         end if;
     end process;
-
     RX_ACTIVE <= not rx_idle;
+
+    -- Transmitter process
+    process (CLK_48MHz)
+    begin
+        if rising_edge(CLK_48MHz) then
+            TX_READ <= '0';
+
+            case tx_state is
+                when idle =>
+                    -- Wait for data to be sent
+                    tx_dn  <= '1';
+                    tx_dp  <= '0';
+                    if FULL_SPEED then
+                        tx_dn <= '0';
+                        tx_dp <= '1';
+                    end if;
+                    tx_divider       <= (others => '0');
+                    tx_shift_counter <= to_unsigned(7, tx_shift_counter'length);
+                    tx_stuffing      <= (others => '0');
+                    if TX_ENABLE = '1' then
+                        tx_shift_reg <= TX_DATA;
+                        TX_READ      <= '1';
+                        tx_state     <= sending;
+                    end if;
+
+                when sending =>
+                    -- Divide the clock frequency to reach the target speed
+                    if tx_divider > 0 then
+                        tx_divider <= tx_divider - 1;
+                    else
+                        tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        if FULL_SPEED then
+                            tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        end if;
+
+                        -- Send data bit by bit
+                        tx_shift_reg     <= '0' & tx_shift_reg(tx_shift_reg'high downto tx_shift_reg'low + 1);
+                        tx_shift_counter <= tx_shift_counter - 1;
+                        tx_stuffing      <= (others => '0');
+
+                        -- Check if bit stuffing is required
+                        if tx_shift_reg(tx_shift_reg'low) = '1' then
+                            tx_stuffing <= tx_stuffing + 1;
+                            if tx_stuffing = 6 then
+                                tx_dn            <= not tx_dn;
+                                tx_dp            <= not tx_dp;
+                                tx_stuffing      <= (others => '0');
+                                tx_shift_reg     <= tx_shift_reg;
+                                tx_shift_counter <= tx_shift_counter;
+                            end if;
+                        else
+                            tx_dn <= not tx_dn;
+                            tx_dp <= not tx_dp;
+                        end if;
+
+                        -- Check if more data is available
+                        if tx_shift_counter = 0 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                            if TX_ENABLE = '1' then
+                                tx_shift_reg     <= TX_DATA;
+                                tx_shift_counter <= to_unsigned(7, tx_shift_counter'length);
+                                TX_READ          <= '1';
+                            else
+                                tx_dn      <= '0';
+                                tx_dp      <= '0';
+                                tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
+                                if FULL_SPEED then
+                                    tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH * 2, tx_divider'length) - 1;
+                                end if;
+                                tx_state <= eop_1;
+                            end if;
+                        end if;
+                    end if;
+
+                when eop_1 =>
+                    -- Send SE0 twice
+                    if tx_divider > 0 then
+                        tx_divider <= tx_divider - 1;
+                    else
+                        tx_divider <= to_unsigned(LOW_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                        tx_dn      <= '1';
+                        tx_dp      <= '0';
+                        if FULL_SPEED then
+                            tx_divider <= to_unsigned(FULL_SPEED_BIT_LENGTH, tx_divider'length) - 1;
+                            tx_dn      <= '0';
+                            tx_dp      <= '1';
+                        end if;
+                        tx_state <= eop_2;
+                    end if;
+
+                when eop_2 =>
+                    -- Send J once
+                    if tx_divider > 0 then
+                        tx_divider <= tx_divider - 1;
+                    else
+                        tx_state <= idle;
+                    end if;
+            end case;
+
+            -- Drive the USB lines
+            if tx_state /= idle then
+                USB_OE     <= '0'; -- TODO: test first
+                USB_DN_OUT <= tx_dn;
+                USB_DP_OUT <= tx_dp;
+            else
+                USB_OE     <= '0';
+                USB_DN_OUT <= '0';
+                USB_DP_OUT <= '0';
+            end if;
+
+            -- Synchronous reset
+            if CLRn = '0' then
+                USB_OE     <= '0';
+                USB_DN_OUT <= '0';
+                USB_DP_OUT <= '0';
+                TX_READ    <= '0';
+                tx_state   <= idle;
+            end if;
+        end if;
+    end process;
 
 end USB_PHY_arch;

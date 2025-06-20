@@ -30,9 +30,9 @@ architecture PLL_arch of PLL is
     attribute FREQUENCY_PIN_CLKI: string;
     attribute FREQUENCY_PIN_CLKI of pll_inst: label is "12.000000";
     attribute ICP_CURRENT: string;
-    attribute ICP_CURRENT of pll_inst: label is "11";
+    attribute ICP_CURRENT of pll_inst: label is "5";
     attribute LPF_RESISTOR: string;
-    attribute LPF_RESISTOR of pll_inst: label is "8";
+    attribute LPF_RESISTOR of pll_inst: label is "16";
     attribute NGD_DRC_MASK: integer;
     attribute NGD_DRC_MASK of PLL_arch: architecture is 1;
 

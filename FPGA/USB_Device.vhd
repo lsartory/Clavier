@@ -41,6 +41,10 @@ architecture USB_Device_arch of USB_Device is
     signal rx_suspend: std_logic;
     signal rx_reset:   std_logic;
 
+    signal tx_enable:  std_logic;
+    signal tx_data:    std_logic_vector(7 downto 0);
+    signal tx_read:    std_logic;
+
     type usb_state_t is (
         detached,
         connect,
@@ -56,8 +60,10 @@ architecture USB_Device_arch of USB_Device is
     signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: move to the USB_Setup block
     signal rx_pid: std_logic_vector(3 downto 0);
 
-    signal rx_ack:  std_logic;
-    signal rx_nack: std_logic;
+    signal rx_ack: std_logic;
+    signal rx_nak: std_logic;
+    signal tx_ack: std_logic;
+    signal tx_nak: std_logic;
 
     type token_type_t is (
         token_none,
@@ -111,7 +117,11 @@ begin
 
             RX_ERROR    => rx_error,
             RX_SUSPEND  => rx_suspend,
-            RX_RESET    => rx_reset
+            RX_RESET    => rx_reset,
+
+            TX_ENABLE   => tx_enable,
+            TX_DATA     => tx_data,
+            TX_READ     => tx_read
         );
 
     -- State handling process
@@ -121,9 +131,6 @@ begin
             case usb_state is
                 when detached =>
                     -- Keep all lines deactivated
-                    USB_OE      <= '0';
-                    USB_DN_OUT  <= '0';
-                    USB_DP_OUT  <= '0';
                     USB_DN_PULL <= '0';
                     USB_DP_PULL <= '0';
                     usb_state   <= connect;
@@ -208,12 +215,12 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
-            rx_ack  <= '0';
-            rx_nack <= '0';
+            rx_ack <= '0';
+            rx_nak <= '0';
             if CLRn = '1' and usb_state = eop then
                 case rx_pid is
-                    when "0010" => rx_ack  <= '1';
-                    when "1010" => rx_nack <= '1';
+                    when "0010" => rx_ack <= '1';
+                    when "1010" => rx_nak <= '1';
                     when others => null;
                 end case;
             end if;
@@ -304,15 +311,18 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
+            tx_ack               <= '0';
+            tx_nak               <= '0';
             rx_data_packet_valid <= '0';
 
-            -- Wait for the beginning of a packet
             case usb_state is
                 when pid =>
+                    -- Wait for the beginning of a packet
                     rx_data_packet <= '0';
                     data_start     <= '1';
 
                 when payload =>
+                    -- Check the packet identifier
                     if data_start = '1' then
                         if (data_parity = '0' and rx_pid = "0011")
                         or (data_parity = '1' and rx_pid = "1011")
@@ -327,7 +337,10 @@ begin
                     data_start <= '0';
 
                 when eop =>
-                    data_end <= '1';
+                    -- Wait for the end of a packet
+                    if rx_data_packet = '1' then
+                        data_end <= '1';
+                    end if;
 
                 when others => null;
             end case;
@@ -342,13 +355,16 @@ begin
                 data_crc16(15)     <= data_crc16(0)  xor data_crc_shift_reg(data_crc_shift_reg'low);
             end if;
 
-            -- Wait for the end of a packet
+            -- Wait for the CRC computation to be complete
             if data_end = '1' and data_crc_counter = 0 then
                 data_end       <= '0';
                 rx_data_packet <= '0';
                 if data_crc16 = "1011000000000001" then
                     data_parity          <= not data_parity;
                     rx_data_packet_valid <= '1';
+                    tx_ack               <= '1';
+                else
+                    tx_nak <= '1';
                 end if;
             end if;
 
@@ -361,6 +377,27 @@ begin
                 data_parity          <= '0';
                 rx_data_packet       <= '0';
                 rx_data_packet_valid <= '0';
+            end if;
+        end if;
+    end process;
+
+    -- Data packet transmitter
+    process (CLK_48MHz)
+    begin
+        if rising_edge(CLK_48MHz) then
+            tx_enable <= '0';
+
+            if tx_ack = '1' then
+                tx_enable <= '1';
+                tx_data   <= x"CA"; -- TODO
+            elsif tx_nak = '1' then
+                tx_enable <= '1';
+                tx_data   <= x"FE"; -- TODO
+            end if;
+
+            -- Synchronous reset
+            if CLRn = '0' then
+                tx_enable <= '0';
             end if;
         end if;
     end process;
