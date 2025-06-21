@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - Overview")
-		(date "2025-06-01")
+		(date "2025-06-21")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -1245,7 +1245,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "9")
+					(page "2")
 				)
 			)
 		)
@@ -1307,7 +1307,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "3")
+					(page "5")
 				)
 			)
 		)
@@ -1359,7 +1359,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "10")
+					(page "11")
 				)
 			)
 		)
@@ -1451,7 +1451,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "4")
+					(page "7")
 				)
 			)
 		)
@@ -1533,7 +1533,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "2")
+					(page "3")
 				)
 			)
 		)
@@ -1595,7 +1595,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(page "7")
+					(page "12")
 				)
 			)
 		)

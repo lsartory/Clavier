@@ -682,7 +682,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "doc/",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -699,16 +699,32 @@
       "Root"
     ],
     [
-      "b5ce206e-d477-45ca-b2c8-aebfdce28e55",
+      "0c8a9398-ddd2-4230-9850-fe0f46e922ad",
+      "Power"
+    ],
+    [
+      "f3d926d4-179d-4033-9062-145e3f3d7f6d",
       "USB hub"
+    ],
+    [
+      "ef8929de-a747-4f3a-ab77-4865a3483dd3",
+      "USB hub ESD"
     ],
     [
       "363c396c-f7c0-4911-9972-4574f7737631",
       "5-in-1 USB"
     ],
     [
-      "8d58ea1a-837d-4fea-8f9a-f307766a4e71",
+      "43d27599-c6f7-424d-a87e-55a1d50df649",
+      "5-in-1 USB ESD"
+    ],
+    [
+      "d73938da-f0ba-48e3-aac9-a36988c25c2c",
       "FPGA"
+    ],
+    [
+      "b5b36560-d80b-424a-94c9-5c93a5ca4fe2",
+      "FPGA GPIOs"
     ],
     [
       "de1eff49-f476-44bd-be62-918dcb8e6e8d",
@@ -719,20 +735,16 @@
       "FPGA power"
     ],
     [
-      "ea30a7b3-69b4-4e89-9104-c59667629c29",
+      "7a0fedde-fdbf-441d-b3e6-197cbc93a029",
+      "Display"
+    ],
+    [
+      "fe36ef85-cf96-48c6-8774-50fbc2348e34",
       "Keys"
     ],
     [
       "030080dd-0f27-48c8-8d7a-6555150d84cb",
       "Keycaps"
-    ],
-    [
-      "745855ca-7737-40a8-830b-da3eb384fbf9",
-      "Power"
-    ],
-    [
-      "1405a8c7-b915-4145-b540-6ef3ba3364a5",
-      "Display"
     ]
   ],
   "text_variables": {}
