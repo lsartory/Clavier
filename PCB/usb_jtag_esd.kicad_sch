@@ -1843,7 +1843,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "58c44c11-ff49-47a1-a020-17c336d2a08e")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR047"
 			(at 203.2 91.44 0)
 			(effects
 				(font
@@ -1893,7 +1893,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "#PWR045")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -1917,7 +1917,7 @@
 				)
 			)
 		)
-		(property "Value" "TPAZ1043-04F"
+		(property "Value" "TPESD0594PA"
 			(at 203.2 110.49 0)
 			(effects
 				(font
@@ -1934,7 +1934,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411121100_TECH-PUBLIC-TPAZ1043-04F_C2827673.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2501161435_TECH-PUBLIC-TPESD0594PA_C42436622.pdf"
 			(at 203.2 120.65 0)
 			(effects
 				(font
@@ -1952,7 +1952,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2827673"
+		(property "LCSC" "C42436622"
 			(at 203.2 120.65 0)
 			(effects
 				(font
@@ -1961,7 +1961,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part_number" "TPAZ1043-04F"
+		(property "Part_number" "TPESD0594PA"
 			(at 203.2 120.65 0)
 			(effects
 				(font
@@ -2027,7 +2027,7 @@
 				)
 			)
 		)
-		(property "Value" "TPAZ1043-04F"
+		(property "Value" "TPESD0594PA"
 			(at 101.6 59.69 0)
 			(effects
 				(font
@@ -2044,7 +2044,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411121100_TECH-PUBLIC-TPAZ1043-04F_C2827673.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2501161435_TECH-PUBLIC-TPESD0594PA_C42436622.pdf"
 			(at 101.6 69.85 0)
 			(effects
 				(font
@@ -2062,7 +2062,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2827673"
+		(property "LCSC" "C42436622"
 			(at 101.6 69.85 0)
 			(effects
 				(font
@@ -2071,7 +2071,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part_number" "TPAZ1043-04F"
+		(property "Part_number" "TPESD0594PA"
 			(at 101.6 69.85 0)
 			(effects
 				(font
@@ -2137,7 +2137,7 @@
 				)
 			)
 		)
-		(property "Value" "TPAZ1043-04F"
+		(property "Value" "TPESD0594PA"
 			(at 203.2 59.69 0)
 			(effects
 				(font
@@ -2154,7 +2154,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411121100_TECH-PUBLIC-TPAZ1043-04F_C2827673.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2501161435_TECH-PUBLIC-TPESD0594PA_C42436622.pdf"
 			(at 203.2 69.85 0)
 			(effects
 				(font
@@ -2172,7 +2172,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2827673"
+		(property "LCSC" "C42436622"
 			(at 203.2 69.85 0)
 			(effects
 				(font
@@ -2181,7 +2181,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part_number" "TPAZ1043-04F"
+		(property "Part_number" "TPESD0594PA"
 			(at 203.2 69.85 0)
 			(effects
 				(font
@@ -2247,7 +2247,7 @@
 				)
 			)
 		)
-		(property "Value" "TPAZ1043-04F"
+		(property "Value" "TPESD0594PA"
 			(at 101.6 110.49 0)
 			(effects
 				(font
@@ -2264,7 +2264,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411121100_TECH-PUBLIC-TPAZ1043-04F_C2827673.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2501161435_TECH-PUBLIC-TPESD0594PA_C42436622.pdf"
 			(at 101.6 120.65 0)
 			(effects
 				(font
@@ -2282,7 +2282,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2827673"
+		(property "LCSC" "C42436622"
 			(at 101.6 120.65 0)
 			(effects
 				(font
@@ -2291,7 +2291,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part_number" "TPAZ1043-04F"
+		(property "Part_number" "TPESD0594PA"
 			(at 101.6 120.65 0)
 			(effects
 				(font
@@ -2349,7 +2349,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "94534606-cc4b-4e3b-899e-fcd3f775e8fe")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR048"
 			(at 101.6 142.24 0)
 			(effects
 				(font
@@ -2399,7 +2399,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "#PWR046")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -2415,7 +2415,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "957228b4-c5f0-4295-bf6c-8708a68406a2")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR046"
 			(at 101.6 91.44 0)
 			(effects
 				(font
@@ -2465,7 +2465,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "#PWR044")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -2481,7 +2481,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e25a93e6-b945-40d5-a84c-90b84476067d")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR049"
 			(at 203.2 142.24 0)
 			(effects
 				(font
@@ -2531,7 +2531,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "#PWR047")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)

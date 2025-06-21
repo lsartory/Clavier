@@ -825,7 +825,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c139e19-381e-4170-b056-97365e508e61")
-		(property "Reference" "D2"
+		(property "Reference" "D3"
 			(at 139.7 71.882 0)
 			(effects
 				(font
@@ -905,7 +905,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "D2")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -1006,7 +1006,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35dd9d39-d03f-4835-81bf-26adeef4f2ea")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR082"
 			(at 165.1 67.31 0)
 			(effects
 				(font
@@ -1056,7 +1056,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "#PWR080")
+					(reference "#PWR082")
 					(unit 1)
 				)
 			)
@@ -1157,7 +1157,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b1bfd38d-2178-4afa-a883-2ee00bd8fb1b")
-		(property "Reference" "D4"
+		(property "Reference" "D5"
 			(at 139.7 97.282 0)
 			(effects
 				(font
@@ -1237,7 +1237,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "D4")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -1253,7 +1253,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb20ecd9-2d61-47f1-be31-f172de86d7cb")
-		(property "Reference" "D6"
+		(property "Reference" "D7"
 			(at 139.7 122.682 0)
 			(effects
 				(font
@@ -1333,7 +1333,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "D6")
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -1349,7 +1349,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d4c3e161-1693-4745-9126-20fcc60e5fdb")
-		(property "Reference" "D3"
+		(property "Reference" "D4"
 			(at 139.7 84.582 0)
 			(effects
 				(font
@@ -1429,7 +1429,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "D3")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -1445,7 +1445,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da26d0da-0723-4388-9572-442bba036593")
-		(property "Reference" "D5"
+		(property "Reference" "D6"
 			(at 139.7 109.982 0)
 			(effects
 				(font
@@ -1525,7 +1525,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/7a0fedde-fdbf-441d-b3e6-197cbc93a029"
-					(reference "D5")
+					(reference "D6")
 					(unit 1)
 				)
 			)
