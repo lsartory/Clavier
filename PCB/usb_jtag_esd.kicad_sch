@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - 5-in-1 USB ESD protection")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -1909,7 +1909,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "698e7b52-8077-4547-883c-7c3f2b277501")
-		(property "Reference" "U12"
+		(property "Reference" "U13"
 			(at 203.2 107.95 0)
 			(effects
 				(font
@@ -2003,7 +2003,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "U12")
+					(reference "U13")
 					(unit 1)
 				)
 			)
@@ -2019,7 +2019,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78571a58-7aa0-4b0a-8a4f-2d196a51833a")
-		(property "Reference" "U9"
+		(property "Reference" "U12"
 			(at 101.6 57.15 0)
 			(effects
 				(font
@@ -2113,7 +2113,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "U9")
+					(reference "U12")
 					(unit 1)
 				)
 			)
@@ -2129,7 +2129,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "845bfe9c-abe8-4c8c-b776-55ef1a922ef6")
-		(property "Reference" "U10"
+		(property "Reference" "U14"
 			(at 203.2 57.15 0)
 			(effects
 				(font
@@ -2223,7 +2223,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "U10")
+					(reference "U14")
 					(unit 1)
 				)
 			)
@@ -2239,7 +2239,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8601c90d-5eda-47ac-b13a-928d117ecb82")
-		(property "Reference" "U11"
+		(property "Reference" "U15"
 			(at 101.6 107.95 0)
 			(effects
 				(font
@@ -2333,7 +2333,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631/43d27599-c6f7-424d-a87e-55a1d50df649"
-					(reference "U11")
+					(reference "U15")
 					(unit 1)
 				)
 			)

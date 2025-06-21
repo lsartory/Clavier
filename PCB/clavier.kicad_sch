@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - Overview")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -1082,11 +1082,11 @@
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
-		(on_board no)
+		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c777b992-4cc9-49d5-8a71-8c8ff3afff6d")
-		(property "Reference" "#SYM1"
+		(property "Reference" "OSHW1"
 			(at 254 127 0)
 			(effects
 				(font
@@ -1104,7 +1104,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Symbol:OSHW-Symbol_13.4x12mm_SilkScreen"
 			(at 254 139.7 0)
 			(effects
 				(font
@@ -1134,7 +1134,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20"
-					(reference "#SYM1")
+					(reference "OSHW1")
 					(unit 1)
 				)
 			)

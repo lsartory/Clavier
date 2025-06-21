@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - 5-in-1 USB")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -3855,7 +3855,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "097e0002-c05d-4915-b090-710e33a625fa")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 182.88 58.42 0)
 			(effects
 				(font
@@ -4007,7 +4007,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 3)
 				)
 			)
@@ -4126,7 +4126,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "12763724-c777-4a35-b776-d07a9e4c4511")
-		(property "Reference" "Y2"
+		(property "Reference" "Y1"
 			(at 116.84 77.724 90)
 			(effects
 				(font
@@ -4202,7 +4202,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "Y2")
+					(reference "Y1")
 					(unit 1)
 				)
 			)
@@ -4312,7 +4312,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3765ec83-0b31-4be6-a85d-c5a3ceb9ce5b")
-		(property "Reference" "R20"
+		(property "Reference" "R25"
 			(at 224.028 138.5316 0)
 			(effects
 				(font
@@ -4383,7 +4383,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "R20")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -4398,7 +4398,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3f53ae8c-69ce-4a22-bf74-ee3115f14638")
-		(property "Reference" "R18"
+		(property "Reference" "R23"
 			(at 58.928 55.9816 0)
 			(effects
 				(font
@@ -4469,7 +4469,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "R18")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -4551,7 +4551,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56170a16-a35d-4dd4-9eaf-a020512932cf")
-		(property "Reference" "J7"
+		(property "Reference" "J3"
 			(at 260.35 137.16 0)
 			(effects
 				(font
@@ -4639,7 +4639,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J7")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -4786,7 +4786,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60e1dff7-de77-4bb0-b1f6-f7d581d39c72")
-		(property "Reference" "C21"
+		(property "Reference" "C23"
 			(at 95.25 68.072 90)
 			(effects
 				(font
@@ -4863,7 +4863,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C21")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -4945,7 +4945,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7fe6c254-9a28-4d94-b7d4-2a33214da83b")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 182.88 133.35 0)
 			(effects
 				(font
@@ -5098,7 +5098,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 5)
 				)
 			)
@@ -5180,7 +5180,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8697954f-cd3c-464e-80eb-81b340541bbb")
-		(property "Reference" "J6"
+		(property "Reference" "J2"
 			(at 223.52 104.14 0)
 			(effects
 				(font
@@ -5268,7 +5268,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J6")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5284,7 +5284,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "931ecf06-ba15-4576-bd80-d3ea363cf56c")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 182.88 95.25 0)
 			(effects
 				(font
@@ -5435,7 +5435,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 4)
 				)
 			)
@@ -5450,7 +5450,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "96c95073-d259-4c1d-b4cc-6f7c34bf9887")
-		(property "Reference" "C25"
+		(property "Reference" "C17"
 			(at 91.821 136.1186 0)
 			(effects
 				(font
@@ -5530,7 +5530,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C25")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -5613,7 +5613,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "99a6243f-169d-44b0-8d23-02ebdea63063")
-		(property "Reference" "SW1"
+		(property "Reference" "SW18"
 			(at 60.96 74.9299 90)
 			(effects
 				(font
@@ -5685,7 +5685,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "SW1")
+					(reference "SW18")
 					(unit 1)
 				)
 			)
@@ -5834,7 +5834,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "af79bdc2-973b-46a4-8a13-5ee158d61171")
-		(property "Reference" "R19"
+		(property "Reference" "R1"
 			(at 249.428 83.9216 0)
 			(effects
 				(font
@@ -5905,7 +5905,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "R19")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -6052,7 +6052,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c34151a2-e617-4d23-b471-316d2949377d")
-		(property "Reference" "C22"
+		(property "Reference" "C16"
 			(at 79.121 80.2386 0)
 			(effects
 				(font
@@ -6132,7 +6132,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C22")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -6214,7 +6214,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c6907137-55bf-4e2b-876f-1348dd475dd8")
-		(property "Reference" "R21"
+		(property "Reference" "R24"
 			(at 236.728 138.5316 0)
 			(effects
 				(font
@@ -6285,7 +6285,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "R21")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -6301,7 +6301,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d744ec6a-0af7-444f-9db0-1e0153edcc2d")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 182.88 33.02 0)
 			(effects
 				(font
@@ -6452,7 +6452,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 2)
 				)
 			)
@@ -6467,7 +6467,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d87088c9-c3e4-4cb7-9e13-6aa9ba28fea3")
-		(property "Reference" "C23"
+		(property "Reference" "C18"
 			(at 95.25 80.772 90)
 			(effects
 				(font
@@ -6544,7 +6544,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "C23")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -6560,7 +6560,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0eeb4d2-6b45-4d4a-bde1-67478b94ab9d")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 69.85 123.19 0)
 			(effects
 				(font
@@ -6711,7 +6711,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 6)
 				)
 			)
@@ -6792,7 +6792,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec9ad89f-a083-490d-a444-3300b7c32105")
-		(property "Reference" "D2"
+		(property "Reference" "D1"
 			(at 234.95 95.758 0)
 			(effects
 				(font
@@ -6872,7 +6872,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "D2")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -6888,7 +6888,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee4d87b7-65da-4ce7-95de-0def01664be1")
-		(property "Reference" "J5"
+		(property "Reference" "J1"
 			(at 222.25 59.69 0)
 			(effects
 				(font
@@ -6976,7 +6976,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "J5")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -7059,7 +7059,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fb17d1e2-0b64-4ebe-91cb-6044caad7367")
-		(property "Reference" "U8"
+		(property "Reference" "U17"
 			(at 133.35 55.88 0)
 			(effects
 				(font
@@ -7210,7 +7210,7 @@
 		(instances
 			(project ""
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/363c396c-f7c0-4911-9972-4574f7737631"
-					(reference "U8")
+					(reference "U17")
 					(unit 1)
 				)
 			)

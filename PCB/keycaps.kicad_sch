@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Clavier - Keycaps")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -520,7 +520,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "008deafe-7ee2-4c68-a838-b4bd6469bd48")
-		(property "Reference" "KC63"
+		(property "Reference" "KC64"
 			(at 107.95 152.4 0)
 			(effects
 				(font
@@ -566,7 +566,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC63")
+					(reference "KC64")
 					(unit 1)
 				)
 			)
@@ -892,7 +892,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12c2f4cd-0359-443b-9cdf-b6dd56a420be")
-		(property "Reference" "KC106"
+		(property "Reference" "KC93"
 			(at 349.25 203.2 0)
 			(effects
 				(font
@@ -938,7 +938,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC106")
+					(reference "KC93")
 					(unit 1)
 				)
 			)
@@ -1140,7 +1140,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "23437d34-d85c-47b9-bf43-7b310e11cec3")
-		(property "Reference" "KC93"
+		(property "Reference" "KC94"
 			(at 44.45 203.2 0)
 			(effects
 				(font
@@ -1186,7 +1186,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC93")
+					(reference "KC94")
 					(unit 1)
 				)
 			)
@@ -1264,7 +1264,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ac47dbc-4514-4612-abcc-05394e26e2a3")
-		(property "Reference" "KC55"
+		(property "Reference" "KC54"
 			(at 273.05 127 0)
 			(effects
 				(font
@@ -1310,7 +1310,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC55")
+					(reference "KC54")
 					(unit 1)
 				)
 			)
@@ -1326,7 +1326,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2adbe8a8-0a39-49b4-a355-6e16128610e4")
-		(property "Reference" "KC53"
+		(property "Reference" "KC52"
 			(at 247.65 127 0)
 			(effects
 				(font
@@ -1372,7 +1372,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC53")
+					(reference "KC52")
 					(unit 1)
 				)
 			)
@@ -1512,7 +1512,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32d726ef-c716-497d-903a-d9b41f550276")
-		(property "Reference" "KC68"
+		(property "Reference" "KC69"
 			(at 171.45 152.4 0)
 			(effects
 				(font
@@ -1558,7 +1558,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC68")
+					(reference "KC69")
 					(unit 1)
 				)
 			)
@@ -1574,7 +1574,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "351fe33b-77ac-4cc1-9074-00c766296002")
-		(property "Reference" "KC69"
+		(property "Reference" "KC70"
 			(at 184.15 152.4 0)
 			(effects
 				(font
@@ -1620,7 +1620,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC69")
+					(reference "KC70")
 					(unit 1)
 				)
 			)
@@ -1760,7 +1760,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e505494-a146-4516-8b82-20cfdb647da4")
-		(property "Reference" "KC52"
+		(property "Reference" "KC58"
 			(at 215.9 127 0)
 			(effects
 				(font
@@ -1806,7 +1806,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC52")
+					(reference "KC58")
 					(unit 1)
 				)
 			)
@@ -2256,7 +2256,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "547ea25a-039c-48c5-856b-c9c717514f3e")
-		(property "Reference" "KC60"
+		(property "Reference" "KC61"
 			(at 69.85 152.4 0)
 			(effects
 				(font
@@ -2302,7 +2302,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC60")
+					(reference "KC61")
 					(unit 1)
 				)
 			)
@@ -2380,7 +2380,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5550f99f-1c56-4277-b148-bb7c399a014a")
-		(property "Reference" "KC62"
+		(property "Reference" "KC63"
 			(at 95.25 152.4 0)
 			(effects
 				(font
@@ -2426,7 +2426,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC62")
+					(reference "KC63")
 					(unit 1)
 				)
 			)
@@ -2752,7 +2752,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "650dc5da-2ab0-47c1-87a3-54058a90047b")
-		(property "Reference" "KC59"
+		(property "Reference" "KC60"
 			(at 44.45 152.4 0)
 			(effects
 				(font
@@ -2798,7 +2798,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC59")
+					(reference "KC60")
 					(unit 1)
 				)
 			)
@@ -3000,7 +3000,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6f2df00b-17cb-4b2f-8c4c-ae979fbd7b2c")
-		(property "Reference" "KC67"
+		(property "Reference" "KC68"
 			(at 158.75 152.4 0)
 			(effects
 				(font
@@ -3046,7 +3046,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC67")
+					(reference "KC68")
 					(unit 1)
 				)
 			)
@@ -3124,7 +3124,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70c2f5ad-e0c2-4ccb-b6d3-787d6696a258")
-		(property "Reference" "KC70"
+		(property "Reference" "KC71"
 			(at 196.85 152.4 0)
 			(effects
 				(font
@@ -3170,7 +3170,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC70")
+					(reference "KC71")
 					(unit 1)
 				)
 			)
@@ -3310,7 +3310,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "73f1ecb2-fe6c-4c3b-85c5-cfdf1856ff29")
-		(property "Reference" "KC71"
+		(property "Reference" "KC72"
 			(at 209.55 152.4 0)
 			(effects
 				(font
@@ -3356,7 +3356,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC71")
+					(reference "KC72")
 					(unit 1)
 				)
 			)
@@ -3620,7 +3620,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a842b44-b93a-4ad3-82d7-fd7521f8fe8d")
-		(property "Reference" "KC58"
+		(property "Reference" "KC57"
 			(at 336.55 127 0)
 			(effects
 				(font
@@ -3666,7 +3666,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC58")
+					(reference "KC57")
 					(unit 1)
 				)
 			)
@@ -3744,7 +3744,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8086f344-7b43-4c6f-aa3e-854011ae0010")
-		(property "Reference" "KC95"
+		(property "Reference" "KC96"
 			(at 69.85 203.2 0)
 			(effects
 				(font
@@ -3790,7 +3790,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC95")
+					(reference "KC96")
 					(unit 1)
 				)
 			)
@@ -3806,7 +3806,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "821a768f-c968-4ca5-aed5-91ec4b794a38")
-		(property "Reference" "KC54"
+		(property "Reference" "KC53"
 			(at 260.35 127 0)
 			(effects
 				(font
@@ -3852,7 +3852,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC54")
+					(reference "KC53")
 					(unit 1)
 				)
 			)
@@ -3992,7 +3992,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "84c34f33-1af2-426a-aebf-2bc27ac7b8ce")
-		(property "Reference" "KC61"
+		(property "Reference" "KC62"
 			(at 82.55 152.4 0)
 			(effects
 				(font
@@ -4038,7 +4038,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC61")
+					(reference "KC62")
 					(unit 1)
 				)
 			)
@@ -4302,7 +4302,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "93d57624-e3e1-40ac-ae3b-b20a0541c2a6")
-		(property "Reference" "KC74"
+		(property "Reference" "KC75"
 			(at 336.55 152.4 0)
 			(effects
 				(font
@@ -4348,7 +4348,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC74")
+					(reference "KC75")
 					(unit 1)
 				)
 			)
@@ -4550,7 +4550,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9cab22c3-cef3-490f-bac0-51a4d89a8453")
-		(property "Reference" "KC65"
+		(property "Reference" "KC66"
 			(at 133.35 152.4 0)
 			(effects
 				(font
@@ -4596,7 +4596,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC65")
+					(reference "KC66")
 					(unit 1)
 				)
 			)
@@ -4612,7 +4612,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e365d77-b661-4f41-9841-8e43afeed70b")
-		(property "Reference" "KC73"
+		(property "Reference" "KC74"
 			(at 323.85 152.4 0)
 			(effects
 				(font
@@ -4658,7 +4658,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC73")
+					(reference "KC74")
 					(unit 1)
 				)
 			)
@@ -4860,7 +4860,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a73d7c59-583d-4e1a-bbca-a9be208fdea1")
-		(property "Reference" "KC64"
+		(property "Reference" "KC65"
 			(at 120.65 152.4 0)
 			(effects
 				(font
@@ -4906,7 +4906,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC64")
+					(reference "KC65")
 					(unit 1)
 				)
 			)
@@ -5170,7 +5170,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ade3015c-b199-467b-81d0-681a251daf56")
-		(property "Reference" "KC94"
+		(property "Reference" "KC95"
 			(at 57.15 203.2 0)
 			(effects
 				(font
@@ -5216,7 +5216,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC94")
+					(reference "KC95")
 					(unit 1)
 				)
 			)
@@ -5418,7 +5418,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b90b39c1-2123-449e-a700-e5bd07180bb6")
-		(property "Reference" "KC96"
+		(property "Reference" "KC106"
 			(at 114.3 203.2 0)
 			(effects
 				(font
@@ -5464,7 +5464,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC96")
+					(reference "KC106")
 					(unit 1)
 				)
 			)
@@ -5728,7 +5728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c1964f4d-02c4-43b7-8966-dab36a09602e")
-		(property "Reference" "KC57"
+		(property "Reference" "KC56"
 			(at 323.85 127 0)
 			(effects
 				(font
@@ -5774,7 +5774,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC57")
+					(reference "KC56")
 					(unit 1)
 				)
 			)
@@ -5976,7 +5976,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb26ff78-52e0-4081-9064-217716669474")
-		(property "Reference" "KC56"
+		(property "Reference" "KC55"
 			(at 311.15 127 0)
 			(effects
 				(font
@@ -6022,7 +6022,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC56")
+					(reference "KC55")
 					(unit 1)
 				)
 			)
@@ -6100,7 +6100,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4475de2-622d-40d7-ade2-2b2ca9d5ddfb")
-		(property "Reference" "KC75"
+		(property "Reference" "KC59"
 			(at 349.25 152.4 0)
 			(effects
 				(font
@@ -6146,7 +6146,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC75")
+					(reference "KC59")
 					(unit 1)
 				)
 			)
@@ -6348,7 +6348,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dda43a4a-d1cc-4925-8e81-05dfea3f7774")
-		(property "Reference" "KC72"
+		(property "Reference" "KC73"
 			(at 311.15 152.4 0)
 			(effects
 				(font
@@ -6394,7 +6394,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC72")
+					(reference "KC73")
 					(unit 1)
 				)
 			)
@@ -6844,7 +6844,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e9e0bbc3-70c9-4ba4-a54c-08ab44af61df")
-		(property "Reference" "KC66"
+		(property "Reference" "KC67"
 			(at 146.05 152.4 0)
 			(effects
 				(font
@@ -6890,7 +6890,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/fe36ef85-cf96-48c6-8774-50fbc2348e34/030080dd-0f27-48c8-8d7a-6555150d84cb"
-					(reference "KC66")
+					(reference "KC67")
 					(unit 1)
 				)
 			)

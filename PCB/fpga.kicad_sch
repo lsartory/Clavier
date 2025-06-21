@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - FPGA")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -5698,38 +5698,220 @@
 		(uuid "e6916407-cf84-4853-a31e-89105533361f")
 	)
 	(no_connect
+		(at 193.04 119.38)
+		(uuid "04556e64-1072-4419-aa80-5fc0d2978b76")
+	)
+	(no_connect
+		(at 231.14 114.3)
+		(uuid "0717e1bf-cea7-49af-989c-beb61c008db6")
+	)
+	(no_connect
+		(at 231.14 81.28)
+		(uuid "08f49e1f-d432-44a3-b472-fff57ca9ce7e")
+	)
+	(no_connect
+		(at 78.74 73.66)
+		(uuid "0d7e37b9-8a7f-4b75-8ea3-14623c1b38bd")
+	)
+	(no_connect
+		(at 231.14 93.98)
+		(uuid "0f116f51-622c-4a52-b4a7-1c5a8fece7de")
+	)
+	(no_connect
+		(at 154.94 71.12)
+		(uuid "0fc60ea1-a10e-4639-b42a-d26ca998de76")
+	)
+	(no_connect
+		(at 154.94 66.04)
+		(uuid "13014029-640e-463e-a9ef-2b88b36e448f")
+	)
+	(no_connect
+		(at 40.64 99.06)
+		(uuid "13c7146f-04ee-4970-ab15-705953aa52a8")
+	)
+	(no_connect
+		(at 40.64 73.66)
+		(uuid "1a7c41a4-c2da-4c9d-8d2d-f003a701c58d")
+	)
+	(no_connect
+		(at 231.14 66.04)
+		(uuid "1c691350-86eb-4cac-a5f1-477dbbdf2767")
+	)
+	(no_connect
+		(at 78.74 88.9)
+		(uuid "203d81a8-10a3-43f6-ac6f-393078f1f7af")
+	)
+	(no_connect
+		(at 116.84 111.76)
+		(uuid "2a6d2a85-a85f-4146-8cb3-38d5f57b0722")
+	)
+	(no_connect
+		(at 116.84 83.82)
+		(uuid "30747b24-0d5c-4059-9582-6f8d074f07fa")
+	)
+	(no_connect
+		(at 193.04 55.88)
+		(uuid "31adbfa6-6a27-4836-b4a8-62dea1007a57")
+	)
+	(no_connect
+		(at 193.04 124.46)
+		(uuid "36c100fc-21d0-4106-b9a1-5094c8c9c5e9")
+	)
+	(no_connect
+		(at 154.94 119.38)
+		(uuid "39c5c428-38a4-419c-801d-286da42a8f07")
+	)
+	(no_connect
+		(at 78.74 111.76)
+		(uuid "4d5a3fc1-817d-465f-8b39-82a4de1c9303")
+	)
+	(no_connect
+		(at 193.04 83.82)
+		(uuid "5304b367-8ed5-44dc-8e1b-bf9be5954697")
+	)
+	(no_connect
+		(at 78.74 96.52)
+		(uuid "556195f8-001b-4a59-b24c-bad2bc9bd5e2")
+	)
+	(no_connect
+		(at 231.14 91.44)
+		(uuid "60e9b64a-a947-48be-b833-f6e390fcbfa8")
+	)
+	(no_connect
+		(at 40.64 106.68)
+		(uuid "63437dc4-317d-4180-b8d3-d8d6fb49146f")
+	)
+	(no_connect
+		(at 40.64 66.04)
+		(uuid "64288473-1542-4c0b-a7f3-973ea4ebc0dc")
+	)
+	(no_connect
+		(at 78.74 99.06)
+		(uuid "66dd48b8-c7f7-4a02-91cf-b68c06ec281d")
+	)
+	(no_connect
+		(at 116.84 104.14)
+		(uuid "6863ee0e-c46e-4fe0-b71e-7e8f0677f4ea")
+	)
+	(no_connect
+		(at 231.14 88.9)
+		(uuid "6ae1093d-3b94-4fd6-8d83-937a1899fc1b")
+	)
+	(no_connect
+		(at 193.04 96.52)
+		(uuid "6c27541e-90a7-4ea7-8357-388de9e86faf")
+	)
+	(no_connect
+		(at 193.04 71.12)
+		(uuid "6ec4c820-2a9e-4cb0-9369-4576e5270159")
+	)
+	(no_connect
+		(at 231.14 127)
+		(uuid "75c32925-b872-43f2-a3f7-36a5bca0297d")
+	)
+	(no_connect
+		(at 231.14 83.82)
+		(uuid "768c6757-d3c4-46ef-8346-9ae01754a186")
+	)
+	(no_connect
+		(at 193.04 86.36)
+		(uuid "816eb88d-fd76-4b6d-982a-19d60e9434d0")
+	)
+	(no_connect
+		(at 231.14 96.52)
+		(uuid "84f7e356-af6c-4e46-98dd-71d63ae2cf65")
+	)
+	(no_connect
+		(at 231.14 129.54)
+		(uuid "865b968c-42ab-4628-b0f3-725ed180ce68")
+	)
+	(no_connect
+		(at 78.74 63.5)
+		(uuid "87e70556-17ef-4f98-af44-7b64be2b46a0")
+	)
+	(no_connect
+		(at 78.74 76.2)
+		(uuid "88440e10-fa75-44be-9425-e3548c4a425d")
+	)
+	(no_connect
+		(at 231.14 60.96)
+		(uuid "9109afec-7ed7-4329-86a6-551c1654cdf1")
+	)
+	(no_connect
+		(at 78.74 78.74)
+		(uuid "9ab31cc1-3b4e-4edb-b539-444e3d526ab6")
+	)
+	(no_connect
+		(at 40.64 109.22)
+		(uuid "9aee4e77-2fc1-4b1c-9c02-a8a143d7d93f")
+	)
+	(no_connect
+		(at 116.84 81.28)
+		(uuid "a0051704-1519-4250-80cb-25b81d3a66c3")
+	)
+	(no_connect
+		(at 231.14 116.84)
+		(uuid "a426a517-1a0e-433c-a588-f80ee8687c1e")
+	)
+	(no_connect
+		(at 193.04 60.96)
+		(uuid "b6bea157-67d6-400c-984c-20d8a9a01654")
+	)
+	(no_connect
+		(at 193.04 73.66)
+		(uuid "b8ce7c80-8e18-4fe5-9b20-7b137a41be74")
+	)
+	(no_connect
+		(at 193.04 53.34)
+		(uuid "bdc8a550-1f61-42f4-b38d-739ed94aa065")
+	)
+	(no_connect
+		(at 193.04 101.6)
+		(uuid "be13707f-388d-4c26-a7b0-cff5e62d226e")
+	)
+	(no_connect
+		(at 78.74 60.96)
+		(uuid "beceec8c-4ce4-4d55-b876-41579e37b5c1")
+	)
+	(no_connect
+		(at 193.04 99.06)
+		(uuid "ce6e5af5-f759-4207-9543-413f123f3911")
+	)
+	(no_connect
+		(at 193.04 76.2)
+		(uuid "cefbd628-4318-44d4-8503-3082caf9a9cf")
+	)
+	(no_connect
+		(at 231.14 132.08)
+		(uuid "d2c948a2-528c-408a-98dc-0d4b1da87d31")
+	)
+	(no_connect
+		(at 231.14 124.46)
+		(uuid "dbcac0ff-eb9e-416d-b03d-86b3f70b3702")
+	)
+	(no_connect
 		(at 40.64 165.1)
 		(uuid "dca9fde3-50e4-4123-ad39-21170e0bad07")
 	)
-	(wire
-		(pts
-			(xy 215.9 127) (xy 231.14 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0145bfe8-9014-43c7-9ff1-bb09e50b3253")
+	(no_connect
+		(at 40.64 111.76)
+		(uuid "e9fd39e6-91b2-41f4-a6f2-0053a318c662")
 	)
-	(wire
-		(pts
-			(xy 215.9 96.52) (xy 231.14 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02ca5a07-486e-4e63-8c09-825e6d1d4905")
+	(no_connect
+		(at 154.94 124.46)
+		(uuid "eeb2ba50-a30d-424e-a2a0-985f67eb6dc6")
 	)
-	(wire
-		(pts
-			(xy 177.8 86.36) (xy 193.04 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04063ee3-dc30-4428-b3fb-1ff0fd4afd7b")
+	(no_connect
+		(at 154.94 129.54)
+		(uuid "ef6f92c9-8eec-418f-a589-d44ecd31cbb9")
+	)
+	(no_connect
+		(at 231.14 76.2)
+		(uuid "f14d75b6-83f3-4ea3-88b7-c32abc78191d")
+	)
+	(no_connect
+		(at 40.64 88.9)
+		(uuid "f3e1aa58-c301-4a2a-8854-4112c2d6c561")
 	)
 	(wire
 		(pts
@@ -5740,16 +5922,6 @@
 			(type default)
 		)
 		(uuid "05ac1ff6-107f-4e08-a486-2b9bf21c33e7")
-	)
-	(wire
-		(pts
-			(xy 101.6 111.76) (xy 116.84 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0656bb13-eaa9-4a5f-b254-da4598b4532c")
 	)
 	(wire
 		(pts
@@ -5780,16 +5952,6 @@
 			(type default)
 		)
 		(uuid "0adb3d97-8bd7-4f57-9567-ad5fdc8bdd92")
-	)
-	(wire
-		(pts
-			(xy 63.5 60.96) (xy 78.74 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0af13b74-a462-4caa-b734-6ef20930a030")
 	)
 	(wire
 		(pts
@@ -5840,16 +6002,6 @@
 			(type default)
 		)
 		(uuid "13fa8c49-b07a-43f1-98ff-22877ee1fa40")
-	)
-	(wire
-		(pts
-			(xy 215.9 66.04) (xy 231.14 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14755bbb-a804-4167-91a2-dcab75a42484")
 	)
 	(wire
 		(pts
@@ -5920,16 +6072,6 @@
 			(type default)
 		)
 		(uuid "176596b3-ac50-479e-bbaf-facd69abc493")
-	)
-	(wire
-		(pts
-			(xy 139.7 71.12) (xy 154.94 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17fb48a4-eb1d-4dbe-a58e-668650d332ea")
 	)
 	(wire
 		(pts
@@ -6033,36 +6175,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 78.74) (xy 78.74 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "214910db-ddbe-403c-9714-a10c6298773c")
-	)
-	(wire
-		(pts
-			(xy 177.8 71.12) (xy 193.04 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2266b247-eed9-44ba-8be3-adcb6a7a1e10")
-	)
-	(wire
-		(pts
-			(xy 177.8 53.34) (xy 193.04 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22be30f2-54fc-49a9-851a-c496b8f81fd4")
-	)
-	(wire
-		(pts
 			(xy 101.6 68.58) (xy 116.84 68.58)
 		)
 		(stroke
@@ -6080,16 +6192,6 @@
 			(type default)
 		)
 		(uuid "245f4329-c592-40d0-9039-098f48e6a134")
-	)
-	(wire
-		(pts
-			(xy 25.4 106.68) (xy 40.64 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "261bd5c1-faf7-4180-90f2-cbb811888c94")
 	)
 	(wire
 		(pts
@@ -6133,23 +6235,13 @@
 	)
 	(wire
 		(pts
-			(xy 25.4 109.22) (xy 40.64 109.22)
+			(xy 25.4 55.88) (xy 40.64 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2b71a081-e66e-444f-a6c5-4f060e13326c")
-	)
-	(wire
-		(pts
-			(xy 139.7 129.54) (xy 154.94 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2be45cbd-1c9c-46ae-8e24-768d1b0edc24")
+		(uuid "2b45412e-2f16-429f-914f-d1493d9e8239")
 	)
 	(wire
 		(pts
@@ -6163,16 +6255,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 55.88) (xy 193.04 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30d6785b-bfde-4a4e-af79-8dcfab80bc53")
-	)
-	(wire
-		(pts
 			(xy 215.9 119.38) (xy 231.14 119.38)
 		)
 		(stroke
@@ -6180,16 +6262,6 @@
 			(type default)
 		)
 		(uuid "30ffda36-8c67-4c6f-bebf-7fe4d892de79")
-	)
-	(wire
-		(pts
-			(xy 177.8 76.2) (xy 193.04 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31c52e27-80d5-4418-96e5-7d3e72177972")
 	)
 	(wire
 		(pts
@@ -6220,16 +6292,6 @@
 			(type default)
 		)
 		(uuid "34caf70a-721e-4895-aaf1-55e5ccfefc54")
-	)
-	(wire
-		(pts
-			(xy 215.9 132.08) (xy 231.14 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36b62375-135c-49a9-b231-987f0264e0df")
 	)
 	(wire
 		(pts
@@ -6293,16 +6355,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 88.9) (xy 231.14 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f3d28d0-6fab-43c0-9b85-b75e0a4b5ece")
-	)
-	(wire
-		(pts
 			(xy 177.8 106.68) (xy 193.04 106.68)
 		)
 		(stroke
@@ -6340,16 +6392,6 @@
 			(type default)
 		)
 		(uuid "421cb5be-4eef-4869-aac8-1cb48b680e89")
-	)
-	(wire
-		(pts
-			(xy 101.6 81.28) (xy 116.84 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43483665-94da-41cd-aee1-b5c2b264e0f5")
 	)
 	(wire
 		(pts
@@ -6433,16 +6475,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 119.38) (xy 154.94 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4bf94b53-4d78-4fad-aa8e-69d68643e133")
-	)
-	(wire
-		(pts
 			(xy 177.8 88.9) (xy 193.04 88.9)
 		)
 		(stroke
@@ -6500,16 +6532,6 @@
 			(type default)
 		)
 		(uuid "5484552a-10bd-4308-91c3-59cab790c841")
-	)
-	(wire
-		(pts
-			(xy 25.4 99.06) (xy 40.64 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54f17fb3-1d12-4e41-8e5f-ef4a29e4070f")
 	)
 	(wire
 		(pts
@@ -6633,16 +6655,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 116.84) (xy 231.14 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f1173c9-f5fa-4679-ba78-3b0f70d89eb8")
-	)
-	(wire
-		(pts
 			(xy 139.7 88.9) (xy 154.94 88.9)
 		)
 		(stroke
@@ -6743,16 +6755,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 88.9) (xy 78.74 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b293e5f-dcda-4c56-98b6-b95c57ce15c7")
-	)
-	(wire
-		(pts
 			(xy 63.5 27.94) (xy 50.8 27.94)
 		)
 		(stroke
@@ -6793,26 +6795,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 91.44) (xy 231.14 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f1085ab-fe85-4e61-afa3-333b5c3532e3")
-	)
-	(wire
-		(pts
-			(xy 63.5 96.52) (xy 78.74 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f2f674a-5005-4bf4-9b49-2acb48b0d031")
-	)
-	(wire
-		(pts
 			(xy 63.5 109.22) (xy 78.74 109.22)
 		)
 		(stroke
@@ -6830,16 +6812,6 @@
 			(type default)
 		)
 		(uuid "7229d574-fef6-4ad7-ac97-cfd6e9402a3c")
-	)
-	(wire
-		(pts
-			(xy 215.9 60.96) (xy 231.14 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74d36e87-6792-4a82-b48c-32082ae846c6")
 	)
 	(wire
 		(pts
@@ -6890,26 +6862,6 @@
 			(type default)
 		)
 		(uuid "7e466c6e-5263-4bad-aaf2-1c42be9b3736")
-	)
-	(wire
-		(pts
-			(xy 177.8 73.66) (xy 193.04 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "800902e8-3403-44c7-bde6-57a84884a163")
-	)
-	(wire
-		(pts
-			(xy 215.9 124.46) (xy 231.14 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81d0c256-b023-4c6d-b404-82a10e2f2e9d")
 	)
 	(bus
 		(pts
@@ -6983,16 +6935,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 129.54) (xy 231.14 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cc139b8-57c5-44d8-834a-781b2e9dd38c")
-	)
-	(wire
-		(pts
 			(xy 139.7 76.2) (xy 154.94 76.2)
 		)
 		(stroke
@@ -7000,16 +6942,6 @@
 			(type default)
 		)
 		(uuid "8e97ae7d-74c5-4703-9bd8-cfe95d4a316c")
-	)
-	(wire
-		(pts
-			(xy 25.4 88.9) (xy 40.64 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fcac29f-2dcb-48de-8b05-1bff0c26f81c")
 	)
 	(wire
 		(pts
@@ -7113,16 +7045,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 124.46) (xy 193.04 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9406968c-1b5b-4ded-842a-f47863032d83")
-	)
-	(wire
-		(pts
 			(xy 101.6 71.12) (xy 116.84 71.12)
 		)
 		(stroke
@@ -7143,16 +7065,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 73.66) (xy 78.74 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "987cdc58-5be5-432a-8da2-48a58adf53ab")
-	)
-	(wire
-		(pts
 			(xy 139.7 91.44) (xy 154.94 91.44)
 		)
 		(stroke
@@ -7163,16 +7075,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 99.06) (xy 193.04 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9996fc4b-370d-4e0f-9036-bd94866929f0")
-	)
-	(wire
-		(pts
 			(xy 177.8 63.5) (xy 193.04 63.5)
 		)
 		(stroke
@@ -7180,16 +7082,6 @@
 			(type default)
 		)
 		(uuid "9a3d42a5-7aba-422a-895a-fbd5d4e251f2")
-	)
-	(wire
-		(pts
-			(xy 63.5 99.06) (xy 78.74 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b8e5cc3-dd6a-4f21-adc2-7d974168fd97")
 	)
 	(wire
 		(pts
@@ -7223,16 +7115,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 81.28) (xy 231.14 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1baf5fc-9eca-4fec-91f7-e45fdf6137f2")
-	)
-	(wire
-		(pts
 			(xy 101.6 127) (xy 116.84 127)
 		)
 		(stroke
@@ -7240,16 +7122,6 @@
 			(type default)
 		)
 		(uuid "a2101d0e-f5a5-41ad-9609-715c66f8ce89")
-	)
-	(wire
-		(pts
-			(xy 215.9 114.3) (xy 231.14 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a27eb946-d0f4-42d8-8489-3fbdcb331450")
 	)
 	(wire
 		(pts
@@ -7313,26 +7185,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 63.5) (xy 78.74 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad4a7e0d-43ac-44a8-8721-62451ea183c3")
-	)
-	(wire
-		(pts
-			(xy 177.8 96.52) (xy 193.04 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae632c23-9abd-4a6b-a5c5-f0232540dda8")
-	)
-	(wire
-		(pts
 			(xy 25.4 71.12) (xy 40.64 71.12)
 		)
 		(stroke
@@ -7360,26 +7212,6 @@
 			(type default)
 		)
 		(uuid "b11af971-16a1-458e-aeb7-f20d4504035a")
-	)
-	(wire
-		(pts
-			(xy 177.8 119.38) (xy 193.04 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2054736-4920-46aa-9d8e-33b232826e8f")
-	)
-	(wire
-		(pts
-			(xy 139.7 124.46) (xy 154.94 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b275e58e-b3a6-421c-8c9f-4a643413866e")
 	)
 	(wire
 		(pts
@@ -7423,16 +7255,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 93.98) (xy 231.14 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b96a95bb-4340-4fde-be08-13d2bce29f08")
-	)
-	(wire
-		(pts
 			(xy 139.7 68.58) (xy 154.94 68.58)
 		)
 		(stroke
@@ -7450,16 +7272,6 @@
 			(type default)
 		)
 		(uuid "b9fed911-577a-43aa-bf54-760cd1768602")
-	)
-	(wire
-		(pts
-			(xy 177.8 83.82) (xy 193.04 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "baeb4267-2a08-40f0-9ef5-ead897ac6dda")
 	)
 	(wire
 		(pts
@@ -7483,16 +7295,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 101.6) (xy 193.04 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfe160df-d943-4074-9bfb-c6cf54908aad")
-	)
-	(wire
-		(pts
 			(xy 215.9 121.92) (xy 231.14 121.92)
 		)
 		(stroke
@@ -7500,16 +7302,6 @@
 			(type default)
 		)
 		(uuid "bfeee8aa-3831-41a9-9de9-13edcbbd53fb")
-	)
-	(wire
-		(pts
-			(xy 139.7 66.04) (xy 154.94 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bff3ac24-4cbb-44a7-9c3e-a5a69b46a20b")
 	)
 	(wire
 		(pts
@@ -7523,16 +7315,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 83.82) (xy 116.84 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1a8fece-03b2-4f47-b533-5fb972ff2d6e")
-	)
-	(wire
-		(pts
 			(xy 193.04 58.42) (xy 177.8 58.42)
 		)
 		(stroke
@@ -7540,16 +7322,6 @@
 			(type default)
 		)
 		(uuid "c20baeaa-068d-428d-b898-e7bf9e6399d3")
-	)
-	(wire
-		(pts
-			(xy 25.4 55.88) (xy 40.64 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c31af2ef-8f62-4109-845a-e4911edf0833")
 	)
 	(wire
 		(pts
@@ -7573,16 +7345,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 76.2) (xy 78.74 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8915a1c-75b8-476e-b543-ad0e6e6d12cc")
-	)
-	(wire
-		(pts
 			(xy 139.7 93.98) (xy 154.94 93.98)
 		)
 		(stroke
@@ -7590,16 +7352,6 @@
 			(type default)
 		)
 		(uuid "c922dc65-ee3a-4855-988d-06b8f836a2a3")
-	)
-	(wire
-		(pts
-			(xy 101.6 104.14) (xy 116.84 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c92e71b0-f422-4446-a663-6d8a2e204b19")
 	)
 	(wire
 		(pts
@@ -7753,26 +7505,6 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 111.76) (xy 78.74 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e01b18ff-9965-42f9-a6be-8a2f69a4e854")
-	)
-	(wire
-		(pts
-			(xy 177.8 60.96) (xy 193.04 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0eb3ebe-46b8-4042-bb91-f04536b3941f")
-	)
-	(wire
-		(pts
 			(xy 215.9 111.76) (xy 231.14 111.76)
 		)
 		(stroke
@@ -7843,26 +7575,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 76.2) (xy 231.14 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7d86093-c70a-46c4-9027-b93b7ff9addf")
-	)
-	(wire
-		(pts
-			(xy 25.4 111.76) (xy 40.64 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7e52c01-8b2a-4cfd-9015-b35e5a8c0b03")
-	)
-	(wire
-		(pts
 			(xy 215.9 106.68) (xy 231.14 106.68)
 		)
 		(stroke
@@ -7890,26 +7602,6 @@
 			(type default)
 		)
 		(uuid "ebaeb07e-9826-4a4e-985c-0f49de37aa1e")
-	)
-	(wire
-		(pts
-			(xy 25.4 66.04) (xy 40.64 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee74f13d-26f7-49b5-bbcc-8f6b7f1e964f")
-	)
-	(wire
-		(pts
-			(xy 25.4 73.66) (xy 40.64 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee7806e3-dac5-4edc-895f-29783c5c5bbf")
 	)
 	(wire
 		(pts
@@ -7960,16 +7652,6 @@
 			(type default)
 		)
 		(uuid "f32c4224-626a-40dd-90be-94672fe6baa5")
-	)
-	(wire
-		(pts
-			(xy 215.9 83.82) (xy 231.14 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f36b000c-7fc5-412e-b576-2e0042c4788a")
 	)
 	(wire
 		(pts
@@ -8031,17 +7713,7 @@
 		)
 		(uuid "fd2b0e94-e234-4510-bc20-8917f8241014")
 	)
-	(label "K.A"
-		(at 215.9 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "001ac3b6-f682-428c-b0df-07a3ec463c1e")
-	)
-	(label "K.AE"
+	(label "K.Delete"
 		(at 25.4 86.36 0)
 		(effects
 			(font
@@ -8051,17 +7723,7 @@
 		)
 		(uuid "00255b26-dc63-4b88-8668-d3d668f34e26")
 	)
-	(label "K.Acute"
-		(at 101.6 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "00f267c3-af4e-44fc-9bc6-4952746daa90")
-	)
-	(label "K.Alt"
+	(label "K.E"
 		(at 101.6 88.9 0)
 		(effects
 			(font
@@ -8071,7 +7733,7 @@
 		)
 		(uuid "054e5d0a-6fcf-4560-a58a-a00d6781e36c")
 	)
-	(label "K.AltGr"
+	(label "K.Circ"
 		(at 63.5 132.08 0)
 		(effects
 			(font
@@ -8081,17 +7743,7 @@
 		)
 		(uuid "05d900fb-d020-41a2-8202-3d065029caf1")
 	)
-	(label "K.B"
-		(at 177.8 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "064bdc19-c4c9-41ef-8202-477ae8862910")
-	)
-	(label "K.Bksp"
+	(label "Kp._5"
 		(at 177.8 106.68 0)
 		(effects
 			(font
@@ -8101,17 +7753,7 @@
 		)
 		(uuid "077b843d-2b0d-421e-bede-fecda6a2af40")
 	)
-	(label "K.C"
-		(at 101.6 104.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "07afd9c5-624a-41a3-8b56-d732fa3eaa5a")
-	)
-	(label "K.Circ"
+	(label "Kp.Star"
 		(at 215.9 111.76 0)
 		(effects
 			(font
@@ -8121,17 +7763,7 @@
 		)
 		(uuid "09119305-d70e-49cc-9eed-0b8c31612896")
 	)
-	(label "K.Comma"
-		(at 63.5 111.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "09294e53-4eb2-46e2-a703-e98d3ff266be")
-	)
-	(label "K.D"
+	(label "K.Insert"
 		(at 25.4 96.52 0)
 		(effects
 			(font
@@ -8141,7 +7773,7 @@
 		)
 		(uuid "0c676477-a273-4109-8b11-4586511d775b")
 	)
-	(label "K.Delete"
+	(label "K.End"
 		(at 25.4 71.12 0)
 		(effects
 			(font
@@ -8151,7 +7783,7 @@
 		)
 		(uuid "0d278aca-5e57-41c5-b9f8-393fc4a6401a")
 	)
-	(label "K.Dot"
+	(label "LED0"
 		(at 25.4 83.82 0)
 		(effects
 			(font
@@ -8161,17 +7793,7 @@
 		)
 		(uuid "1093cb79-b812-4559-87ba-019a8d8bac98")
 	)
-	(label "K.Down"
-		(at 25.4 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "10c4006e-e7f0-41fe-98fe-1fb0eeffa75e")
-	)
-	(label "K.E"
+	(label "FPGA_GPIO11"
 		(at 177.8 63.5 0)
 		(effects
 			(font
@@ -8181,7 +7803,7 @@
 		)
 		(uuid "13a358ca-8037-44f2-bb98-ee6c5371bf1c")
 	)
-	(label "K.End"
+	(label "K._8"
 		(at 101.6 63.5 0)
 		(effects
 			(font
@@ -8191,7 +7813,7 @@
 		)
 		(uuid "14113d0f-b541-4f14-9dab-ae8d0b202761")
 	)
-	(label "K.Esc"
+	(label "K.Eszett"
 		(at 63.5 106.68 0)
 		(effects
 			(font
@@ -8201,17 +7823,7 @@
 		)
 		(uuid "19566a79-8e6e-4994-b4cd-1edc2c176361")
 	)
-	(label "K.Eszett"
-		(at 25.4 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1b049681-48d6-4fc7-92eb-d1157bea845c")
-	)
-	(label "K.F"
+	(label "K.UE"
 		(at 101.6 116.84 0)
 		(effects
 			(font
@@ -8221,7 +7833,7 @@
 		)
 		(uuid "1b29885e-354a-4eb0-bd9c-459d82d72ffc")
 	)
-	(label "K.F1"
+	(label "FPGA_GPIO15"
 		(at 177.8 78.74 0)
 		(effects
 			(font
@@ -8231,7 +7843,7 @@
 		)
 		(uuid "1b9f857b-ced4-4c4a-8be6-a6a095228bdc")
 	)
-	(label "K.F10"
+	(label "K.Pause"
 		(at 25.4 76.2 0)
 		(effects
 			(font
@@ -8240,16 +7852,6 @@
 			(justify left bottom)
 		)
 		(uuid "1c1357a2-1a2b-4586-b092-6c0e4a33395b")
-	)
-	(label "K.F12"
-		(at 101.6 111.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1feefa65-7584-427f-9dc9-07fada15cb0b")
 	)
 	(label "USB_FPGA-"
 		(at 127 167.64 180)
@@ -8261,27 +7863,7 @@
 		)
 		(uuid "21e91f40-da2f-4296-8ff4-aff9237c4bdb")
 	)
-	(label "K.F2"
-		(at 63.5 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "22b41c75-1bef-4f1f-b0d9-304080201eb0")
-	)
-	(label "K.F3"
-		(at 63.5 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2492c07b-2a9a-426d-8716-b1961b273c6c")
-	)
-	(label "K.F4"
+	(label "K.Print"
 		(at 25.4 101.6 0)
 		(effects
 			(font
@@ -8291,7 +7873,7 @@
 		)
 		(uuid "25f97352-6bb2-47a5-b878-c1992aa4c2b4")
 	)
-	(label "K.F5"
+	(label "Kp._9"
 		(at 177.8 66.04 0)
 		(effects
 			(font
@@ -8301,7 +7883,7 @@
 		)
 		(uuid "2668b513-7137-47b0-9397-42281906ffe6")
 	)
-	(label "K.F6"
+	(label "K.J"
 		(at 101.6 101.6 0)
 		(effects
 			(font
@@ -8311,7 +7893,7 @@
 		)
 		(uuid "289a90c2-0e73-4322-856f-8abd6c051155")
 	)
-	(label "K.F7"
+	(label "K._3"
 		(at 63.5 81.28 0)
 		(effects
 			(font
@@ -8321,7 +7903,7 @@
 		)
 		(uuid "29710ccb-5ba3-4dff-8a74-3e5e03893836")
 	)
-	(label "K._9"
+	(label "K.D"
 		(at 101.6 99.06 0)
 		(effects
 			(font
@@ -8331,17 +7913,7 @@
 		)
 		(uuid "29d558c9-b87e-4453-b359-546248dad51c")
 	)
-	(label "K.F9"
-		(at 63.5 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2e5f7bc5-db5d-4864-91ab-c50f3da76864")
-	)
-	(label "K.G"
+	(label "K.Minus"
 		(at 139.7 99.06 0)
 		(effects
 			(font
@@ -8351,7 +7923,7 @@
 		)
 		(uuid "30686102-0d13-4461-b88c-c0bc178e211e")
 	)
-	(label "K.H"
+	(label "K.W"
 		(at 101.6 58.42 0)
 		(effects
 			(font
@@ -8361,7 +7933,7 @@
 		)
 		(uuid "319ee87a-fbbd-48fc-937d-15abf1307f88")
 	)
-	(label "K.Hash"
+	(label "K.RMeta"
 		(at 139.7 111.76 0)
 		(effects
 			(font
@@ -8371,7 +7943,7 @@
 		)
 		(uuid "324b1753-d31e-4aa4-85af-897c4535eaa3")
 	)
-	(label "K.Home"
+	(label "K.Plus"
 		(at 101.6 78.74 0)
 		(effects
 			(font
@@ -8381,27 +7953,7 @@
 		)
 		(uuid "337401ba-a387-4613-8ce0-d8a0d87ac781")
 	)
-	(label "K.Insert"
-		(at 177.8 124.46 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "342ead92-2146-4c10-8fb9-7caff5d1bbcc")
-	)
-	(label "K.J"
-		(at 177.8 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "358c665a-3c9c-4ac7-b04c-5fc6481c6b0f")
-	)
-	(label "K.K"
+	(label "K.Comma"
 		(at 139.7 86.36 0)
 		(effects
 			(font
@@ -8411,7 +7963,7 @@
 		)
 		(uuid "36167bb5-2b77-4852-83bb-89dd5df00e19")
 	)
-	(label "K.L"
+	(label "LED2"
 		(at 25.4 78.74 0)
 		(effects
 			(font
@@ -8421,7 +7973,7 @@
 		)
 		(uuid "36cba739-f000-4da3-9733-27f2deec9c99")
 	)
-	(label "K.LCtrl"
+	(label "K.F5"
 		(at 63.5 114.3 0)
 		(effects
 			(font
@@ -8431,7 +7983,7 @@
 		)
 		(uuid "38d5450d-6c43-48d6-bf51-0df31e934d9d")
 	)
-	(label "K.LMeta"
+	(label "K.N"
 		(at 139.7 76.2 0)
 		(effects
 			(font
@@ -8441,7 +7993,7 @@
 		)
 		(uuid "3a3f2c2e-8279-4714-92b8-c73fac8617af")
 	)
-	(label "K.LShift"
+	(label "K.Dot"
 		(at 139.7 88.9 0)
 		(effects
 			(font
@@ -8451,27 +8003,7 @@
 		)
 		(uuid "3a5f78e2-0721-4e93-b9e6-f43e363502a9")
 	)
-	(label "K.Left"
-		(at 63.5 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3aa488e3-a79a-4d53-9f18-e3b7be58c9ca")
-	)
-	(label "K.Lock"
-		(at 215.9 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3be11c4c-9b78-42b1-9bcd-fa28cff0c3e1")
-	)
-	(label "K.Lt"
+	(label "K.F11"
 		(at 63.5 101.6 0)
 		(effects
 			(font
@@ -8481,17 +8013,7 @@
 		)
 		(uuid "3ca751a3-abe8-4457-b572-f685aa03bf7b")
 	)
-	(label "K.M"
-		(at 139.7 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3d20d7bc-d85a-4805-9a95-773c8683dd25")
-	)
-	(label "K.Minus"
+	(label "K.L"
 		(at 101.6 119.38 0)
 		(effects
 			(font
@@ -8501,7 +8023,7 @@
 		)
 		(uuid "4026eb6c-4785-4e73-8a57-6e56237ea7ed")
 	)
-	(label "K.N"
+	(label "FPGA_GPIO3"
 		(at 215.9 86.36 0)
 		(effects
 			(font
@@ -8511,17 +8033,7 @@
 		)
 		(uuid "4334b7a6-7e26-4f35-8ed9-35e634c12333")
 	)
-	(label "K.O"
-		(at 215.9 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4376b37d-55bd-4376-b8a2-5b5bf8d69e82")
-	)
-	(label "K.OE"
+	(label "FPGA_GPIO1"
 		(at 215.9 78.74 0)
 		(effects
 			(font
@@ -8531,17 +8043,7 @@
 		)
 		(uuid "4632cd64-cfd5-44be-9506-025f55bc812d")
 	)
-	(label "K.P"
-		(at 139.7 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4a85a19f-249b-4e15-ac5a-b5e951db712a")
-	)
-	(label "K.Pause"
+	(label "K.A"
 		(at 101.6 86.36 0)
 		(effects
 			(font
@@ -8551,7 +8053,7 @@
 		)
 		(uuid "4b2dee7f-8a31-4d15-9b5f-c00d7ef2173a")
 	)
-	(label "K.PgDn"
+	(label "K.F9"
 		(at 63.5 104.14 0)
 		(effects
 			(font
@@ -8560,26 +8062,6 @@
 			(justify left bottom)
 		)
 		(uuid "4cc459e4-c6ad-460c-934b-a82f7577efbf")
-	)
-	(label "K.PgUp"
-		(at 215.9 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4ebf7167-a269-4c0b-85fe-7f45c01c2af5")
-	)
-	(label "K.Plus"
-		(at 139.7 124.46 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4f6a1157-63f6-4466-9c07-8f44ee68ae48")
 	)
 	(label "FPGA_GPIO[0..15]"
 		(at 82.55 184.15 0)
@@ -8591,7 +8073,7 @@
 		)
 		(uuid "52d77e21-58c4-4f1d-9e8d-78739011b106")
 	)
-	(label "K.Print"
+	(label "Kp._8"
 		(at 25.4 63.5 0)
 		(effects
 			(font
@@ -8601,7 +8083,7 @@
 		)
 		(uuid "5357fe3e-8b1b-44fd-94d3-48612c063995")
 	)
-	(label "K.Q"
+	(label "FPGA_GPIO14"
 		(at 177.8 68.58 0)
 		(effects
 			(font
@@ -8611,17 +8093,7 @@
 		)
 		(uuid "54d1dca1-a8d1-43a2-8c37-9c09dbb7eaba")
 	)
-	(label "K.RCtrl"
-		(at 177.8 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "54fbe95b-d2f2-4ea2-8afd-ffb899c41046")
-	)
-	(label "K.RMeta"
+	(label "K.Comp"
 		(at 101.6 124.46 0)
 		(effects
 			(font
@@ -8631,17 +8103,7 @@
 		)
 		(uuid "551fd3a8-c016-4179-abc9-5aea75dbfcc7")
 	)
-	(label "K.RShift"
-		(at 177.8 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "55f13147-abb2-439a-a746-975db2dac35b")
-	)
-	(label "K.Right"
+	(label "K.C"
 		(at 139.7 78.74 0)
 		(effects
 			(font
@@ -8651,7 +8113,7 @@
 		)
 		(uuid "56c0ad94-e8e4-464c-b8de-ba3efd0dd6da")
 	)
-	(label "K.Rtrn"
+	(label "K._5"
 		(at 63.5 83.82 0)
 		(effects
 			(font
@@ -8661,17 +8123,7 @@
 		)
 		(uuid "585c9506-40f5-4a83-a070-543a5e85daeb")
 	)
-	(label "K.S"
-		(at 215.9 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "596d0d22-9cb7-4dd9-82cc-3eaa117119b0")
-	)
-	(label "K.SLock"
+	(label "Kp.Slash"
 		(at 215.9 55.88 0)
 		(effects
 			(font
@@ -8681,7 +8133,7 @@
 		)
 		(uuid "59e8167c-53ca-430c-a063-4c1301b26da0")
 	)
-	(label "K.Space"
+	(label "LED4"
 		(at 215.9 58.42 0)
 		(effects
 			(font
@@ -8691,17 +8143,7 @@
 		)
 		(uuid "59e96062-aec8-40cd-93bc-c29e34658533")
 	)
-	(label "K.T"
-		(at 63.5 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5a5cf0dd-d0c8-4327-9662-2069218f46d7")
-	)
-	(label "K.U"
+	(label "FPGA_GPIO5"
 		(at 215.9 101.6 0)
 		(effects
 			(font
@@ -8710,16 +8152,6 @@
 			(justify left bottom)
 		)
 		(uuid "5b8b3780-fe9a-4f14-9de9-7d1c1d4864c5")
-	)
-	(label "K.UE"
-		(at 215.9 116.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5c704bd3-eee9-40f4-8661-9a6446e27fe8")
 	)
 	(label "CLK_12MHz"
 		(at 177.8 58.42 0)
@@ -8731,17 +8163,7 @@
 		)
 		(uuid "5ccdb465-0f5b-4936-a3d8-6f0db21e3f9a")
 	)
-	(label "K.Up"
-		(at 25.4 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5e2e52c4-dccb-4b9b-8e46-ba4f2fc86ef7")
-	)
-	(label "K.V"
+	(label "K.Acute"
 		(at 101.6 76.2 0)
 		(effects
 			(font
@@ -8751,7 +8173,7 @@
 		)
 		(uuid "5fad1815-f4bc-4871-9bcb-ac1fe5ed12a1")
 	)
-	(label "K.W"
+	(label "K.F1"
 		(at 63.5 129.54 0)
 		(effects
 			(font
@@ -8761,17 +8183,7 @@
 		)
 		(uuid "61b26445-f814-46fc-b015-2e0001369493")
 	)
-	(label "K.X"
-		(at 215.9 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "66fa411b-d1d0-48c9-ac44-7640f2e51a60")
-	)
-	(label "K.Y"
+	(label "K.RShift"
 		(at 139.7 91.44 0)
 		(effects
 			(font
@@ -8781,7 +8193,7 @@
 		)
 		(uuid "6809d4b4-2c73-48c4-bc4c-0be70fea7fd9")
 	)
-	(label "K.Z"
+	(label "Kp._0"
 		(at 177.8 129.54 0)
 		(effects
 			(font
@@ -8791,7 +8203,7 @@
 		)
 		(uuid "68c9ed0b-ddc4-4b8a-b382-0c0f96d3d2b1")
 	)
-	(label "K._0"
+	(label "K.LShift"
 		(at 101.6 121.92 0)
 		(effects
 			(font
@@ -8801,7 +8213,7 @@
 		)
 		(uuid "6995c06f-eade-4f8a-925b-fac9d1933d50")
 	)
-	(label "K._1"
+	(label "K.F"
 		(at 101.6 129.54 0)
 		(effects
 			(font
@@ -8811,7 +8223,7 @@
 		)
 		(uuid "6ba6543b-9b6f-454f-9c8b-a9d221d2d531")
 	)
-	(label "K._2"
+	(label "Kp.Dot"
 		(at 177.8 127 0)
 		(effects
 			(font
@@ -8821,17 +8233,7 @@
 		)
 		(uuid "6edd68a3-cb05-4605-be26-595cc53afc06")
 	)
-	(label "K._3"
-		(at 215.9 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "70e8667a-461c-48cd-9f65-68a7dd5e1406")
-	)
-	(label "K._4"
+	(label "K.AE"
 		(at 101.6 109.22 0)
 		(effects
 			(font
@@ -8841,7 +8243,7 @@
 		)
 		(uuid "7143771a-5902-45e2-b328-635ebaa66b62")
 	)
-	(label "K._5"
+	(label "K.Y"
 		(at 139.7 63.5 0)
 		(effects
 			(font
@@ -8851,7 +8253,7 @@
 		)
 		(uuid "72809251-2583-47de-9b0a-0aac7bf398ff")
 	)
-	(label "K._6"
+	(label "K._9"
 		(at 63.5 93.98 0)
 		(effects
 			(font
@@ -8861,7 +8263,7 @@
 		)
 		(uuid "7331151a-06b6-453f-8bcc-0bf2d7431ae6")
 	)
-	(label "K._8"
+	(label "K.Esc"
 		(at 63.5 66.04 0)
 		(effects
 			(font
@@ -8871,7 +8273,7 @@
 		)
 		(uuid "76fa0be3-7a8b-4316-ab45-8093b8376020")
 	)
-	(label "LED1"
+	(label "K.P"
 		(at 101.6 68.58 0)
 		(effects
 			(font
@@ -8881,17 +8283,7 @@
 		)
 		(uuid "7792f4cb-e598-4327-87eb-0a090c17e14e")
 	)
-	(label "FPGA_IO315"
-		(at 25.4 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "79e94ce6-1de3-4660-94d2-4b7a7845a01e")
-	)
-	(label "Kp.Dot"
+	(label "Kp.Minus"
 		(at 177.8 93.98 0)
 		(effects
 			(font
@@ -8901,7 +8293,7 @@
 		)
 		(uuid "7a4dd9f6-6eb5-479c-acc4-12f76d002929")
 	)
-	(label "Kp.Minus"
+	(label "K.F3"
 		(at 63.5 127 0)
 		(effects
 			(font
@@ -8911,7 +8303,7 @@
 		)
 		(uuid "7dc5f19a-e478-40ce-9b4b-aa202b969ca4")
 	)
-	(label "Kp.NLock"
+	(label "K.K"
 		(at 139.7 53.34 0)
 		(effects
 			(font
@@ -8931,7 +8323,7 @@
 		)
 		(uuid "7e7971d7-72cc-4976-8545-d0e88b6a87e8")
 	)
-	(label "Kp.Rtrn"
+	(label "K.F6"
 		(at 63.5 53.34 0)
 		(effects
 			(font
@@ -8941,17 +8333,7 @@
 		)
 		(uuid "7fc47b0e-7921-49fb-82b6-508ab9c62fa8")
 	)
-	(label "Kp.Slash"
-		(at 215.9 129.54 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "80220e17-f9bd-4e7d-af51-7674b3508789")
-	)
-	(label "Kp.Star"
+	(label "K.V"
 		(at 139.7 83.82 0)
 		(effects
 			(font
@@ -8961,17 +8343,7 @@
 		)
 		(uuid "80bdb75f-4c71-4dea-888d-9f3eaa9d5a63")
 	)
-	(label "Kp._0"
-		(at 139.7 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "81236094-de59-4bae-a94d-8ff076d10295")
-	)
-	(label "Kp._1"
+	(label "K.F12"
 		(at 25.4 104.14 0)
 		(effects
 			(font
@@ -8981,7 +8353,7 @@
 		)
 		(uuid "81b8cc97-512f-4bf2-9fe3-c977e38ba0b0")
 	)
-	(label "Kp._3"
+	(label "Kp._2"
 		(at 177.8 116.84 0)
 		(effects
 			(font
@@ -8991,7 +8363,7 @@
 		)
 		(uuid "82f8b4af-a7ae-46b6-a50a-246ba06fab29")
 	)
-	(label "Kp._4"
+	(label "K.Up"
 		(at 139.7 114.3 0)
 		(effects
 			(font
@@ -9001,17 +8373,7 @@
 		)
 		(uuid "8412c22f-776e-49b2-aed6-4d1aa845cac4")
 	)
-	(label "Kp._5"
-		(at 63.5 73.66 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8887b929-70d6-4ff2-a080-3916fe17df35")
-	)
-	(label "Kp._6"
+	(label "K.PgDn"
 		(at 25.4 58.42 0)
 		(effects
 			(font
@@ -9021,7 +8383,7 @@
 		)
 		(uuid "89d603b8-76ce-4edf-890f-ef6a79e3e316")
 	)
-	(label "Kp._7"
+	(label "K.F7"
 		(at 63.5 124.46 0)
 		(effects
 			(font
@@ -9031,7 +8393,7 @@
 		)
 		(uuid "89e432ae-aaba-494b-b6b5-82bf1a6e310c")
 	)
-	(label "Kp._8"
+	(label "K.Right"
 		(at 139.7 127 0)
 		(effects
 			(font
@@ -9041,7 +8403,7 @@
 		)
 		(uuid "8aa2ddc8-741a-42a4-bbb6-168f5b80897b")
 	)
-	(label "FPGA_GPIO14"
+	(label "FPGA_GPIO12"
 		(at 177.8 88.9 0)
 		(effects
 			(font
@@ -9051,7 +8413,7 @@
 		)
 		(uuid "8ac2f770-cb7b-44ca-9a9a-553a4bb71833")
 	)
-	(label "FPGA_IO94"
+	(label "K.B"
 		(at 139.7 68.58 0)
 		(effects
 			(font
@@ -9061,7 +8423,7 @@
 		)
 		(uuid "8f66950c-08b2-4249-925b-079eeddac562")
 	)
-	(label "FPGA_IO142"
+	(label "Kp._3"
 		(at 177.8 109.22 0)
 		(effects
 			(font
@@ -9071,7 +8433,7 @@
 		)
 		(uuid "8fa3dd88-a02b-452c-a9a1-828ceee5c8ce")
 	)
-	(label "K.F11"
+	(label "K.F4"
 		(at 63.5 86.36 0)
 		(effects
 			(font
@@ -9081,7 +8443,7 @@
 		)
 		(uuid "90759f37-a9e7-4ea0-a9e1-909862017787")
 	)
-	(label "FPGA_GPIO9"
+	(label "FPGA_GPIO6"
 		(at 215.9 106.68 0)
 		(effects
 			(font
@@ -9091,7 +8453,7 @@
 		)
 		(uuid "9119e9f0-07fd-4cbc-b698-ff118ed75bc1")
 	)
-	(label "FPGA_IO179"
+	(label "FPGA_GPIO10"
 		(at 215.9 121.92 0)
 		(effects
 			(font
@@ -9101,7 +8463,7 @@
 		)
 		(uuid "925de6da-dc37-4ce4-ae1d-802e770d050d")
 	)
-	(label "FPGA_GPIO1"
+	(label "K.Left"
 		(at 139.7 132.08 0)
 		(effects
 			(font
@@ -9111,7 +8473,7 @@
 		)
 		(uuid "96dbb71b-b317-45e4-b4f9-2c35025540c7")
 	)
-	(label "FPGA_GPIO6"
+	(label "K.I"
 		(at 63.5 121.92 0)
 		(effects
 			(font
@@ -9121,17 +8483,7 @@
 		)
 		(uuid "9a67c9ce-7c50-469e-b186-851e5636640d")
 	)
-	(label "K.Menu"
-		(at 25.4 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9b09081b-0861-4671-9386-bcb0096ddd38")
-	)
-	(label "FPGA_IO15"
+	(label "K.SLock"
 		(at 25.4 91.44 0)
 		(effects
 			(font
@@ -9141,7 +8493,7 @@
 		)
 		(uuid "9b60a0c1-8dd2-4e1c-8f2d-bec5d4ef7aad")
 	)
-	(label "FPGA_GPIO4"
+	(label "K.H"
 		(at 101.6 132.08 0)
 		(effects
 			(font
@@ -9151,17 +8503,7 @@
 		)
 		(uuid "9c2ded52-89b9-4de3-9b83-22e8be2a9ac0")
 	)
-	(label "FPGA_IO168"
-		(at 215.9 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9d8df85c-dc52-4f5b-b818-4d2728808370")
-	)
-	(label "FPGA_IO159"
+	(label "FPGA_GPIO2"
 		(at 215.9 71.12 0)
 		(effects
 			(font
@@ -9171,7 +8513,7 @@
 		)
 		(uuid "9dc6392b-a1a5-402b-aac3-996595d0dfdf")
 	)
-	(label "FPGA_IO73"
+	(label "K.U"
 		(at 101.6 96.52 0)
 		(effects
 			(font
@@ -9181,7 +8523,7 @@
 		)
 		(uuid "9ddaba68-7423-457c-9c8e-ae3d0d43a75d")
 	)
-	(label "FPGA_IO90"
+	(label "K.Hash"
 		(at 139.7 58.42 0)
 		(effects
 			(font
@@ -9191,17 +8533,7 @@
 		)
 		(uuid "9f39b2a1-8353-4924-a3ef-3529fc435da7")
 	)
-	(label "FPGA_GPIO3"
-		(at 215.9 127 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9f9a2f98-d8df-4245-912d-f8609fa129dd")
-	)
-	(label "LED0"
+	(label "K._6"
 		(at 101.6 66.04 0)
 		(effects
 			(font
@@ -9211,7 +8543,7 @@
 		)
 		(uuid "a09b6dc5-e7d0-4a05-a4a0-5687dc37f4e4")
 	)
-	(label "FPGA_IO57"
+	(label "K._2"
 		(at 101.6 55.88 0)
 		(effects
 			(font
@@ -9231,16 +8563,6 @@
 		)
 		(uuid "a242780d-d15a-4c68-a7d3-7a9d592e878e")
 	)
-	(label "FPGA_GPIO2"
-		(at 215.9 124.46 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a3b10d20-c589-4898-b01c-a309d5078161")
-	)
 	(label "USB_FPGA+"
 		(at 215.9 63.5 0)
 		(effects
@@ -9251,7 +8573,7 @@
 		)
 		(uuid "a44b308d-792d-4062-a190-8eed99f73247")
 	)
-	(label "FPGA_GPIO7"
+	(label "K.Bksp"
 		(at 63.5 109.22 0)
 		(effects
 			(font
@@ -9261,7 +8583,7 @@
 		)
 		(uuid "a5136e2c-574a-45b5-a041-245e4f9c847f")
 	)
-	(label "FPGA_IO96"
+	(label "K.X"
 		(at 139.7 73.66 0)
 		(effects
 			(font
@@ -9271,7 +8593,7 @@
 		)
 		(uuid "a573ad3a-4f19-45aa-8100-d682c98078ce")
 	)
-	(label "FPGA_IO151"
+	(label "Kp.Rtrn"
 		(at 177.8 132.08 0)
 		(effects
 			(font
@@ -9281,17 +8603,7 @@
 		)
 		(uuid "a59442af-d514-4cfa-928b-f1d5fdaab2db")
 	)
-	(label "FPGA_IO123"
-		(at 177.8 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a789c7e2-c332-4e00-bbcb-c8076d4195c8")
-	)
-	(label "K._7"
+	(label "K.T"
 		(at 101.6 93.98 0)
 		(effects
 			(font
@@ -9301,17 +8613,7 @@
 		)
 		(uuid "a80c27b7-124f-4cab-8812-1c11dd527ada")
 	)
-	(label "FPGA_IO121"
-		(at 177.8 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a8d3a3ea-48e6-4895-b66b-8208c670020d")
-	)
-	(label "FPGA_IO144"
+	(label "Kp._1"
 		(at 177.8 114.3 0)
 		(effects
 			(font
@@ -9321,17 +8623,7 @@
 		)
 		(uuid "a97c07a6-82fc-40ef-b55c-4831e8b81073")
 	)
-	(label "FPGA_IO8"
-		(at 25.4 73.66 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "aa2bf1f6-c86b-4b1b-bf29-d197a8136450")
-	)
-	(label "FPGA_IO115"
+	(label "K.Menu"
 		(at 139.7 121.92 0)
 		(effects
 			(font
@@ -9341,7 +8633,7 @@
 		)
 		(uuid "aacc6d14-11aa-43c1-b6ab-0751a76705ab")
 	)
-	(label "FPGA_IO56"
+	(label "K._4"
 		(at 101.6 53.34 0)
 		(effects
 			(font
@@ -9351,7 +8643,7 @@
 		)
 		(uuid "ac7d69b5-a0c3-4e4d-ac7d-169960fb0011")
 	)
-	(label "Kp._9"
+	(label "K.O"
 		(at 101.6 114.3 0)
 		(effects
 			(font
@@ -9361,7 +8653,7 @@
 		)
 		(uuid "b0246af0-3828-42ff-9e6f-90978cfa7f11")
 	)
-	(label "FPGA_IO26"
+	(label "K.F8"
 		(at 63.5 58.42 0)
 		(effects
 			(font
@@ -9371,17 +8663,7 @@
 		)
 		(uuid "b12dbc4f-076a-4f81-b5a6-f1cdbfb5d35c")
 	)
-	(label "FPGA_IO128"
-		(at 177.8 73.66 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b1aa147c-d88b-4f90-99ae-deca5006affc")
-	)
-	(label "FPGA_IO113"
+	(label "K.Down"
 		(at 139.7 116.84 0)
 		(effects
 			(font
@@ -9390,16 +8672,6 @@
 			(justify left bottom)
 		)
 		(uuid "b2a13236-7045-4865-9a30-0a1be9b2a288")
-	)
-	(label "FPGA_GPIO0"
-		(at 139.7 129.54 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b2d8e855-6e89-4557-92e4-594b4cd7bbed")
 	)
 	(label "USB_FPGA-"
 		(at 215.9 73.66 0)
@@ -9411,7 +8683,7 @@
 		)
 		(uuid "b4a7b307-6df0-42b0-8b34-d99612d8c32f")
 	)
-	(label "FPGA_IO3"
+	(label "K.PgUp"
 		(at 25.4 60.96 0)
 		(effects
 			(font
@@ -9421,7 +8693,7 @@
 		)
 		(uuid "b54a8504-84c7-4771-ad06-e993890b4ac5")
 	)
-	(label "FPGA_GPIO12"
+	(label "FPGA_GPIO13"
 		(at 177.8 81.28 0)
 		(effects
 			(font
@@ -9431,27 +8703,7 @@
 		)
 		(uuid "b65e9f1a-1591-47d5-a20d-f10007686f4f")
 	)
-	(label "FPGA_GPIO13"
-		(at 177.8 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b8dd183a-bd09-4622-a4ab-b0f86b49b101")
-	)
-	(label "FPGA_IO120"
-		(at 177.8 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b8f9ac00-f8e3-49bb-b8f6-d88dab89dd4f")
-	)
-	(label "FPGA_IO31"
+	(label "K.F2"
 		(at 63.5 71.12 0)
 		(effects
 			(font
@@ -9461,17 +8713,7 @@
 		)
 		(uuid "bc55b6a6-d397-4f92-9249-692311db404e")
 	)
-	(label "FPGA_IO166"
-		(at 215.9 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bcb9bc1a-2a61-4a50-a22b-af58bbfd4ba1")
-	)
-	(label "LED3"
+	(label "K._0"
 		(at 101.6 73.66 0)
 		(effects
 			(font
@@ -9481,7 +8723,7 @@
 		)
 		(uuid "bcdc0e0c-e1bc-4298-82c7-1ece7f5b0078")
 	)
-	(label "FPGA_IO89"
+	(label "K.OE"
 		(at 139.7 55.88 0)
 		(effects
 			(font
@@ -9491,7 +8733,7 @@
 		)
 		(uuid "bdd22713-5736-489b-81d6-77e60e879995")
 	)
-	(label "Kp._2"
+	(label "K.G"
 		(at 101.6 106.68 0)
 		(effects
 			(font
@@ -9501,7 +8743,7 @@
 		)
 		(uuid "c20e1d19-3dfb-459c-ac7b-7daca183eb61")
 	)
-	(label "FPGA_IO178"
+	(label "FPGA_GPIO8"
 		(at 215.9 119.38 0)
 		(effects
 			(font
@@ -9511,17 +8753,7 @@
 		)
 		(uuid "c7db25a3-a13b-47c5-b35c-17e8eaa82e95")
 	)
-	(label "FPGA_IO34"
-		(at 63.5 78.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c88d0779-eb75-40e7-bca0-938d1e148fc1")
-	)
-	(label "FPGA_IO105"
+	(label "K.LCtrl"
 		(at 139.7 96.52 0)
 		(effects
 			(font
@@ -9531,7 +8763,7 @@
 		)
 		(uuid "cac2f5dd-c307-47bd-af72-5f436c627511")
 	)
-	(label "FPGA_IO91"
+	(label "K.Lt"
 		(at 139.7 60.96 0)
 		(effects
 			(font
@@ -9541,7 +8773,7 @@
 		)
 		(uuid "cb7733c6-f1d7-4dbb-ad6a-3a136f268396")
 	)
-	(label "FPGA_IO107"
+	(label "K.LMeta"
 		(at 139.7 101.6 0)
 		(effects
 			(font
@@ -9551,7 +8783,7 @@
 		)
 		(uuid "cda0677d-ff0f-4886-bd3c-c2dec62606ab")
 	)
-	(label "FPGA_IO99"
+	(label "K.M"
 		(at 139.7 81.28 0)
 		(effects
 			(font
@@ -9561,7 +8793,7 @@
 		)
 		(uuid "cf330e3f-1d42-4108-be62-22bda7b16ef8")
 	)
-	(label "FPGA_GPIO10"
+	(label "FPGA_GPIO9"
 		(at 215.9 109.22 0)
 		(effects
 			(font
@@ -9571,7 +8803,7 @@
 		)
 		(uuid "d1a0f02b-5379-4400-a83d-3cc638ad8d57")
 	)
-	(label "LED4"
+	(label "K.Q"
 		(at 101.6 91.44 0)
 		(effects
 			(font
@@ -9581,7 +8813,7 @@
 		)
 		(uuid "d1ccf25b-d96e-4469-abd9-6a05c2dd5bf0")
 	)
-	(label "FPGA_IO170"
+	(label "FPGA_GPIO7"
 		(at 215.9 99.06 0)
 		(effects
 			(font
@@ -9591,7 +8823,7 @@
 		)
 		(uuid "d2fb1db0-b4cf-45a6-bdf0-d599f36a2188")
 	)
-	(label "FPGA_IO16"
+	(label "LED1"
 		(at 25.4 93.98 0)
 		(effects
 			(font
@@ -9601,17 +8833,7 @@
 		)
 		(uuid "d413967a-afaf-49b5-905d-a275b3ee4243")
 	)
-	(label "FPGA_IO138"
-		(at 177.8 99.06 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d5ce24ed-1b01-456b-b8bd-48b5200b0d63")
-	)
-	(label "FPGA_IO147"
+	(label "Kp._6"
 		(at 177.8 121.92 0)
 		(effects
 			(font
@@ -9621,7 +8843,7 @@
 		)
 		(uuid "d6a8b188-306b-4870-9f47-f8b56904bfde")
 	)
-	(label "K.F8"
+	(label "K._1"
 		(at 63.5 68.58 0)
 		(effects
 			(font
@@ -9631,7 +8853,7 @@
 		)
 		(uuid "d81530a8-5d8a-451b-9276-c4410b2a8b7e")
 	)
-	(label "FPGA_IO11"
+	(label "K.Home"
 		(at 25.4 81.28 0)
 		(effects
 			(font
@@ -9641,7 +8863,7 @@
 		)
 		(uuid "d82154dc-5830-46f8-a68f-52a141d5b79e")
 	)
-	(label "FPGA_IO25"
+	(label "K.F10"
 		(at 63.5 55.88 0)
 		(effects
 			(font
@@ -9661,7 +8883,7 @@
 		)
 		(uuid "d98dd06a-9f34-4b33-9dba-4f1987f5a36e")
 	)
-	(label "FPGA_IO0"
+	(label "Kp._7"
 		(at 25.4 53.34 0)
 		(effects
 			(font
@@ -9671,17 +8893,7 @@
 		)
 		(uuid "daa0e138-d0af-4437-8ef9-10aa9c584309")
 	)
-	(label "FPGA_GPIO11"
-		(at 215.9 114.3 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "db64f027-12ff-4326-9fcd-a759473f6fc5")
-	)
-	(label "K.I"
+	(label "K._7"
 		(at 63.5 91.44 0)
 		(effects
 			(font
@@ -9691,7 +8903,7 @@
 		)
 		(uuid "dc3b463e-31d5-4fea-8300-1d4d9f690b5d")
 	)
-	(label "FPGA_IO59"
+	(label "K.Z"
 		(at 101.6 60.96 0)
 		(effects
 			(font
@@ -9701,7 +8913,7 @@
 		)
 		(uuid "dcb1beb3-abf9-43f0-9a2e-be12c2b26e7a")
 	)
-	(label "FPGA_GPIO5"
+	(label "K.S"
 		(at 101.6 127 0)
 		(effects
 			(font
@@ -9711,7 +8923,7 @@
 		)
 		(uuid "dd65392e-dabc-4620-bc24-b554f8e28821")
 	)
-	(label "FPGA_GPIO15"
+	(label "K.Lock"
 		(at 177.8 91.44 0)
 		(effects
 			(font
@@ -9721,17 +8933,7 @@
 		)
 		(uuid "de1025e9-cf45-4fb7-af2c-4ef775d5b7e3")
 	)
-	(label "FPGA_IO28"
-		(at 63.5 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dfa65968-0b88-40ee-8f92-8741fe874220")
-	)
-	(label "FPGA_IO108"
+	(label "K.AltGr"
 		(at 139.7 104.14 0)
 		(effects
 			(font
@@ -9741,7 +8943,7 @@
 		)
 		(uuid "e08aa773-2503-4643-af3e-0ee9719d5cfe")
 	)
-	(label "FPGA_GPIO8"
+	(label "FPGA_GPIO4"
 		(at 215.9 104.14 0)
 		(effects
 			(font
@@ -9751,7 +8953,7 @@
 		)
 		(uuid "e24ca9e9-24b8-4ecc-978b-9a9f65ea83cf")
 	)
-	(label "FPGA_IO109"
+	(label "K.Space"
 		(at 139.7 106.68 0)
 		(effects
 			(font
@@ -9760,36 +8962,6 @@
 			(justify left bottom)
 		)
 		(uuid "e5564234-9549-448e-8360-1f35a9732d3c")
-	)
-	(label "FPGA_IO316"
-		(at 25.4 111.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5b8c82a-89e8-424c-834c-ce88cec284de")
-	)
-	(label "FPGA_IO14"
-		(at 25.4 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e7fc347f-0677-4b2b-aba8-78c7258fe1be")
-	)
-	(label "K.Comp"
-		(at 101.6 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ea0cec3d-2661-4ce6-ad51-db7ee783e9a4")
 	)
 	(label "USB_Pull_Up"
 		(at 215.9 53.34 0)
@@ -9811,17 +8983,7 @@
 		)
 		(uuid "ebb7cf88-8e79-4952-9990-246bf38498fc")
 	)
-	(label "FPGA_IO139"
-		(at 177.8 101.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ebc48586-444f-4ce2-b7dd-218b7dba42f0")
-	)
-	(label "FPGA_IO104"
+	(label "K.Alt"
 		(at 139.7 93.98 0)
 		(effects
 			(font
@@ -9831,17 +8993,7 @@
 		)
 		(uuid "ec5f7070-e362-4ab3-a7db-24297048c94f")
 	)
-	(label "FPGA_IO163"
-		(at 215.9 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ecb85d50-95d7-4960-af2a-056439850be3")
-	)
-	(label "FPGA_IO6"
+	(label "LED3"
 		(at 25.4 68.58 0)
 		(effects
 			(font
@@ -9851,7 +9003,7 @@
 		)
 		(uuid "ed256e34-c6e7-4bd4-bd11-736d8f9d24ac")
 	)
-	(label "FPGA_IO110"
+	(label "K.RCtrl"
 		(at 139.7 109.22 0)
 		(effects
 			(font
@@ -9871,6 +9023,16 @@
 		)
 		(uuid "f08b5428-fc67-4cc5-b819-701d09f89863")
 	)
+	(label "Kp.NLock"
+		(at 25.4 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f41e6d8d-936a-46a9-bcd6-2547b6310433")
+	)
 	(label "K.R"
 		(at 63.5 119.38 0)
 		(effects
@@ -9881,7 +9043,7 @@
 		)
 		(uuid "f43a2e33-18ad-4e80-8621-d39cf07368c8")
 	)
-	(label "FPGA_IO140"
+	(label "Kp._4"
 		(at 177.8 104.14 0)
 		(effects
 			(font
@@ -9891,7 +9053,7 @@
 		)
 		(uuid "f80a3f52-0ab9-4f05-9125-0a8412701f25")
 	)
-	(label "LED2"
+	(label "K.Rtrn"
 		(at 101.6 71.12 0)
 		(effects
 			(font
@@ -9901,7 +9063,7 @@
 		)
 		(uuid "fbaf47b1-6c64-4c09-a8b4-31b243fa09dc")
 	)
-	(label "FPGA_IO158"
+	(label "FPGA_GPIO0"
 		(at 215.9 68.58 0)
 		(effects
 			(font
@@ -9910,16 +9072,6 @@
 			(justify left bottom)
 		)
 		(uuid "fcba5a73-1aa2-42c8-97f7-04ba4ac6d255")
-	)
-	(label "FPGA_IO129"
-		(at 177.8 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fe5d78aa-c93f-41d2-8901-ff8ac7a8b1d9")
 	)
 	(hierarchical_label "USB_FPGA-"
 		(shape bidirectional)
@@ -10051,7 +9203,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "139a99c1-4630-454f-8252-1d078057dbc0")
-		(property "Reference" "C30"
+		(property "Reference" "C33"
 			(at 218.821 31.9786 0)
 			(effects
 				(font
@@ -10131,7 +9283,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C30")
+					(reference "C33")
 					(unit 1)
 				)
 			)
@@ -10145,23 +9297,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "13cd18b1-4582-438c-a58a-ece5c8836f84")
-		(property "Reference" "U13"
-			(at 236.22 136.144 0)
+		(property "Reference" "U18"
+			(at 241.3 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 236.22 138.684 0)
+			(at 241.3 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -10980,7 +10131,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 7)
 				)
 			)
@@ -11127,7 +10278,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6167cc45-3c76-4426-9a21-efa5dc504463")
-		(property "Reference" "C27"
+		(property "Reference" "C36"
 			(at 79.121 31.9786 0)
 			(effects
 				(font
@@ -11207,7 +10358,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C27")
+					(reference "C36")
 					(unit 1)
 				)
 			)
@@ -11354,7 +10505,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "75941905-8c26-4ab1-8f49-e04df01a7714")
-		(property "Reference" "C32"
+		(property "Reference" "C26"
 			(at 34.671 162.7886 0)
 			(effects
 				(font
@@ -11434,7 +10585,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C32")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -11449,7 +10600,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8172bc7a-43f9-4108-9ecc-4538106e7078")
-		(property "Reference" "R22"
+		(property "Reference" "R31"
 			(at 116.078 157.5816 0)
 			(effects
 				(font
@@ -11520,7 +10671,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "R22")
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -11667,7 +10818,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9af5c72f-e018-44a8-bd64-d8befb0748bb")
-		(property "Reference" "C31"
+		(property "Reference" "C32"
 			(at 231.521 31.9786 0)
 			(effects
 				(font
@@ -11747,7 +10898,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C31")
+					(reference "C32")
 					(unit 1)
 				)
 			)
@@ -11761,23 +10912,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "9b6ee38e-e32a-4168-b452-38110a0e39d3")
-		(property "Reference" "U13"
-			(at 198.12 136.144 0)
+		(property "Reference" "U18"
+			(at 203.2 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 198.12 138.684 0)
+			(at 203.2 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -12597,7 +11747,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 6)
 				)
 			)
@@ -12612,7 +11762,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9ecf5d5e-f8c3-42de-9918-919805a77db4")
-		(property "Reference" "C28"
+		(property "Reference" "C35"
 			(at 142.621 31.9786 0)
 			(effects
 				(font
@@ -12692,7 +11842,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C28")
+					(reference "C35")
 					(unit 1)
 				)
 			)
@@ -12866,7 +12016,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b612127a-2744-4fd1-af08-bdb5cf4fcae0")
-		(property "Reference" "C29"
+		(property "Reference" "C34"
 			(at 155.321 31.9786 0)
 			(effects
 				(font
@@ -12946,7 +12096,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C29")
+					(reference "C34")
 					(unit 1)
 				)
 			)
@@ -12960,23 +12110,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "b6a63e80-0234-41fe-8eca-80f2a3399fb0")
-		(property "Reference" "U13"
-			(at 45.72 115.824 0)
+		(property "Reference" "U18"
+			(at 50.8 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 45.72 118.364 0)
+			(at 50.8 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -13795,7 +12944,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 2)
 				)
 			)
@@ -13809,23 +12958,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "bfb8d251-b2ab-4c77-8b5a-dc14d17a91f4")
-		(property "Reference" "U13"
-			(at 121.92 136.144 0)
+		(property "Reference" "U18"
+			(at 127 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 121.92 138.684 0)
+			(at 127 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -14644,7 +13792,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 4)
 				)
 			)
@@ -14791,7 +13939,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d867715f-e22c-4c6b-8d4c-fef6588d2256")
-		(property "Reference" "C26"
+		(property "Reference" "C37"
 			(at 66.421 31.9786 0)
 			(effects
 				(font
@@ -14871,7 +14019,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "C26")
+					(reference "C37")
 					(unit 1)
 				)
 			)
@@ -14951,23 +14099,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "f24fb714-0e13-4beb-8302-8bf24f528387")
-		(property "Reference" "U13"
-			(at 83.82 136.144 0)
+		(property "Reference" "U18"
+			(at 88.9 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 83.82 138.684 0)
+			(at 88.9 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -15786,7 +14933,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 3)
 				)
 			)
@@ -15800,23 +14947,22 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "f7b3bd43-17be-4cc3-a2ac-28828b04314a")
-		(property "Reference" "U13"
-			(at 160.02 136.144 0)
+		(property "Reference" "U18"
+			(at 165.1 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "LFE5U-25F-6BG256C"
-			(at 160.02 138.684 0)
+			(at 165.1 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Package_BGA:BGA-256_14.0x14.0mm_Layout16x16_P0.8mm_Ball0.45mm_Pad0.32mm_NSMD"
@@ -16635,7 +15781,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c"
-					(reference "U13")
+					(reference "U18")
 					(unit 5)
 				)
 			)

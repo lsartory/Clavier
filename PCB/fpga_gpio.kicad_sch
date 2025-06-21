@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - FPGA GPIOs")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -2724,7 +2724,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54f15ee8-6a6f-4fee-bf84-4990a1688c7f")
-		(property "Reference" "J9"
+		(property "Reference" "J6"
 			(at 190.5 46.99 0)
 			(effects
 				(font
@@ -2812,7 +2812,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "J9")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -2894,7 +2894,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a9977677-38c8-4eda-a7bb-b33ad5d9e5a0")
-		(property "Reference" "U17"
+		(property "Reference" "U9"
 			(at 190.5 120.65 0)
 			(effects
 				(font
@@ -2988,7 +2988,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "U17")
+					(reference "U9")
 					(unit 1)
 				)
 			)
@@ -3004,7 +3004,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "accd48d1-45c0-4759-a2fe-fcb9a38862c9")
-		(property "Reference" "U15"
+		(property "Reference" "U2"
 			(at 190.5 82.55 0)
 			(effects
 				(font
@@ -3098,7 +3098,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "U15")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -3114,7 +3114,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb8f1b31-74b2-4e85-b96e-1ae3837342a9")
-		(property "Reference" "U16"
+		(property "Reference" "U10"
 			(at 101.6 120.65 0)
 			(effects
 				(font
@@ -3208,7 +3208,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "U16")
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -3224,7 +3224,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf1b897b-8526-42f7-b98c-f588b920ef73")
-		(property "Reference" "U14"
+		(property "Reference" "U3"
 			(at 101.6 82.55 0)
 			(effects
 				(font
@@ -3318,7 +3318,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "U14")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -3400,7 +3400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "edfa0aa1-fb96-4935-910b-458b158471c5")
-		(property "Reference" "J8"
+		(property "Reference" "J5"
 			(at 101.6 46.99 0)
 			(effects
 				(font
@@ -3488,7 +3488,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/d73938da-f0ba-48e3-aac9-a36988c25c2c/b5b36560-d80b-424a-94c9-5c93a5ca4fe2"
-					(reference "J8")
+					(reference "J5")
 					(unit 1)
 				)
 			)

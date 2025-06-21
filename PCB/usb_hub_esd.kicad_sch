@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Clavier - USB hub ESD protection")
-		(date "2025-06-21")
+		(date "2025-06-22")
 		(rev "1.0")
 		(company "Copyright (c) 2025 L. Sartory")
 		(comment 1 "SPDX-License-Identifier: CERN-OHL-P-2.0")
@@ -1329,7 +1329,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a060ee1-4a77-419a-96d8-6a62c99cd59b")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 88.9 69.85 0)
 			(effects
 				(font
@@ -1423,7 +1423,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d/ef8929de-a747-4f3a-ab77-4865a3483dd3"
-					(reference "U6")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -1505,7 +1505,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5a821672-561d-4d99-b84f-5fb24f4c953d")
-		(property "Reference" "U7"
+		(property "Reference" "U11"
 			(at 190.5 95.25 0)
 			(effects
 				(font
@@ -1599,7 +1599,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d/ef8929de-a747-4f3a-ab77-4865a3483dd3"
-					(reference "U7")
+					(reference "U11")
 					(unit 1)
 				)
 			)
@@ -1681,7 +1681,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b7b4c438-233e-4c7e-9871-d09c27ebe5a6")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 190.5 44.45 0)
 			(effects
 				(font
@@ -1775,7 +1775,7 @@
 		(instances
 			(project "clavier"
 				(path "/6362c6e0-59ef-40d3-b6e0-7e9dfe7b9b20/f3d926d4-179d-4033-9062-145e3f3d7f6d/ef8929de-a747-4f3a-ab77-4865a3483dd3"
-					(reference "U5")
+					(reference "U4")
 					(unit 1)
 				)
 			)
