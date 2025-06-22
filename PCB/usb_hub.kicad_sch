@@ -5539,7 +5539,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_A_Molex_67643_Horizontal"
+		(property "Footprint" "clavier:USB_A_Molex_67643_Horizontal"
 			(at 232.41 97.79 0)
 			(effects
 				(font
@@ -7259,7 +7259,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_A_Molex_67643_Horizontal"
+		(property "Footprint" "clavier:USB_A_Molex_67643_Horizontal"
 			(at 232.41 142.24 0)
 			(effects
 				(font
