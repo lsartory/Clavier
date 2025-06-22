@@ -150,7 +150,7 @@ begin
             end if;
 
             -- Synchronous reset
-            if CLRn = '0' then
+            if CLRn = '0' or tx_state /= idle then
                 line_idle          <= '1';
                 line_counter       <= (others => '0');
                 line_timeout       <= (others => '0');
@@ -174,80 +174,78 @@ begin
             RX_EOP   <= '0';
             RX_ERROR <= '0';
 
-            if tx_state = idle then
-                -- Line activity detection
-                if line_state_valid = '1' and line_state_sampled = K then
-                    rx_idle <= '0';
-                end if;
+            -- Line activity detection
+            if line_state_valid = '1' and line_state_sampled = K then
+                rx_idle <= '0';
+            end if;
 
-                -- Receive bits
-                if line_state_valid = '1' then
-                    if line_state_sampled = prev_line_state then
-                        if rx_stuffing < 6 then
-                            rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
-                            rx_shift_counter <= rx_shift_counter + 1;
-                            rx_stuffing      <= rx_stuffing + 1;
-                        else
-                            rx_idle  <= '1';
-                            RX_ERROR <= '1';
-                        end if;
+            -- Receive bits
+            if line_state_valid = '1' then
+                if line_state_sampled = prev_line_state then
+                    if rx_stuffing < 6 then
+                        rx_shift_reg     <= '1' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                        rx_shift_counter <= rx_shift_counter + 1;
+                        rx_stuffing      <= rx_stuffing + 1;
                     else
-                        if rx_stuffing < 6 then
-                            rx_shift_reg     <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
-                            rx_shift_counter <= rx_shift_counter + 1;
-                        end if;
-                        rx_stuffing <= (others => '0');
+                        rx_idle  <= '1';
+                        RX_ERROR <= '1';
                     end if;
-                    prev_line_state := line_state_sampled;
-                end if;
-
-                -- Signal full bytes
-                if rx_shift_counter = 8 then
-                    rx_shift_counter <= (others => '0');
-                    RX_DATA          <= rx_shift_reg;
-                    RX_VALID         <= '1';
-                end if;
-
-                -- End of packet shift register
-                if line_state_valid = '1' then
-                    eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_sampled;
-                end if;
-                if eop_shift_reg = (SE0, SE0, J) then
-                    eop_shift_reg <= (others => SE0);
-                    rx_idle       <= '1';
-                    RX_EOP        <= '1';
-                end if;
-
-                -- Suspend timer
-                if line_state /= J then
-                    suspend_counter <= (others => '0');
-                    RX_SUSPEND      <= '0';
-                elsif suspend_counter <= SUSPEND_LENGTH then
-                    suspend_counter <= suspend_counter + 1;
                 else
-                    RX_SUSPEND <= '1';
+                    if rx_stuffing < 6 then
+                        rx_shift_reg     <= '0' & rx_shift_reg(rx_shift_reg'high downto rx_shift_reg'low + 1);
+                        rx_shift_counter <= rx_shift_counter + 1;
+                    end if;
+                    rx_stuffing <= (others => '0');
                 end if;
+                prev_line_state := line_state_sampled;
+            end if;
 
-                -- Host reset timer
-                if line_state /= SE0 then
-                    reset_counter <= (others => '0');
-                    RX_RESET      <= '0';
-                elsif reset_counter <= RESET_LENGTH then
-                    reset_counter <= reset_counter + 1;
-                else
-                    RX_RESET <= '1';
-                end if;
+            -- Signal full bytes
+            if rx_shift_counter = 8 then
+                rx_shift_counter <= (others => '0');
+                RX_DATA          <= rx_shift_reg;
+                RX_VALID         <= '1';
+            end if;
 
-                -- Resynchronization
-                if line_idle = '0' and line_idle_prev = '1' then
-                    rx_shift_reg     <= (others => '0');
-                    rx_shift_counter <= (others => '0');
-                    rx_stuffing      <= (others => '0');
-                end if;
+            -- End of packet shift register
+            if line_state_valid = '1' then
+                eop_shift_reg <= eop_shift_reg(eop_shift_reg'high - 1 downto eop_shift_reg'low) & line_state_sampled;
+            end if;
+            if eop_shift_reg = (SE0, SE0, J) then
+                eop_shift_reg <= (others => SE0);
+                rx_idle       <= '1';
+                RX_EOP        <= '1';
+            end if;
+
+            -- Suspend timer
+            if line_state /= J then
+                suspend_counter <= (others => '0');
+                RX_SUSPEND      <= '0';
+            elsif suspend_counter <= SUSPEND_LENGTH then
+                suspend_counter <= suspend_counter + 1;
+            else
+                RX_SUSPEND <= '1';
+            end if;
+
+            -- Host reset timer
+            if line_state /= SE0 then
+                reset_counter <= (others => '0');
+                RX_RESET      <= '0';
+            elsif reset_counter <= RESET_LENGTH then
+                reset_counter <= reset_counter + 1;
+            else
+                RX_RESET <= '1';
+            end if;
+
+            -- Resynchronization
+            if line_idle = '0' and line_idle_prev = '1' then
+                rx_shift_reg     <= (others => '0');
+                rx_shift_counter <= (others => '0');
+                rx_stuffing      <= (others => '0');
             end if;
 
             -- Synchronous reset
-            if CLRn = '0' then
+            if CLRn = '0' or tx_state /= idle then
                 rx_idle          <= '1';
                 rx_shift_reg     <= (others => '0');
                 rx_shift_counter <= (others => '0');
@@ -390,6 +388,6 @@ begin
             end if;
         end if;
     end process;
-    TX_ACTIVE <= '1' when tx_state = idle else '0';
+    TX_ACTIVE <= '0' when tx_state = idle else '1';
 
 end USB_PHY_arch;
