@@ -33,6 +33,7 @@ end entity USB_Device;
 --------------------------------------------------
 
 architecture USB_Device_arch of USB_Device is
+    -- PHY signals
     signal rx_active:  std_logic;
     signal rx_data:    std_logic_vector(7 downto 0);
     signal rx_valid:   std_logic;
@@ -40,18 +41,18 @@ architecture USB_Device_arch of USB_Device is
     signal rx_error:   std_logic;
     signal rx_suspend: std_logic;
     signal rx_reset:   std_logic;
-
     signal tx_enable:  std_logic;
     signal tx_data:    std_logic_vector(7 downto 0);
     signal tx_read:    std_logic;
 
+    -- State handling signals
     type usb_state_t is (
         detached,
         connect,
         idle,
-        sync,
         pid,
         payload,
+        skip_to_eop,
         eop,
         suspend,
         reset
@@ -60,11 +61,11 @@ architecture USB_Device_arch of USB_Device is
     signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: move to the USB_Setup block
     signal rx_pid: std_logic_vector(3 downto 0);
 
+    -- Handshake packet decoder signals
     signal rx_ack: std_logic;
     signal rx_nak: std_logic;
-    signal tx_ack: std_logic;
-    signal tx_nak: std_logic;
 
+    -- Token packet decoder signals
     type token_type_t is (
         token_none,
         token_out,
@@ -87,6 +88,7 @@ architecture USB_Device_arch of USB_Device is
     signal token_crc_counter:   unsigned(3 downto 0);
     signal token_crc5:          std_logic_vector(4 downto 0);
 
+    -- Data packet decoder signals
     signal data_start:           std_logic;
     signal data_end:             std_logic;
     signal data_parity:          std_logic;
@@ -95,11 +97,13 @@ architecture USB_Device_arch of USB_Device is
     signal data_crc16:           std_logic_vector(15 downto 0);
     signal rx_data_packet:       std_logic;
     signal rx_data_packet_valid: std_logic;
+    signal tx_ack: std_logic;
+    signal tx_nak: std_logic;
 
-    signal tx_send_ack:  std_logic;
-    signal tx_send_nak:  std_logic;
+    -- Data packet transmitter signals
     signal tx_wait_read: std_logic;
 begin
+    -- PHY block
     usb_phy: entity work.USB_PHY
         generic map (
             FULL_SPEED => FULL_SPEED
@@ -151,34 +155,27 @@ begin
                     usb_state <= idle;
 
                 when idle =>
-                    -- Detect sync patterns
+                    -- Wait for the start of a packet
                     if rx_active = '1' then
-                        usb_state <= sync;
-                    end if;
-
-                when sync =>
-                    -- Wait until synchronization is complete
-                    if rx_valid = '1' then
-                        usb_state <= idle;
-                        if rx_data = x"80" then
-                            usb_state <= pid;
-                        end if;
+                        usb_state <= pid;
                     end if;
 
                 when pid =>
                     -- Get the packet identifier
                     if rx_valid = '1' then
-                        usb_state <= payload;
                         rx_pid    <= rx_data(3 downto 0);
+                        usb_state <= payload;
+                        -- Verify the PID
                         for i in 0 to 3 loop
                             if rx_data(i) = rx_data(i + 4) then
+                                rx_pid    <= (others => '0');
                                 usb_state <= idle;
                             end if;
                         end loop;
                     end if;
 
-                when payload =>
-                    -- Detect end of packet
+                when payload | skip_to_eop =>
+                    -- Detect the end of the current packet
                     if rx_eop = '1' then
                         usb_state <= eop;
                     end if;
@@ -196,7 +193,7 @@ begin
                 when reset =>
                     -- Host reset
                     if rx_reset = '0' then
-                        usb_state <= detached;
+                        usb_state <= connect;
                     end if;
             end case;
 
@@ -204,7 +201,7 @@ begin
             if rx_reset = '1' then
                 usb_state <= reset;
             elsif rx_error = '1' then
-                usb_state <= idle;
+                usb_state <= skip_to_eop;
             elsif rx_suspend = '1' then
                 usb_state <= suspend;
             end if;
@@ -225,7 +222,7 @@ begin
             if CLRn = '1' and usb_state = eop then
                 case rx_pid is
                     when "0010" => rx_ack <= '1';
-                    when "1010" => rx_nak <= '1';
+                    when "1010" => rx_nak <= '1'; -- Normally unreachable
                     when others => null;
                 end case;
             end if;
@@ -289,7 +286,7 @@ begin
                         token_decoder_state <= idle;
                     end if;
             end case;
-            if usb_state = sync then
+            if usb_state = pid then
                 token_decoder_state <= idle;
             end if;
 
@@ -300,6 +297,11 @@ begin
                 token_crc5          <= '0' & token_crc5(token_crc5'high downto token_crc5'low + 1);
                 token_crc5(2)       <= token_crc5(3) xor token_crc5(0) xor token_crc_shift_reg(token_crc_shift_reg'low);
                 token_crc5(4)       <= token_crc5(0) xor token_crc_shift_reg(token_crc_shift_reg'low);
+            end if;
+
+            -- Reset the transaction state after an acknowledge
+            if rx_ack = '1' or tx_ack = '1' then
+                token_type <= token_none;
             end if;
 
             -- Synchronous reset
@@ -316,9 +318,9 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
+            rx_data_packet_valid <= '0';
             tx_ack               <= '0';
             tx_nak               <= '0';
-            rx_data_packet_valid <= '0';
 
             case usb_state is
                 when pid =>
@@ -342,7 +344,7 @@ begin
                     data_start <= '0';
 
                 when eop =>
-                    -- Wait for the end of a packet
+                    -- Wait for the end of the current packet
                     if rx_data_packet = '1' then
                         data_end <= '1';
                     end if;
@@ -373,7 +375,10 @@ begin
                 end if;
             end if;
 
-            -- TODO: setup tokens reset data_parity to '0'
+            -- Setup tokens are always followed by a DATA0 packet
+            if token_type = token_setup then
+                data_parity <= '0';
+            end if;
 
             -- Synchronous reset
             if CLRn = '0' then
@@ -395,13 +400,11 @@ begin
             -- Check if an ACK or NAK needs to be sent
             if tx_ack = '1' then
                 tx_enable    <= '1';
-                tx_data      <= x"80";
-                tx_send_ack  <= '1';
+                tx_data      <= x"D2";
                 tx_wait_read <= '1';
             elsif tx_nak = '1' then
                 tx_enable    <= '1';
-                tx_data      <= x"80";
-                tx_send_nak  <= '1';
+                tx_data      <= x"5A";
                 tx_wait_read <= '1';
             end if;
 
@@ -411,23 +414,14 @@ begin
                 if tx_read = '1' then
                     tx_wait_read <= '0';
                 end if;
-            elsif tx_send_ack = '1' then
-                tx_enable <= '1';
-                tx_data   <= x"D2";
-                if tx_read = '1' then
-                    tx_send_ack <= '0';
-                end if;
-            elsif tx_send_nak = '1' then
-                tx_enable <= '1';
-                tx_data   <= x"5A";
-                if tx_read = '1' then
-                    tx_send_nak <= '0';
-                end if;
             end if;
+
+            -- TODO: send data with CRC16
 
             -- Synchronous reset
             if CLRn = '0' then
-                tx_enable <= '0';
+                tx_enable    <= '0';
+                tx_wait_read <= '0';
             end if;
         end if;
     end process;
