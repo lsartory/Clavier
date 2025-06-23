@@ -8,12 +8,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.usb_types.all;
+use work.usb_descriptors.all;
 
 --------------------------------------------------
 
 entity USB_Device is
     generic (
-        FULL_SPEED: boolean := true
+        FULL_SPEED:  boolean := true;
+        DESCRIPTORS: usb_device_descriptor_t
     );
     port (
         CLK_48MHz:   in  std_logic;
@@ -424,6 +426,9 @@ begin
 
     -- Endpoint 0
     usb_ep0: entity work.USB_EndPoint0
+        generic map (
+            DESCRIPTORS => DESCRIPTORS
+        )
         port map (
             CLK_48MHz            => CLK_48MHz,
             CLRn                 => CLRn,

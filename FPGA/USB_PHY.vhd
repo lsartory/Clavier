@@ -44,10 +44,10 @@ end entity USB_PHY;
 --------------------------------------------------
 
 architecture USB_PHY_arch of USB_PHY is
-    constant LOW_SPEED_BIT_LENGTH:  natural :=      32; -- 1.5 Mbps
-    constant FULL_SPEED_BIT_LENGTH: natural :=       4; --  12 Mbps
-    constant SUSPEND_LENGTH:        natural := 144_000; -- 3.0 ms
-    constant RESET_LENGTH:          natural := 120_000; -- 2.5 ms
+    constant LOW_SPEED_BIT_LENGTH:  positive :=      32; -- 1.5 Mbps
+    constant FULL_SPEED_BIT_LENGTH: positive :=       4; --  12 Mbps
+    constant SUSPEND_LENGTH:        positive := 144_000; -- 3.0 ms
+    constant RESET_LENGTH:          positive := 120_000; -- 2.5 ms
 
     -- Synchronized signals
     signal usb_dn_sync: std_logic;

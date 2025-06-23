@@ -6,10 +6,16 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use work.usb_descriptors.all;
 
 --------------------------------------------------
 
 entity Clavier is
+    generic (
+        USB_VENDOR_ID:  integer range 0 to 65535 := 16#1209#;
+        USB_PRODUCT_ID: integer range 0 to 65535 := 16#0008#;
+        USB_BCD_DEVICE: integer range 0 to 65535 := 16#0100#
+    );
     port (
         CLK_12MHz:   in    std_logic;
 
@@ -50,6 +56,44 @@ begin
         );
 
     usb_dev: entity work.USB_Device
+        generic map (
+            FULL_SPEED  => true,
+            DESCRIPTORS => new_usb_device(
+                16#00#, -- No device class
+                16#00#, -- No device sub-class
+                16#00#, -- No device protocol
+                8,      -- Max packet size -- TODO: select automatically depending on FULL_SPEED
+                USB_VENDOR_ID,
+                USB_PRODUCT_ID,
+                USB_BCD_DEVICE,
+                1, -- Manufacturer string index
+                2, -- Product string index
+                3, -- Serial number string index
+                (
+                    0 => new_usb_configuration(
+                        0,     -- Configuration #0
+                        0,     -- No description string
+                        false, -- Bus-powered
+                        false, -- No remote wakeup
+                        100,   -- mA max. power
+                        (
+                            0 => new_usb_interface(
+                                0,      -- Interface #0
+                                0,      -- No alternate setting
+                                16#03#, -- HID class
+                                16#00#, -- Non-boot sub-class
+                                16#00#, -- Non-boot protocol
+                                0,      -- No description string
+                                (
+                                    0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 8, 1), -- TODO: max packet size
+                                    1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 8, 1)  -- TODO: max packet size
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
         port map (
             CLK_48MHz   => pll_clk,
             CLRn        => clrn,

@@ -11,7 +11,11 @@ use work.usb_types.all;
 use work.usb_descriptors.all;
 
 --------------------------------------------------
+
 entity USB_EndPoint0 is
+    generic (
+        DESCRIPTORS: usb_device_descriptor_t
+    );
     port (
         CLK_48MHz:            in  std_logic;
         CLRn:                 in  std_logic := '1';
@@ -32,6 +36,8 @@ end entity USB_EndPoint0;
 --------------------------------------------------
 
 architecture USB_EndPoint0_arch of USB_EndPoint0 is
+    constant DESCRIPTOR_ROM: usb_byte_array_t := to_byte_array(DESCRIPTORS);
+
     -- Setup handler signals
     type setup_packet_t is record
         valid:         std_logic;
