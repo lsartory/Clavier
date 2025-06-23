@@ -13,8 +13,11 @@ LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += PLL.vhd
+SOURCES += USB_Descriptors.vhd
 SOURCES += USB_Device.vhd
+SOURCES += USB_EndPoint0.vhd
 SOURCES += USB_PHY.vhd
+SOURCES += USB_Types.vhd
 SOURCES += VectorCDC.vhd
 
 

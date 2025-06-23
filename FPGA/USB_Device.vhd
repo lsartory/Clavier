@@ -7,6 +7,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.usb_types.all;
 
 --------------------------------------------------
 
@@ -35,14 +36,14 @@ end entity USB_Device;
 architecture USB_Device_arch of USB_Device is
     -- PHY signals
     signal rx_active:  std_logic;
-    signal rx_data:    std_logic_vector(7 downto 0);
+    signal rx_data:    usb_byte_t;
     signal rx_valid:   std_logic;
     signal rx_eop:     std_logic;
     signal rx_error:   std_logic;
     signal rx_suspend: std_logic;
     signal rx_reset:   std_logic;
     signal tx_enable:  std_logic;
-    signal tx_data:    std_logic_vector(7 downto 0);
+    signal tx_data:    usb_byte_t;
     signal tx_read:    std_logic;
 
     -- State handling signals
@@ -58,21 +59,13 @@ architecture USB_Device_arch of USB_Device is
         reset
     );
     signal usb_state: usb_state_t;
-    signal device_address: unsigned(6 downto 0) := (others => '0'); -- TODO: move to the USB_Setup block
     signal rx_pid: std_logic_vector(3 downto 0);
 
     -- Handshake packet decoder signals
     signal rx_ack: std_logic;
-    signal rx_nak: std_logic;
+    --signal rx_nak: std_logic;
 
     -- Token packet decoder signals
-    type token_type_t is (
-        token_none,
-        token_out,
-        token_in,
-        token_setup,
-        token_unknown
-    );
     type token_decoder_state_t is (
         idle,
         load_data_1,
@@ -82,9 +75,9 @@ architecture USB_Device_arch of USB_Device is
     );
     signal token_decoder_state: token_decoder_state_t;
     signal token_shift_reg:     std_logic_vector(19 downto 0);
-    signal token_type:          token_type_t;
-    signal token_endpoint:      std_logic_vector(3 downto 0);
-    signal token_crc_shift_reg: std_logic_vector(7 downto 0);
+    signal token_type:          usb_token_t;
+    signal token_endpoint:      usb_endpoint_t;
+    signal token_crc_shift_reg: usb_byte_t;
     signal token_crc_counter:   unsigned(3 downto 0);
     signal token_crc5:          std_logic_vector(4 downto 0);
 
@@ -92,7 +85,7 @@ architecture USB_Device_arch of USB_Device is
     signal data_start:           std_logic;
     signal data_end:             std_logic;
     signal data_parity:          std_logic;
-    signal data_crc_shift_reg:   std_logic_vector(7 downto 0);
+    signal data_crc_shift_reg:   usb_byte_t;
     signal data_crc_counter:     unsigned(3 downto 0);
     signal data_crc16:           std_logic_vector(15 downto 0);
     signal rx_data_packet:       std_logic;
@@ -102,6 +95,9 @@ architecture USB_Device_arch of USB_Device is
 
     -- Data packet transmitter signals
     signal tx_wait_read: std_logic;
+
+    -- Endpoint 0 signals
+    signal device_address: usb_dev_addr_t;
 begin
     -- PHY block
     usb_phy: entity work.USB_PHY
@@ -218,11 +214,11 @@ begin
     begin
         if rising_edge(CLK_48MHz) then
             rx_ack <= '0';
-            rx_nak <= '0';
+            --rx_nak <= '0';
             if CLRn = '1' and usb_state = eop then
                 case rx_pid is
                     when "0010" => rx_ack <= '1';
-                    when "1010" => rx_nak <= '1'; -- Normally unreachable
+                    --when "1010" => rx_nak <= '1'; -- Normally unreachable
                     when others => null;
                 end case;
             end if;
@@ -274,7 +270,7 @@ begin
                                     when "1101" => token_type <= token_setup;
                                     when others => token_type <= token_unknown;
                                 end case;
-                                token_endpoint <= token_shift_reg(14 downto 11);
+                                token_endpoint <= usb_endpoint_t(token_shift_reg(14 downto 11));
                             end if;
                         end if;
                         token_decoder_state <= wait_eop;
@@ -425,4 +421,22 @@ begin
             end if;
         end if;
     end process;
+
+    -- Endpoint 0
+    usb_ep0: entity work.USB_EndPoint0
+        port map (
+            CLK_48MHz            => CLK_48MHz,
+            CLRn                 => CLRn,
+
+            TOKEN                => token_type,
+            ENDPOINT             => token_endpoint,
+
+            RX_DATA_PACKET       => rx_data_packet,
+            RX_DATA_PACKET_VALID => rx_data_packet_valid,
+            RX_DATA              => rx_data,
+            RX_DATA_VALID        => rx_valid,
+            RX_EOP               => rx_eop,
+
+            DEVICE_ADDRESS       => device_address
+        );
 end USB_Device_arch;

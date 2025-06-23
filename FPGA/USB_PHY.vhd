@@ -7,6 +7,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.usb_types.all;
 
 --------------------------------------------------
 
@@ -25,7 +26,7 @@ entity USB_PHY is
         USB_DP_OUT:  out std_logic;
 
         RX_ACTIVE:   out std_logic;
-        RX_DATA:     out std_logic_vector(7 downto 0);
+        RX_DATA:     out usb_byte_t;
         RX_VALID:    out std_logic;
         RX_EOP:      out std_logic;
 
@@ -35,7 +36,7 @@ entity USB_PHY is
 
         TX_ACTIVE:   out std_logic;
         TX_ENABLE:   in  std_logic;
-        TX_DATA:     in  std_logic_vector(7 downto 0);
+        TX_DATA:     in  usb_byte_t;
         TX_READ:     out std_logic
     );
 end entity USB_PHY;
@@ -67,7 +68,7 @@ architecture USB_PHY_arch of USB_PHY is
     signal suspend_counter:    unsigned(17 downto 0);
 
     -- Receiver signals
-    signal rx_shift_reg:     std_logic_vector(7 downto 0);
+    signal rx_shift_reg:     usb_byte_t;
     signal rx_shift_counter: unsigned(3 downto 0);
     signal rx_stuffing:      unsigned(3 downto 0);
 
@@ -87,7 +88,7 @@ architecture USB_PHY_arch of USB_PHY is
         end_delay
     );
     signal tx_state:         tx_state_t;
-    signal tx_shift_reg:     std_logic_vector(7 downto 0);
+    signal tx_shift_reg:     usb_byte_t;
     signal tx_shift_counter: unsigned(3 downto 0);
     signal tx_stuffing:      unsigned(3 downto 0);
     signal tx_dn:            std_logic;
