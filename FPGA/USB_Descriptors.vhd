@@ -14,30 +14,53 @@ use work.usb_types.all;
 package usb_descriptors is
     -- Define maximums
     constant MAX_STRING_LENGTH:       positive := 32;
+    constant MAX_STRING_COUNT:        positive := 32;
     constant MAX_ENDPOINT_COUNT:      positive := 30;
     constant MAX_INTERFACE_COUNT:     positive :=  8;
     constant MAX_CONFIGURATION_COUNT: positive :=  4;
 
     --------------------------------------------------
 
-    -- String descriptor
-    type usb_string_descriptor_t is record
+    -- Descriptor header
+    type usb_descriptor_header_t is record
+        rom_offset: unsigned(15 downto 0);
+
         bLength:         usb_byte_t;
         bDescriptorType: usb_byte_t;
-        bString:         usb_word_array_t(0 to MAX_STRING_LENGTH - 1);
     end record;
+
+    constant EMPTY_USB_DESCRIPTOR_HEADER: usb_descriptor_header_t := (
+        rom_offset => (others => '0'),
+
+        bLength         => (others => '0'),
+        bDescriptorType => (others => '0')
+    );
+
+    --------------------------------------------------
+
+    -- String descriptor
+    type usb_string_descriptor_t is record
+        header:  usb_descriptor_header_t;
+        bString: usb_word_array_t(0 to MAX_STRING_LENGTH - 1);
+    end record;
+
+    constant EMPTY_USB_STRING_DESCRIPTOR: usb_string_descriptor_t := (
+        header  => EMPTY_USB_DESCRIPTOR_HEADER,
+        bString => (others => (others => '0'))
+    );
 
     type usb_string_descriptor_array_t is array(natural range <>) of usb_string_descriptor_t;
 
+    function new_usb_string_zero(langs: usb_word_array_t) return usb_string_descriptor_t;
     function to_usb_string_descriptor(s: string) return usb_string_descriptor_t;
-    function to_byte_array(d: usb_string_descriptor_t) return usb_byte_array_t;
+    function serialize(d: usb_string_descriptor_t; i: natural) return usb_byte_t;
+    function get_total_size(d: usb_string_descriptor_array_t) return natural;
 
     --------------------------------------------------
 
     -- Endpoint descriptor
     type usb_endpoint_descriptor_t is record
-        bLength:          usb_byte_t;
-        bDescriptorType:  usb_byte_t;
+        header:           usb_descriptor_header_t;
         bEndpointAddress: usb_byte_t;
         bmAttributes:     usb_byte_t;
         wMaxPacketSize:   usb_word_t;
@@ -45,8 +68,7 @@ package usb_descriptors is
     end record;
 
     constant EMPTY_USB_ENDPOINT_DESCRIPTOR: usb_endpoint_descriptor_t := (
-        bLength          => (others => '0'),
-        bDescriptorType  => (others => '0'),
+        header           => EMPTY_USB_DESCRIPTOR_HEADER,
         bEndpointAddress => (others => '0'),
         bmAttributes     => (others => '0'),
         wMaxPacketSize   => (others => '0'),
@@ -75,8 +97,7 @@ package usb_descriptors is
 
     -- Interface descriptor
     type usb_interface_descriptor_t is record
-        bLength:            usb_byte_t;
-        bDescriptorType:    usb_byte_t;
+        header:             usb_descriptor_header_t;
         bInterfaceNumber:   usb_byte_t;
         bAlternateSetting:  usb_byte_t;
         bNumEndpoints:      usb_byte_t;
@@ -89,8 +110,7 @@ package usb_descriptors is
     end record;
 
     constant EMPTY_USB_INTERFACE_DESCRIPTOR: usb_interface_descriptor_t := (
-        bLength            => (others => '0'),
-        bDescriptorType    => (others => '0'),
+        header             => EMPTY_USB_DESCRIPTOR_HEADER,
         bInterfaceNumber   => (others => '0'),
         bAlternateSetting  => (others => '0'),
         bNumEndpoints      => (others => '0'),
@@ -120,8 +140,7 @@ package usb_descriptors is
 
     -- Configuration descriptor
     type usb_configuration_descriptor_t is record
-        bLength:             usb_byte_t;
-        bDescriptorType:     usb_byte_t;
+        header:              usb_descriptor_header_t;
         wTotalLength:        usb_word_t;
         bNumInterfaces:      usb_byte_t;
         bConfigurationValue: usb_byte_t;
@@ -133,8 +152,7 @@ package usb_descriptors is
     end record;
 
     constant EMPTY_USB_CONFIGURATION_DESCRIPTOR: usb_configuration_descriptor_t := (
-        bLength             => (others => '0'),
-        bDescriptorType     => (others => '0'),
+        header              => EMPTY_USB_DESCRIPTOR_HEADER,
         wTotalLength        => (others => '0'),
         bNumInterfaces      => (others => '0'),
         bConfigurationValue => (others => '0'),
@@ -148,7 +166,7 @@ package usb_descriptors is
     type usb_configuration_descriptor_array_t is array(natural range <>) of usb_configuration_descriptor_t;
 
     function new_usb_configuration(
-        value:         integer range 0 to 255;
+        value:         integer range 1 to 255;
         desc_string:   integer range 0 to 255;
         self_powered:  boolean;
         remote_wakeup: boolean;
@@ -162,8 +180,7 @@ package usb_descriptors is
 
     -- Device descriptor
     type usb_device_descriptor_t is record
-        bLength:            usb_byte_t;
-        bDescriptorType:    usb_byte_t;
+        header:             usb_descriptor_header_t;
         bcdUSB:             usb_word_t;
         bDeviceClass:       usb_byte_t;
         bDeviceSubClass:    usb_byte_t;
@@ -181,8 +198,7 @@ package usb_descriptors is
     end record;
 
     constant EMPTY_USB_DEVICE_DESCRIPTOR: usb_device_descriptor_t := (
-        bLength            => (others => '0'),
-        bDescriptorType    => (others => '0'),
+        header             => EMPTY_USB_DESCRIPTOR_HEADER,
         bcdUSB             => (others => '0'),
         bDeviceClass       => (others => '0'),
         bDeviceSubClass    => (others => '0'),
@@ -215,23 +231,64 @@ package usb_descriptors is
 
     function serialize(d: usb_device_descriptor_t; i: natural) return usb_byte_t;
     function get_total_size(d: usb_device_descriptor_t) return natural;
-    function to_byte_array(d: usb_device_descriptor_t) return usb_byte_array_t;
+
+    --------------------------------------------------
+
+    -- Combined descriptors
+    type usb_descriptors_t is record
+        device:  usb_device_descriptor_t;
+        strings: usb_string_descriptor_array_t(0 to MAX_STRING_COUNT - 1);
+    end record;
+
+    constant EMPTY_USB_DESCRIPTORS: usb_descriptors_t := (
+        device  => EMPTY_USB_DEVICE_DESCRIPTOR,
+        strings => (others => EMPTY_USB_STRING_DESCRIPTOR)
+    );
+
+    function new_usb_descriptors(
+        device:  usb_device_descriptor_t;
+        strings: usb_string_descriptor_array_t
+    ) return usb_descriptors_t;
+
+    function to_byte_array(d: usb_descriptors_t) return usb_byte_array_t;
 end package;
 
 --------------------------------------------------
 
 package body usb_descriptors is
+    -- Create a new string descriptor containing the supported languages
+    function new_usb_string_zero(langs: usb_word_array_t) return usb_string_descriptor_t is
+        variable ret: usb_string_descriptor_t := EMPTY_USB_STRING_DESCRIPTOR;
+    begin
+        ret.header.bLength         := usb_byte_t(to_unsigned(langs'length * 2 + 2, ret.header.bLength'length));
+        ret.header.bDescriptorType := x"03";
+
+        -- TODO: handle multiple languages
+        assert langs'length = 1 report "Multiple languages are not supported yet" severity error;
+
+        -- Copy the languages array
+        for i in langs'low to langs'high loop
+            ret.bString(i - langs'low) := langs(i);
+        end loop;
+
+        return ret;
+    end function;
+
     -- Convert a VHDL string into a USB string descriptor
     function to_usb_string_descriptor(s: string) return usb_string_descriptor_t is
-        variable ret: usb_string_descriptor_t;
+        variable ret: usb_string_descriptor_t := EMPTY_USB_STRING_DESCRIPTOR;
     begin
-        ret.bLength         := usb_byte_t(to_unsigned(s'length * 2 + 2, ret.bLength'length));
-        ret.bDescriptorType := x"03";
-        ret.bString         := (others => (others => '0'));
-        for i in s'low to s'high loop
-            ret.bString(i - s'low)( 7 downto 0) := usb_byte_t(to_unsigned(character'pos(s(i)), 8));
-            ret.bString(i - s'low)(15 downto 8) := (others => '0');
-        end loop;
+        ret.header.bLength         := usb_byte_t(to_unsigned(s'length * 2 + 2, ret.header.bLength'length));
+        ret.header.bDescriptorType := x"03";
+
+        -- Convert the ASCII string into UTF-16 character by character
+        if s'length > 0 then
+            for i in s'low to s'high loop
+                ret.bString(i - s'low)( 7 downto 0) := usb_byte_t(to_unsigned(character'pos(s(i)), 8));
+                ret.bString(i - s'low)(15 downto 8) := (others => '0');
+            end loop;
+        end if;
+
         return ret;
     end function;
 
@@ -240,8 +297,8 @@ package body usb_descriptors is
         variable ret: usb_byte_t := (others => '0');
     begin
         case i is
-            when 0 => ret := d.bLength;
-            when 1 => ret := d.bDescriptorType;
+            when 0 => ret := d.header.bLength;
+            when 1 => ret := d.header.bDescriptorType;
             when 2 to d.bString'length - 3 =>
                 if i mod 2 = 0 then
                     ret := d.bString((i - 2) / 2)( 7 downto 0);
@@ -253,14 +310,14 @@ package body usb_descriptors is
         return ret;
     end function;
 
-    -- Convert a USB string descriptor into a byte array
-    function to_byte_array(d: usb_string_descriptor_t) return usb_byte_array_t is
-        variable ret: usb_byte_array_t(0 to to_integer(unsigned(d.bLength)) - 1) := (others => (others => '0'));
+    -- Get the size necessary to serialize a string array
+    function get_total_size(d: usb_string_descriptor_array_t) return natural is
+        variable total_size: natural := 0;
     begin
-        for i in ret'range loop
-            ret(i) := serialize(d, i);
+        for i in d'range loop
+            total_size := total_size + to_integer(unsigned(d(i).header.bLength));
         end loop;
-        return ret;
+        return total_size;
     end function;
 
     --------------------------------------------------
@@ -277,8 +334,9 @@ package body usb_descriptors is
     ) return usb_endpoint_descriptor_t is
         variable ret: usb_endpoint_descriptor_t := EMPTY_USB_ENDPOINT_DESCRIPTOR;
     begin
-        ret.bLength          := x"07";
-        ret.bDescriptorType  := x"05";
+        ret.header.bLength          := x"07";
+        ret.header.bDescriptorType  := x"05";
+
         ret.bEndpointAddress := usb_byte_t(to_unsigned(addr, ret.bEndpointAddress'length));
         ret.bmAttributes     := (others => '0');
         case transfer_type is
@@ -300,6 +358,7 @@ package body usb_descriptors is
         end case;
         ret.wMaxPacketSize   := usb_word_t(to_unsigned(max_packet_size, ret.wMaxPacketSize'length));
         ret.bInterval        := usb_byte_t(to_unsigned(interval, ret.bInterval'length));
+
         return ret;
     end function;
 
@@ -308,8 +367,8 @@ package body usb_descriptors is
         variable ret: usb_byte_t := (others => '0');
     begin
         case i is
-            when 0 => ret := d.bLength;
-            when 1 => ret := d.bDescriptorType;
+            when 0 => ret := d.header.bLength;
+            when 1 => ret := d.header.bDescriptorType;
             when 2 => ret := d.bEndpointAddress;
             when 3 => ret := d.bmAttributes;
             when 4 => ret := d.wMaxPacketSize( 7 downto 0);
@@ -334,8 +393,9 @@ package body usb_descriptors is
     ) return usb_interface_descriptor_t is
         variable ret: usb_interface_descriptor_t := EMPTY_USB_INTERFACE_DESCRIPTOR;
     begin
-        ret.bLength            := x"09";
-        ret.bDescriptorType    := x"04";
+        ret.header.bLength         := x"09";
+        ret.header.bDescriptorType := x"04";
+
         ret.bInterfaceNumber   := usb_byte_t(to_unsigned(number, ret.bInterfaceNumber'length));
         ret.bAlternateSetting  := usb_byte_t(to_unsigned(alt_setting, ret.bAlternateSetting'length));
         ret.bNumEndpoints      := usb_byte_t(to_unsigned(endpoints'length, ret.bNumEndpoints'length));
@@ -357,8 +417,8 @@ package body usb_descriptors is
         variable ret: usb_byte_t := (others => '0');
     begin
         case i is
-            when 0 => ret := d.bLength;
-            when 1 => ret := d.bDescriptorType;
+            when 0 => ret := d.header.bLength;
+            when 1 => ret := d.header.bDescriptorType;
             when 2 => ret := d.bInterfaceNumber;
             when 3 => ret := d.bAlternateSetting;
             when 4 => ret := d.bNumEndpoints;
@@ -375,7 +435,7 @@ package body usb_descriptors is
 
     -- Create a new USB configuration
     function new_usb_configuration(
-        value:         integer range 0 to 255;
+        value:         integer range 1 to 255;
         desc_string:   integer range 0 to 255;
         self_powered:  boolean;
         remote_wakeup: boolean;
@@ -385,8 +445,9 @@ package body usb_descriptors is
         variable ret: usb_configuration_descriptor_t := EMPTY_USB_CONFIGURATION_DESCRIPTOR;
         variable wTotalLength: integer range 0 to 65535;
     begin
-        ret.bLength             := x"09";
-        ret.bDescriptorType     := x"02";
+        ret.header.bLength         := x"09";
+        ret.header.bDescriptorType := x"02";
+
         ret.bNumInterfaces      := usb_byte_t(to_unsigned(interfaces'length, ret.bNumInterfaces'length));
         ret.bConfigurationValue := usb_byte_t(to_unsigned(value, ret.bConfigurationValue'length));
         ret.iConfiguration      := usb_byte_t(to_unsigned(desc_string, ret.iConfiguration'length));
@@ -405,11 +466,11 @@ package body usb_descriptors is
         end loop;
 
         -- Compute the configuration size
-        wTotalLength := to_integer(unsigned(ret.bLength));
+        wTotalLength := to_integer(unsigned(ret.header.bLength));
         for i in ret.interfaces'range loop
-            wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).bLength));
+            wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).header.bLength));
             for j in ret.interfaces(i).endpoints'range loop
-                wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).endpoints(j).bLength));
+                wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).endpoints(j).header.bLength));
             end loop;
         end loop;
         ret.wTotalLength := usb_word_t(to_unsigned(wTotalLength, ret.wTotalLength'length));
@@ -422,8 +483,8 @@ package body usb_descriptors is
         variable ret: usb_byte_t := (others => '0');
     begin
         case i is
-            when 0 => ret := d.bLength;
-            when 1 => ret := d.bDescriptorType;
+            when 0 => ret := d.header.bLength;
+            when 1 => ret := d.header.bDescriptorType;
             when 2 => ret := d.wTotalLength( 7 downto 0);
             when 3 => ret := d.wTotalLength(15 downto 8);
             when 4 => ret := d.bNumInterfaces;
@@ -459,8 +520,9 @@ package body usb_descriptors is
             when others => report "bMaxPacketSize0 must be 8, 16, 32, or 64" severity error;
         end case;
 
-        ret.bLength            := x"12";
-        ret.bDescriptorType    := x"01";
+        ret.header.bLength         := x"12";
+        ret.header.bDescriptorType := x"01";
+
         ret.bcdUSB             := x"0110"; -- USB 1.1
         ret.bDeviceClass       := usb_byte_t(to_unsigned(class, ret.bDeviceClass'length));
         ret.bDeviceSubClass    := usb_byte_t(to_unsigned(sub_class, ret.bDeviceSubClass'length));
@@ -487,8 +549,8 @@ package body usb_descriptors is
         variable ret: usb_byte_t := (others => '0');
     begin
         case i is
-            when  0 => ret := d.bLength;
-            when  1 => ret := d.bDescriptorType;
+            when  0 => ret := d.header.bLength;
+            when  1 => ret := d.header.bDescriptorType;
             when  2 => ret := d.bcdUSB( 7 downto 0);
             when  3 => ret := d.bcdUSB(15 downto 8);
             when  4 => ret := d.bDeviceClass;
@@ -514,46 +576,106 @@ package body usb_descriptors is
     function get_total_size(d: usb_device_descriptor_t) return natural is
         variable total_size: natural := 0;
     begin
-        total_size := to_integer(unsigned(d.bLength));
+        total_size := to_integer(unsigned(d.header.bLength));
         for i in d.configurations'range loop
             total_size := total_size + to_integer(unsigned(d.configurations(i).wTotalLength));
         end loop;
         return total_size;
     end function;
 
-    -- Convert a USB device descriptor into a byte array
-    function to_byte_array(d: usb_device_descriptor_t) return usb_byte_array_t is
-        variable ret: usb_byte_array_t(0 to get_total_size(d) - 1) := (others => (others => '0'));
+    --------------------------------------------------
+
+    function new_usb_descriptors(
+        device:  usb_device_descriptor_t;
+        strings: usb_string_descriptor_array_t
+    ) return usb_descriptors_t is
+        variable ret: usb_descriptors_t := EMPTY_USB_DESCRIPTORS;
+        variable rom_offset: unsigned(ret.device.header.rom_offset'range) := (others => '0');
+    begin
+        -- Copy the device
+        ret.device := device;
+
+        -- Copy the strings
+        for i in strings'low to strings'high loop
+            ret.strings(i - strings'low) := strings(i);
+        end loop;
+
+        -- Update the device ROM offset
+        ret.device.header.rom_offset := (others => '0');
+        rom_offset := rom_offset + unsigned(ret.device.header.bLength);
+
+        -- Update the configurations ROM offsets
+        for conf_index in 0 to to_integer(unsigned(ret.device.bNumConfigurations)) - 1 loop
+            ret.device.configurations(conf_index).header.rom_offset := rom_offset;
+            rom_offset := rom_offset + unsigned(ret.device.configurations(conf_index).header.bLength);
+
+            -- Update the interfaces ROM offsets
+            for iface_index in 0 to to_integer(unsigned(ret.device.configurations(conf_index).bNumInterfaces)) - 1 loop
+                ret.device.configurations(conf_index).interfaces(iface_index).header.rom_offset := rom_offset;
+                rom_offset := rom_offset + unsigned(ret.device.configurations(conf_index).interfaces(iface_index).header.bLength);
+
+                -- Update the endpoints ROM offsets
+                for endpoint_index in 0 to to_integer(unsigned(ret.device.configurations(conf_index).interfaces(iface_index).bNumEndpoints)) - 1 loop
+                    ret.device.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index).header.rom_offset := rom_offset;
+                    rom_offset := rom_offset + unsigned(ret.device.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index).header.bLength);
+                end loop;
+            end loop;
+        end loop;
+
+        -- Update the strings ROM offsets
+        for i in ret.strings'low to ret.strings'high loop
+            if unsigned(ret.strings(i).header.bLength) > 0 then
+                ret.strings(i).header.rom_offset := rom_offset;
+                rom_offset := rom_offset + unsigned(ret.strings(i).header.bLength);
+            end if;
+        end loop;
+
+        return ret;
+    end function;
+
+    -- Convert the combined USB descriptors into a byte array
+    function to_byte_array(d: usb_descriptors_t) return usb_byte_array_t is
+        variable ret: usb_byte_array_t(0 to get_total_size(d.device) + get_total_size(d.strings) - 1) := (others => (others => '0'));
         variable out_index: natural := 0;
     begin
         -- Serialize the device descriptor
-        for i in 0 to to_integer(unsigned(d.bLength)) - 1 loop
-            ret(out_index) := serialize(d, i);
+        for i in 0 to to_integer(unsigned(d.device.header.bLength)) - 1 loop
+            ret(out_index) := serialize(d.device, i);
             out_index      := out_index + 1;
         end loop;
 
         -- Serialize configuration descriptors
-        for conf_index in 0 to to_integer(unsigned(d.bNumConfigurations)) - 1 loop
-            for i in 0 to to_integer(unsigned(d.configurations(conf_index).bLength)) - 1 loop
-                ret(out_index) := serialize(d.configurations(conf_index), i);
+        for conf_index in 0 to to_integer(unsigned(d.device.bNumConfigurations)) - 1 loop
+            for i in 0 to to_integer(unsigned(d.device.configurations(conf_index).header.bLength)) - 1 loop
+                ret(out_index) := serialize(d.device.configurations(conf_index), i);
                 out_index      := out_index + 1;
             end loop;
 
             -- Serialize interface descriptors
-            for iface_index in 0 to to_integer(unsigned(d.configurations(conf_index).bNumInterfaces)) - 1 loop
-                for i in 0 to to_integer(unsigned(d.configurations(conf_index).interfaces(iface_index).bLength)) - 1 loop
-                    ret(out_index) := serialize(d.configurations(conf_index).interfaces(iface_index), i);
+            for iface_index in 0 to to_integer(unsigned(d.device.configurations(conf_index).bNumInterfaces)) - 1 loop
+                for i in 0 to to_integer(unsigned(d.device.configurations(conf_index).interfaces(iface_index).header.bLength)) - 1 loop
+                    ret(out_index) := serialize(d.device.configurations(conf_index).interfaces(iface_index), i);
                     out_index      := out_index + 1;
                 end loop;
 
                 -- Serialize endpoint descriptors
-                for endpoint_index in 0 to to_integer(unsigned(d.configurations(conf_index).interfaces(iface_index).bNumEndpoints)) - 1 loop
-                    for i in 0 to to_integer(unsigned(d.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index).bLength)) - 1 loop
-                        ret(out_index) := serialize(d.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index), i);
+                for endpoint_index in 0 to to_integer(unsigned(d.device.configurations(conf_index).interfaces(iface_index).bNumEndpoints)) - 1 loop
+                    for i in 0 to to_integer(unsigned(d.device.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index).header.bLength)) - 1 loop
+                        ret(out_index) := serialize(d.device.configurations(conf_index).interfaces(iface_index).endpoints(endpoint_index), i);
                         out_index      := out_index + 1;
                     end loop;
                 end loop;
             end loop;
+        end loop;
+
+        -- Serialize the strings
+        for i in d.strings'low to d.strings'high loop
+            if unsigned(d.strings(i).header.bLength) > 0 then
+                for j in 0 to to_integer(unsigned(d.strings(i).header.bLength)) - 1 loop
+                    ret(out_index) := serialize(d.strings(i), j);
+                    out_index      := out_index + 1;
+                end loop;
+            end if;
         end loop;
 
         return ret;

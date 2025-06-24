@@ -11,12 +11,15 @@ use ieee.numeric_std.all;
 --------------------------------------------------
 
 package usb_types is
+    -- Data types
     subtype usb_byte_t is std_logic_vector( 7 downto 0);
     subtype usb_word_t is std_logic_vector(15 downto 0);
 
+    -- Array types
     type usb_byte_array_t is array(natural range <>) of usb_byte_t;
     type usb_word_array_t is array(natural range <>) of usb_word_t;
 
+    -- Token types
     type usb_token_t is (
         token_none,
         token_out,
@@ -25,6 +28,26 @@ package usb_types is
         token_unknown
     );
 
+    -- Address types
     subtype usb_dev_addr_t is unsigned(6 downto 0);
-    subtype usb_endpoint_t is unsigned(3 downto 0);
+    subtype usb_ep_addr_t  is unsigned(3 downto 0);
+
+    -- Endpoints input/output signals
+    type usb_ep_input_signals_t is record
+        token:                usb_token_t;
+        endpoint:             usb_ep_addr_t;
+
+        rx_data_packet:       std_logic;
+        rx_data_packet_valid: std_logic;
+        rx_data:              usb_byte_t;
+        rx_data_valid:        std_logic;
+        rx_eop:               std_logic;
+
+        tx_read:              std_logic;
+    end record;
+    type usb_ep_output_signals_t is record
+        tx_enable: std_logic;
+        tx_data:   usb_byte_t;
+    end record;
+    type usb_ep_output_signals_array_t is array(natural range <>) of usb_ep_output_signals_t;
 end package;

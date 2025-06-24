@@ -8,28 +8,31 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.usb_types.all;
-use work.usb_descriptors.all;
 
 --------------------------------------------------
 
 entity USB_Device is
     generic (
-        FULL_SPEED:  boolean := true;
-        DESCRIPTORS: usb_device_descriptor_t
+        FULL_SPEED: boolean := true
     );
     port (
-        CLK_48MHz:   in  std_logic;
-        CLRn:        in  std_logic := '1';
+        CLK_48MHz:      in  std_logic;
+        CLRn:           in  std_logic := '1';
 
-        USB_OE:      out std_logic;
-        USB_DN_IN:   in  std_logic;
-        USB_DP_IN:   in  std_logic;
-        USB_DN_OUT:  out std_logic;
-        USB_DP_OUT:  out std_logic;
-        USB_DN_PULL: out std_logic;
-        USB_DP_PULL: out std_logic;
+        USB_OE:         out std_logic;
+        USB_DN_IN:      in  std_logic;
+        USB_DP_IN:      in  std_logic;
+        USB_DN_OUT:     out std_logic;
+        USB_DP_OUT:     out std_logic;
+        USB_DN_PULL:    out std_logic;
+        USB_DP_PULL:    out std_logic;
 
-        FRAME_START: out std_logic
+        DEVICE_ADDRESS: in    usb_dev_addr_t;
+
+        EP_INPUT:       out   usb_ep_input_signals_t;
+        EP_OUTPUTS:     in    usb_ep_output_signals_array_t;
+
+        FRAME_START:    out   std_logic
     );
 end entity USB_Device;
 
@@ -78,7 +81,7 @@ architecture USB_Device_arch of USB_Device is
     signal token_decoder_state: token_decoder_state_t;
     signal token_shift_reg:     std_logic_vector(19 downto 0);
     signal token_type:          usb_token_t;
-    signal token_endpoint:      usb_endpoint_t;
+    signal token_endpoint:      usb_ep_addr_t;
     signal token_crc_shift_reg: usb_byte_t;
     signal token_crc_counter:   unsigned(3 downto 0);
     signal token_crc5:          std_logic_vector(4 downto 0);
@@ -92,14 +95,22 @@ architecture USB_Device_arch of USB_Device is
     signal data_crc16:           std_logic_vector(15 downto 0);
     signal rx_data_packet:       std_logic;
     signal rx_data_packet_valid: std_logic;
-    signal tx_ack: std_logic;
-    signal tx_nak: std_logic;
+    signal tx_ack:               std_logic;
+    signal tx_nak:               std_logic;
 
     -- Data packet transmitter signals
-    signal tx_wait_read: std_logic;
-
-    -- Endpoint 0 signals
-    signal device_address: usb_dev_addr_t;
+    type tx_state_t is (
+        idle,
+        data,
+        crc_1,
+        crc_2,
+        wait_done
+    );
+    signal tx_state:         tx_state_t;
+    signal tx_endpoint:      usb_ep_addr_t;
+    signal tx_crc_shift_reg: usb_byte_t;
+    signal tx_crc_counter:   unsigned(3 downto 0);
+    signal tx_crc16:         std_logic_vector(15 downto 0);
 begin
     -- PHY block
     usb_phy: entity work.USB_PHY
@@ -265,14 +276,14 @@ begin
                         if token_crc5 = "00110" then
                             if token_shift_reg(3 downto 0) = "0101" then
                                 FRAME_START <= '1';
-                            elsif unsigned(token_shift_reg(10 downto 4)) = device_address then
+                            elsif unsigned(token_shift_reg(10 downto 4)) = DEVICE_ADDRESS then
                                 case token_shift_reg(3 downto 0) is
                                     when "0001" => token_type <= token_out;
                                     when "1001" => token_type <= token_in;
                                     when "1101" => token_type <= token_setup;
                                     when others => token_type <= token_unknown;
                                 end case;
-                                token_endpoint <= usb_endpoint_t(token_shift_reg(14 downto 11));
+                                token_endpoint <= usb_ep_addr_t(token_shift_reg(14 downto 11));
                             end if;
                         end if;
                         token_decoder_state <= wait_eop;
@@ -393,55 +404,95 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
-            tx_enable <= '0';
+            case tx_state is
+                when idle =>
+                    -- Wait until something needs to be transmitted
+                    tx_enable <= '0';
+                    tx_crc16  <= (others => '1');
+                    if tx_ack = '1' then
+                        -- Send an ACK
+                        tx_enable <= '1';
+                        tx_data   <= x"D2";
+                        tx_state  <= wait_done;
+                    elsif tx_nak = '1' then
+                        -- Send a NAK
+                        tx_enable <= '1';
+                        tx_data   <= x"5A";
+                        tx_state  <= wait_done;
+                    else
+                        -- Prepare sending endpoint data
+                        for i in EP_OUTPUTS'range loop
+                            if EP_OUTPUTS(i).tx_enable = '1' then
+                                tx_endpoint <= to_unsigned(i, tx_endpoint'length);
+                                tx_state    <= data;
+                                exit;
+                            end if;
+                        end loop;
+                    end if;
 
-            -- Check if an ACK or NAK needs to be sent
-            if tx_ack = '1' then
-                tx_enable    <= '1';
-                tx_data      <= x"D2";
-                tx_wait_read <= '1';
-            elsif tx_nak = '1' then
-                tx_enable    <= '1';
-                tx_data      <= x"5A";
-                tx_wait_read <= '1';
+                when data =>
+                    -- Send endpoint data
+                    if EP_OUTPUTS(to_integer(tx_endpoint)).tx_enable = '1' then
+                        tx_enable <= '1';
+                        tx_data   <= EP_OUTPUTS(to_integer(tx_endpoint)).tx_data;
+                    else
+                        tx_state <= crc_1;
+                    end if;
+                    if tx_read = '1' then
+                        tx_crc_shift_reg <= tx_data;
+                        tx_crc_counter   <= to_unsigned(8, tx_crc_counter'length);
+                    end if;
+
+                -- Send CRC16
+                when crc_1 =>
+                    if tx_crc_counter = 0 then
+                        tx_data <= not tx_crc16(7 downto 0);
+                    end if;
+                    if tx_read = '1' then
+                        tx_state <= crc_2;
+                    end if;
+                when crc_2 =>
+                    tx_data <= not tx_crc16(15 downto 8);
+                    if tx_read = '1' then
+                        tx_enable <= '0';
+                        tx_state  <= idle;
+                    end if;
+
+                when wait_done =>
+                    -- Wait until the transmitter is not busy anymore
+                    if tx_read = '1' then
+                        tx_enable <= '0';
+                        tx_state  <= idle;
+                    end if;
+            end case;
+
+            -- Compute CRC16
+            if tx_crc_counter > 0 then
+                tx_crc_counter   <= tx_crc_counter - 1;
+                tx_crc_shift_reg <= '0' & tx_crc_shift_reg(tx_crc_shift_reg'high downto tx_crc_shift_reg'low + 1);
+                tx_crc16         <= '0' & tx_crc16(tx_crc16'high downto tx_crc16'low + 1);
+                tx_crc16(0)      <= tx_crc16(1)  xor tx_crc16(0) xor tx_crc_shift_reg(tx_crc_shift_reg'low);
+                tx_crc16(13)     <= tx_crc16(14) xor tx_crc16(0) xor tx_crc_shift_reg(tx_crc_shift_reg'low);
+                tx_crc16(15)     <= tx_crc16(0)  xor tx_crc_shift_reg(tx_crc_shift_reg'low);
             end if;
-
-            -- Send the second byte of the ACK or NAK packet
-            if tx_wait_read = '1' then
-                tx_enable <= '1';
-                if tx_read = '1' then
-                    tx_wait_read <= '0';
-                end if;
-            end if;
-
-            -- TODO: send data with CRC16
 
             -- Synchronous reset
             if CLRn = '0' then
-                tx_enable    <= '0';
-                tx_wait_read <= '0';
+                tx_enable <= '0';
+                tx_state  <= idle;
             end if;
         end if;
     end process;
 
-    -- Endpoint 0
-    usb_ep0: entity work.USB_EndPoint0
-        generic map (
-            DESCRIPTORS => DESCRIPTORS
-        )
-        port map (
-            CLK_48MHz            => CLK_48MHz,
-            CLRn                 => CLRn,
+    EP_INPUT.token    <= token_type;
+    EP_INPUT.endpoint <= token_endpoint;
 
-            TOKEN                => token_type,
-            ENDPOINT             => token_endpoint,
+    EP_INPUT.rx_data_packet       <= rx_data_packet;
+    EP_INPUT.rx_data_packet_valid <= rx_data_packet_valid;
+    EP_INPUT.rx_data              <= rx_data;
+    EP_INPUT.rx_data_valid        <= rx_valid;
+    EP_INPUT.rx_eop               <= rx_eop;
 
-            RX_DATA_PACKET       => rx_data_packet,
-            RX_DATA_PACKET_VALID => rx_data_packet_valid,
-            RX_DATA              => rx_data,
-            RX_DATA_VALID        => rx_valid,
-            RX_EOP               => rx_eop,
+    EP_INPUT.tx_read <= tx_read;
 
-            DEVICE_ADDRESS       => device_address
-        );
 end USB_Device_arch;
