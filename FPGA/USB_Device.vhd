@@ -32,7 +32,9 @@ entity USB_Device is
         EP_INPUT:       out   usb_ep_input_signals_t;
         EP_OUTPUTS:     in    usb_ep_output_signals_array_t;
 
-        FRAME_START:    out   std_logic
+        FRAME_START:    out   std_logic;
+
+        DEBUG_TX:       out   std_logic
     );
 end entity USB_Device;
 
@@ -139,7 +141,9 @@ begin
             TX_ACTIVE   => open,
             TX_ENABLE   => tx_enable,
             TX_DATA     => tx_data,
-            TX_READ     => tx_read
+            TX_READ     => tx_read,
+
+            DEBUG_TX    => DEBUG_TX
         );
 
     -- State handling process

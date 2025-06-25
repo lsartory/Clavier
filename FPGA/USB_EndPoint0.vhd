@@ -32,6 +32,7 @@ end entity USB_EndPoint0;
 
 architecture USB_EndPoint0_arch of USB_EndPoint0 is
     -- Descriptor ROM signals
+    -- TODO: change this to a RAM to allow setting the serial number from an external source
     constant DESCRIPTOR_ROM: usb_byte_array_t := to_byte_array(DESCRIPTORS);
     signal descriptor_data: usb_byte_t;
     signal descriptor_addr: unsigned(natural(ceil(log2(real(DESCRIPTOR_ROM'length)))) - 1 downto 0);

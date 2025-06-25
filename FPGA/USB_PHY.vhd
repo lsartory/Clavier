@@ -37,7 +37,9 @@ entity USB_PHY is
         TX_ACTIVE:   out std_logic;
         TX_ENABLE:   in  std_logic;
         TX_DATA:     in  usb_byte_t;
-        TX_READ:     out std_logic
+        TX_READ:     out std_logic;
+
+        DEBUG_TX:    out std_logic
     );
 end entity USB_PHY;
 
@@ -95,6 +97,19 @@ architecture USB_PHY_arch of USB_PHY is
     signal tx_dp:            std_logic;
     signal tx_dn_buf:        std_logic;
     signal tx_dp_buf:        std_logic;
+
+    -- Debug UART signals
+    signal debug_rx_start:   std_logic;
+    signal debug_tx_start:   std_logic;
+    signal debug_rx_data:    usb_byte_t;
+    signal debug_tx_data:    usb_byte_t;
+    signal debug_data:       usb_byte_t;
+    signal debug_tx_valid:   std_logic;
+    signal debug_rx_valid:   std_logic;
+    signal debug_data_valid: std_logic;
+    signal debug_rx_eop:     std_logic;
+    signal debug_tx_eop:     std_logic;
+    signal debug_eop:        std_logic;
 begin
     -- Input synchronization
     usb_cdc: entity work.VectorCDC
@@ -147,6 +162,8 @@ begin
         variable line_state:   line_state_t;
     begin
         if rising_edge(CLK_48MHz) then
+            debug_rx_start   <= '0';
+            debug_rx_eop     <= '0';
             line_state_valid <= '0';
             RX_EOP           <= '0';
             RX_SUSPEND       <= '0';
@@ -187,6 +204,7 @@ begin
                         if line_state /= line_state_sampled and sync_counter /= 0 then
                             sync_counter <= sync_counter - 1;
                         elsif line_state = K and line_state_sampled = K and sync_counter = 0 then
+                            debug_rx_start     <= '1';
                             line_sampler_state <= data;
                         end if;
 
@@ -201,6 +219,7 @@ begin
                     when eop =>
                         -- Wait for the end of packet
                         if line_state = J then
+                            debug_rx_eop       <= '1';
                             RX_EOP             <= '1';
                             line_sampler_state <= idle;
                         end if;
@@ -246,8 +265,9 @@ begin
         variable prev_line_state: line_state_t;
     begin
         if rising_edge(CLK_48MHz) then
-            RX_VALID <= '0';
-            RX_ERROR <= '0';
+            debug_rx_valid <= '0';
+            RX_VALID       <= '0';
+            RX_ERROR       <= '0';
 
             -- Receive bits
             if line_state_valid = '1' then
@@ -272,6 +292,8 @@ begin
             -- Signal full bytes
             if rx_shift_counter = 8 then
                 rx_shift_counter <= (others => '0');
+                debug_rx_data    <= rx_shift_reg;
+                debug_rx_valid   <= '1';
                 RX_DATA          <= rx_shift_reg;
                 RX_VALID         <= '1';
             end if;
@@ -324,7 +346,10 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
-            TX_READ <= '0';
+            debug_tx_start <= '0';
+            debug_tx_valid <= '0';
+            debug_tx_eop   <= '0';
+            TX_READ        <= '0';
 
             -- Wait for data to be sent
             if tx_state = idle then
@@ -338,8 +363,9 @@ begin
                 tx_stuffing      <= (others => '0');
                 if TX_ENABLE = '1' then
                     -- Send the sync pattern first
-                    tx_shift_reg <= x"80";
-                    tx_state     <= start_delay_1;
+                    debug_tx_start <= '1';
+                    tx_shift_reg   <= x"80";
+                    tx_state       <= start_delay_1;
                 end if;
             end if;
 
@@ -377,6 +403,8 @@ begin
 
                         -- Check if more data is available
                         if TX_ENABLE = '1' and tx_shift_counter = 1 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                            debug_tx_data    <= TX_DATA;
+                            debug_tx_valid   <= '1';
                             tx_shift_reg     <= TX_DATA;
                             tx_shift_counter <= to_unsigned(8, tx_shift_counter'length);
                             TX_READ          <= '1';
@@ -400,7 +428,8 @@ begin
 
                     -- Send J once
                     when eop_3 =>
-                        tx_state <= end_delay;
+                        debug_tx_eop <= '1';
+                        tx_state     <= end_delay;
 
                     -- Delay a bit after sending
                     when end_delay =>
@@ -431,6 +460,24 @@ begin
             end if;
         end if;
     end process;
-    TX_ACTIVE <= '0' when tx_state = idle else '1';
+    TX_ACTIVE <= '1' when tx_state /= idle else '0';
+
+    -- Debug UART
+    debug_data       <= debug_rx_data when debug_rx_valid = '1' else debug_tx_data when debug_tx_valid = '1' else (others => '0');
+    debug_data_valid <= debug_rx_valid or debug_tx_valid;
+    debug_eop        <= debug_rx_eop   or debug_tx_eop;
+    debug: entity work.USB_Debug_UART
+        port map (
+            CLK_48MHz  => CLK_48MHz,
+            CLRn       => CLRn,
+
+            RX_START   => debug_rx_start,
+            TX_START   => debug_tx_start,
+            DATA       => debug_data,
+            DATA_VALID => debug_data_valid,
+            EOP        => debug_eop,
+
+            DEBUG_TX   => DEBUG_TX
+        );
 
 end USB_PHY_arch;

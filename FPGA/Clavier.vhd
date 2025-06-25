@@ -18,11 +18,13 @@ entity Clavier is
         USB_BCD_DEVICE: integer range 0 to 65535 := 16#0100#
     );
     port (
-        CLK_12MHz:   in    std_logic;
+        CLK_12MHz:    in    std_logic;
 
-        USB_DN:      inout std_logic;
-        USB_DP:      inout std_logic;
-        USB_DP_PULL: out   std_logic
+        USB_DN:       inout std_logic;
+        USB_DP:       inout std_logic;
+        USB_DP_PULL:  out   std_logic;
+
+        USB_DEBUG_TX: out   std_logic
     );
 end entity Clavier;
 
@@ -80,7 +82,9 @@ begin
             EP_INPUT       => ep_input,
             EP_OUTPUTS     => ep_outputs,
 
-            FRAME_START    => open
+            FRAME_START    => open,
+
+            DEBUG_TX       => USB_DEBUG_TX
         );
     USB_DN      <= usb_dn_out when usb_oe = '1' else 'Z';
     USB_DP      <= usb_dp_out when usb_oe = '1' else 'Z';

@@ -12,7 +12,9 @@ TOPLEVEL = Clavier
 LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
+SOURCES += ClockScaler.vhd
 SOURCES += PLL.vhd
+SOURCES += USB_Debug_UART.vhd
 SOURCES += USB_Descriptors.vhd
 SOURCES += USB_Device.vhd
 SOURCES += USB_EndPoint0.vhd
@@ -48,4 +50,4 @@ prog-flash: $(BUILDDIR)/$(TOPLEVEL).bit
 
 .PHONY: clean
 clean:
-	rm -rf $(BUILDDIR) *.o
+	rm -rf $(BUILDDIR)
