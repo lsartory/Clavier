@@ -54,6 +54,7 @@ package usb_descriptors is
     function new_usb_string_zero(langs: usb_word_array_t) return usb_string_descriptor_t;
     function to_usb_string_descriptor(s: string) return usb_string_descriptor_t;
     function serialize(d: usb_string_descriptor_t; i: natural) return usb_byte_t;
+    function get_string_count(d: usb_string_descriptor_array_t) return natural;
     function get_total_size(d: usb_string_descriptor_array_t) return natural;
 
     --------------------------------------------------
@@ -166,7 +167,6 @@ package usb_descriptors is
     type usb_configuration_descriptor_array_t is array(natural range <>) of usb_configuration_descriptor_t;
 
     function new_usb_configuration(
-        value:         integer range 1 to 255;
         desc_string:   integer range 0 to 255;
         self_powered:  boolean;
         remote_wakeup: boolean;
@@ -310,6 +310,18 @@ package body usb_descriptors is
         return ret;
     end function;
 
+    -- Get the amount of defined strings in an array
+    function get_string_count(d: usb_string_descriptor_array_t) return natural is
+        variable ret: natural := 0;
+    begin
+        for i in d'range loop
+            if unsigned(d(i).header.bLength) /= 0 then
+                ret := ret + 1;
+            end if;
+        end loop;
+        return ret;
+    end function;
+
     -- Get the size necessary to serialize a string array
     function get_total_size(d: usb_string_descriptor_array_t) return natural is
         variable total_size: natural := 0;
@@ -334,10 +346,14 @@ package body usb_descriptors is
     ) return usb_endpoint_descriptor_t is
         variable ret: usb_endpoint_descriptor_t := EMPTY_USB_ENDPOINT_DESCRIPTOR;
     begin
-        ret.header.bLength          := x"07";
-        ret.header.bDescriptorType  := x"05";
+        ret.header.bLength         := x"07";
+        ret.header.bDescriptorType := x"05";
 
         ret.bEndpointAddress := usb_byte_t(to_unsigned(addr, ret.bEndpointAddress'length));
+        case dir is
+            when ep_in  => ret.bEndpointAddress(7) := '1';
+            when ep_out => ret.bEndpointAddress(7) := '0';
+        end case;
         ret.bmAttributes     := (others => '0');
         case transfer_type is
             when control     => ret.bmAttributes(1 downto 0) := "00";
@@ -356,8 +372,8 @@ package body usb_descriptors is
             when feedback => ret.bmAttributes(5 downto 4) := "01";
             when explicit => ret.bmAttributes(5 downto 4) := "10";
         end case;
-        ret.wMaxPacketSize   := usb_word_t(to_unsigned(max_packet_size, ret.wMaxPacketSize'length));
-        ret.bInterval        := usb_byte_t(to_unsigned(interval, ret.bInterval'length));
+        ret.wMaxPacketSize := usb_word_t(to_unsigned(max_packet_size, ret.wMaxPacketSize'length));
+        ret.bInterval      := usb_byte_t(to_unsigned(interval, ret.bInterval'length));
 
         return ret;
     end function;
@@ -435,7 +451,6 @@ package body usb_descriptors is
 
     -- Create a new USB configuration
     function new_usb_configuration(
-        value:         integer range 1 to 255;
         desc_string:   integer range 0 to 255;
         self_powered:  boolean;
         remote_wakeup: boolean;
@@ -449,7 +464,6 @@ package body usb_descriptors is
         ret.header.bDescriptorType := x"02";
 
         ret.bNumInterfaces      := usb_byte_t(to_unsigned(interfaces'length, ret.bNumInterfaces'length));
-        ret.bConfigurationValue := usb_byte_t(to_unsigned(value, ret.bConfigurationValue'length));
         ret.iConfiguration      := usb_byte_t(to_unsigned(desc_string, ret.iConfiguration'length));
         ret.bmAttributes        := (7 => '1', others => '0');
         if self_powered then
@@ -536,9 +550,10 @@ package body usb_descriptors is
         ret.iSerialNumber      := usb_byte_t(to_unsigned(serial_string, ret.iSerialNumber'length));
         ret.bNumConfigurations := usb_byte_t(to_unsigned(configurations'length, ret.bNumConfigurations'length));
 
-        -- Copy the configurations
+        -- Copy the configurations and assign configuration IDs
         for i in configurations'low to configurations'high loop
-            ret.configurations(i - configurations'low) := configurations(i);
+            ret.configurations(i - configurations'low)                     := configurations(i);
+            ret.configurations(i - configurations'low).bConfigurationValue := usb_byte_t(to_unsigned(i - configurations'low + 1, 8));
         end loop;
 
         return ret;

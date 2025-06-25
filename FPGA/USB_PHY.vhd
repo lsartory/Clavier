@@ -68,6 +68,8 @@ architecture USB_PHY_arch of USB_PHY is
     signal line_state_valid:   std_logic;
     signal reset_counter:      unsigned(17 downto 0);
     signal suspend_counter:    unsigned(17 downto 0);
+    signal line_suspend:       std_logic;
+    signal line_reset:         std_logic;
 
     -- Receiver signals
     signal rx_shift_reg:     usb_byte_t;
@@ -165,9 +167,9 @@ begin
             debug_rx_start   <= '0';
             debug_rx_eop     <= '0';
             line_state_valid <= '0';
+            line_suspend     <= '0';
+            line_reset       <= '0';
             RX_EOP           <= '0';
-            RX_SUSPEND       <= '0';
-            RX_RESET         <= '0';
 
             -- Decode the line state depending on the chosen speed
             input_vector(2) := '0';
@@ -229,28 +231,28 @@ begin
             -- Suspend timer
             if line_state /= J then
                 suspend_counter <= to_unsigned(SUSPEND_LENGTH, suspend_counter'length);
-                RX_SUSPEND      <= '0';
+                line_suspend    <= '0';
             elsif suspend_counter /= 0 then
                 suspend_counter <= suspend_counter - 1;
             else
-                RX_SUSPEND <= '1';
+                line_suspend <= '1';
             end if;
 
             -- Host reset timer
             if line_state /= SE0 then
                 reset_counter <= to_unsigned(RESET_LENGTH, reset_counter'length);
-                RX_RESET      <= '0';
+                line_reset    <= '0';
             elsif reset_counter /= 0 then
                 reset_counter <= reset_counter - 1;
             else
-                RX_RESET <= '1';
+                line_reset <= '1';
             end if;
 
             -- Synchronous reset
             if CLRn = '0' or tx_state /= idle then
                 RX_EOP             <= '0';
-                RX_SUSPEND         <= '0';
-                RX_RESET           <= '0';
+                line_suspend       <= '0';
+                line_reset         <= '0';
                 suspend_counter    <= (others => '1');
                 reset_counter      <= (others => '1');
                 line_state_valid   <= '0';
@@ -258,7 +260,9 @@ begin
             end if;
         end if;
     end process;
-    RX_ACTIVE <= '1' when line_sampler_state = data else '0';
+    RX_ACTIVE  <= '1' when line_sampler_state = data else '0';
+    RX_SUSPEND <= line_suspend;
+    RX_RESET   <= line_reset;
 
     -- Receiver process
     process (CLK_48MHz)
@@ -384,25 +388,24 @@ begin
                     when sending =>
                         tx_shift_reg     <= '0' & tx_shift_reg(tx_shift_reg'high downto tx_shift_reg'low + 1);
                         tx_shift_counter <= tx_shift_counter - 1;
-                        tx_stuffing      <= (others => '0');
 
                         -- Check if bit stuffing is required
-                        if tx_shift_reg(tx_shift_reg'low) = '1' then
+                        if tx_stuffing = 6 then
+                            tx_dn            <= not tx_dn;
+                            tx_dp            <= not tx_dp;
+                            tx_stuffing      <= (others => '0');
+                            tx_shift_reg     <= tx_shift_reg;
+                            tx_shift_counter <= tx_shift_counter;
+                        elsif tx_shift_reg(tx_shift_reg'low) = '1' then
                             tx_stuffing <= tx_stuffing + 1;
-                            if tx_stuffing = 6 then
-                                tx_dn            <= not tx_dn;
-                                tx_dp            <= not tx_dp;
-                                tx_stuffing      <= (others => '0');
-                                tx_shift_reg     <= tx_shift_reg;
-                                tx_shift_counter <= tx_shift_counter;
-                            end if;
                         else
-                            tx_dn <= not tx_dn;
-                            tx_dp <= not tx_dp;
+                            tx_dn       <= not tx_dn;
+                            tx_dp       <= not tx_dp;
+                            tx_stuffing <= (others => '0');
                         end if;
 
                         -- Check if more data is available
-                        if TX_ENABLE = '1' and tx_shift_counter = 1 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                        if TX_ENABLE = '1' and tx_shift_counter = 1 and tx_stuffing /= 6 then
                             debug_tx_data    <= TX_DATA;
                             debug_tx_valid   <= '1';
                             tx_shift_reg     <= TX_DATA;
@@ -476,6 +479,10 @@ begin
             DATA       => debug_data,
             DATA_VALID => debug_data_valid,
             EOP        => debug_eop,
+
+            RX_SUSPEND => line_suspend,
+            RX_RESET   => line_reset,
+            RX_ERROR   => '0', -- TODO
 
             DEBUG_TX   => DEBUG_TX
         );

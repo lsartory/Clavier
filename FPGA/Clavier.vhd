@@ -99,7 +99,7 @@ begin
                     16#00#, -- No device class
                     16#00#, -- No device sub-class
                     16#00#, -- No device protocol
-                    8,      -- Max packet size -- TODO: select automatically depending on FULL_SPEED
+                    8,      -- Max packet size -- TODO: select automatically depending on FULL_SPEED?
                     USB_VENDOR_ID,
                     USB_PRODUCT_ID,
                     USB_BCD_DEVICE,
@@ -108,7 +108,6 @@ begin
                     3, -- Serial number string index
                     (
                         0 => new_usb_configuration(
-                            1,     -- Configuration #1
                             0,     -- No description string
                             false, -- Bus-powered
                             false, -- No remote wakeup
@@ -122,8 +121,8 @@ begin
                                     16#00#, -- Non-boot protocol
                                     0,      -- No description string
                                     (
-                                        0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 8, 1), -- TODO: max packet size
-                                        1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 8, 1)  -- TODO: max packet size
+                                        0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 8, 1), -- TODO: max packet size?
+                                        1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 8, 1)  -- TODO: max packet size?
                                     )
                                 )
                             )

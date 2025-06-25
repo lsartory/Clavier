@@ -22,6 +22,10 @@ entity USB_Debug_UART is
         DATA_VALID: in  std_logic;
         EOP:        in  std_logic;
 
+        RX_SUSPEND: in  std_logic;
+        RX_RESET:   in  std_logic;
+        RX_ERROR:   in  std_logic;
+
         DEBUG_TX:   out std_logic
     );
 end entity USB_Debug_UART;
@@ -33,11 +37,11 @@ architecture USB_Debug_UART_arch of USB_Debug_UART is
     signal tx_pulse: std_logic;
 
     -- FIFO signals
-    signal fifo:            usb_byte_array_t(0 to 1023);
+    signal fifo:            usb_byte_array_t(0 to 2047);
     signal fifo_data_in:    usb_byte_t;
     signal fifo_data_out:   usb_byte_t;
-    signal fifo_write_addr: unsigned(9 downto 0);
-    signal fifo_read_addr:  unsigned(9 downto 0);
+    signal fifo_write_addr: unsigned(10 downto 0);
+    signal fifo_read_addr:  unsigned(fifo_write_addr'range);
     signal fifo_write:      std_logic;
     signal fifo_read:       std_logic;
     signal fifo_empty:      std_logic;
@@ -131,13 +135,16 @@ begin
 
     -- Input encoder
     process (CLK_48MHz)
+        variable suspend_prev: std_logic;
+        variable reset_prev:   std_logic;
+        variable error_prev:   std_logic;
     begin
         if rising_edge(CLK_48MHz) then
             fifo_write <= '0';
 
             -- Get events
             if fifo_overflow = '1' then
-                input_shift_reg <= to_byte_array(LF & "Ovrflw!", input_shift_reg'length);
+                input_shift_reg <= to_byte_array(LF & "Ovrflw" & LF, input_shift_reg'length);
             elsif RX_START = '1' then
                 input_shift_reg <= to_byte_array(LF & "H->D: ", input_shift_reg'length);
             elsif TX_START = '1' then
@@ -148,6 +155,12 @@ begin
                 input_shift_reg(2) <= usb_byte_t(to_unsigned(character'pos(' '), 8));
             elsif EOP = '1' then
                 input_shift_reg <= to_byte_array("EOP", input_shift_reg'length);
+            elsif RX_SUSPEND = '1' and suspend_prev = '0' then
+                input_shift_reg <= to_byte_array(LF & "Suspend", input_shift_reg'length);
+            elsif RX_RESET = '1' and reset_prev = '0' then
+                input_shift_reg <= to_byte_array(LF & "Reset", input_shift_reg'length);
+            elsif RX_ERROR = '1' and error_prev = '0' then
+                input_shift_reg <= to_byte_array(LF & "Error", input_shift_reg'length);
             end if;
 
             -- Save to FIFO
@@ -160,8 +173,12 @@ begin
             -- Synchronous reset
             if CLRn = '0' then
                 fifo_write      <= '0';
-                input_shift_reg <= to_byte_array(LF & "Reset", input_shift_reg'length);
+                input_shift_reg <= to_byte_array(LF & LF & "-----" & LF, input_shift_reg'length);
             end if;
+
+            suspend_prev := RX_SUSPEND;
+            reset_prev   := RX_RESET;
+            error_prev   := RX_ERROR;
         end if;
     end process;
 

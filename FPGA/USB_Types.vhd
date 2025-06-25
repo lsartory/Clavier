@@ -34,14 +34,16 @@ package usb_types is
 
     -- Endpoints input/output signals
     type usb_ep_input_signals_t is record
-        token:                usb_token_t;
-        endpoint:             usb_ep_addr_t;
+        token:       usb_token_t;
+        endpoint:    usb_ep_addr_t;
+        start_trans: std_logic;
 
+        rx_reset:             std_logic;
         rx_data_packet:       std_logic;
         rx_data_packet_valid: std_logic;
         rx_data:              usb_byte_t;
         rx_data_valid:        std_logic;
-        rx_eop:               std_logic;
+        rx_ack:               std_logic;
 
         tx_read:              std_logic;
     end record;

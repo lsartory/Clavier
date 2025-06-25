@@ -87,14 +87,15 @@ architecture USB_Device_arch of USB_Device is
     signal token_crc_shift_reg: usb_byte_t;
     signal token_crc_counter:   unsigned(3 downto 0);
     signal token_crc5:          std_logic_vector(4 downto 0);
+    signal token_start_trans:   std_logic;
 
     -- Data packet decoder signals
-    signal data_start:           std_logic;
-    signal data_end:             std_logic;
-    signal data_parity:          std_logic;
-    signal data_crc_shift_reg:   usb_byte_t;
-    signal data_crc_counter:     unsigned(3 downto 0);
-    signal data_crc16:           std_logic_vector(15 downto 0);
+    signal rx_data_start:        std_logic;
+    signal rx_data_end:          std_logic;
+    signal rx_data_parity:       std_logic;
+    signal rx_crc_shift_reg:     usb_byte_t;
+    signal rx_crc_counter:       unsigned(3 downto 0);
+    signal rx_crc16:             std_logic_vector(15 downto 0);
     signal rx_data_packet:       std_logic;
     signal rx_data_packet_valid: std_logic;
     signal tx_ack:               std_logic;
@@ -103,13 +104,16 @@ architecture USB_Device_arch of USB_Device is
     -- Data packet transmitter signals
     type tx_state_t is (
         idle,
-        data,
+        data_header,
+        payload,
         crc_1,
         crc_2,
+        wait_ack,
         wait_done
     );
     signal tx_state:         tx_state_t;
     signal tx_endpoint:      usb_ep_addr_t;
+    signal tx_data_parity:   std_logic;
     signal tx_crc_shift_reg: usb_byte_t;
     signal tx_crc_counter:   unsigned(3 downto 0);
     signal tx_crc16:         std_logic_vector(15 downto 0);
@@ -246,7 +250,8 @@ begin
     process (CLK_48MHz)
     begin
         if rising_edge(CLK_48MHz) then
-            FRAME_START <= '0';
+            token_start_trans <= '0';
+            FRAME_START       <= '0';
 
             case token_decoder_state is
                 when idle =>
@@ -287,7 +292,8 @@ begin
                                     when "1101" => token_type <= token_setup;
                                     when others => token_type <= token_unknown;
                                 end case;
-                                token_endpoint <= usb_ep_addr_t(token_shift_reg(14 downto 11));
+                                token_endpoint    <= usb_ep_addr_t(token_shift_reg(14 downto 11));
+                                token_start_trans <= '1';
                             end if;
                         end if;
                         token_decoder_state <= wait_eop;
@@ -322,6 +328,7 @@ begin
                 token_type          <= token_none;
                 token_endpoint      <= (others => '0');
                 token_decoder_state <= idle;
+                token_start_trans   <= '0';
                 FRAME_START         <= '0';
             end if;
         end if;
@@ -339,48 +346,48 @@ begin
                 when pid =>
                     -- Wait for the beginning of a packet
                     rx_data_packet <= '0';
-                    data_start     <= '1';
+                    rx_data_start  <= '1';
 
                 when payload =>
                     -- Check the packet identifier
-                    if data_start = '1' then
-                        if (data_parity = '0' and rx_pid = "0011")
-                        or (data_parity = '1' and rx_pid = "1011")
+                    if rx_data_start = '1' then
+                        if (rx_data_parity = '0' and rx_pid = "0011")
+                        or (rx_data_parity = '1' and rx_pid = "1011")
                         then
                             rx_data_packet <= '1';
-                            data_crc16     <= (others => '1');
+                            rx_crc16       <= (others => '1');
                         end if;
                     elsif rx_data_packet = '1' and rx_valid = '1' then
-                        data_crc_shift_reg <= rx_data;
-                        data_crc_counter   <= to_unsigned(8, data_crc_counter'length);
+                        rx_crc_shift_reg <= rx_data;
+                        rx_crc_counter   <= to_unsigned(8, rx_crc_counter'length);
                     end if;
-                    data_start <= '0';
+                    rx_data_start <= '0';
 
                 when eop =>
                     -- Wait for the end of the current packet
                     if rx_data_packet = '1' then
-                        data_end <= '1';
+                        rx_data_end <= '1';
                     end if;
 
                 when others => null;
             end case;
 
             -- Compute CRC16
-            if data_crc_counter > 0 then
-                data_crc_counter   <= data_crc_counter - 1;
-                data_crc_shift_reg <= '0' & data_crc_shift_reg(data_crc_shift_reg'high downto data_crc_shift_reg'low + 1);
-                data_crc16         <= '0' & data_crc16(data_crc16'high downto data_crc16'low + 1);
-                data_crc16(0)      <= data_crc16(1)  xor data_crc16(0) xor data_crc_shift_reg(data_crc_shift_reg'low);
-                data_crc16(13)     <= data_crc16(14) xor data_crc16(0) xor data_crc_shift_reg(data_crc_shift_reg'low);
-                data_crc16(15)     <= data_crc16(0)  xor data_crc_shift_reg(data_crc_shift_reg'low);
+            if rx_crc_counter > 0 then
+                rx_crc_counter   <= rx_crc_counter - 1;
+                rx_crc_shift_reg <= '0' & rx_crc_shift_reg(rx_crc_shift_reg'high downto rx_crc_shift_reg'low + 1);
+                rx_crc16         <= '0' & rx_crc16(rx_crc16'high downto rx_crc16'low + 1);
+                rx_crc16(0)      <= rx_crc16(1)  xor rx_crc16(0) xor rx_crc_shift_reg(rx_crc_shift_reg'low);
+                rx_crc16(13)     <= rx_crc16(14) xor rx_crc16(0) xor rx_crc_shift_reg(rx_crc_shift_reg'low);
+                rx_crc16(15)     <= rx_crc16(0)  xor rx_crc_shift_reg(rx_crc_shift_reg'low);
             end if;
 
             -- Wait for the CRC computation to be complete
-            if data_end = '1' and data_crc_counter = 0 then
-                data_end       <= '0';
+            if rx_data_end = '1' and rx_crc_counter = 0 then
+                rx_data_end    <= '0';
                 rx_data_packet <= '0';
-                if data_crc16 = "1011000000000001" then
-                    data_parity          <= not data_parity;
+                if rx_crc16 = "1011000000000001" then
+                    rx_data_parity       <= not rx_data_parity;
                     rx_data_packet_valid <= '1';
                     tx_ack               <= '1';
                 else
@@ -388,16 +395,22 @@ begin
                 end if;
             end if;
 
-            -- Setup tokens are always followed by a DATA0 packet
-            if token_type = token_setup then
-                data_parity <= '0';
-            end if;
+            -- Reset data parity, if necessary
+            case token_type is
+                when token_setup =>
+                    -- Setup tokens are always followed by a DATA0 packet
+                    rx_data_parity <= '0';
+                when token_in =>
+                    -- Status is always signaled with a DATA1 packet
+                    rx_data_parity <= '1';
+                when others => null;
+            end case;
 
             -- Synchronous reset
             if CLRn = '0' then
-                data_start           <= '0';
-                data_end             <= '0';
-                data_parity          <= '0';
+                rx_data_start        <= '0';
+                rx_data_end          <= '0';
+                rx_data_parity       <= '0';
                 rx_data_packet       <= '0';
                 rx_data_packet_valid <= '0';
             end if;
@@ -428,13 +441,27 @@ begin
                         for i in EP_OUTPUTS'range loop
                             if EP_OUTPUTS(i).tx_enable = '1' then
                                 tx_endpoint <= to_unsigned(i, tx_endpoint'length);
-                                tx_state    <= data;
+                                tx_state    <= data_header;
                                 exit;
                             end if;
                         end loop;
                     end if;
 
-                when data =>
+                when data_header =>
+                    -- Send the data header
+                    tx_enable <= '1';
+                    if tx_data_parity = '0' then
+                        -- DATA0
+                        tx_data <= x"C3";
+                    else
+                        -- DATA1
+                        tx_data <= x"4B";
+                    end if;
+                    if tx_read = '1' then
+                        tx_state <= payload;
+                    end if;
+
+                when payload =>
                     -- Send endpoint data
                     if EP_OUTPUTS(to_integer(tx_endpoint)).tx_enable = '1' then
                         tx_enable <= '1';
@@ -459,7 +486,18 @@ begin
                     tx_data <= not tx_crc16(15 downto 8);
                     if tx_read = '1' then
                         tx_enable <= '0';
-                        tx_state  <= idle;
+                        tx_state  <= wait_ack;
+                    end if;
+
+                -- Wait for the packet to be acknowledged
+                when wait_ack =>
+                    if rx_ack = '1' then
+                        tx_data_parity <= not tx_data_parity;
+                        tx_state       <= idle;
+                    end if;
+                    if token_start_trans = '1' then
+                        -- No ACK received, retransmit
+                        tx_state <= idle;
                     end if;
 
                 when wait_done =>
@@ -480,23 +518,32 @@ begin
                 tx_crc16(15)     <= tx_crc16(0)  xor tx_crc_shift_reg(tx_crc_shift_reg'low);
             end if;
 
+            -- Setup tokens are always answered by a DATA1 packet
+            if token_type = token_setup then
+                tx_data_parity <= '1';
+            end if;
+
             -- Synchronous reset
             if CLRn = '0' then
-                tx_enable <= '0';
-                tx_state  <= idle;
+                tx_data_parity <= '0';
+                tx_enable      <= '0';
+                tx_state       <= idle;
             end if;
         end if;
     end process;
 
-    EP_INPUT.token    <= token_type;
-    EP_INPUT.endpoint <= token_endpoint;
+    -- Endpoint communication signals
+    EP_INPUT.token       <= token_type;
+    EP_INPUT.endpoint    <= token_endpoint;
+    EP_INPUT.start_trans <= token_start_trans;
 
+    EP_INPUT.rx_reset             <= rx_reset;
     EP_INPUT.rx_data_packet       <= rx_data_packet;
     EP_INPUT.rx_data_packet_valid <= rx_data_packet_valid;
     EP_INPUT.rx_data              <= rx_data;
     EP_INPUT.rx_data_valid        <= rx_valid;
-    EP_INPUT.rx_eop               <= rx_eop;
+    EP_INPUT.rx_ack               <= rx_ack;
 
-    EP_INPUT.tx_read <= tx_read;
+    EP_INPUT.tx_read <= tx_read when tx_state = payload else '0';
 
 end USB_Device_arch;
