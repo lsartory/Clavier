@@ -99,7 +99,7 @@ begin
                     16#00#, -- No device class
                     16#00#, -- No device sub-class
                     16#00#, -- No device protocol
-                    8,      -- Max packet size -- TODO: select automatically depending on FULL_SPEED?
+                    64,     -- Max packet size
                     USB_VENDOR_ID,
                     USB_PRODUCT_ID,
                     USB_BCD_DEVICE,
