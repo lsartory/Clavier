@@ -144,11 +144,20 @@ begin
                                     -- Standard request
                                     when "00" =>
                                         case setup.bRequest is
-                                            -- GET_STATUS
+                                            -- Get_Status
                                             when x"00" =>
                                                 data <= x"00"; -- TODO: return actual status
 
-                                            -- GET_DESCRIPTOR
+                                            -- Clear_Feature
+                                            when x"01" => null;
+
+                                            -- Set_Feature
+                                            when x"03" => null;
+
+                                            -- Set_Address
+                                            when x"05" => null;
+
+                                            -- Get_Descriptor
                                             when x"06" =>
                                                 case wValueHigh is
                                                     when x"01" =>
@@ -188,34 +197,37 @@ begin
                                                         control_state <= idle;
                                                 end case;
 
-                                            -- GET_CONFIGURATION
+                                            -- Get_Configuration
                                             when x"08" =>
                                                 data <= current_config;
 
-                                            when others => null;
+                                            -- Set_Configuration
+                                            when x"09" => null;
+
+                                            when others => control_state <= idle;
                                         end case;
 
                                     -- Class request
-                                    when "01" => null;
+                                    when "01" => control_state <= idle;
 
                                     -- Vendor request
-                                    when "10" => null;
+                                    when "10" => control_state <= idle;
 
                                     -- Reserved
-                                    when others => null;
+                                    when others => control_state <= idle;
                                 end case;
 
                             -- Interface request
-                            when "00001" => null;
+                            when "00001" => control_state <= idle;
 
                             -- Endpoint request
-                            when "00010" => null;
+                            when "00010" => control_state <= idle;
 
                             -- Other request
-                            when "00011" => null;
+                            when "00011" => control_state <= idle;
 
                             -- Reserved
-                            when others => null;
+                            when others => control_state <= idle;
                         end case;
                     end if;
 
@@ -298,46 +310,46 @@ begin
                                 -- Standard request
                                 when "00" =>
                                     case setup.bRequest is
-                                        -- CLEAR_FEATURE
+                                        -- Clear_Feature
                                         when x"01" =>
                                             null; -- TODO: useful for remote wakeup
 
-                                        -- SET_FEATURE
+                                        -- Set_Feature
                                         when x"03" =>
                                             null; -- TODO: useful for remote wakeup
 
-                                        -- SET_ADDRESS
+                                        -- Set_Address
                                         when x"05" =>
                                             DEVICE_ADDRESS <= usb_dev_addr_t(setup.wValue(DEVICE_ADDRESS'range));
 
-                                        -- SET_CONFIGURATION
+                                        -- Set_Configuration
                                         when x"09" =>
                                             current_config <= usb_byte_t(wValueLow);
 
-                                        when others => null;
+                                        when others => EP_OUTPUT.tx_enable <= '0';
                                     end case;
 
                                 -- Class request
-                                when "01" => null;
+                                when "01" => EP_OUTPUT.tx_enable <= '0';
 
                                 -- Vendor request
-                                when "10" => null;
+                                when "10" => EP_OUTPUT.tx_enable <= '0';
 
                                 -- Reserved
-                                when others => null;
+                                when others => EP_OUTPUT.tx_enable <= '0';
                             end case;
 
                         -- Interface request
-                        when "00001" => null;
+                        when "00001" => EP_OUTPUT.tx_enable <= '0';
 
                         -- Endpoint request
-                        when "00010" => null;
+                        when "00010" => EP_OUTPUT.tx_enable <= '0';
 
                         -- Other request
-                        when "00011" => null;
+                        when "00011" => EP_OUTPUT.tx_enable <= '0';
 
                         -- Reserved
-                        when others => null;
+                        when others => EP_OUTPUT.tx_enable <= '0';
                     end case;
 
                     -- Mark the exchange as complete
