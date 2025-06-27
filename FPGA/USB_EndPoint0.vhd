@@ -57,7 +57,6 @@ architecture USB_EndPoint0_arch of USB_EndPoint0 is
 
     -- Setup signals
     type setup_packet_t is record
-        valid:         std_logic;
         bmRequestType: usb_byte_t;
         bRequest:      usb_byte_t;
         wValue:        usb_word_t;

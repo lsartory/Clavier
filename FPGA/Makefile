@@ -14,6 +14,7 @@ PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += ClockScaler.vhd
 SOURCES += PLL.vhd
+SOURCES += USB_Class_Descriptors.vhd
 SOURCES += USB_Debug_UART.vhd
 SOURCES += USB_Descriptors.vhd
 SOURCES += USB_Device.vhd

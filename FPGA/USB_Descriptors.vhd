@@ -12,11 +12,12 @@ use work.usb_types.all;
 --------------------------------------------------
 
 package usb_descriptors is
-    -- Define maximums
+    -- Define reasonable maximums
     constant MAX_STRING_LENGTH:       positive := 32;
     constant MAX_STRING_COUNT:        positive := 32;
-    constant MAX_ENDPOINT_COUNT:      positive := 30;
-    constant MAX_INTERFACE_COUNT:     positive :=  8;
+    constant MAX_CLASSES_LENGTH:      positive := 64; -- per interface
+    constant MAX_ENDPOINT_COUNT:      positive :=  8; -- per interface
+    constant MAX_INTERFACE_COUNT:     positive :=  8; -- per configuration
     constant MAX_CONFIGURATION_COUNT: positive :=  4;
 
     --------------------------------------------------
@@ -107,7 +108,9 @@ package usb_descriptors is
         bInterfaceProtocol: usb_byte_t;
         iInterface:         usb_byte_t;
 
-        endpoints: usb_endpoint_descriptor_array_t(0 to MAX_ENDPOINT_COUNT - 1);
+        classes_length: natural;
+        classes:        usb_byte_array_t(0 to MAX_CLASSES_LENGTH - 1);
+        endpoints:      usb_endpoint_descriptor_array_t(0 to MAX_ENDPOINT_COUNT - 1);
     end record;
 
     constant EMPTY_USB_INTERFACE_DESCRIPTOR: usb_interface_descriptor_t := (
@@ -120,7 +123,9 @@ package usb_descriptors is
         bInterfaceProtocol => (others => '0'),
         iInterface         => (others => '0'),
 
-        endpoints => (others => EMPTY_USB_ENDPOINT_DESCRIPTOR)
+        classes_length => 0,
+        classes        => (others => (others => '0')),
+        endpoints      => (others => EMPTY_USB_ENDPOINT_DESCRIPTOR)
     );
 
     type usb_interface_descriptor_array_t is array(natural range <>) of usb_interface_descriptor_t;
@@ -132,6 +137,7 @@ package usb_descriptors is
         sub_class:   integer range 0 to 255;
         protocol:    integer range 0 to 255;
         desc_string: integer range 0 to 255;
+        classes:     usb_byte_array_t;
         endpoints:   usb_endpoint_descriptor_array_t
     ) return usb_interface_descriptor_t;
 
@@ -373,7 +379,7 @@ package body usb_descriptors is
             when explicit => ret.bmAttributes(5 downto 4) := "10";
         end case;
         ret.wMaxPacketSize := usb_word_t(to_unsigned(max_packet_size, ret.wMaxPacketSize'length));
-        ret.bInterval      := usb_byte_t(to_unsigned(interval, ret.bInterval'length));
+        ret.bInterval      := usb_byte_t(to_unsigned(interval,        ret.bInterval'length));
 
         return ret;
     end function;
@@ -405,6 +411,7 @@ package body usb_descriptors is
         sub_class:   integer range 0 to 255;
         protocol:    integer range 0 to 255;
         desc_string: integer range 0 to 255;
+        classes:     usb_byte_array_t;
         endpoints:   usb_endpoint_descriptor_array_t
     ) return usb_interface_descriptor_t is
         variable ret: usb_interface_descriptor_t := EMPTY_USB_INTERFACE_DESCRIPTOR;
@@ -412,13 +419,21 @@ package body usb_descriptors is
         ret.header.bLength         := x"09";
         ret.header.bDescriptorType := x"04";
 
-        ret.bInterfaceNumber   := usb_byte_t(to_unsigned(number, ret.bInterfaceNumber'length));
-        ret.bAlternateSetting  := usb_byte_t(to_unsigned(alt_setting, ret.bAlternateSetting'length));
+        ret.bInterfaceNumber   := usb_byte_t(to_unsigned(number,           ret.bInterfaceNumber'length));
+        ret.bAlternateSetting  := usb_byte_t(to_unsigned(alt_setting,      ret.bAlternateSetting'length));
         ret.bNumEndpoints      := usb_byte_t(to_unsigned(endpoints'length, ret.bNumEndpoints'length));
-        ret.bInterfaceClass    := usb_byte_t(to_unsigned(class, ret.bInterfaceClass'length));
-        ret.bInterfaceSubClass := usb_byte_t(to_unsigned(sub_class, ret.bInterfaceSubClass'length));
-        ret.bInterfaceProtocol := usb_byte_t(to_unsigned(protocol, ret.bInterfaceProtocol'length));
-        ret.iInterface         := usb_byte_t(to_unsigned(desc_string, ret.iInterface'length));
+        ret.bInterfaceClass    := usb_byte_t(to_unsigned(class,            ret.bInterfaceClass'length));
+        ret.bInterfaceSubClass := usb_byte_t(to_unsigned(sub_class,        ret.bInterfaceSubClass'length));
+        ret.bInterfaceProtocol := usb_byte_t(to_unsigned(protocol,         ret.bInterfaceProtocol'length));
+        ret.iInterface         := usb_byte_t(to_unsigned(desc_string,      ret.iInterface'length));
+
+        -- Copy the classes, if any
+        if classes'length > 0 then
+            ret.classes_length := classes'length;
+            for i in classes'low to classes'high loop
+                ret.classes(i - classes'low) := classes(i);
+            end loop;
+        end if;
 
         -- Copy the endpoints
         for i in endpoints'low to endpoints'high loop
@@ -464,7 +479,7 @@ package body usb_descriptors is
         ret.header.bDescriptorType := x"02";
 
         ret.bNumInterfaces      := usb_byte_t(to_unsigned(interfaces'length, ret.bNumInterfaces'length));
-        ret.iConfiguration      := usb_byte_t(to_unsigned(desc_string, ret.iConfiguration'length));
+        ret.iConfiguration      := usb_byte_t(to_unsigned(desc_string,       ret.iConfiguration'length));
         ret.bmAttributes        := (7 => '1', others => '0');
         if self_powered then
             ret.bmAttributes(6) := '1';
@@ -483,6 +498,7 @@ package body usb_descriptors is
         wTotalLength := to_integer(unsigned(ret.header.bLength));
         for i in ret.interfaces'range loop
             wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).header.bLength));
+            wTotalLength := wTotalLength + ret.interfaces(i).classes_length;
             for j in ret.interfaces(i).endpoints'range loop
                 wTotalLength := wTotalLength + to_integer(unsigned(ret.interfaces(i).endpoints(j).header.bLength));
             end loop;
@@ -538,16 +554,16 @@ package body usb_descriptors is
         ret.header.bDescriptorType := x"01";
 
         ret.bcdUSB             := x"0110"; -- USB 1.1
-        ret.bDeviceClass       := usb_byte_t(to_unsigned(class, ret.bDeviceClass'length));
-        ret.bDeviceSubClass    := usb_byte_t(to_unsigned(sub_class, ret.bDeviceSubClass'length));
-        ret.bDeviceProtocol    := usb_byte_t(to_unsigned(protocol, ret.bDeviceProtocol'length));
-        ret.bMaxPacketSize0    := usb_byte_t(to_unsigned(max_packet_size_0, ret.bMaxPacketSize0'length));
-        ret.idVendor           := usb_word_t(to_unsigned(vendor_id, ret.idVendor'length));
-        ret.idProduct          := usb_word_t(to_unsigned(product_id, ret.idProduct'length));
-        ret.bcdDevice          := usb_word_t(to_unsigned(bcd_device, ret.bcdDevice'length));
-        ret.iManufacturer      := usb_byte_t(to_unsigned(manufacturer_string, ret.iManufacturer'length));
-        ret.iProduct           := usb_byte_t(to_unsigned(product_string, ret.iProduct'length));
-        ret.iSerialNumber      := usb_byte_t(to_unsigned(serial_string, ret.iSerialNumber'length));
+        ret.bDeviceClass       := usb_byte_t(to_unsigned(class,                 ret.bDeviceClass'length));
+        ret.bDeviceSubClass    := usb_byte_t(to_unsigned(sub_class,             ret.bDeviceSubClass'length));
+        ret.bDeviceProtocol    := usb_byte_t(to_unsigned(protocol,              ret.bDeviceProtocol'length));
+        ret.bMaxPacketSize0    := usb_byte_t(to_unsigned(max_packet_size_0,     ret.bMaxPacketSize0'length));
+        ret.idVendor           := usb_word_t(to_unsigned(vendor_id,             ret.idVendor'length));
+        ret.idProduct          := usb_word_t(to_unsigned(product_id,            ret.idProduct'length));
+        ret.bcdDevice          := usb_word_t(to_unsigned(bcd_device,            ret.bcdDevice'length));
+        ret.iManufacturer      := usb_byte_t(to_unsigned(manufacturer_string,   ret.iManufacturer'length));
+        ret.iProduct           := usb_byte_t(to_unsigned(product_string,        ret.iProduct'length));
+        ret.iSerialNumber      := usb_byte_t(to_unsigned(serial_string,         ret.iSerialNumber'length));
         ret.bNumConfigurations := usb_byte_t(to_unsigned(configurations'length, ret.bNumConfigurations'length));
 
         -- Copy the configurations and assign configuration IDs
@@ -628,6 +644,7 @@ package body usb_descriptors is
             for iface_index in 0 to to_integer(unsigned(ret.device.configurations(conf_index).bNumInterfaces)) - 1 loop
                 ret.device.configurations(conf_index).interfaces(iface_index).header.rom_offset := rom_offset;
                 rom_offset := rom_offset + unsigned(ret.device.configurations(conf_index).interfaces(iface_index).header.bLength);
+                rom_offset := rom_offset + to_unsigned(ret.device.configurations(conf_index).interfaces(iface_index).classes_length, rom_offset'length);
 
                 -- Update the endpoints ROM offsets
                 for endpoint_index in 0 to to_integer(unsigned(ret.device.configurations(conf_index).interfaces(iface_index).bNumEndpoints)) - 1 loop
@@ -672,6 +689,14 @@ package body usb_descriptors is
                     ret(out_index) := serialize(d.device.configurations(conf_index).interfaces(iface_index), i);
                     out_index      := out_index + 1;
                 end loop;
+
+                -- Serialize class descriptors
+                if d.device.configurations(conf_index).interfaces(iface_index).classes_length > 0 then
+                    for i in 0 to d.device.configurations(conf_index).interfaces(iface_index).classes_length - 1 loop
+                        ret(out_index) := d.device.configurations(conf_index).interfaces(iface_index).classes(i);
+                        out_index      := out_index + 1;
+                    end loop;
+                end if;
 
                 -- Serialize endpoint descriptors
                 for endpoint_index in 0 to to_integer(unsigned(d.device.configurations(conf_index).interfaces(iface_index).bNumEndpoints)) - 1 loop

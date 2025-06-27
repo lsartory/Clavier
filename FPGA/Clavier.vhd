@@ -8,6 +8,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use work.usb_types.all;
 use work.usb_descriptors.all;
+use work.usb_class_descriptors.all;
 
 --------------------------------------------------
 
@@ -31,6 +32,10 @@ end entity Clavier;
 --------------------------------------------------
 
 architecture Clavier_arch of Clavier is
+    constant report_descriptor: usb_byte_array_t := (
+        x"00", x"00" -- TODO
+    );
+
     -- Common signals
     signal clrn:       std_logic;
     signal pll_clk:    std_logic;
@@ -120,6 +125,12 @@ begin
                                     16#00#, -- Non-boot sub-class
                                     16#00#, -- Non-boot protocol
                                     0,      -- No description string
+                                    to_byte_array(new_usb_hid_class(
+                                        0, -- No country code
+                                        (
+                                            0 => from_report_descriptor(report_descriptor)
+                                        )
+                                    )),
                                     (
                                         0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 8, 1), -- TODO: max packet size?
                                         1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 8, 1)  -- TODO: max packet size?
