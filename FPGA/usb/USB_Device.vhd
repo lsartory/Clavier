@@ -406,6 +406,15 @@ begin
                 when others => null;
             end case;
 
+            -- Handle ACK/NAK packets from endpoints
+            for i in EP_OUTPUTS'range loop
+                if EP_OUTPUTS(i).tx_ack = '1' then
+                    tx_ack <= '1';
+                elsif EP_OUTPUTS(i).tx_nak = '1' then
+                    tx_nak <= '1';
+                end if;
+            end loop;
+
             -- Synchronous reset
             if CLRn = '0' then
                 rx_data_start        <= '0';

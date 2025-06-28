@@ -15,13 +15,14 @@ SOURCES  = Clavier.vhd
 SOURCES += ClockScaler.vhd
 SOURCES += PLL.vhd
 SOURCES += VectorCDC.vhd
-SOURCES += usb/USB_Class_Descriptors.vhd
 SOURCES += usb/USB_Debug_UART.vhd
 SOURCES += usb/USB_Descriptors.vhd
 SOURCES += usb/USB_Device.vhd
 SOURCES += usb/USB_EndPoint0.vhd
 SOURCES += usb/USB_PHY.vhd
 SOURCES += usb/USB_Types.vhd
+SOURCES += usb/class/USB_Class_Descriptors.vhd
+SOURCES += usb/class/USB_HID.vhd
 
 
 .PHONY: all

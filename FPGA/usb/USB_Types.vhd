@@ -48,8 +48,19 @@ package usb_types is
         tx_read:              std_logic;
     end record;
     type usb_ep_output_signals_t is record
+        tx_ack:    std_logic;
+        tx_nak:    std_logic;
         tx_enable: std_logic;
         tx_data:   usb_byte_t;
     end record;
     type usb_ep_output_signals_array_t is array(natural range <>) of usb_ep_output_signals_t;
+
+    -- Setup packet
+    type usb_setup_packet_t is record
+        bmRequestType: usb_byte_t;
+        bRequest:      usb_byte_t;
+        wValue:        usb_word_t;
+        wIndex:        usb_word_t;
+        wLength:       usb_word_t;
+    end record;
 end package;

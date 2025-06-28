@@ -1,4 +1,4 @@
--- Clavier | USB_EndPoint0.vhd
+-- Clavier | USB_HID.vhd
 -- Copyright (c) 2025 L. Sartory
 -- SPDX-License-Identifier: MIT
 
@@ -13,31 +13,28 @@ use work.usb_descriptors.all;
 
 --------------------------------------------------
 
-entity USB_EndPoint0 is
+entity USB_HID is
     generic (
-        DESCRIPTORS: usb_descriptors_t
+        REPORT_DESCRIPTOR:  usb_byte_array_t;
+        MAX_EP0_PACKET_LEN: positive;
+        EP_IN_ID:           positive;
+        EP_OUT_ID:          positive
     );
     port (
-        CLK_48MHz:      in  std_logic;
-        CLRn:           in  std_logic := '1';
+        CLK_48MHz: in  std_logic;
+        CLRn:      in  std_logic := '1';
 
-        EP_INPUT:       in  usb_ep_input_signals_t;
-        EP_OUTPUT:      out usb_ep_output_signals_t;
-
-        DEVICE_ADDRESS: out usb_dev_addr_t
+        EP_INPUT:  in  usb_ep_input_signals_t;
+        EP_OUTPUT: out usb_ep_output_signals_t
     );
-end entity USB_EndPoint0;
+end entity USB_HID;
 
 --------------------------------------------------
 
-architecture USB_EndPoint0_arch of USB_EndPoint0 is
-    constant MAX_PACKET_LEN: positive := to_integer(unsigned(DESCRIPTORS.device.bMaxPacketSize0));
-
+architecture USB_HID_arch of USB_HID is
     -- Descriptor ROM signals
-    -- TODO: change this to a RAM to allow setting the serial number from an external source
-    constant DESCRIPTOR_ROM: usb_byte_array_t := to_byte_array(DESCRIPTORS);
     signal descriptor_data: usb_byte_t;
-    signal descriptor_addr: unsigned(natural(ceil(log2(real(DESCRIPTOR_ROM'length)))) - 1 downto 0);
+    signal descriptor_addr: unsigned(natural(ceil(log2(real(REPORT_DESCRIPTOR'length)))) - 1 downto 0);
 
     -- Control transfer signals
     type control_state_t is (
@@ -52,8 +49,7 @@ architecture USB_EndPoint0_arch of USB_EndPoint0 is
         receive_data,
         send_status
     );
-    signal control_state:  control_state_t;
-    signal current_config: usb_byte_t;
+    signal control_state: control_state_t;
 
     -- Setup signals
     signal setup:              usb_setup_packet_t;
@@ -72,28 +68,26 @@ begin
         if rising_edge(CLK_48MHz) then
             descriptor_data <= (others => '0');
             if CLRn = '1' then
-                descriptor_data <= DESCRIPTOR_ROM(to_integer(descriptor_addr));
+                descriptor_data <= REPORT_DESCRIPTOR(to_integer(descriptor_addr));
             end if;
         end if;
     end process;
 
-    -- Control transfer handler
+    -- Main process
     process (CLK_48MHz)
         variable rx_data_packet_prev: std_logic;
 
         variable wValueHigh: unsigned(7 downto 0);
-        variable wValueLow:  unsigned(7 downto 0);
     begin
         if rising_edge(CLK_48MHz) then
             wValueHigh := unsigned(setup.wValue(15 downto 8));
-            wValueLow  := unsigned(setup.wValue( 7 downto 0));
 
             EP_OUTPUT.tx_ack    <= '0';
             EP_OUTPUT.tx_nak    <= '0';
             EP_OUTPUT.tx_enable <= '0';
             EP_OUTPUT.tx_data   <= (others => '0');
 
-            -- Start the state machine when a setup packet is received
+            -- Start the control state machine when a setup packet is received
             if EP_INPUT.rx_data_packet = '1' and rx_data_packet_prev = '0' and EP_INPUT.token = token_setup then
                 setup_byte_counter <= (others => '0');
                 control_state      <= receive_setup;
@@ -134,76 +128,51 @@ begin
                         -- Check what kind of answer is expected
                         case setup.bmRequestType(4 downto 0) is
                             -- Device request
-                            when "00000" =>
+                            when "00000" => control_state <= idle;
+
+                            -- Interface request
+                            when "00001" =>
                                 case setup.bmRequestType(6 downto 5) is
                                     -- Standard request
                                     when "00" =>
                                         case setup.bRequest is
-                                            -- Get_Status
-                                            when x"00" =>
-                                                data <= x"00"; -- TODO: return actual status
-
-                                            -- Clear_Feature
-                                            when x"01" => null;
-
-                                            -- Set_Feature
-                                            when x"03" => null;
-
-                                            -- Set_Address
-                                            when x"05" => null;
-
                                             -- Get_Descriptor
                                             when x"06" =>
                                                 case wValueHigh is
-                                                    when x"01" =>
-                                                        -- Device descriptor
-                                                        descriptor_base <= resize(DESCRIPTORS.device.header.rom_offset, descriptor_base'length);
-                                                        if unsigned(DESCRIPTORS.device.header.bLength) < unsigned(setup.wLength) then
-                                                            setup.wLength <= usb_word_t(resize(unsigned(DESCRIPTORS.device.header.bLength), setup.wLength'length));
+                                                    when x"22" =>
+                                                        -- Report descriptor
+                                                        descriptor_base <= (others => '0');
+                                                        if REPORT_DESCRIPTOR'length < unsigned(setup.wLength) then
+                                                            setup.wLength <= usb_word_t(to_unsigned(REPORT_DESCRIPTOR'length, setup.wLength'length));
                                                         end if;
                                                         send_descriptor <= '1';
-
-                                                    when x"02" =>
-                                                        -- Configuration descriptor
-                                                        if wValueLow < unsigned(DESCRIPTORS.device.bNumConfigurations) then
-                                                            descriptor_base <= resize(DESCRIPTORS.device.configurations(to_integer(wValueLow)).header.rom_offset, descriptor_base'length);
-                                                            if unsigned(DESCRIPTORS.device.configurations(to_integer(wValueLow)).wTotalLength) < unsigned(setup.wLength) then
-                                                                setup.wLength <= usb_word_t(resize(unsigned(DESCRIPTORS.device.configurations(to_integer(wValueLow)).wTotalLength), setup.wLength'length));
-                                                            end if;
-                                                            send_descriptor <= '1';
-                                                        else
-                                                            setup.wLength <= (others => '0');
-                                                        end if;
-
-                                                    when x"03" =>
-                                                        -- String descriptor
-                                                        if wValueLow < get_string_count(DESCRIPTORS.strings) then
-                                                            descriptor_base <= resize(DESCRIPTORS.strings(to_integer(wValueLow)).header.rom_offset, descriptor_base'length);
-                                                            if unsigned(DESCRIPTORS.strings(to_integer(wValueLow)).header.bLength) < unsigned(setup.wLength) then
-                                                                setup.wLength <= usb_word_t(resize(unsigned(DESCRIPTORS.strings(to_integer(wValueLow)).header.bLength), setup.wLength'length));
-                                                            end if;
-                                                            send_descriptor <= '1';
-                                                        else
-                                                            setup.wLength <= (others => '0');
-                                                        end if;
 
                                                     when others =>
                                                         -- Unknown descriptor type
                                                         control_state <= idle;
                                                 end case;
 
-                                            -- Get_Configuration
-                                            when x"08" =>
-                                                data <= current_config;
-
-                                            -- Set_Configuration
-                                            when x"09" => null;
-
                                             when others => control_state <= idle;
                                         end case;
 
                                     -- Class request
-                                    when "01" => control_state <= idle;
+                                    when "01" =>
+                                        case setup.bRequest is
+                                            -- Get_Report
+                                            when x"01" =>
+                                                -- TODO: Get_Report
+                                                data <= (others => '0');
+
+                                            -- Get_Idle
+                                            when x"02" =>
+                                                -- TODO: Get_Idle
+                                                data <= (others => '0');
+
+                                            -- Set_Idle
+                                            when x"0A" => null;
+
+                                            when others => EP_OUTPUT.tx_enable <= '0';
+                                        end case;
 
                                     -- Vendor request
                                     when "10" => control_state <= idle;
@@ -211,9 +180,6 @@ begin
                                     -- Reserved
                                     when others => control_state <= idle;
                                 end case;
-
-                            -- Interface request
-                            when "00001" => control_state <= idle;
 
                             -- Endpoint request
                             when "00010" => control_state <= idle;
@@ -239,17 +205,17 @@ begin
 
                     -- Handle ACK packets
                     if EP_INPUT.rx_ack = '1' then
-                        descriptor_base <= descriptor_base + MAX_PACKET_LEN;
-                        if unsigned(setup.wLength) > MAX_PACKET_LEN then
-                            setup.wLength <= usb_word_t(unsigned(setup.wLength) - MAX_PACKET_LEN);
+                        descriptor_base <= descriptor_base + MAX_EP0_PACKET_LEN;
+                        if unsigned(setup.wLength) > MAX_EP0_PACKET_LEN then
+                            setup.wLength <= usb_word_t(unsigned(setup.wLength) - MAX_EP0_PACKET_LEN);
                         else
                             control_state <= receive_status;
                         end if;
                     end if;
 
                     -- Compute next packet length
-                    packet_len <= to_unsigned(MAX_PACKET_LEN, packet_len'length);
-                    if unsigned(setup.wLength) < MAX_PACKET_LEN then
+                    packet_len <= to_unsigned(MAX_EP0_PACKET_LEN, packet_len'length);
+                    if unsigned(setup.wLength) < MAX_EP0_PACKET_LEN then
                         packet_len <= resize(unsigned(setup.wLength), packet_len'length);
                     end if;
                     descriptor_addr <= descriptor_base;
@@ -300,32 +266,22 @@ begin
                     -- Commit the request
                     case setup.bmRequestType(4 downto 0) is
                         -- Device request
-                        when "00000" =>
+                        when "00000" => EP_OUTPUT.tx_enable <= '0';
+
+                        -- Interface request
+                        when "00001" =>
                             case setup.bmRequestType(6 downto 5) is
                                 -- Standard request
-                                when "00" =>
+                                when "00" => EP_OUTPUT.tx_enable <= '0';
+
+                                -- Class request
+                                when "01" =>
                                     case setup.bRequest is
-                                        -- Clear_Feature
-                                        when x"01" =>
-                                            null; -- TODO: useful for remote wakeup
-
-                                        -- Set_Feature
-                                        when x"03" =>
-                                            null; -- TODO: useful for remote wakeup
-
-                                        -- Set_Address
-                                        when x"05" =>
-                                            DEVICE_ADDRESS <= usb_dev_addr_t(setup.wValue(DEVICE_ADDRESS'range));
-
-                                        -- Set_Configuration
-                                        when x"09" =>
-                                            current_config <= usb_byte_t(wValueLow);
+                                        -- Set_Idle
+                                        when x"0A" => null; -- TODO: actually set idle
 
                                         when others => EP_OUTPUT.tx_enable <= '0';
                                     end case;
-
-                                -- Class request
-                                when "01" => EP_OUTPUT.tx_enable <= '0';
 
                                 -- Vendor request
                                 when "10" => EP_OUTPUT.tx_enable <= '0';
@@ -333,9 +289,6 @@ begin
                                 -- Reserved
                                 when others => EP_OUTPUT.tx_enable <= '0';
                             end case;
-
-                        -- Interface request
-                        when "00001" => EP_OUTPUT.tx_enable <= '0';
 
                         -- Endpoint request
                         when "00010" => EP_OUTPUT.tx_enable <= '0';
@@ -356,18 +309,22 @@ begin
                 control_state <= idle;
             end if;
 
+            -- Input interrupts handling
+            if EP_INPUT.endpoint = EP_IN_ID and EP_INPUT.token = token_in and EP_INPUT.start_trans = '1' then
+                -- TODO: send report
+                EP_OUTPUT.tx_nak <= '1';
+            end if;
+
             -- Synchronous reset
-            if CLRn = '0' or EP_INPUT.rx_reset = '1' then
+            if CLRn = '0' then
                 control_state       <= idle;
                 descriptor_addr     <= (others => '0');
-                current_config      <= (others => '0');
                 EP_OUTPUT.tx_enable <= '0';
                 EP_OUTPUT.tx_data   <= (others => '0');
-                DEVICE_ADDRESS      <= (others => '0');
             end if;
 
             rx_data_packet_prev := EP_INPUT.rx_data_packet;
         end if;
     end process;
 
-end USB_EndPoint0_arch;
+end USB_HID_arch;

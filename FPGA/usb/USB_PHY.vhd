@@ -72,9 +72,10 @@ architecture USB_PHY_arch of USB_PHY is
     signal line_reset:         std_logic;
 
     -- Receiver signals
-    signal rx_shift_reg:     usb_byte_t;
-    signal rx_shift_counter: unsigned(3 downto 0);
-    signal rx_stuffing:      unsigned(3 downto 0);
+    signal rx_shift_reg:      usb_byte_t;
+    signal rx_shift_counter:  unsigned(3 downto 0);
+    signal rx_stuffing:       unsigned(3 downto 0);
+    signal rx_stuffing_error: std_logic;
 
     -- Transmitter clock signals
     signal tx_clock_counter: unsigned(6 downto 0);
@@ -269,9 +270,9 @@ begin
         variable prev_line_state: line_state_t;
     begin
         if rising_edge(CLK_48MHz) then
-            debug_rx_valid <= '0';
-            RX_VALID       <= '0';
-            RX_ERROR       <= '0';
+            debug_rx_valid    <= '0';
+            rx_stuffing_error <= '0';
+            RX_VALID          <= '0';
 
             -- Receive bits
             if line_state_valid = '1' then
@@ -281,7 +282,7 @@ begin
                         rx_shift_counter <= rx_shift_counter + 1;
                         rx_stuffing      <= rx_stuffing + 1;
                     else
-                        RX_ERROR <= '1';
+                        rx_stuffing_error <= '1';
                     end if;
                 else
                     if rx_stuffing < 6 then
@@ -311,14 +312,15 @@ begin
 
             -- Synchronous reset
             if CLRn = '0' or tx_state /= idle then
-                RX_DATA          <= (others => '0');
-                RX_VALID         <= '0';
-                RX_ERROR         <= '0';
-                rx_shift_counter <= (others => '0');
-                rx_stuffing      <= (others => '0');
+                RX_DATA           <= (others => '0');
+                RX_VALID          <= '0';
+                rx_shift_counter  <= (others => '0');
+                rx_stuffing       <= (others => '0');
+                rx_stuffing_error <= '0';
             end if;
         end if;
     end process;
+    RX_ERROR <= rx_stuffing_error;
 
     -- Transmitter clock
     process (CLK_48MHz)
@@ -482,7 +484,7 @@ begin
 
             RX_SUSPEND => line_suspend,
             RX_RESET   => line_reset,
-            RX_ERROR   => '0', -- TODO
+            RX_ERROR   => rx_stuffing_error,
 
             DEBUG_TX   => DEBUG_TX
         );
