@@ -21,11 +21,13 @@ entity USB_HID is
         EP_OUT_ID:          positive
     );
     port (
-        CLK_48MHz: in  std_logic;
-        CLRn:      in  std_logic := '1';
+        CLK_48MHz:   in  std_logic;
+        CLRn:        in  std_logic := '1';
 
-        EP_INPUT:  in  usb_ep_input_signals_t;
-        EP_OUTPUT: out usb_ep_output_signals_t
+        EP_INPUT:    in  usb_ep_input_signals_t;
+        EP_OUTPUT:   out usb_ep_output_signals_t;
+
+        REPORT_DATA: in  usb_byte_array_t
     );
 end entity USB_HID;
 
@@ -60,6 +62,10 @@ architecture USB_HID_arch of USB_HID is
     signal data:            usb_byte_t;
     signal send_descriptor: std_logic;
     signal descriptor_base: unsigned(descriptor_addr'range);
+
+    -- Report data
+    signal prev_report_data: usb_byte_array_t(REPORT_DATA'range);
+    signal report_addr:      unsigned(6 downto 0);
 begin
 
     -- Descriptor ROM process
@@ -311,14 +317,29 @@ begin
 
             -- Input interrupts handling
             if EP_INPUT.endpoint = EP_IN_ID and EP_INPUT.token = token_in and EP_INPUT.start_trans = '1' then
-                -- TODO: send report
-                EP_OUTPUT.tx_nak <= '1';
+                -- TODO: retransmit until acknowledged instead of only once
+                if REPORT_DATA /= prev_report_data then
+                    prev_report_data <= REPORT_DATA;
+                    packet_len       <= to_unsigned(REPORT_DATA'length, packet_len'length);
+                else
+                    EP_OUTPUT.tx_nak <= '1';
+                end if;
+            end if;
+            if control_state = idle and packet_len > 0 then
+                EP_OUTPUT.tx_enable <= '1';
+                EP_OUTPUT.tx_data   <= prev_report_data(to_integer(report_addr));
+                if EP_INPUT.tx_read = '1' then
+                    packet_len  <= packet_len - 1;
+                    report_addr <= report_addr + 1;
+                end if;
             end if;
 
             -- Synchronous reset
             if CLRn = '0' then
                 control_state       <= idle;
                 descriptor_addr     <= (others => '0');
+                packet_len          <= (others => '0');
+                prev_report_data    <= (others => (others => '0'));
                 EP_OUTPUT.tx_enable <= '0';
                 EP_OUTPUT.tx_data   <= (others => '0');
             end if;

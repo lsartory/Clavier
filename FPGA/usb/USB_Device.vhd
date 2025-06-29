@@ -27,14 +27,14 @@ entity USB_Device is
         USB_DN_PULL:    out std_logic;
         USB_DP_PULL:    out std_logic;
 
-        DEVICE_ADDRESS: in    usb_dev_addr_t;
+        DEVICE_ADDRESS: in  usb_dev_addr_t;
 
-        EP_INPUT:       out   usb_ep_input_signals_t;
-        EP_OUTPUTS:     in    usb_ep_output_signals_array_t;
+        EP_INPUT:       out usb_ep_input_signals_t;
+        EP_OUTPUTS:     in  usb_ep_output_signals_array_t;
 
-        FRAME_START:    out   std_logic;
+        FRAME_START:    out std_logic;
 
-        DEBUG_TX:       out   std_logic
+        DEBUG_TX:       out std_logic
     );
 end entity USB_Device;
 
@@ -124,30 +124,30 @@ begin
             FULL_SPEED => FULL_SPEED
         )
         port map (
-            CLK_48MHz   => clk_48MHz,
-            CLRn        => clrn,
+            CLK_48MHz  => clk_48MHz,
+            CLRn       => clrn,
 
-            USB_OE      => USB_OE,
-            USB_DN_IN   => USB_DN_IN,
-            USB_DP_IN   => USB_DP_IN,
-            USB_DN_OUT  => USB_DN_OUT,
-            USB_DP_OUT  => USB_DP_OUT,
+            USB_OE     => USB_OE,
+            USB_DN_IN  => USB_DN_IN,
+            USB_DP_IN  => USB_DP_IN,
+            USB_DN_OUT => USB_DN_OUT,
+            USB_DP_OUT => USB_DP_OUT,
 
-            RX_ACTIVE   => rx_active,
-            RX_DATA     => rx_data,
-            RX_VALID    => rx_valid,
-            RX_EOP      => rx_eop,
+            RX_ACTIVE  => rx_active,
+            RX_DATA    => rx_data,
+            RX_VALID   => rx_valid,
+            RX_EOP     => rx_eop,
 
-            RX_ERROR    => rx_error,
-            RX_SUSPEND  => rx_suspend,
-            RX_RESET    => rx_reset,
+            RX_ERROR   => rx_error,
+            RX_SUSPEND => rx_suspend,
+            RX_RESET   => rx_reset,
 
-            TX_ACTIVE   => open,
-            TX_ENABLE   => tx_enable,
-            TX_DATA     => tx_data,
-            TX_READ     => tx_read,
+            TX_ACTIVE  => open,
+            TX_ENABLE  => tx_enable,
+            TX_DATA    => tx_data,
+            TX_READ    => tx_read,
 
-            DEBUG_TX    => DEBUG_TX
+            DEBUG_TX   => DEBUG_TX
         );
 
     -- State handling process

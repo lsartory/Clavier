@@ -16,30 +16,30 @@ entity USB_PHY is
         FULL_SPEED: boolean := true
     );
     port (
-        CLK_48MHz:   in  std_logic;
-        CLRn:        in  std_logic := '1';
+        CLK_48MHz:  in  std_logic;
+        CLRn:       in  std_logic := '1';
 
-        USB_OE:      out std_logic;
-        USB_DN_IN:   in  std_logic;
-        USB_DP_IN:   in  std_logic;
-        USB_DN_OUT:  out std_logic;
-        USB_DP_OUT:  out std_logic;
+        USB_OE:     out std_logic;
+        USB_DN_IN:  in  std_logic;
+        USB_DP_IN:  in  std_logic;
+        USB_DN_OUT: out std_logic;
+        USB_DP_OUT: out std_logic;
 
-        RX_ACTIVE:   out std_logic;
-        RX_DATA:     out usb_byte_t;
-        RX_VALID:    out std_logic;
-        RX_EOP:      out std_logic;
+        RX_ACTIVE:  out std_logic;
+        RX_DATA:    out usb_byte_t;
+        RX_VALID:   out std_logic;
+        RX_EOP:     out std_logic;
 
-        RX_ERROR:    out std_logic;
-        RX_SUSPEND:  out std_logic;
-        RX_RESET:    out std_logic;
+        RX_ERROR:   out std_logic;
+        RX_SUSPEND: out std_logic;
+        RX_RESET:   out std_logic;
 
-        TX_ACTIVE:   out std_logic;
-        TX_ENABLE:   in  std_logic;
-        TX_DATA:     in  usb_byte_t;
-        TX_READ:     out std_logic;
+        TX_ACTIVE:  out std_logic;
+        TX_ENABLE:  in  std_logic;
+        TX_DATA:    in  usb_byte_t;
+        TX_READ:    out std_logic;
 
-        DEBUG_TX:    out std_logic
+        DEBUG_TX:   out std_logic
     );
 end entity USB_PHY;
 

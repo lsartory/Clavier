@@ -25,8 +25,9 @@ entity Clavier is
         USB_DN:       inout std_logic;
         USB_DP:       inout std_logic;
         USB_DP_PULL:  out   std_logic;
+        USB_DEBUG_TX: out   std_logic;
 
-        USB_DEBUG_TX: out   std_logic
+        KEYS:         in    std_logic_vector(0 downto 0)
     );
 end entity Clavier;
 
@@ -34,20 +35,20 @@ end entity Clavier;
 
 architecture Clavier_arch of Clavier is
     -- USB descriptors
-    constant REPORT_DESCRIPTOR: usb_byte_array_t := (
+    constant REPORT_DESCRIPTOR: usb_byte_array_t := ( -- TODO: generate this automatically?
         x"05", x"01", -- Usage Page (Generic Desktop),
         x"09", x"06", -- Usage (Keyboard),
         x"A1", x"01", -- Collection (Application),
         x"85", x"01", --   Report ID
 
         -- Bitmap of keys
-        x"95", x"11", --   Report Count -- TODO: change this to the key count
+        x"95", x"08", --   Report Count -- TODO: change this to the key count
         x"75", x"01", --   Report Size (1),
         x"15", x"00", --   Logical Minimum (0),
         x"25", x"01", --   Logical Maximum(1),
         x"05", x"07", --   Usage Page (Key Codes),
-        x"19", x"00", --   Usage Minimum (0), -- TODO: change this to the lowest scancode
-        x"29", x"10", --   Usage Maximum      -- TODO: change this to the highest scancode
+        x"19", x"04", --   Usage Minimum -- TODO: change this to the lowest scancode
+        x"29", x"0B", --   Usage Maximum -- TODO: change this to the highest scancode
         x"81", x"02", --   Input (Data, Variable, Absolute),
 
         x"C0"         -- End Collection
@@ -102,7 +103,7 @@ architecture Clavier_arch of Clavier is
             2 => to_usb_string_descriptor("USB test"),   -- Product
             3 => to_usb_string_descriptor("000001")      -- Serial number
         )
-     );
+    );
 
     -- Common signals
     signal clrn:       std_logic;
@@ -119,6 +120,9 @@ architecture Clavier_arch of Clavier is
     signal device_address: usb_dev_addr_t;
     signal ep_input:       usb_ep_input_signals_t;
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
+
+    -- Keyboard signals
+    signal report_data: usb_byte_array_t(0 to 1);
 begin
 
     -- PLL for the USB controller
@@ -179,19 +183,25 @@ begin
         );
 
     -- USB HID
+    report_data <= (
+        0 => x"01",
+        1 => "000" & KEYS(0) & "0000"
+    );
     usb_hid: entity work.USB_HID
         generic map (
             REPORT_DESCRIPTOR  => REPORT_DESCRIPTOR,
             MAX_EP0_PACKET_LEN => to_integer(unsigned(DESCRIPTORS.device.bMaxPacketSize0)),
-            EP_IN_ID           => 1,
-            EP_OUT_ID          => 1
+            EP_IN_ID           => to_integer(unsigned(DESCRIPTORS.device.configurations(0).interfaces(0).endpoints(0).bEndpointAddress)),
+            EP_OUT_ID          => to_integer(unsigned(DESCRIPTORS.device.configurations(0).interfaces(0).endpoints(1).bEndpointAddress))
         )
         port map (
-            CLK_48MHz => pll_clk,
-            CLRn      => clrn,
+            CLK_48MHz   => pll_clk,
+            CLRn        => clrn,
 
-            EP_INPUT  => ep_input,
-            EP_OUTPUT => ep_outputs(1)
+            EP_INPUT    => ep_input,
+            EP_OUTPUT   => ep_outputs(1),
+
+            REPORT_DATA => report_data
         );
 
 end Clavier_arch;
