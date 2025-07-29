@@ -40,15 +40,15 @@ $(BUILDDIR)/$(TOPLEVEL).config: $(BUILDDIR)/$(TOPLEVEL).json
 	nextpnr-ecp5 --package $(PACKAGE) --$(SIZE) --speed $(SPEED) --pre-pack $(PREPACK) --lpf $(LPFFILE) --json $< --textcfg $@ -l $(BUILDDIR)/nextpnr.rpt
 
 $(BUILDDIR)/$(TOPLEVEL).bit: $(BUILDDIR)/$(TOPLEVEL).config
-	ecppack $< $@
+	ecppack --spimode qspi --freq 62.0 $< $@
 
 .PHONY: prog-sram
 prog-sram: $(BUILDDIR)/$(TOPLEVEL).bit
-	openFPGALoader $<
+	openFPGALoader -c ch347_jtag --pid 0x55de $<
 
 .PHONY: prog-flash
 prog-flash: $(BUILDDIR)/$(TOPLEVEL).bit
-	openFPGALoader -f $<
+	openFPGALoader -c ch347_jtag --pid 0x55de -f $<
 
 .PHONY: clean
 clean:

@@ -27,7 +27,8 @@ entity Clavier is
         USB_DP_PULL:  out   std_logic;
         USB_DEBUG_TX: out   std_logic;
 
-        KEYS:         in    std_logic_vector(0 downto 0)
+        KEYS:         in    std_logic_vector(0 downto 0);
+        LEDS:         out   std_logic_vector(4 downto 0)
     );
 end entity Clavier;
 
@@ -100,7 +101,7 @@ architecture Clavier_arch of Clavier is
         (
             0 => new_usb_string_zero((0 => x"0409")),    -- English (United States)
             1 => to_usb_string_descriptor("L. Sartory"), -- Manufacturer
-            2 => to_usb_string_descriptor("USB test"),   -- Product
+            2 => to_usb_string_descriptor("Clavier"),    -- Product
             3 => to_usb_string_descriptor("000001")      -- Serial number
         )
     );
@@ -122,6 +123,7 @@ architecture Clavier_arch of Clavier is
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
 
     -- Keyboard signals
+    signal keys_sync:   std_logic_vector(KEYS'range);
     signal report_data: usb_byte_array_t(0 to 1);
 begin
 
@@ -138,6 +140,14 @@ begin
             TARGET_CLK => pll_clk,
             INPUT(0)   => pll_locked,
             OUTPUT(0)  => clrn
+        );
+
+    -- Keys synchronization
+    keys_cdc: entity work.VectorCDC
+        port map (
+            TARGET_CLK => pll_clk,
+            INPUT      => KEYS,
+            OUTPUT     => keys_sync
         );
 
     -- USB device
@@ -185,7 +195,7 @@ begin
     -- USB HID
     report_data <= (
         0 => x"01",
-        1 => "000" & KEYS(0) & "0000"
+        1 => "000" & keys_sync(0) & "0000"
     );
     usb_hid: entity work.USB_HID
         generic map (
@@ -204,4 +214,6 @@ begin
             REPORT_DATA => report_data
         );
 
+    -- TODO: use the LEDs to display the key state, for debugging
+    LEDS <= (others => keys_sync(0));
 end Clavier_arch;
