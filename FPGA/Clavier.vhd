@@ -27,7 +27,7 @@ entity Clavier is
         USB_DP_PULL:  out   std_logic;
         USB_DEBUG_TX: out   std_logic;
 
-        KEYS:         in    std_logic_vector(0 downto 0);
+        KEYS:         in    std_logic_vector(105 downto 0);
         LEDS:         out   std_logic_vector(4 downto 0)
     );
 end entity Clavier;
