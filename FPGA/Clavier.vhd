@@ -123,8 +123,14 @@ architecture Clavier_arch of Clavier is
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
 
     -- Keyboard signals
+    signal keys_pd:     std_logic_vector(KEYS'range);
     signal keys_sync:   std_logic_vector(KEYS'range);
     signal report_data: usb_byte_array_t(0 to 1);
+
+    -- Input buffer with pull-down resistor
+    component IBPD is
+        port (I: in std_logic; O: out std_logic);
+    end component;
 begin
 
     -- PLL for the USB controller
@@ -142,11 +148,15 @@ begin
             OUTPUT(0)  => clrn
         );
 
-    -- Keys synchronization
+    -- Keys input buffers with pull-down and synchronization
+    keys_ibpd_gen: for i in KEYS'range generate
+    begin
+        key_ibpd: IBPD port map (I => KEYS(i), O => keys_pd(i));
+    end generate;
     keys_cdc: entity work.VectorCDC
         port map (
             TARGET_CLK => pll_clk,
-            INPUT      => KEYS,
+            INPUT      => keys_pd,
             OUTPUT     => keys_sync
         );
 
@@ -215,5 +225,5 @@ begin
         );
 
     -- TODO: use the LEDs to display the key state, for debugging
-    LEDS <= (others => keys_sync(0));
+    LEDS <= (others => not keys_sync(0));
 end Clavier_arch;
