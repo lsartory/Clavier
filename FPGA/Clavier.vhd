@@ -225,5 +225,18 @@ begin
         );
 
     -- TODO: use the LEDs to display the key state, for debugging
-    LEDS <= (others => not keys_sync(0));
+    process (pll_clk)
+    begin
+        if rising_edge(pll_clk) then
+            for i in keys_sync'range loop
+                if keys_sync(i) = '1' then
+                    LEDS <= not std_logic_vector(to_unsigned(i + 1, LEDS'length));
+                end if;
+            end loop;
+
+            if CLRn = '0' then
+                LEDS <= (others => '1');
+            end if;
+        end if;
+    end process;
 end Clavier_arch;
