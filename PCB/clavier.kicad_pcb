@@ -11931,7 +11931,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "1c664605-5788-4e46-ab42-de191cbe4fbf")
+			(uuid "7a81020e-f2a8-4adf-9f11-76cee4a095b9")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -11952,7 +11952,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "1c664605-5788-4e46-ab42-de191cbe4fbf")
+			(uuid "7075358b-e4d7-4e16-8609-993c6a0c0557")
 		)
 		(embedded_fonts no)
 	)
@@ -47496,7 +47496,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "86a1b234-c593-461f-b932-b6ec39b05c0f")
+			(uuid "759f6e7e-d9e4-4368-8a7f-8e946b5a8e4f")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -47517,7 +47517,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "86a1b234-c593-461f-b932-b6ec39b05c0f")
+			(uuid "c109f27a-8f2b-45c2-ac7f-4f4ef6c0619a")
 		)
 		(embedded_fonts no)
 	)
@@ -63144,7 +63144,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "fece26c9-9aa8-4df5-bbd5-5a280be6cdd8")
+			(uuid "e450377d-90cc-4cc5-84d2-f44e37f13e17")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -63165,7 +63165,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "fece26c9-9aa8-4df5-bbd5-5a280be6cdd8")
+			(uuid "2b4e20ed-3bf9-4796-b3aa-4c059ab38c42")
 		)
 		(embedded_fonts no)
 	)
@@ -77855,7 +77855,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "b9c703e1-8144-4aa6-a0d1-f938caa021b0")
+			(uuid "a8f43a3d-c901-4107-aeea-670633dee62d")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -77876,7 +77876,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "b9c703e1-8144-4aa6-a0d1-f938caa021b0")
+			(uuid "bb3cb666-5132-4231-9a51-85d47a730124")
 		)
 		(embedded_fonts no)
 	)
@@ -112974,7 +112974,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "2422bf3b-9deb-4ef8-9d01-e56806e74f61")
+			(uuid "e43bd614-6719-402d-81b1-2fbc9108e8aa")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -112995,7 +112995,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "2422bf3b-9deb-4ef8-9d01-e56806e74f61")
+			(uuid "be0d5940-7cba-445d-9499-0b48eef82bff")
 		)
 		(embedded_fonts no)
 	)
@@ -222679,7 +222679,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "5972bb8f-734f-4230-85c3-ffe9ea998a6a")
+			(uuid "97aeff61-8336-4993-b92b-eff10660a9f4")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -222700,7 +222700,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "5972bb8f-734f-4230-85c3-ffe9ea998a6a")
+			(uuid "53c851b5-5aa2-4904-8334-f6811d9f8473")
 		)
 		(embedded_fonts no)
 	)
@@ -297120,7 +297120,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "5b6e737b-d102-47be-bf08-2f20483cf04b")
+			(uuid "ac1e59fd-92cf-4bb1-a7db-6385296b5fcb")
 		)
 		(pad "1" connect circle
 			(at 0 0)
@@ -297141,7 +297141,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "5b6e737b-d102-47be-bf08-2f20483cf04b")
+			(uuid "386711a5-6815-46ab-838d-691e259892c4")
 		)
 		(embedded_fonts no)
 	)
@@ -344755,7 +344755,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "8367f8f1-6d1c-4ec7-a837-f0b902e39c0e")
+			(uuid "8e56db3a-2090-4a4b-9271-ba04d9acbe42")
 		)
 		(pad "S1" thru_hole oval
 			(at 4.32 -1.075)
@@ -344778,7 +344778,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "8367f8f1-6d1c-4ec7-a837-f0b902e39c0e")
+			(uuid "47469f0e-bb81-4580-8ef5-2b7383c0b6aa")
 		)
 		(pad "S1" thru_hole oval
 			(at 4.32 3.105)
@@ -344801,7 +344801,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "8367f8f1-6d1c-4ec7-a837-f0b902e39c0e")
+			(uuid "8be8381e-269b-41b6-a0c1-48d496f245e0")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step"
@@ -348175,7 +348175,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "0811f37a-0bdf-424f-9904-25a323c22145")
+			(uuid "43b8c7fa-5da7-4aa3-a477-fe3172d14bf1")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_A_Molex_67643_Horizontal.step"
@@ -374733,7 +374733,7 @@
 				(allow_two_segments yes)
 				(prefer_zone_connections yes)
 			)
-			(uuid "95978d63-f43c-4d23-b5f3-19ebb27b4e9e")
+			(uuid "dcf4d42d-8ba3-4677-b12d-5434ef1d8212")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_A_Molex_67643_Horizontal.step"
@@ -380609,9 +380609,9 @@
 		(layer "Cmts.User")
 		(uuid "36c54442-b8c7-4610-9beb-cea414081941")
 		(pts
-			(xy 81.25 139.5) (xy 92.75 158.25)
+			(xy 86.25 134.5) (xy 92.75 158.25)
 		)
-		(height -7.75)
+		(height -12.75)
 		(orientation 1)
 		(format
 			(prefix "")
@@ -380630,8 +380630,8 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "18.75"
-			(at 72.35 148.875 90)
+		(gr_text "23.75"
+			(at 72.35 146.375 90)
 			(layer "Cmts.User")
 			(uuid "36c54442-b8c7-4610-9beb-cea414081941")
 			(effects
@@ -380913,9 +380913,9 @@
 		(layer "Cmts.User")
 		(uuid "c5a0203a-4f85-40a4-80b5-f1551f6a72e8")
 		(pts
-			(xy 81.25 139.5) (xy 107 239)
+			(xy 86.25 134.5) (xy 107 239)
 		)
-		(height -15.75)
+		(height -20.75)
 		(orientation 1)
 		(format
 			(prefix "")
@@ -380934,8 +380934,8 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "99.5"
-			(at 64.35 189.25 90)
+		(gr_text "104.5"
+			(at 64.35 186.75 90)
 			(layer "Cmts.User")
 			(uuid "c5a0203a-4f85-40a4-80b5-f1551f6a72e8")
 			(effects
