@@ -4,3 +4,6 @@
 [submodule "PCB/3rdparty/cherry-mx-keycaps"]
 	path = PCB/3rdparty/cherry-mx-keycaps
 	url = https://github.com/endeavoursc/cherry-mx-keycaps.git
+[submodule "Housing/BOSL2"]
+	path = Housing/BOSL2
+	url = https://github.com/BelfrySCAD/BOSL2.git
