@@ -30,9 +30,13 @@ bottom_offset     =  5.00;
 gap               =  0.40;
 housing_chamfer   =  1.00;
 
+openings_ext      = 10.00;
+openings_margin   =  0.50;
+
 screw_type        = "M3,9";
 mounting_diameter = 7.00;
 mounting_base     = 8.00;
+mounting_delta    = 0.20;
 rib_height        = 5.00;
 rib_rounding      = 2.50;
 
@@ -40,6 +44,19 @@ supports = [
     [11.50,  -23.75], [135.00,  -23.75], [277.50,  -23.75], [420.00, -23.75],
     [25.75, -104.50], [215.75, -104.50], [391.50, -104.50]
 ];
+
+usb_c =  [405.75, -1.80];
+usb_a = [[382.00, -4.30], [355.75, -4.30]];
+jtag  =  [289.38, -1.40];
+
+usb_c_dim = [9.00, 3.20, 1.00];
+usb_c_ext = 6.00;
+
+usb_a_dim = [14.40, 7.20, 2.00];
+usb_a_ext = 8.00;
+
+jtag_dim  = [10.20, 2.60, 0.50];
+jtag_ext  = 2.00;
 
 /************************************************/
 
@@ -102,8 +119,20 @@ module housing() {
         translate([pcb_width - pcb_corner, -pcb_height + pcb_corner - bottom_offset, -housing_thickness])
             front_half() right_half() chamfer_cylinder_mask(r = pcb_corner + border_width + gap, chamfer = housing_chamfer, orient = BOTTOM);
 
-        // TODO: USB openings
-        // TODO: JTAG opening
+        // USB C opening
+        translate([usb_c[0], 0, usb_c[1] + openings_ext / 2]) cuboid([usb_c_dim[0] + usb_c_ext + openings_margin, (border_width + gap) * 2, usb_c_dim[1] + usb_c_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_c_dim[2] * 2);
+        translate([usb_c[0], 0, usb_c[1] + openings_ext / 2]) cuboid([usb_c_dim[0] + openings_margin, (border_width + gap) * 4, usb_c_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_c_dim[2]);
+
+        // USB openings
+        translate([usb_a[0][0], 0, usb_a[0][1]]) cuboid([usb_a_dim[0] + usb_a_ext + openings_margin, (border_width + gap) * 2, usb_a_dim[1] + usb_a_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_a_dim[2] * 2);
+        translate([usb_a[0][0], 0, usb_a[0][1] + openings_ext / 2]) cuboid([usb_a_dim[0] + openings_margin, (border_width + gap) * 4, usb_a_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_a_dim[2]);
+        translate([usb_a[1][0], 0, usb_a[1][1]]) cuboid([usb_a_dim[0] + usb_a_ext + openings_margin, (border_width + gap) * 2, usb_a_dim[1] + usb_a_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_a_dim[2] * 2);
+        translate([usb_a[1][0], 0, usb_a[1][1] + openings_ext / 2]) cuboid([usb_a_dim[0] + openings_margin, (border_width + gap) * 4, usb_a_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_a_dim[2]);
+
+        // JTAG opening
+        translate([jtag[0], 0, jtag[1] + openings_ext / 2]) cuboid([jtag_dim[0] + jtag_ext + openings_margin, (border_width + gap) * 2, jtag_dim[1] + jtag_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = jtag_dim[2] * 2);
+        translate([jtag[0], 0, jtag[1] + openings_ext / 2]) cuboid([jtag_dim[0] + openings_margin, (border_width + gap) * 4, jtag_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = jtag_dim[2]);
+
         // TODO: Stabilizers openings
     }
 }
@@ -112,7 +141,7 @@ module housing() {
 
 module supports() {
     for (i = supports) {
-        translate(i) cyl(l = housing_thickness - bottom_thickness + epsilon, r = mounting_diameter / 2, rounding1 = -mounting_base, rounding2 = 1.00, anchor = TOP);
+        translate(i) cyl(l = housing_thickness - bottom_thickness + epsilon - mounting_delta, r = mounting_diameter / 2, rounding1 = -mounting_base, rounding2 = 1.0 - mounting_delta, anchor = TOP);
     }
 }
 
@@ -132,25 +161,45 @@ module rib(start, end) {
 
 module ribs() {
     down(housing_thickness - bottom_thickness + epsilon) {
+        // Top edge to support ribs
         rib([supports[0][0], -epsilon], supports[0]);
         rib([supports[1][0], -epsilon], supports[1]);
         rib([supports[2][0], -epsilon], supports[2]);
         rib([supports[3][0], -epsilon], supports[3]);
 
+        // Upper horizontal rib
         rib([-epsilon, supports[0][1]], [pcb_width + epsilon, supports[0][1]]);
 
+        // Center ribs
         rib(supports[0], supports[4]);
         rib(supports[1], supports[4]);
+        rib(supports[1], [(supports[4][0] + supports[5][0]) / 2, supports[4][1]]);
         rib(supports[1], supports[5]);
         rib(supports[2], supports[5]);
+        rib(supports[2], [(supports[5][0] + supports[6][0]) / 2, supports[5][1]]);
         rib(supports[2], supports[6]);
         rib(supports[3], supports[6]);
 
+        // Lower horizontal rib
         rib([-epsilon, supports[4][1]], [pcb_width + epsilon, supports[4][1]]);
 
+        // Bottom edge to support ribs
         rib(supports[4], [supports[4][0], -pcb_height - epsilon]);
+        rib([(supports[4][0] + supports[5][0]) / 2, supports[4][1]], [(supports[4][0] + supports[5][0]) / 2, -pcb_height - epsilon]);
         rib(supports[5], [supports[5][0], -pcb_height - epsilon]);
+        rib([(supports[5][0] + supports[6][0]) / 2, supports[5][1]], [(supports[5][0] + supports[6][0]) / 2, -pcb_height - epsilon]);
         rib(supports[6], [supports[6][0], -pcb_height - epsilon]);
+
+        // USB reinforcement ribs
+        usb_rib_x = (usb_a[0][0] + usb_a[1][0]) / 2;
+        usb_rib_delta = (usb_a[0][0] - usb_rib_x) * 2;
+        rib([usb_rib_x, -epsilon], [usb_rib_x, supports[0][1]]);
+        rib([usb_rib_x + usb_rib_delta, -epsilon], [usb_rib_x + usb_rib_delta, supports[0][1]]);
+        rib([usb_rib_x - usb_rib_delta, -epsilon], [usb_rib_x - usb_rib_delta, supports[0][1]]);
+
+        // JTAG reinforcement rib
+        jtag_rib_x = jtag[0] * 2 - supports[2][0];
+        rib([jtag_rib_x, -epsilon], [jtag_rib_x, supports[0][1]]);
     }
 }
 
@@ -158,7 +207,7 @@ module ribs() {
 
 module drillings() {
     for (i = supports) {
-        translate(i) screw_hole(screw_type, thread = true, anchor = TOP);
+        translate(i) screw_hole(screw_type, thread = true, bevel2 = true, anchor = TOP);
     }
 }
 
