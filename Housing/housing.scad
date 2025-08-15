@@ -1,4 +1,4 @@
-// Clavier | clavier.scad
+// Clavier | housing.scad
 // Copyright (c) 2025 L. Sartory
 // SPDX-License-Identifier: CERN-OHL-P-2.0
 
@@ -37,12 +37,22 @@ screw_type        = "M3,9";
 mounting_diameter = 7.00;
 mounting_base     = 8.00;
 mounting_delta    = 0.20;
+
+stab_radius       = 3.58;
+
 rib_height        = 5.00;
 rib_rounding      = 2.50;
 
 supports = [
     [11.50,  -23.75], [135.00,  -23.75], [277.50,  -23.75], [420.00, -23.75],
     [25.75, -104.50], [215.75, -104.50], [391.50, -104.50]
+];
+
+stabilizers = [
+    [ 82.63, -122.24], [182.63, -122.24],
+    [360.60, -122.24], [384.40, -122.24],
+    [428.24, -116.40], [428.24,  -92.60],
+    [428.24,  -78.40], [428.24,  -54.60]
 ];
 
 usb_c =  [405.75, -1.80];
@@ -123,17 +133,20 @@ module housing() {
         translate([usb_c[0], 0, usb_c[1] + openings_ext / 2]) cuboid([usb_c_dim[0] + usb_c_ext + openings_margin, (border_width + gap) * 2, usb_c_dim[1] + usb_c_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_c_dim[2] * 2);
         translate([usb_c[0], 0, usb_c[1] + openings_ext / 2]) cuboid([usb_c_dim[0] + openings_margin, (border_width + gap) * 4, usb_c_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_c_dim[2]);
 
-        // USB openings
-        translate([usb_a[0][0], 0, usb_a[0][1]]) cuboid([usb_a_dim[0] + usb_a_ext + openings_margin, (border_width + gap) * 2, usb_a_dim[1] + usb_a_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_a_dim[2] * 2);
-        translate([usb_a[0][0], 0, usb_a[0][1] + openings_ext / 2]) cuboid([usb_a_dim[0] + openings_margin, (border_width + gap) * 4, usb_a_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_a_dim[2]);
-        translate([usb_a[1][0], 0, usb_a[1][1]]) cuboid([usb_a_dim[0] + usb_a_ext + openings_margin, (border_width + gap) * 2, usb_a_dim[1] + usb_a_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_a_dim[2] * 2);
-        translate([usb_a[1][0], 0, usb_a[1][1] + openings_ext / 2]) cuboid([usb_a_dim[0] + openings_margin, (border_width + gap) * 4, usb_a_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_a_dim[2]);
+        // USB A openings
+        for (usb = usb_a) {
+            translate([usb[0], 0, usb[1]]) cuboid([usb_a_dim[0] + usb_a_ext + openings_margin, (border_width + gap) * 2, usb_a_dim[1] + usb_a_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = usb_a_dim[2] * 2);
+            translate([usb[0], 0, usb[1] + openings_ext / 2]) cuboid([usb_a_dim[0] + openings_margin, (border_width + gap) * 4, usb_a_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = usb_a_dim[2]);
+        }
 
         // JTAG opening
         translate([jtag[0], 0, jtag[1] + openings_ext / 2]) cuboid([jtag_dim[0] + jtag_ext + openings_margin, (border_width + gap) * 2, jtag_dim[1] + jtag_ext + openings_margin + openings_ext], anchor = FRONT, except = [FRONT, BACK], rounding = jtag_dim[2] * 2);
         translate([jtag[0], 0, jtag[1] + openings_ext / 2]) cuboid([jtag_dim[0] + openings_margin, (border_width + gap) * 4, jtag_dim[1] + openings_margin + openings_ext], except = [FRONT, BACK], rounding = jtag_dim[2]);
 
-        // TODO: Stabilizers openings
+        // Stabilizers openings
+        for (stab = stabilizers) {
+            translate(stab) spheroid(stab_radius, style = "icosa", circum = true);
+        }
     }
 }
 
@@ -141,7 +154,7 @@ module housing() {
 
 module supports() {
     for (i = supports) {
-        translate(i) cyl(l = housing_thickness - bottom_thickness + epsilon - mounting_delta, r = mounting_diameter / 2, rounding1 = -mounting_base, rounding2 = 1.0 - mounting_delta, anchor = TOP);
+        translate(i) down(mounting_delta) cyl(l = housing_thickness - bottom_thickness - mounting_delta + epsilon, r = mounting_diameter / 2, rounding1 = -mounting_base, rounding2 = 1.00 - mounting_delta, anchor = TOP);
     }
 }
 
