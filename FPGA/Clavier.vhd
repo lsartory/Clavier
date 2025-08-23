@@ -7,6 +7,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.keymap.all;
 use work.usb_types.all;
 use work.usb_descriptors.all;
 use work.usb_class_descriptors.all;
@@ -37,20 +38,20 @@ end entity Clavier;
 architecture Clavier_arch of Clavier is
     -- USB descriptors
     constant REPORT_DESCRIPTOR: usb_byte_array_t := ( -- TODO: generate this automatically?
-        x"05", x"01", -- Usage Page (Generic Desktop),
-        x"09", x"06", -- Usage (Keyboard),
-        x"A1", x"01", -- Collection (Application),
+        x"05", x"01", -- Usage Page (Generic Desktop)
+        x"09", x"06", -- Usage (Keyboard)
+        x"A1", x"01", -- Collection (Application)
         x"85", x"01", --   Report ID
 
         -- Bitmap of keys
-        x"95", x"08", --   Report Count -- TODO: change this to the key count
-        x"75", x"01", --   Report Size (1),
-        x"15", x"00", --   Logical Minimum (0),
-        x"25", x"01", --   Logical Maximum(1),
-        x"05", x"07", --   Usage Page (Key Codes),
-        x"19", x"04", --   Usage Minimum -- TODO: change this to the lowest scancode
-        x"29", x"0B", --   Usage Maximum -- TODO: change this to the highest scancode
-        x"81", x"02", --   Input (Data, Variable, Absolute),
+        x"95", x"F8", --   Report Count
+        x"75", x"01", --   Report Size (1)
+        x"15", x"00", --   Logical Minimum (0)
+        x"25", x"01", --   Logical Maximum (1)
+        x"05", x"07", --   Usage Page (Key Codes)
+        x"19", x"04", --   Usage Minimum (KEY_A)
+        x"29", x"FB", --   Usage Maximum (KEY_CALC)
+        x"81", x"02", --   Input (Data, Variable, Absolute)
 
         x"C0"         -- End Collection
     );
@@ -88,8 +89,8 @@ architecture Clavier_arch of Clavier is
                                 )
                             )),
                             (
-                                0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 8, 1), -- TODO: max packet size?
-                                1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 8, 1)  -- TODO: max packet size?
+                                0 => new_usb_endpoint(1, ep_in,  interrupt, no_sync, data, 64, 1),
+                                1 => new_usb_endpoint(1, ep_out, interrupt, no_sync, data, 64, 1)
                             )
                         )
                     )
@@ -125,7 +126,7 @@ architecture Clavier_arch of Clavier is
     -- Keyboard signals
     signal keys_pd:     std_logic_vector(KEYS'range);
     signal keys_sync:   std_logic_vector(KEYS'range);
-    signal report_data: usb_byte_array_t(0 to 1);
+    signal report_data: usb_byte_array_t(0 to 31);
 
     -- Input buffer with pull-down resistor
     component IBPD is
@@ -203,10 +204,7 @@ begin
         );
 
     -- USB HID
-    report_data <= (
-        0 => x"01",
-        1 => "000" & keys_sync(0) & "0000"
-    );
+    report_data <= keys_to_usb_report(keys_sync, report_data);
     usb_hid: entity work.USB_HID
         generic map (
             REPORT_DESCRIPTOR  => REPORT_DESCRIPTOR,

@@ -13,6 +13,7 @@ LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += ClockScaler.vhd
+SOURCES += Keymap.vhd
 SOURCES += PLL.vhd
 SOURCES += VectorCDC.vhd
 SOURCES += usb/USB_Debug_UART.vhd
