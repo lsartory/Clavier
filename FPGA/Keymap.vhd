@@ -72,7 +72,7 @@ package body keymap is
              45 => 16#6F#, -- KEY_F20
              46 => 16#64#, -- KEY_102ND
              47 => 16#10#, -- KEY_M
-             48 => 16#76#, -- KEY_PROPS
+             48 => 16#65#, -- KEY_COMPOSE
              49 => 16#38#, -- KEY_SLASH
              50 => 16#11#, -- KEY_N
              51 => 16#12#, -- KEY_O
