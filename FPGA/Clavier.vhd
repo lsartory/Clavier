@@ -18,7 +18,9 @@ entity Clavier is
     generic (
         USB_VENDOR_ID:  integer range 0 to 65535 := 16#1209#;
         USB_PRODUCT_ID: integer range 0 to 65535 := 16#0008#;
-        USB_BCD_DEVICE: integer range 0 to 65535 := 16#0100#
+        USB_BCD_DEVICE: integer range 0 to 65535 := 16#0100#;
+
+        LED_BRIGHTNESS: unsigned(15 downto 0) := x"FFFF"
     );
     port (
         CLK_12MHz:    in    std_logic;
@@ -119,6 +121,7 @@ architecture Clavier_arch of Clavier is
     signal usb_dp_pull_enable: std_logic;
 
     -- USB device signals
+    signal device_reset:   std_logic;
     signal device_address: usb_dev_addr_t;
     signal ep_input:       usb_ep_input_signals_t;
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
@@ -127,6 +130,10 @@ architecture Clavier_arch of Clavier is
     signal keys_pd:     std_logic_vector(KEYS'range);
     signal keys_sync:   std_logic_vector(KEYS'range);
     signal report_data: usb_byte_array_t(0 to 31);
+
+    -- LED signals
+    signal led_clrn:   std_logic;
+    signal led_states: std_logic_vector(LEDS'range);
 
     -- Input buffer with pull-down resistor
     component IBPD is
@@ -180,6 +187,7 @@ begin
             EP_INPUT       => ep_input,
             EP_OUTPUTS     => ep_outputs,
 
+            DEVICE_RESET   => device_reset,
             FRAME_START    => open,
 
             DEBUG_TX       => USB_DEBUG_TX
@@ -188,7 +196,7 @@ begin
     USB_DP      <= usb_dp_out when usb_oe = '1' else 'Z';
     USB_DP_PULL <= '1' when usb_dp_pull_enable = '1' else 'Z';
 
-    -- USB Endpoint 0
+    -- USB endpoint 0
     usb_ep0: entity work.USB_EndPoint0
         generic map (
             DESCRIPTORS => DESCRIPTORS
@@ -222,18 +230,31 @@ begin
             REPORT_DATA => report_data
         );
 
+    -- LED controller
+    led_clrn <= not device_reset;
+    led_ctrl: entity work.LedController
+        port map (
+            CLK_48MHz  => pll_clk,
+            CLRn       => led_clrn,
+
+            LED_STATES => led_states,
+            BRIGHTNESS => LED_BRIGHTNESS,
+
+            LEDS       => LEDS
+        );
+
     -- TODO: use the LEDs to display the key state, for debugging
     process (pll_clk)
     begin
         if rising_edge(pll_clk) then
             for i in keys_sync'range loop
                 if keys_sync(i) = '1' then
-                    LEDS <= not std_logic_vector(to_unsigned(i + 1, LEDS'length));
+                    led_states <= std_logic_vector(to_unsigned(i + 1, 8)(led_states'range));
                 end if;
             end loop;
 
             if CLRn = '0' then
-                LEDS <= (others => '1');
+                led_states <= (others => '0');
             end if;
         end if;
     end process;
