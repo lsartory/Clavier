@@ -127,9 +127,9 @@ architecture Clavier_arch of Clavier is
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
 
     -- Keyboard signals
-    signal keys_pd:     std_logic_vector(KEYS'range);
-    signal keys_sync:   std_logic_vector(KEYS'range);
-    signal report_data: usb_byte_array_t(0 to 31);
+    signal keys_pd:        std_logic_vector(KEYS'range);
+    signal keys_debounced: std_logic_vector(KEYS'range);
+    signal report_data:    usb_byte_array_t(0 to 31);
 
     -- LED signals
     signal led_clrn:   std_logic;
@@ -156,17 +156,22 @@ begin
             OUTPUT(0)  => clrn
         );
 
-    -- Keys input buffers with pull-down and synchronization
+    -- Keys preparation
     keys_ibpd_gen: for i in KEYS'range generate
     begin
+        -- Input buffer with pull-down resistor
         key_ibpd: IBPD port map (I => KEYS(i), O => keys_pd(i));
+
+        -- Debouncing
+        key_deb: entity work.Debouncer
+            port map (
+                CLK_48MHz     => pll_clk,
+                CLRn          => clrn,
+
+                KEY_INPUT     => keys_pd(i),
+                KEY_DEBOUNCED => keys_debounced(i)
+            );
     end generate;
-    keys_cdc: entity work.VectorCDC
-        port map (
-            TARGET_CLK => pll_clk,
-            INPUT      => keys_pd,
-            OUTPUT     => keys_sync
-        );
 
     -- USB device
     usb_dev: entity work.USB_Device
@@ -212,7 +217,7 @@ begin
         );
 
     -- USB HID
-    report_data <= keys_to_usb_report(keys_sync, report_data);
+    report_data <= keys_to_usb_report(keys_debounced, report_data);
     usb_hid: entity work.USB_HID
         generic map (
             REPORT_DESCRIPTOR  => REPORT_DESCRIPTOR,
@@ -247,8 +252,8 @@ begin
     process (pll_clk)
     begin
         if rising_edge(pll_clk) then
-            for i in keys_sync'range loop
-                if keys_sync(i) = '1' then
+            for i in keys_debounced'range loop
+                if keys_debounced(i) = '1' then
                     led_states <= std_logic_vector(to_unsigned(i + 1, 8)(led_states'range));
                 end if;
             end loop;

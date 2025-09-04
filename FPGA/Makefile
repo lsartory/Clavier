@@ -13,6 +13,7 @@ LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
 SOURCES += ClockScaler.vhd
+SOURCES += Debouncer.vhd
 SOURCES += Keymap.vhd
 SOURCES += LedController.vhd
 SOURCES += PLL.vhd
