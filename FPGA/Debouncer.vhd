@@ -13,7 +13,7 @@ use work.utils.all;
 
 entity Debouncer is
 	generic (
-		FILTER_DURATION: time := 10 ms
+		FILTER_DURATION: time := 5 ms
 	);
 	port (
 		CLK_48MHz:     in  std_logic;
@@ -49,11 +49,12 @@ begin
 	begin
 		if rising_edge(CLK_48MHz) then
             -- Simple filter
-            if filter_counter /= 0 then
-                filter_counter <= filter_counter - 1;
-            elsif key_sync /= key_latched then
-                key_latched    <= key_sync;
+            if key_sync = key_latched then
                 filter_counter <= to_unsigned(FILTER_DURATION_INT, filter_counter'length);
+            elsif filter_counter /= 0 then
+                filter_counter <= filter_counter - 1;
+            else
+                key_latched <= key_sync;
             end if;
 
             -- Synchronous reset
