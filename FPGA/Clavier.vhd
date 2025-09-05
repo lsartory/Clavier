@@ -28,7 +28,6 @@ entity Clavier is
         USB_DN:       inout std_logic;
         USB_DP:       inout std_logic;
         USB_DP_PULL:  out   std_logic;
-        USB_DEBUG_TX: out   std_logic;
 
         KEYS:         in    std_logic_vector(105 downto 0);
         LEDS:         out   std_logic_vector(4 downto 0)
@@ -195,7 +194,7 @@ begin
             DEVICE_RESET   => device_reset,
             FRAME_START    => open,
 
-            DEBUG_TX       => USB_DEBUG_TX
+            DEBUG_TX       => open
         );
     USB_DN      <= usb_dn_out when usb_oe = '1' else 'Z';
     USB_DP      <= usb_dp_out when usb_oe = '1' else 'Z';
