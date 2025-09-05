@@ -18,6 +18,7 @@ SOURCES += Keymap.vhd
 SOURCES += LedController.vhd
 SOURCES += PLL.vhd
 SOURCES += PulseDensityModulator.vhd
+SOURCES += Utils.vhd
 SOURCES += VectorCDC.vhd
 SOURCES += usb/USB_Debug_UART.vhd
 SOURCES += usb/USB_Descriptors.vhd

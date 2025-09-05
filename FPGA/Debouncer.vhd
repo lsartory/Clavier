@@ -7,12 +7,13 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.utils.all;
 
 --------------------------------------------------
 
 entity Debouncer is
 	generic (
-		FILTER_DURATION: natural := 480_000 -- 10 ms @ 48 MHz
+		FILTER_DURATION: time := 10 ms
 	);
 	port (
 		CLK_48MHz:     in  std_logic;
@@ -26,9 +27,13 @@ end entity Debouncer;
 --------------------------------------------------
 
 architecture Debouncer_arch of Debouncer is
-	signal key_sync:       std_logic := '0';
-	signal key_latched:    std_logic := '0';
-	signal filter_counter: unsigned(25 downto 0) := (others => '0');
+    -- Intermediate signals
+	signal key_sync:    std_logic;
+	signal key_latched: std_logic;
+
+    -- Timing signals
+    constant FILTER_DURATION_INT: natural := time_to_ticks(FILTER_DURATION, 48.000000);
+	signal filter_counter: unsigned(unsigned_bit_width(FILTER_DURATION_INT) - 1 downto 0);
 begin
 
 	-- Key input synchronization
@@ -48,7 +53,7 @@ begin
                 filter_counter <= filter_counter - 1;
             elsif key_sync /= key_latched then
                 key_latched    <= key_sync;
-                filter_counter <= to_unsigned(FILTER_DURATION, filter_counter'length);
+                filter_counter <= to_unsigned(FILTER_DURATION_INT, filter_counter'length);
             end if;
 
             -- Synchronous reset

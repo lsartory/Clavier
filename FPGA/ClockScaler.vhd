@@ -27,9 +27,9 @@ end ClockScaler;
 --------------------------------------------------
 
 architecture ClockScaler_arch of ClockScaler is
-    signal counter: unsigned(31 downto 0);
+    signal counter: unsigned(63 downto 0);
 
-    function real_to_unsigned(x : real; size : natural) return unsigned is
+    function real_to_unsigned(x: real; size: natural) return unsigned is
         variable tmp:    real := round(x);
         variable result: unsigned(size - 1 downto 0) := (others => '0');
     begin

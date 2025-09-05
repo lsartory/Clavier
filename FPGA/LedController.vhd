@@ -7,10 +7,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.utils.all;
 
 --------------------------------------------------
 
 entity LedController is
+    generic (
+        RESET_DELAY: time := 1 sec
+    );
 	port (
         CLK_48MHz:  in  std_logic;
         CLRn:       in  std_logic := '1';
@@ -28,11 +32,14 @@ architecture LedController_arch of LedController is
     -- Frequency generator signals
     signal led_ena: std_logic;
 
+    -- Reset signals
+    constant RESET_DELAY_INT: natural := time_to_ticks(RESET_DELAY, 48.000000);
+    signal reset_counter: unsigned(unsigned_bit_width(RESET_DELAY_INT) - 1 downto 0);
+
     -- Startup animation signals
     type led_animation_t is (idle, rise, fall, done);
     type led_animation_array_t is array(natural range <>) of led_animation_t;
     signal led_animation: led_animation_array_t(LEDS'range);
-    signal reset_delay:   unsigned(25 downto 0);
 
     -- Modulator signals
     type led_value_array_t is array(natural range <>) of unsigned(BRIGHTNESS'range);
@@ -92,8 +99,8 @@ begin
             end if;
 
             -- Animation sequence
-            if reset_delay < 48_000_000 then
-                reset_delay <= reset_delay + 1;
+            if reset_counter < RESET_DELAY_INT then
+                reset_counter <= reset_counter + 1;
             elsif led_animation(2) = idle then
                 led_animation(2) <= rise;
             elsif led_animation(2) = fall then
@@ -109,7 +116,7 @@ begin
 
             -- Synchronous reset
             if CLRn = '0' then
-                reset_delay   <= (others => '0');
+                reset_counter <= (others => '0');
                 led_values    <= (others => (others => '0'));
                 led_animation <= (others => idle);
             end if;
