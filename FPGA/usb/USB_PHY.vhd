@@ -413,7 +413,7 @@ begin
                             tx_shift_reg     <= TX_DATA;
                             tx_shift_counter <= to_unsigned(8, tx_shift_counter'length);
                             TX_READ          <= '1';
-                        elsif tx_shift_counter = 0 and (tx_shift_reg(tx_shift_reg'low) = '0' or tx_stuffing /= 6) then
+                        elsif tx_shift_counter = 0 and tx_stuffing /= 6 then
                             tx_dn    <= '0';
                             tx_dp    <= '0';
                             tx_state <= eop_1;
