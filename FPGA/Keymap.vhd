@@ -69,7 +69,7 @@ package body keymap is
              42 => 16#E3#, -- KEY_LEFTMETA
              43 => 16#E1#, -- KEY_LEFTSHIFT
              44 => 16#50#, -- KEY_LEFT
-             45 => 16#6F#, -- KEY_F20
+             45 => 16#F9#, -- KEY_COFFEE
              46 => 16#64#, -- KEY_102ND
              47 => 16#10#, -- KEY_M
              48 => 16#65#, -- KEY_COMPOSE

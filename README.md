@@ -18,8 +18,8 @@ Clavier (French for ‘keyboard’) is an FPGA-based mechanical keyboard with an
 
 ### What's the extra key for?
 
-It's mapped to F20.
-I use it to lock my computer quickly when I leave my desk.
+It's the coffee key.
+Use it to lock your computer and go have a break.
 
 ## Required tools
 
