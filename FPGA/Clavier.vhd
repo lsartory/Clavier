@@ -7,6 +7,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.git_info.all;
 use work.keymap.all;
 use work.usb_types.all;
 use work.usb_descriptors.all;
@@ -104,7 +105,7 @@ architecture Clavier_arch of Clavier is
             0 => new_usb_string_zero((0 => x"0409")),    -- English (United States)
             1 => to_usb_string_descriptor("L. Sartory"), -- Manufacturer
             2 => to_usb_string_descriptor("Clavier"),    -- Product
-            3 => to_usb_string_descriptor("000001")      -- Serial number
+            3 => to_usb_string_descriptor(GIT_DESC)      -- Serial number
         )
     );
 

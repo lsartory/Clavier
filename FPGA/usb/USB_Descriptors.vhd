@@ -13,7 +13,7 @@ use work.usb_types.all;
 
 package usb_descriptors is
     -- Define reasonable maximums
-    constant MAX_STRING_LENGTH:       positive := 32;
+    constant MAX_STRING_LENGTH:       positive := 64;
     constant MAX_STRING_COUNT:        positive := 32;
     constant MAX_CLASSES_LENGTH:      positive := 64; -- per interface
     constant MAX_ENDPOINT_COUNT:      positive :=  8; -- per interface
@@ -305,7 +305,7 @@ package body usb_descriptors is
         case i is
             when 0 => ret := d.header.bLength;
             when 1 => ret := d.header.bDescriptorType;
-            when 2 to d.bString'length - 3 =>
+            when 2 to 2 + ((d.bString'high - d.bString'low) * 2) + 1 =>
                 if i mod 2 = 0 then
                     ret := d.bString((i - 2) / 2)( 7 downto 0);
                 else
