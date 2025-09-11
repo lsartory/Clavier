@@ -13,7 +13,7 @@ use work.utils.all;
 
 entity Debouncer is
 	generic (
-		FILTER_DURATION: time := 5 ms
+		FILTER_DURATION: delay_length := 5 ms
 	);
 	port (
 		CLK_48MHz:     in  std_logic;
@@ -32,7 +32,7 @@ architecture Debouncer_arch of Debouncer is
 	signal key_latched: std_logic;
 
     -- Timing signals
-    constant FILTER_DURATION_INT: natural := time_to_ticks(FILTER_DURATION, 48.000000);
+    constant FILTER_DURATION_INT: natural := delay_to_ticks(FILTER_DURATION, 48 MHz);
 	signal filter_counter: unsigned(unsigned_bit_width(FILTER_DURATION_INT) - 1 downto 0);
 begin
 

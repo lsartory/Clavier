@@ -140,7 +140,7 @@ architecture Clavier_arch of Clavier is
 
     -- Reset signals
     constant RESET_KEY_NUM:      natural := 45;
-    constant RESET_DURATION_INT: natural := time_to_ticks(5 sec, 12.000000);
+    constant RESET_DURATION_INT: natural := delay_to_ticks(5 sec, 12 MHz);
     signal reset_counter:        unsigned(unsigned_bit_width(RESET_DURATION_INT) - 1 downto 0);
 
     -- Input buffer with pull-down resistor

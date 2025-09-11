@@ -13,7 +13,7 @@ use work.utils.all;
 
 entity LedController is
     generic (
-        RESET_DELAY: time := 1 sec
+        RESET_DELAY: delay_length := 1 sec
     );
 	port (
         CLK_48MHz:  in  std_logic;
@@ -33,7 +33,7 @@ architecture LedController_arch of LedController is
     signal led_ena: std_logic;
 
     -- Reset signals
-    constant RESET_DELAY_INT: natural := time_to_ticks(RESET_DELAY, 48.000000);
+    constant RESET_DELAY_INT: natural := delay_to_ticks(RESET_DELAY, 48 MHz);
     signal reset_counter: unsigned(unsigned_bit_width(RESET_DELAY_INT) - 1 downto 0);
 
     -- Startup animation signals
