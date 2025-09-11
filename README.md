@@ -21,6 +21,8 @@ Clavier (French for ‘keyboard’) is an FPGA-based mechanical keyboard with an
 It's the coffee key.
 Use it to lock your computer and go have a break.
 
+It can also be long-pressed for 5 seconds to reset the FPGA.
+
 ## Required tools
 
 - [KiCad](https://www.kicad.org) for the PCB

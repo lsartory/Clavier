@@ -12,6 +12,7 @@ use work.keymap.all;
 use work.usb_types.all;
 use work.usb_descriptors.all;
 use work.usb_class_descriptors.all;
+use work.utils.all;
 
 --------------------------------------------------
 
@@ -31,7 +32,9 @@ entity Clavier is
         USB_DP_PULL:  out   std_logic;
 
         KEYS:         in    std_logic_vector(105 downto 0);
-        LEDS:         out   std_logic_vector(4 downto 0)
+        LEDS:         out   std_logic_vector(4 downto 0);
+
+        FPGA_RESET:   out   std_logic
     );
 end entity Clavier;
 
@@ -134,6 +137,11 @@ architecture Clavier_arch of Clavier is
     -- LED signals
     signal led_clrn:   std_logic;
     signal led_states: std_logic_vector(LEDS'range);
+
+    -- Reset signals
+    constant RESET_KEY_NUM:      natural := 45;
+    constant RESET_DURATION_INT: natural := time_to_ticks(5 sec, 12.000000);
+    signal reset_counter:        unsigned(unsigned_bit_width(RESET_DURATION_INT) - 1 downto 0);
 
     -- Input buffer with pull-down resistor
     component IBPD is
@@ -247,6 +255,22 @@ begin
 
             LEDS       => LEDS
         );
+
+    -- Reset process
+    process (CLK_12MHz)
+    begin
+        if rising_edge(CLK_12MHz) then
+            -- Detect long presses on the coffee key to reset
+            if keys_pd(RESET_KEY_NUM) = '1' then
+                if reset_counter < RESET_DURATION_INT then
+                    reset_counter <= reset_counter + 1;
+                end if;
+            else
+                reset_counter <= (others => '0');
+            end if;
+        end if;
+    end process;
+    FPGA_RESET <= '0' when reset_counter >= RESET_DURATION_INT and keys_pd(RESET_KEY_NUM) = '1' else 'Z';
 
     -- TODO: use the LEDs to display the key state, for debugging
     process (pll_clk)
