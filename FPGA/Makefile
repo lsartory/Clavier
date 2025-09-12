@@ -2,6 +2,9 @@
 # Copyright (c) 2025 L. Sartory
 # SPDX-License-Identifier: MIT
 
+GIT_INFO_FILE = GitInfo.vhd
+GIT_DESC      = $(shell git describe --abbrev=0 --dirty --exclude '*' --always)
+
 PACKAGE = CABGA256
 SIZE    = 25k
 SPEED   = 6
@@ -12,9 +15,9 @@ TOPLEVEL = Clavier
 LPFFILE  = Clavier.lpf
 PREPACK  = Clavier.py
 SOURCES  = Clavier.vhd
+SOURCES += $(GIT_INFO_FILE)
 SOURCES += ClockScaler.vhd
 SOURCES += Debouncer.vhd
-SOURCES += GitInfo.vhd
 SOURCES += Keymap.vhd
 SOURCES += LedController.vhd
 SOURCES += PLL.vhd
@@ -30,14 +33,11 @@ SOURCES += usb/USB_Types.vhd
 SOURCES += usb/class/USB_Class_Descriptors.vhd
 SOURCES += usb/class/USB_HID.vhd
 
-GIT_INFO_FILE = GitInfo.vhd
-GIT_DESC      = $(shell git describe --abbrev=0 --dirty --exclude '*' --always)
-
 .PHONY: all
-all: git-info $(BUILDDIR)/$(TOPLEVEL).bit
+all: $(BUILDDIR)/$(TOPLEVEL).bit
 
-.PHONY: git-info
-git-info:
+.PHONY: $(GIT_INFO_FILE)
+$(GIT_INFO_FILE):
 	@echo "-- Clavier | $(GIT_INFO_FILE)"                      >  $(GIT_INFO_FILE)
 	@echo "-- Copyright (c) 2025 L. Sartory"                   >> $(GIT_INFO_FILE)
 	@echo "-- SPDX-License-Identifier: MIT"                    >> $(GIT_INFO_FILE)
