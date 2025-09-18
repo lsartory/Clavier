@@ -2,7 +2,8 @@
 
 Clavier (French for ‘keyboard’) is an FPGA-based mechanical keyboard with an integrated USB hub, and numerous communication interfaces (JTAG, SPI, I²C, UART).
 
-![Clavier render](clavier.png)
+![Clavier assembled](clavier-assembled.jpg)
+
 
 ## Features
 
@@ -23,11 +24,13 @@ Use it to lock your computer and go have a break.
 
 It can also be long-pressed for 5 seconds to reset the FPGA.
 
+
 ## Required tools
 
 - [KiCad](https://www.kicad.org) for the PCB
 - [FreeCAD](https://www.freecad.org) or [OpenSCAD](https://openscad.org) for the housing
 - [OSS CAD Suite](https://github.com/YosysHQ/oss-cad-suite-build) (GHDL, Yosys, hdl, ghdl-yosys-plugin, nextpnr-ecp5, ecppack, and openFPGALoader) and [GNU Make](https://www.gnu.org/software/make) for the FPGA
+
 
 ## PCB
 
@@ -38,11 +41,21 @@ It is however not easy to assemble by hand mostly due to 0402 passives and the F
 
 A PDF version of the schematics is available here, for convenience: [PCB/doc/clavier.pdf](PCB/doc/clavier.pdf).
 
+
 ## Housing
+
+### Version 1
 
 An OpenSCAD version of the housing was created first and is fine for 3D printing.
 The FreeCAD version was created afterwards for exporting to STEP, which is more suitable for CNC machining.
-Both versions are functionally equivalent.
+Both alternatives are functionally equivalent.
+
+### Version 2
+
+The first version fits properly, but it turns out that it is not angled in a comfortable way.
+To correct this, a second version was created with an angle of 8° that makes the front part much thinner.
+This one is only available in FreeCAD.
+
 
 ## FPGA
 
@@ -59,9 +72,18 @@ Connect the JTAG interface with jumper cables, then run either `make prog-sram` 
 
 ![How to connect the JTAG interface](clavier-jtag.jpg)
 
+
 ## Communication interfaces
 
 Except for the GPIOs that are connected directly to the FPGA, communications are handled by the [CH347F](https://www.lcsc.com/datasheet/C18221627.pdf).
+
+
+## 3D renders
+
+![Clavier render](clavier.png)
+
+![Clavier housing render](clavier-housing.png)
+
 
 ## Licenses
 
