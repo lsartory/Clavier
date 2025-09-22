@@ -2,7 +2,7 @@
 
 Clavier (French for ‘keyboard’) is an FPGA-based mechanical keyboard with an integrated USB hub, and numerous communication interfaces (JTAG, SPI, I²C, UART).
 
-![Clavier assembled](clavier-assembled.jpg)
+![Clavier assembled](Pictures/clavier-assembled.jpg)
 
 
 ## Features
@@ -70,7 +70,7 @@ The integrated JTAG interface can be used to program the FPGA.
 The switch `SW18` is used to toggle the interfaces on or off. The LED `D1` close by displays the current status.
 Connect the JTAG interface with jumper cables, then run either `make prog-sram` or `make prog-flash`, depending on if the configuration needs to be permanent or not.
 
-![How to connect the JTAG interface](clavier-jtag.jpg)
+![How to connect the JTAG interface](Pictures/clavier-jtag.jpg)
 
 
 ## Communication interfaces
@@ -80,9 +80,9 @@ Except for the GPIOs that are connected directly to the FPGA, communications are
 
 ## 3D renders
 
-![Clavier render](clavier.png)
+![Clavier render](Pictures/clavier.png)
 
-![Clavier housing render](clavier-housing.png)
+![Clavier housing render](Pictures/clavier-housing.png)
 
 
 ## Licenses
