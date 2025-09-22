@@ -34,6 +34,8 @@ It can also be long-pressed for 5 seconds to reset the FPGA.
 
 ## PCB
 
+![The PCB layout](Pictures/clavier-pcb.png)
+
 The PCB has 4 layers and requires no unusual capabilities to produce.
 It is however not easy to assemble by hand mostly due to 0402 passives and the FPGA in BGA packaging.
 
