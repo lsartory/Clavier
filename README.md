@@ -89,3 +89,4 @@ Except for the GPIOs that are connected directly to the FPGA, communications are
 
 - The PCB and housing are licensed under the [CERN Open Hardware Licence Version 2 - Permissive](https://spdx.org/licenses/CERN-OHL-P-2.0.html).
 - The FPGA code is licensed under the [MIT Licence](https://spdx.org/licenses/MIT.html).
+- The pictures are licensed under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
