@@ -291,7 +291,7 @@ begin
                 when receive_data =>
                     -- We don't actually need to receive data,
                     -- but if we did, it would take place here...
-                    control_state <= wait_receive_data;
+                    control_state <= idle;
 
                 when send_status =>
                     -- Send the status packet

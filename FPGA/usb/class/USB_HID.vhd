@@ -21,13 +21,14 @@ entity USB_HID is
         EP_OUT_ID:          positive
     );
     port (
-        CLK_48MHz:   in  std_logic;
-        CLRn:        in  std_logic := '1';
+        CLK_48MHz:       in  std_logic;
+        CLRn:            in  std_logic := '1';
 
-        EP_INPUT:    in  usb_ep_input_signals_t;
-        EP_OUTPUT:   out usb_ep_output_signals_t;
+        EP_INPUT:        in  usb_ep_input_signals_t;
+        EP_OUTPUT:       out usb_ep_output_signals_t;
 
-        REPORT_DATA: in  usb_byte_array_t
+        REPORT_DATA_IN:  in  usb_byte_array_t;
+        REPORT_DATA_OUT: out usb_byte_array_t
     );
 end entity USB_HID;
 
@@ -57,15 +58,17 @@ architecture USB_HID_arch of USB_HID is
     signal setup:              usb_setup_packet_t;
     signal setup_byte_counter: unsigned(3 downto 0);
 
-    -- Output signals
+    -- Input / output signals
+    signal receiving:       std_logic;
     signal packet_len:      unsigned(10 downto 0);
     signal data:            usb_byte_t;
     signal send_descriptor: std_logic;
     signal descriptor_base: unsigned(descriptor_addr'range);
 
     -- Report data
-    signal prev_report_data: usb_byte_array_t(REPORT_DATA'range);
-    signal report_addr:      unsigned(6 downto 0);
+    signal tx_report_data: usb_byte_array_t(REPORT_DATA_IN'range);
+    signal rx_report_data: usb_byte_array_t(REPORT_DATA_OUT'range);
+    signal report_addr:    unsigned(6 downto 0);
 begin
 
     -- Descriptor ROM process
@@ -95,6 +98,7 @@ begin
 
             -- Start the control state machine when a setup packet is received
             if EP_INPUT.rx_data_packet = '1' and rx_data_packet_prev = '0' and EP_INPUT.token = token_setup then
+                receiving          <= '0';
                 setup_byte_counter <= (others => '0');
                 control_state      <= receive_setup;
             end if;
@@ -263,7 +267,7 @@ begin
                 when receive_data =>
                     -- We don't actually need to receive data,
                     -- but if we did, it would take place here...
-                    control_state <= wait_receive_data;
+                    control_state <= idle;
 
                 when send_status =>
                     -- Send the status packet
@@ -318,19 +322,40 @@ begin
             -- Input interrupts handling
             if EP_INPUT.endpoint = EP_IN_ID and EP_INPUT.token = token_in and EP_INPUT.start_trans = '1' then
                 -- TODO: retransmit until acknowledged instead of only once
-                if REPORT_DATA /= prev_report_data then
-                    prev_report_data <= REPORT_DATA;
-                    packet_len       <= to_unsigned(REPORT_DATA'length, packet_len'length);
+                receiving   <= '0';
+                report_addr <= (others => '0');
+                if REPORT_DATA_IN /= tx_report_data then
+                    tx_report_data <= REPORT_DATA_IN;
+                    packet_len     <= to_unsigned(REPORT_DATA_IN'length, packet_len'length);
                 else
                     EP_OUTPUT.tx_nak <= '1';
                 end if;
             end if;
             if control_state = idle and packet_len > 0 then
                 EP_OUTPUT.tx_enable <= '1';
-                EP_OUTPUT.tx_data   <= prev_report_data(to_integer(report_addr));
+                EP_OUTPUT.tx_data   <= tx_report_data(to_integer(report_addr));
                 if EP_INPUT.tx_read = '1' then
-                    packet_len  <= packet_len - 1;
-                    report_addr <= report_addr + 1;
+                    packet_len <= packet_len - 1;
+                    if report_addr < tx_report_data'high then
+                        report_addr <= report_addr + 1;
+                    end if;
+                end if;
+            end if;
+
+            -- Output interrupts handling
+            if EP_INPUT.endpoint = EP_OUT_ID and EP_INPUT.token = token_out and EP_INPUT.start_trans = '1' then
+                receiving   <= '1';
+                report_addr <= (others => '0');
+            end if;
+            if receiving = '1' then
+                if EP_INPUT.rx_data_packet = '1' and EP_INPUT.rx_data_valid = '1' then
+                    if report_addr <= rx_report_data'high then
+                        rx_report_data(to_integer(report_addr)) <= EP_INPUT.rx_data;
+                        report_addr                             <= report_addr + 1;
+                    end if;
+                elsif EP_INPUT.rx_data_packet_valid = '1' then
+                    receiving       <= '0';
+                    REPORT_DATA_OUT <= rx_report_data;
                 end if;
             end if;
 
@@ -339,7 +364,9 @@ begin
                 control_state       <= idle;
                 descriptor_addr     <= (others => '0');
                 packet_len          <= (others => '0');
-                prev_report_data    <= (others => (others => '0'));
+                report_addr         <= (others => '0');
+                tx_report_data      <= (others => (others => '0'));
+                rx_report_data      <= (others => (others => '0'));
                 EP_OUTPUT.tx_enable <= '0';
                 EP_OUTPUT.tx_data   <= (others => '0');
             end if;

@@ -42,7 +42,7 @@ end entity Clavier;
 
 architecture Clavier_arch of Clavier is
     -- USB descriptors
-    constant REPORT_DESCRIPTOR: usb_byte_array_t := ( -- TODO: generate this automatically?
+    constant REPORT_DESCRIPTOR: usb_byte_array_t := (
         x"05", x"01", -- Usage Page (Generic Desktop)
         x"09", x"06", -- Usage (Keyboard)
         x"A1", x"01", -- Collection (Application)
@@ -57,6 +57,16 @@ architecture Clavier_arch of Clavier is
         x"19", x"04", --   Usage Minimum (KEY_A)
         x"29", x"FB", --   Usage Maximum (KEY_CALC)
         x"81", x"02", --   Input (Data, Variable, Absolute)
+
+        -- LEDs
+        x"95", x"05", --   Report Count
+        x"75", x"01", --   Report Size (1)
+        x"15", x"00", --   Logical Minimum (0)
+        x"25", x"01", --   Logical Maximum (1)
+        x"05", x"08", --   Usage Page (LEDs)
+        x"19", x"01", --   Usage Minimum (Num Lock)
+        x"29", x"05", --   Usage Maximum (Kana)
+        x"91", x"02", --   Output (Data, Variable, Absolute)
 
         x"C0"         -- End Collection
     );
@@ -130,9 +140,10 @@ architecture Clavier_arch of Clavier is
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
 
     -- Keyboard signals
-    signal keys_pd:        std_logic_vector(KEYS'range);
-    signal keys_debounced: std_logic_vector(KEYS'range);
-    signal report_data:    usb_byte_array_t(0 to 31);
+    signal keys_pd:         std_logic_vector(KEYS'range);
+    signal keys_debounced:  std_logic_vector(KEYS'range);
+    signal report_data_in:  usb_byte_array_t(0 to 31);
+    signal report_data_out: usb_byte_array_t(0 to  1);
 
     -- LED signals
     signal led_clrn:   std_logic;
@@ -225,7 +236,7 @@ begin
         );
 
     -- USB HID
-    report_data <= keys_to_usb_report(keys_debounced, report_data);
+    report_data_in <= keys_to_usb_report(keys_debounced, report_data_in);
     usb_hid: entity work.USB_HID
         generic map (
             REPORT_DESCRIPTOR  => REPORT_DESCRIPTOR,
@@ -234,17 +245,19 @@ begin
             EP_OUT_ID          => to_integer(unsigned(DESCRIPTORS.device.configurations(0).interfaces(0).endpoints(1).bEndpointAddress))
         )
         port map (
-            CLK_48MHz   => pll_clk,
-            CLRn        => clrn,
+            CLK_48MHz       => pll_clk,
+            CLRn            => clrn,
 
-            EP_INPUT    => ep_input,
-            EP_OUTPUT   => ep_outputs(1),
+            EP_INPUT        => ep_input,
+            EP_OUTPUT       => ep_outputs(1),
 
-            REPORT_DATA => report_data
+            REPORT_DATA_IN  => report_data_in,
+            REPORT_DATA_OUT => report_data_out
         );
 
     -- LED controller
-    led_clrn <= not device_reset;
+    led_clrn   <= not device_reset;
+    led_states <= report_data_out(1)(led_states'range);
     led_ctrl: entity work.LedController
         port map (
             CLK_48MHz  => pll_clk,
@@ -272,19 +285,4 @@ begin
     end process;
     FPGA_RESET <= '0' when reset_counter >= RESET_DURATION_INT and keys_pd(RESET_KEY_NUM) = '1' else 'Z';
 
-    -- TODO: use the LEDs to display the key state, for debugging
-    process (pll_clk)
-    begin
-        if rising_edge(pll_clk) then
-            for i in keys_debounced'range loop
-                if keys_debounced(i) = '1' then
-                    led_states <= std_logic_vector(to_unsigned(i + 1, 8)(led_states'range));
-                end if;
-            end loop;
-
-            if CLRn = '0' then
-                led_states <= (others => '0');
-            end if;
-        end if;
-    end process;
 end Clavier_arch;

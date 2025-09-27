@@ -93,7 +93,6 @@ architecture USB_Device_arch of USB_Device is
     -- Data packet decoder signals
     signal rx_data_start:        std_logic;
     signal rx_data_end:          std_logic;
-    signal rx_data_parity:       std_logic;
     signal rx_crc_shift_reg:     usb_byte_t;
     signal rx_crc_counter:       unsigned(3 downto 0);
     signal rx_crc16:             std_logic_vector(15 downto 0);
@@ -353,9 +352,7 @@ begin
                 when payload =>
                     -- Check the packet identifier
                     if rx_data_start = '1' then
-                        if (rx_data_parity = '0' and rx_pid = "0011")
-                        or (rx_data_parity = '1' and rx_pid = "1011")
-                        then
+                        if rx_pid = "0011" or rx_pid = "1011" then
                             rx_data_packet <= '1';
                             rx_crc16       <= (others => '1');
                         end if;
@@ -389,24 +386,12 @@ begin
                 rx_data_end    <= '0';
                 rx_data_packet <= '0';
                 if rx_crc16 = "1011000000000001" then
-                    rx_data_parity       <= not rx_data_parity;
                     rx_data_packet_valid <= '1';
                     tx_ack               <= '1';
                 else
                     tx_nak <= '1';
                 end if;
             end if;
-
-            -- Reset data parity, if necessary
-            case token_type is
-                when token_setup =>
-                    -- Setup tokens are always followed by a DATA0 packet
-                    rx_data_parity <= '0';
-                when token_in =>
-                    -- Status is always signaled with a DATA1 packet
-                    rx_data_parity <= '1';
-                when others => null;
-            end case;
 
             -- Handle ACK/NAK packets from endpoints
             for i in EP_OUTPUTS'range loop
@@ -421,7 +406,6 @@ begin
             if CLRn = '0' then
                 rx_data_start        <= '0';
                 rx_data_end          <= '0';
-                rx_data_parity       <= '0';
                 rx_data_packet       <= '0';
                 rx_data_packet_valid <= '0';
             end if;
