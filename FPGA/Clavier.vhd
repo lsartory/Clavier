@@ -19,7 +19,7 @@ use work.utils.all;
 entity Clavier is
     generic (
         USB_VENDOR_ID:  integer range 0 to 65535 := 16#1209#;
-        USB_PRODUCT_ID: integer range 0 to 65535 := 16#0008#;
+        USB_PRODUCT_ID: integer range 0 to 65535 := 16#4C53#;
         USB_BCD_DEVICE: integer range 0 to 65535 := 16#0100#;
 
         LED_BRIGHTNESS: unsigned(15 downto 0) := x"FFFF"
