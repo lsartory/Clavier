@@ -23,7 +23,7 @@ package body keymap is
         variable key_code: natural;
 
         type keymap_array_t is array(natural range <>) of natural;
-        constant keymap_array: keymap_array_t(0 to keys'high - keys'low) := (
+        constant KEYMAP_ARRAY: keymap_array_t(0 to keys'high - keys'low) := (
               0 => 16#04#, -- KEY_A
               1 => 16#34#, -- KEY_APOSTROPHE
               2 => 16#2E#, -- KEY_EQUAL
@@ -132,13 +132,32 @@ package body keymap is
             105 => 16#61#  -- KEY_KP9
         );
     begin
-        ret(ret'low) := x"01"; -- Report ID
 
+        -- Boot protocol
+        -- TODO: only 1-key rollover in boot protocol for now
         for i in 0 to keys'high - keys'low loop
             if keys(keys'low + i) = '1' then
-                key_code := keymap_array(i);
+                key_code := KEYMAP_ARRAY(i);
+                case key_code is
+                    when 16#E0# => ret(0)(0) := '1'; -- KEY_LEFTCTRL
+                    when 16#E1# => ret(0)(1) := '1'; -- KEY_LEFTSHIFT
+                    when 16#E2# => ret(0)(2) := '1'; -- KEY_LEFTALT
+                    when 16#E3# => ret(0)(3) := '1'; -- KEY_LEFTMETA
+                    when 16#E4# => ret(0)(4) := '1'; -- KEY_RIGHTCTRL
+                    when 16#E5# => ret(0)(5) := '1'; -- KEY_RIGHTSHIFT
+                    when 16#E6# => ret(0)(6) := '1'; -- KEY_RIGHTALT
+                    when 16#E7# => ret(0)(7) := '1'; -- KEY_RIGHTMETA
+                    when others => ret(2) := std_logic_vector(to_unsigned(key_code, 8));
+                end case;
+            end if;
+        end loop;
+
+        -- n-key rollover
+        for i in 0 to keys'high - keys'low loop
+            if keys(keys'low + i) = '1' then
+                key_code := KEYMAP_ARRAY(i);
                 if key_code /= 0 then
-                    ret(ret'low + (key_code - 4) / 8 + 1)((key_code - 4) mod 8) := '1';
+                    ret(ret'low + (key_code - 4) / 8 + 8)((key_code - 4) mod 8) := '1';
                 end if;
             end if;
         end loop;

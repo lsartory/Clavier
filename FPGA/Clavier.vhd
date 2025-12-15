@@ -46,11 +46,15 @@ architecture Clavier_arch of Clavier is
         x"05", x"01", -- Usage Page (Generic Desktop)
         x"09", x"06", -- Usage (Keyboard)
         x"A1", x"01", -- Collection (Application)
-        x"85", x"01", --   Report ID
+
+        -- Boot protocol (padding)
+        x"95", x"08", --   Report Count
+        x"75", x"08", --   Report Size (8 bits)
+        x"81", x"03", --   Input (Constant, Variable, Absolute)
 
         -- Bitmap of keys
         x"95", x"F8", --   Report Count
-        x"75", x"01", --   Report Size (1)
+        x"75", x"01", --   Report Size (1 bit)
         x"15", x"00", --   Logical Minimum (0)
         x"25", x"01", --   Logical Maximum (1)
         x"05", x"07", --   Usage Page (Key Codes)
@@ -60,13 +64,16 @@ architecture Clavier_arch of Clavier is
 
         -- LEDs
         x"95", x"05", --   Report Count
-        x"75", x"01", --   Report Size (1)
+        x"75", x"01", --   Report Size (1 bit)
         x"15", x"00", --   Logical Minimum (0)
         x"25", x"01", --   Logical Maximum (1)
         x"05", x"08", --   Usage Page (LEDs)
         x"19", x"01", --   Usage Minimum (Num Lock)
         x"29", x"05", --   Usage Maximum (Kana)
         x"91", x"02", --   Output (Data, Variable, Absolute)
+        x"95", x"01", --   Report Count
+        x"75", x"03", --   Report Size (3 padding bits)
+        x"91", x"03", --   Output (Constant, Variable, Absolute)
 
         x"C0"         -- End Collection
     );
@@ -94,8 +101,8 @@ architecture Clavier_arch of Clavier is
                             0,      -- Interface #0
                             0,      -- No alternate setting
                             16#03#, -- HID class
-                            16#00#, -- Non-boot sub-class
-                            16#00#, -- Non-boot protocol
+                            16#01#, -- Boot interface sub-class
+                            16#01#, -- Keyboard protocol
                             0,      -- No description string
                             to_byte_array(new_usb_hid_class(
                                 0, -- No country code
@@ -142,8 +149,8 @@ architecture Clavier_arch of Clavier is
     -- Keyboard signals
     signal keys_pd:         std_logic_vector(KEYS'range);
     signal keys_debounced:  std_logic_vector(KEYS'range);
-    signal report_data_in:  usb_byte_array_t(0 to 31);
-    signal report_data_out: usb_byte_array_t(0 to  1);
+    signal report_data_in:  usb_byte_array_t(0 to 38); -- 8 bytes for boot protocol + 31 bytes for n-key rollover
+    signal report_data_out: usb_byte_array_t(0 to  0); -- 1 byte for LEDs
 
     -- LED signals
     signal led_clrn:   std_logic;
@@ -257,7 +264,7 @@ begin
 
     -- LED controller
     led_clrn   <= not device_reset;
-    led_states <= report_data_out(1)(led_states'range);
+    led_states <= report_data_out(0)(led_states'range);
     led_ctrl: entity work.LedController
         port map (
             CLK_48MHz  => pll_clk,

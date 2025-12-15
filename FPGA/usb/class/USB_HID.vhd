@@ -178,8 +178,16 @@ begin
                                                 -- TODO: Get_Idle
                                                 data <= (others => '0');
 
+                                            -- Get_Protocol
+                                            when x"03" =>
+                                                -- TODO: Get_Protocol
+                                                data <= (others => '0');
+
                                             -- Set_Idle
                                             when x"0A" => null;
+
+                                            -- Set_Protocol
+                                            when x"0B" => null;
 
                                             when others => EP_OUTPUT.tx_enable <= '0';
                                         end case;
@@ -289,6 +297,9 @@ begin
                                     case setup.bRequest is
                                         -- Set_Idle
                                         when x"0A" => null; -- TODO: actually set idle
+
+                                        -- Set_Protocol
+                                        when x"0B" => null; -- TODO: actually set protocol
 
                                         when others => EP_OUTPUT.tx_enable <= '0';
                                     end case;
