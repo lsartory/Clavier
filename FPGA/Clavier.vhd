@@ -142,6 +142,7 @@ architecture Clavier_arch of Clavier is
 
     -- USB device signals
     signal device_reset:   std_logic;
+    signal device_suspend: std_logic;
     signal device_address: usb_dev_addr_t;
     signal ep_input:       usb_ep_input_signals_t;
     signal ep_outputs:     usb_ep_output_signals_array_t(1 downto 0);
@@ -219,6 +220,7 @@ begin
             EP_OUTPUTS     => ep_outputs,
 
             DEVICE_RESET   => device_reset,
+            DEVICE_SUSPEND => device_suspend,
             FRAME_START    => open,
 
             DEBUG_TX       => open
@@ -264,7 +266,7 @@ begin
 
     -- LED controller
     led_clrn   <= not device_reset;
-    led_states <= report_data_out(0)(led_states'range);
+    led_states <= report_data_out(0)(led_states'range) when device_suspend = '0' else (others => '0');
     led_ctrl: entity work.LedController
         port map (
             CLK_48MHz  => pll_clk,

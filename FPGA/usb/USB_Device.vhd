@@ -33,6 +33,7 @@ entity USB_Device is
         EP_OUTPUTS:     in  usb_ep_output_signals_array_t;
 
         DEVICE_RESET:   out std_logic;
+        DEVICE_SUSPEND: out std_logic;
         FRAME_START:    out std_logic;
 
         DEBUG_TX:       out std_logic
@@ -229,7 +230,8 @@ begin
             end if;
         end if;
     end process;
-    DEVICE_RESET <= '1' when usb_state = reset or usb_state = detached else '0';
+    DEVICE_RESET   <= '1' when usb_state = reset or usb_state = detached else '0';
+    DEVICE_SUSPEND <= '1' when usb_state = suspend else '0';
 
     -- Handshake packet decoder
     process (CLK_48MHz)
